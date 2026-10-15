@@ -1,0 +1,51 @@
+[
+  {
+    "id": "01-bienvenida",
+    "source_name": "01. Empieza el recorrido.m4a",
+    "mp3": "audio/01-bienvenida.mp3",
+    "duration_seconds": 97.02,
+    "size_bytes": 776563
+  },
+  {
+    "id": "05-crisalida",
+    "source_name": "05. Crisálida · construir relaciones.m4a",
+    "mp3": "audio/05-crisalida.mp3",
+    "duration_seconds": 62.3,
+    "size_bytes": 498829
+  },
+  {
+    "id": "06-autor-curador",
+    "source_name": "06. Curar y construir un recorrido  .m4a",
+    "mp3": "audio/06-autor-curador.mp3",
+    "duration_seconds": 75.83,
+    "size_bytes": 607080
+  },
+  {
+    "id": "08-caso",
+    "source_name": "08. Apertura y presentación del caso .m4a",
+    "mp3": "audio/08-caso.mp3",
+    "duration_seconds": 64.31,
+    "size_bytes": 514920
+  },
+  {
+    "id": "12-estudiante-1",
+    "source_name": "12. Estudiante 1.m4a",
+    "mp3": "audio/12-estudiante-1.mp3",
+    "duration_seconds": 12.33,
+    "size_bytes": 99051
+  },
+  {
+    "id": "12-docente",
+    "source_name": "12. docente.m4a",
+    "mp3": "audio/12-docente.mp3",
+    "duration_seconds": 8.23,
+    "size_bytes": 66275
+  },
+  {
+    "id": "12-estudiante-2",
+    "source_name": "12. Estudiante 2.m4a",
+    "mp3": "audio/12-estudiante-2.mp3",
+    "duration_seconds": 13.04,
+    "size_bytes": 104693
+  }
+]
