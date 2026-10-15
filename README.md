@@ -2,6 +2,16 @@
 
 Proyecto de scrollytelling educativo para un módulo sobre objetos de aprendizaje.
 
+## Revisión autoasistida para ver y probar
+
+La nueva revisión mantiene la entrada gradual de la versión 1 y añade orientación, ayudas opcionales, devolución y guardado local de notas.
+
+- [Boceto autoasistido](version-1-autoasistida/index.html).
+- [Instrucciones y alcance del guardado](version-1-autoasistida/README.md).
+- [Descargar ZIP de esta revisión](descargas/metafora-version-1-autoasistida.zip).
+
+Para verlo, descargá el ZIP desde GitHub, descomprimilo y abrí `index.html`. El repositorio conserva los archivos; todavía no hay una publicación web de GitHub Pages.
+
 ## Base elegida para continuar
 
 La **versión 1** comienza por las partes del OA y el marco conceptual. El caso aparece después. Esta es la base elegida para los próximos ajustes; se conserva sin modificaciones en su propia carpeta.
@@ -10,7 +20,7 @@ La **versión 1** comienza por las partes del OA y el marco conceptual. El caso 
 - [Instrucciones de la versión 1](version-1/README.md).
 - [Descargar la versión 1 en ZIP](descargas/metafora-version-1-conservada.zip).
 
-La siguiente revisión abordará la narración del caso y la integración del marco conceptual, manteniendo esa ubicación del caso. No se ha aplicado todavía un nuevo guion del caso.
+La revisión autoasistida disponible arriba trabaja la orientación, la presentación del caso y la integración del marco conceptual, manteniendo esa ubicación del caso. Esta carpeta conserva el punto de partida sin cambios.
 
 ## Alternativa conservada
 
