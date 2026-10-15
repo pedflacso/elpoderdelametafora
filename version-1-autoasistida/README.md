@@ -33,10 +33,16 @@ Si aparece una copia incompatible o dañada, no se reemplaza automáticamente: s
 
 El ZIP puede subirse como recurso Archivo, descomprimirse y seleccionar `index.html` como principal. Hay que verificar la presentación en el campus real; no se realizó esa prueba. No es SCORM y no informa finalización ni calificación.
 
-Los enlaces se editan en `transfer.urls` del bloque JSON. Los audios siguen pendientes. Los guiones anteriores, especialmente la presentación del caso, deben revisarse antes de grabar: corresponden a versiones previas. Los controles nunca inician audio automáticamente.
+Los enlaces se editan en `transfer.urls` del bloque JSON. Se incorporaron siete grabaciones: bienvenida, Crisálida, autor-curador, caso y tres testimonios. Hay copias MP3 mono de 64 kb/s para la web y los M4A originales se conservan en `audio/originales/`. Los controles no inician audio automáticamente. El audio del caso se ofrece completo de forma opcional y el texto conserva la presentación por partes. Las locuciones de continuidad de la guía anterior no se incorporan porque no fueron recibidas.
+
+Los textos actuales se identifican como guiones de referencia, no como transcripciones verificadas. Se intentó preparar un reconocimiento local, pero la descarga del modelo fue bloqueada por la red. No se cotejó palabra por palabra lo grabado y no se afirma que sean transcripciones literales. Es una revisión pendiente para completar la alternativa textual accesible.
 
 ## Validación realizada
 
 Pruebas funcionales con Chromium por servidor local. Orden gradual, dos ramas, ayudas sin revelar la respuesta, recuperación tras recarga de textos y elecciones de ambas ramas, fichas, transferencia A/B, botón de retorno, exportación, cancelación y confirmación del borrado, almacenamiento denegado y copia incompatible, ancho de 360 px y movimiento reducido.
 
 El navegador automatizado de este entorno no admite `file://`: la apertura por doble clic se prevé por la estructura autónoma, pero no está validada aquí. Pendientes: otros navegadores, lector de pantalla, campus real, duración y comprensión con estudiantes. No se presenta como producto final ni como accesibilidad auditada.
+
+## Pruebas de audio
+
+Los siete archivos se decodificaron con FFmpeg. En Chromium se cargaron las siete fuentes MP3 y se verificó reproducción real, exclusión entre reproductores, pausa al cambiar de rama, reutilización del testimonio en exploración, ausencia de autoplay, persistencia de notas y ancho móvil. La duración y el peso de cada pieza están en `audio/manifest.json`. No se evaluó editorialmente la locución mediante escucha humana.

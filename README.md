@@ -4,13 +4,13 @@ Proyecto de scrollytelling educativo para un módulo sobre objetos de aprendizaj
 
 ## Revisión autoasistida para ver y probar
 
-La nueva revisión mantiene la entrada gradual de la versión 1 y añade orientación, ayudas opcionales, devolución y guardado local de notas.
+La nueva revisión mantiene la entrada gradual de la versión 1 y añade orientación, ayudas opcionales, devolución y guardado local de notas. Ya incorpora los siete audios recibidos; los guiones de referencia necesitan cotejo con las grabaciones.
 
 - [Boceto autoasistido](version-1-autoasistida/index.html).
 - [Instrucciones y alcance del guardado](version-1-autoasistida/README.md).
 - [Descargar ZIP de esta revisión](descargas/metafora-version-1-autoasistida.zip).
 
-Para verlo, descargá el ZIP desde GitHub, descomprimilo y abrí `index.html`. El repositorio conserva los archivos; todavía no hay una publicación web de GitHub Pages.
+Para verlo, descargá el ZIP desde GitHub, descomprimilo y abrí `index.html`. La rama `gh-pages` se prepara para publicación web. Su existencia no confirma que GitHub Pages esté activado: ver las instrucciones de publicación.
 
 ## Base elegida para continuar
 
@@ -87,3 +87,11 @@ Pruebas funcionales en Chromium por servidor local para ambos caminos y el recor
 El navegador automatizado del entorno bloquea `file://`; la apertura por doble clic está prevista por la estructura autónoma, pero no fue validada aquí. Pendientes: audios reales, otros navegadores, lector de pantalla, montaje Moodle, datos bibliográficos completos y prueba de duración/comprensión con estudiantes.
 
 Este prototipo permite revisar todo el recorrido; no se considera producto final.
+
+## Ver el boceto con un enlace web
+
+La rama `gh-pages` contiene la revisión autoasistida en su raíz, con los audios. Para activar GitHub Pages, una persona con permisos de configuración debe entrar en **Settings → Pages**, elegir **Deploy from a branch**, seleccionar **gh-pages**, carpeta **/ (root)** y guardar.
+
+Cuando GitHub termine de publicar, el sitio corresponde a `https://pedflacso.github.io/elpoderdelametafora/`. No se debe confundir preparar esta rama con verificar una publicación exitosa.
+
+Los cambios futuros en la carpeta de trabajo deberán volver a actualizar la rama de publicación. Las versiones anteriores se conservan en `main`. El ZIP incluye MP3 para distribuir; los originales M4A también se conservan en el repositorio.
