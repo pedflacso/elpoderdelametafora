@@ -1,0 +1,1171 @@
+"use strict";
+
+// CONTENIDO EDITABLE. Las rutas de audio vacías indican archivos pendientes.
+const C = {
+  case: {
+    paragraphs: [
+      "Un objeto de aprendizaje pensado para recorrerse de manera autónoma parecía estar completo: incluía contenidos, recursos, orientaciones y actividades.",
+      "Una actividad pedía analizar una situación usando una serie de criterios. Para resolverla, era necesario consultar una guía breve.",
+      "Durante una prueba, varias personas se detuvieron sin saber cómo continuar. Algunas no sabían qué material usar; otras volvieron hacia atrás intentando encontrar información.",
+      "La docente sostuvo que la guía estaba disponible. Los registros mostraron que la mayoría de quienes tuvieron dificultades no había ingresado a esa guía.",
+    ],
+    audio: "",
+  },
+  voices: [
+    {
+      id: "estudiante1",
+      name: "Estudiante 1",
+      text: "Llegué a la actividad, pero no sabía qué criterios tenía que usar para analizar el caso.",
+      audio: "",
+    },
+    {
+      id: "docente",
+      name: "Docente",
+      text: "La consigna era clara y la guía con los criterios estaba disponible antes de la actividad.",
+      audio: "",
+    },
+    {
+      id: "estudiante2",
+      name: "Estudiante 2",
+      text: "Pude resolverla, pero tuve que volver atrás varias veces hasta encontrar la guía.",
+      audio: "",
+    },
+  ],
+  evidence: [
+    {
+      id: "consigna",
+      title: "Consigna",
+      body: "Analizá la situación presentada utilizando los criterios de la guía. Fundamentá tu análisis a partir de esos criterios.",
+      question:
+        "¿La actividad señala cómo llegar a la guía? ¿Da por supuesto que ya la consultaste?",
+      source: "Maqueta textual del caso; no es una captura de un aula real.",
+    },
+    {
+      id: "ubicacion",
+      title: "Ubicación de la guía",
+      body: "La guía estaba en una sección anterior. La actividad no tenía acceso directo a ella: para consultarla era necesario volver hacia atrás.",
+      question: "¿Qué esfuerzo de búsqueda suponía ese recorrido?",
+      source: "Maqueta del recorrido del caso.",
+    },
+    {
+      id: "registro",
+      title: "Registro de navegación",
+      body: "La mayoría de quienes se detuvieron sin saber cómo continuar no había abierto la guía.",
+      question:
+        "El registro muestra una acción que no ocurrió. ¿Qué otras piezas necesitás para explicar por qué?",
+      source: "Dato del caso. No se dispone de cantidades ni porcentajes.",
+    },
+    {
+      id: "guia",
+      title: "Guía de criterios",
+      body: "La guía reunía los criterios necesarios para analizar la situación. Era un recurso previo que debía ponerse en relación con la actividad.",
+      question:
+        "¿Qué relación necesitaba reconocer quien llegaba a la actividad?",
+      source:
+        "El caso no detalla la lista de criterios. Aquí investigamos el vínculo entre guía, consigna y recorrido.",
+    },
+  ],
+  components: [
+    {
+      name: "Propósitos",
+      meaning: "Qué queremos que pueda hacer quien aprende.",
+    },
+    {
+      name: "Contenidos",
+      meaning: "Qué necesita comprender para hacerlo.",
+    },
+    {
+      name: "Actividades",
+      meaning: "Qué le proponemos hacer con el contenido.",
+    },
+    {
+      name: "Orientaciones",
+      meaning: "Qué necesita saber para avanzar y usar los recursos.",
+    },
+    {
+      name: "Recursos",
+      meaning: "Con qué materiales va a trabajar.",
+    },
+    {
+      name: "Retroalimentación",
+      meaning: "Qué le permite revisar lo que hizo y seguir aprendiendo.",
+    },
+  ],
+  reunion: {
+    dimensions: [
+      {
+        title: "Qué conduce",
+        podcast: "La escucha y su progresión narrativa.",
+        artefacto: "La exploración y las decisiones de navegación.",
+      },
+      {
+        title: "Cómo toma forma",
+        podcast:
+          "Una búsqueda de voces, pistas, evidencias y momentos de consulta.",
+        artefacto:
+          "Un espacio de piezas que se exploran, seleccionan y conectan.",
+      },
+      {
+        title: "Qué recursos participan",
+        podcast:
+          "Audios, textos y representaciones del caso articulados por la escucha.",
+        artefacto:
+          "Textos, representaciones, datos y un testimonio consultable. La exploración organiza su uso.",
+      },
+      {
+        title: "Qué decisiones organiza",
+        podcast:
+          "Voces, estructura, progresión, momentos de consulta y actividad.",
+        artefacto:
+          "Navegación, puntos de entrada, conexiones, relaciones y actividad.",
+      },
+      {
+        title: "Qué hace quien aprende",
+        podcast: "Escucha, consulta, contrasta, relaciona y reconstruye.",
+        artefacto: "Explora, selecciona, conecta, jerarquiza y reconstruye.",
+      },
+    ],
+  },
+  consistency: {
+    scenarios: [
+      {
+        title: "Situación 1 · Cambia la apariencia",
+        before:
+          "La investigación aparece en nombres, rótulos y recursos gráficos.",
+        after:
+          "Al quitarla, cambian esos nombres y la estética. El recorrido, las relaciones entre materiales y las acciones permanecen iguales.",
+        consequence:
+          "En esta situación, la investigación incidía principalmente en la superficie del objeto.",
+      },
+      {
+        title: "Situación 2 · Cambia la experiencia",
+        before:
+          "La investigación organiza reunir indicios, contrastar evidencias y construir una explicación.",
+        after:
+          "Al quitar esa lógica, se desarman las conexiones entre las piezas y la progresión hacia una explicación. Cambia lo que tiene que hacer quien aprende.",
+        consequence:
+          "En esta situación, la metáfora organizaba relaciones y acciones; al retirarla, la experiencia cambia.",
+      },
+    ],
+    remove: "Quitar la metáfora",
+    restore: "Volver a ponerla",
+    questions: [
+      "¿Ayuda a comprender o relacionar algo del contenido?",
+      "¿Orienta una acción?",
+      "¿Construye relaciones entre partes del objeto?",
+      "¿Da sentido al recorrido, además de a sus nombres?",
+      "¿Sirve al propósito de aprendizaje?",
+      "Si la quitamos, ¿se pierde algo relevante?",
+    ],
+    criterion:
+      "No hace falta responder sí a todo. Buscá qué trabajo concreto hace esta metáfora en este objeto.",
+  },
+  entry: {
+    title: "Una guía estaba ahí.<br><em>Algo faltaba.</em>",
+    intro:
+      "Una actividad parecía tener todo lo necesario. Sin embargo, varias personas no sabían cómo seguir. Te invitamos a mirar lo que pasó y a descubrir qué puede aportar una metáfora al diseño de un objeto de aprendizaje.",
+    orientation:
+      "El recorrido tiene cuatro momentos. Primero vamos a conocer el problema. Después, buscar una manera de pensarlo, investigar y llevar lo aprendido a tu propio objeto. Podés detenerte, volver y cambiar de camino.",
+    goal: "Al terminar, vas a poder explicar qué relaciones y acciones puede organizar una metáfora y ensayar una decisión para tu diseño.",
+    audioNote:
+      "Esta versión incluye los guiones. Los audios todavía no están incorporados.",
+    start: "Conocer el caso",
+  },
+  initial: {
+    title: "¿Qué creés que está pasando?",
+    lead: "La guía existe. Algunas personas no saben qué material usar. Otras necesitan volver atrás para encontrarlo. Todavía no tenemos una explicación.",
+    label: "Tu primera interpretación",
+    placeholder: "Por ahora, pienso que…",
+    help: "Si te sirve, anotá una idea breve. Vamos a volver a ella después de investigar. También podés seguir sin escribir.",
+    button: "Buscar otra manera de mirarlo",
+  },
+  thinking: {
+    title: "Una manera de encontrar relaciones",
+    lead: "Podríamos revisar cada material por separado. También podemos preguntarnos cómo se conectan y qué recorrido construyen juntos.",
+    parts:
+      "Propósitos, contenidos, actividades, orientaciones, recursos y retroalimentación son partes de un OA. Tenerlas disponibles es un comienzo. Diseñar también implica decidir cómo van a trabajar juntas.",
+    etymology:
+      "Metáfora, en su raíz griega, significa traslado. En el lenguaje, ponemos dos ámbitos en relación y uno nos permite mirar algo del otro de una manera diferente. Aristóteles vinculaba esa capacidad con reconocer semejanzas.",
+    example:
+      "En este caso, podemos pensar la búsqueda como una investigación. Las voces se vuelven indicios. Los materiales, evidencias para consultar. Comprender lo ocurrido requiere ponerlos en relación.",
+    lakoff:
+      "Lakoff y Johnson nos invitan a pensar que las metáforas participan en cómo comprendemos y organizamos la experiencia. Acá vamos a probarlo. La investigación va a orientar qué buscamos y qué hacemos con lo que encontramos.",
+    question:
+      "¿Qué cambia cuando los materiales dejan de ser una lista y se convierten en piezas para investigar?",
+    borgesTitle: "Si querés seguir pensando en las metáforas",
+    borges:
+      "Las metáforas también circulan y cambian de sentido. Borges vuelve sobre imágenes como el tiempo entendido como río, los ojos como estrellas o la vida como sueño. Una imagen conocida puede adquirir potencia en un nuevo contexto. En nuestro objeto importa qué nos permite comprender o hacer.",
+    sourceNote:
+      "Las referencias se presentan como síntesis del guion fuente, no como citas textuales.",
+  },
+  choose: {
+    title: "La misma búsqueda puede tomar dos formas",
+    lead: "Podés investigar desde la escucha o desde la exploración. El caso es el mismo. Cambia cómo vas a encontrar las piezas y trabajar con ellas.",
+    hint: "Elegí un camino. Al terminar vamos a encontrarnos de nuevo. Si después querés probar el otro, podés hacerlo sin perder tus notas.",
+    paths: [
+      {
+        id: "podcast",
+        title: "Dejar que las voces guíen",
+        label: "Podcast",
+        body: "Una secuencia de voces y pausas te lleva hacia otras evidencias.",
+        button: "Seguir las voces",
+      },
+      {
+        id: "exploracion",
+        title: "Elegir qué pieza mirar",
+        label: "Artefacto interactivo",
+        body: "Los materiales están disponibles. Vos decidís qué consultar y cuáles poner juntos.",
+        button: "Explorar las piezas",
+      },
+    ],
+  },
+  podcast: {
+    title: "Dejemos que las voces abran la búsqueda",
+    intro:
+      "Cada voz trae una perspectiva. Podés escucharla o leerla, detenerte y volver antes de seguir.",
+    steps: [
+      {
+        voice: 0,
+        question: "¿Qué necesitaba encontrar esta persona para seguir?",
+        next: "Sumar otra perspectiva",
+      },
+      {
+        voice: 1,
+        question:
+          "La guía estaba disponible. ¿Eso alcanza para explicar lo que pasó?",
+        next: "Escuchar a otra estudiante",
+      },
+      {
+        voice: 2,
+        question:
+          "Ahora aparece un esfuerzo de búsqueda. Miremos otras piezas para contrastarlo.",
+        next: "Consultar las evidencias",
+      },
+      {
+        title: "Las voces nos llevan a los materiales",
+        body: "Consultá la consigna, la ubicación de la guía y el registro. Volvé a las voces si necesitás comparar. ¿Qué agrega cada pieza a lo que escuchaste?",
+        next: "Construir una explicación",
+      },
+    ],
+    back: "Volver a la pausa anterior",
+  },
+  exploration: {
+    title: "¿Qué necesitás mirar primero?",
+    intro:
+      "Abrí una pieza. Si querés compararla con otra, dejala sobre la mesa. Podés reunir hasta dos, reemplazarlas y volver a consultar cualquier material.",
+    hint: "Antes de buscar una explicación, mirá qué muestra cada pieza y qué podés comprender al ponerlas juntas.",
+    pin: "Dejar sobre la mesa",
+    unpin: "Retirar de la mesa",
+    full: "Ya hay dos piezas sobre la mesa. Retirá una para reunir otra.",
+    empty: "La mesa está disponible. Elegí una pieza para empezar.",
+    tableTitle: "Tu mesa de investigación",
+    next: "Construir una explicación",
+    visited: "Consultada",
+  },
+  reconstruct: {
+    title: "Volvamos a lo que pensabas",
+    intro:
+      "Después de investigar, ¿cómo explicarías lo que pasó? Podés sostener tu primera idea, ajustarla o pensar otra. Lo importante es reconocer qué piezas te ayudan a fundamentarla.",
+    firstTitle: "Tu primera interpretación",
+    noFirst:
+      "No escribiste una primera interpretación. Podés reconstruirla ahora o seguir con lo que encontraste.",
+    label: "Tu explicación después de investigar",
+    placeholder:
+      "Ahora pienso que…\nMe apoyo en estas piezas porque…\nTodavía necesitaría saber…",
+    prompt:
+      "Podés elegir las piezas en las que te apoyás. No hay una combinación correcta predefinida.",
+    reveal: "Comparar con una explicación posible",
+    hide: "Ocultar la explicación posible",
+    answer:
+      "La dificultad no estaba en una pieza aislada. La guía estaba. La actividad también. Lo que no estaba suficientemente construido era el vínculo entre ambas: el recorrido no hacía evidente cuándo consultar la guía ni cómo sus criterios ayudaban a resolver la actividad.",
+    caution:
+      "Esta explicación es una hipótesis de diseño. Para comprobarla, convendría probar una orientación y un acceso directo desde la actividad, y observar qué cambia.",
+    return: "Volver a investigar",
+    next: "Mirar las decisiones de diseño",
+    reflection:
+      "¿La lectura posible te ayuda a revisar algo de tu explicación? Podés volver al texto y modificarlo.",
+  },
+  curation: {
+    title: "También hubo alguien diseñando este recorrido",
+    paragraphs: [
+      "En un camino, las voces fueron guiando la búsqueda. En el otro, pudiste elegir qué piezas explorar. Trabajamos con materiales similares, pero los encontramos de distintas maneras.",
+      "Esa diferencia también forma parte del diseño. Retomando a Odetti, podemos pensar a quien diseña como un autor-curador. Alguien que elige contenidos y recursos teniendo en cuenta qué quiere ayudar a aprender, construye relaciones entre ellos y decide cómo presentarlos para que otra persona pueda recorrer la propuesta y encontrarle sentido.",
+    ],
+    ops: [
+      {
+        title: "Seleccionar",
+        body: "Decidir qué contenidos y recursos aportan al propósito de aprendizaje.",
+      },
+      {
+        title: "Relacionar",
+        body: "Construir vínculos que ayuden a comprender el contenido y trabajar con él.",
+      },
+      {
+        title: "Disponer",
+        body: "Decidir dónde y cómo presentar esos elementos para orientar el recorrido y las acciones de quien aprende.",
+      },
+    ],
+    question:
+      "¿Qué te permitió hacer la investigación que no habría hecho una simple lista de materiales?",
+    translation:
+      "La lógica de investigar se mantuvo. Cambiaron el recorrido y las acciones. Traducir una metáfora a otro lenguaje no exige convertir todos los recursos al mismo formato. Requiere encontrar cómo puede trabajar con las posibilidades de ese lenguaje.",
+    more: "Comparar las decisiones de los dos caminos",
+    other: "Probar el otro camino",
+  },
+  connections: [
+    {
+      title: "Una actividad necesita un recurso",
+      body: "La actividad del caso requería criterios de una guía. La relación existía, pero necesitaba hacerse reconocible en el momento de usarla.",
+      pair: [2, 4],
+    },
+    {
+      title: "Una orientación permite avanzar",
+      body: "Saber qué guía consultar, cuándo y cómo llegar a ella cambia la experiencia de resolver la actividad. La orientación forma parte del diseño.",
+      pair: [3, 2],
+    },
+    {
+      title: "Una devolución ayuda a revisar",
+      body: "Primero ensayaste una explicación. Después pudiste compararla con una lectura posible y volver a pensarla. La devolución se conecta con lo que hiciste.",
+      pair: [5, 2],
+    },
+    {
+      title: "El propósito orienta las decisiones",
+      body: "En este módulo, investigar y comparar dos caminos busca ayudarte a reconocer qué aporta una metáfora al diseño. Los contenidos y las actividades necesitan trabajar para ese propósito.",
+      pair: [0, 1, 2],
+    },
+  ],
+  test: {
+    title: "¿Qué trabajo hizo la metáfora?",
+    intro:
+      "Las partes son las mismas del comienzo. Ahora podemos reconocer algunas relaciones. Elegí una para mirar qué significa en la experiencia.",
+    consistencyTitle: "Probemos quitarla",
+    lead: "Estas dos situaciones son distintas. Mirá qué se conserva y qué se pierde en cada una.",
+    criterion:
+      "No hace falta que una metáfora intervenga en todo. Preguntate dónde ayuda a comprender el contenido, orientar una acción o darle sentido al recorrido.",
+    selfTitle: "Y la metamorfosis, ¿qué aportó?",
+    self: "Este recorrido pasó de partes disponibles a relaciones y decisiones que podemos reconocer. Las formas acompañaron ese cambio. Podés juzgar si te ayudaron a comprenderlo o si habrían funcionado igual sin ellas.",
+    selfQuestion:
+      "No hace falta defender esta metáfora. También podés reconocer sus límites.",
+    more: "Preguntas para revisar una metáfora",
+  },
+  transfer: {
+    title: "Llevemos la pregunta a tu objeto",
+    intro:
+      "Pensá en una propuesta que estés diseñando. Empecemos por lo que necesita quien aprende. Después podés decidir si una metáfora te ayuda a organizarlo.",
+    need: "Quiero que quien recorra mi objeto pueda…",
+    relation: "Para que eso ocurra, necesito conectar u organizar…",
+    choices: [
+      {
+        id: "metafora",
+        title: "Probar una metáfora",
+        body: "Hay una estructura conocida que podría ayudarme a construir esas relaciones.",
+        fields: [
+          "La metáfora que quiero probar es…",
+          "Me ayudaría a organizar…",
+          "Para comprobar si aporta, observaría…",
+        ],
+      },
+      {
+        id: "otra",
+        title: "Sostener otra organización",
+        body: "Puedo construir las relaciones que necesito sin una metáfora estructurante.",
+        fields: [
+          "Elegiría otra organización porque…",
+          "Conectaría las partes mediante…",
+          "Para comprobar si funciona, observaría…",
+        ],
+      },
+    ],
+    feedbackTitle: "Una ayuda para revisar tu decisión",
+    feedback:
+      "Volvé a tu propuesta. ¿Se entiende qué necesita aprender la persona? ¿Tu decisión modifica alguna relación o acción? ¿Lo que observarías te permitiría revisar si funciona? Podés ajustar lo que escribiste antes de llevarlo a la Bitácora.",
+    copy: "Copiar mi decisión",
+    download: "Descargar mis notas",
+    missing:
+      "El enlace a la Bitácora todavía no está incorporado. Podés copiar o descargar tu decisión y llevarla a la actividad del aula.",
+    urls: {
+      bitacora: "",
+      aula: "",
+    },
+    ending:
+      "La decisión que ensayaste no termina acá. Al trabajar con otros lenguajes de la certificación, podés volver a preguntarte qué necesita conservar y qué tendría que cambiar.",
+    question: "¿Qué necesitás que haga una metáfora en tu diseño?",
+  },
+  ui: {
+    privacy:
+      "Tus notas se conservan mientras esta página está abierta. No se envían a Moodle y se pierden al recargar. Podés descargarlas antes de salir.",
+    motion: "Reducir movimiento",
+    reduced: "Movimiento reducido",
+    selected: "Camino elegido",
+    nothing: "Elegí un camino para empezar a investigar.",
+    audioMissing: "Audio todavía no incorporado",
+    bibliography: "Referencias del recorrido",
+    sources:
+      "Etimología y Aristóteles, Lakoff y Johnson, Valeria Odetti y Jorge Luis Borges se recuperan del guion compartido. Borges queda como profundización opcional. Las fichas bibliográficas completas deben completarse con las ediciones utilizadas.",
+    bitacora: "Ir a la Bitácora",
+    aula: "Volver al aula",
+    copied: "Tu decisión está copiada. Podés llevarla a la Bitácora.",
+    copyFail: "Seleccioná el texto de abajo y copialo con el teclado.",
+    chooseFirst: "Elegí una de las dos opciones para preparar tu decisión.",
+  },
+};
+
+// LÓGICA DEL RECORRIDO.
+
+function organism(mode, id) {
+  const layouts = {
+    loose: [
+      [30, 30, -18],
+      [230, 25, 15],
+      [115, 130, -8],
+      [285, 180, 20],
+      [20, 260, 8],
+      [180, 290, -15],
+    ],
+    gather: [
+      [90, 40, -12],
+      [210, 60, 12],
+      [80, 160, 0],
+      [215, 170, 0],
+      [90, 270, 10],
+      [220, 275, -10],
+    ],
+    cocoon: [
+      [135, 25, 0],
+      [135, 85, 0],
+      [135, 145, 0],
+      [135, 205, 0],
+      [135, 265, 0],
+      [135, 325, 0],
+    ],
+    open: [
+      [110, 25, -8],
+      [170, 85, 8],
+      [90, 145, -15],
+      [185, 205, 15],
+      [110, 265, -12],
+      [170, 325, 12],
+    ],
+    wings: [
+      [90, 60, -28],
+      [200, 65, 28],
+      [45, 160, -18],
+      [250, 160, 18],
+      [90, 265, 20],
+      [210, 265, -20],
+    ],
+  };
+  const colors = [
+    "#dfcae9",
+    "#f0c8ab",
+    "#bdd8ca",
+    "#dbcce9",
+    "#ecd8a9",
+    "#bfcde2",
+  ];
+  const positions = layouts[mode];
+  return `<svg class="organism ${mode}" viewBox="0 0 400 440" role="img" aria-labelledby="${id}-title ${id}-desc">
+<title id="${id}-title">${esc({ loose: "Las seis partes disponibles", gather: "Las partes empiezan a acercarse", cocoon: "Una forma en construcción", open: "Las partes empiezan a desplegarse", wings: "Las mismas partes conectadas" }[mode])}</title>
+<desc id="${id}-desc">Propósitos, contenidos, actividades, orientaciones, recursos y retroalimentación. ${mode === "wings" ? "Se distribuyen a ambos lados de un eje y evocan alas." : "Su disposición acompaña este momento del recorrido."}</desc>${mode === "wings" ? '<path d="M145 95 L255 100 L305 195 L265 310 L145 310 L100 195 Z M145 95 L265 310 M255 100 L145 310" class="organism-links" fill="none" stroke="#573b68" stroke-width="2"/>' : ""}${positions
+    .map(
+      (
+        [x, y, a],
+        i,
+      ) => `<g class="segment" data-component="${i}" transform="translate(${x} ${y}) rotate(${a} 55 35)">
+<path d="M8 8 C30 -6 89 -2 106 15 C126 33 107 63 87 69 C54 83 2 69 0 40 C-3 25 0 16 8 8Z" fill="${colors[i]}" stroke="#75627f" stroke-width="1.2"/>
+<text x="54" y="39" text-anchor="middle" font-family="system-ui" font-size="10" fill="#302b3b">${esc(C.components[i].name)}</text>
+</g>`,
+    )
+    .join("")}</svg>`;
+}
+
+const esc = (s) =>
+  String(s).replace(
+    /[&<>"']/g,
+    (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
+        c
+      ],
+  );
+const paras = (xs) => xs.map((x) => `<p>${esc(x)}</p>`).join("");
+const state = {
+  path: null,
+  step: 0,
+  active: null,
+  pinned: [],
+  visited: new Set(),
+  support: new Set(),
+  initial: "",
+  revised: "",
+  choice: null,
+  need: "",
+  relation: "",
+  metafora: [],
+  otra: [],
+  revealed: false,
+};
+function note(id, label, placeholder = "") {
+  return `<label for="${id}">${esc(label)}</label>
+<textarea id="${id}" placeholder="${esc(placeholder)}" aria-describedby="privacy-${id}">
+</textarea>
+<p id="privacy-${id}" class="small">${esc(C.ui.privacy)}</p>`;
+}
+function audio(src, label) {
+  return src
+    ? `<audio controls preload="none" src="${esc(src)}" aria-label="${esc(label)}">
+</audio>`
+    : `<p class="small">${esc(C.ui.audioMissing)}</p>`;
+}
+function svgPanel(mode, id, caption) {
+  return `<aside class="stage-form" id="${id}">${organism(mode, id + "-form")}<p class="visual-caption">${esc(caption)}</p>
+</aside>`;
+}
+function scenario(c, i) {
+  return `<article class="choice">
+<h3>${esc(c.title)}</h3>
+<div id="model-${i}" class="mini-model" aria-hidden="true">
+<span class="model-piece">Indicios</span>
+<span class="model-line">→</span>
+<span class="model-piece">Contraste</span>
+<span class="model-line">→</span>
+<span class="model-piece">Explicación</span>
+</div>
+<p id="scenario-text-${i}">${esc(c.before)}</p>
+<button data-scenario="${i}" aria-pressed="false" aria-controls="scenario-text-${i} scenario-consequence-${i}">${esc(C.consistency.remove)}</button>
+<p id="scenario-consequence-${i}" class="small" hidden>${esc(c.consequence)}</p>
+</article>`;
+}
+const main = document.getElementById("main");
+main.innerHTML = `<section class="hero">
+<p class="eyebrow">Una experiencia para diseñar</p>
+<h1>${C.entry.title}</h1>
+<p class="lead">${esc(C.entry.intro)}</p>
+<p>${esc(C.entry.orientation)}</p>
+<a class="button-link" href="#larva">${esc(C.entry.start)}</a>
+<details>
+<summary>Qué vamos a aprender</summary>
+<p>${esc(C.entry.goal)}</p>
+<p class="small">${esc(C.entry.audioNote)}</p>
+</details>
+<nav class="compact-links" aria-label="Accesos al recorrido">
+<a href="#larva">El caso</a>
+<a href="#crisalida">Una forma de pensarlo</a>
+<a href="#eclosion">Investigar</a>
+<a href="#mariposa">Revisar el diseño</a>
+<a href="#tu-objeto">Tu objeto</a>
+</nav>
+</section>
+<section class="chapter" id="larva" aria-labelledby="case-title">
+<p class="eyebrow">Larva</p>
+<h2 id="case-title">Algo no está funcionando</h2>
+<div class="story-grid">${svgPanel("loose", "initial-form", "Las partes están disponibles. Todavía no sabemos cómo están trabajando juntas.")}<div>
+<div class="scene-text">${paras(C.case.paragraphs.slice(0, 2))}</div>
+<div class="scene-text">${paras(C.case.paragraphs.slice(2))}<p class="quote">${esc(C.initial.lead)}</p>
+</div>${C.case.audio ? audio(C.case.audio, "Presentación del caso") : ""}<div class="notebook">
+<h3 class="panel-title">${esc(C.initial.title)}</h3>${note("initial", C.initial.label, C.initial.placeholder)}<p>${esc(C.initial.help)}</p>
+</div>
+<a class="button-link" href="#crisalida">${esc(C.initial.button)}</a>
+</div>
+</div>
+</section>
+<section class="chapter" id="crisalida" aria-labelledby="thinking-title">
+<p class="eyebrow">Crisálida</p>
+<h2 id="thinking-title">${esc(C.thinking.title)}</h2>
+<div class="story-grid">${svgPanel("gather", "thinking-form", "Las partes empiezan a ponerse en relación.")}<div>
+<div class="scene-text" data-form="gather">
+<p class="lead">${esc(C.thinking.lead)}</p>
+<p>${esc(C.thinking.parts)}</p>
+<details>
+<summary>Las seis partes de un objeto de aprendizaje</summary>${C.components
+  .map(
+    (c) => `<p>
+<strong>${esc(c.name)}</strong>
+<br>${esc(c.meaning)}</p>`,
+  )
+  .join("")}</details>
+</div>
+<div class="scene-text" data-form="gather">
+<p>${esc(C.thinking.etymology)}</p>
+<p>${esc(C.thinking.example)}</p>
+</div>
+<div class="scene-text" data-form="cocoon">
+<p>${esc(C.thinking.lakoff)}</p>
+<p class="quote">${esc(C.thinking.question)}</p>
+<details>
+<summary>${esc(C.thinking.borgesTitle)}</summary>
+<p>${esc(C.thinking.borges)}</p>
+</details>
+<p class="source-line">${esc(C.thinking.sourceNote)}</p>
+</div>
+</div>
+</div>
+</section>
+<section class="chapter" id="eclosion" aria-labelledby="choose-title">
+<p class="eyebrow">Eclosión</p>
+<h2 id="choose-title">${esc(C.choose.title)}</h2>
+<p class="lead">${esc(C.choose.lead)}</p>
+<p>${esc(C.choose.hint)}</p>
+<div class="choices">${C.choose.paths
+  .map(
+    (p) => `<article class="choice" data-path-card="${p.id}">
+<p class="small">${esc(p.label)}</p>
+<h3>${esc(p.title)}</h3>
+<p>${esc(p.body)}</p>
+<button data-path="${p.id}" aria-pressed="false" aria-controls="branch">${esc(p.button)}</button>
+</article>`,
+  )
+  .join("")}</div>
+<p role="status" id="path-status">${esc(C.ui.nothing)}</p>
+<div id="branch">
+</div>
+</section>
+<section class="chapter" id="reconstruccion" aria-labelledby="revised-title">
+<h2 id="revised-title">${esc(C.reconstruct.title)}</h2>
+<p class="lead">${esc(C.reconstruct.intro)}</p>
+<div class="workspace">
+<h3>${esc(C.reconstruct.firstTitle)}</h3>
+<p class="first-idea" id="first-idea">${esc(C.reconstruct.noFirst)}</p>
+</div>
+<div class="notebook">${note("revised", C.reconstruct.label, C.reconstruct.placeholder)}<p>${esc(C.reconstruct.prompt)}</p>
+<div class="chosen-pieces" role="group" aria-label="Piezas que sostienen tu explicación">${[{ id: "voces", title: "Voces" }, ...C.evidence].map((e) => `<button data-support="${e.id}" aria-pressed="false">${esc(e.title)}</button>`).join("")}</div>
+<button id="reveal" aria-expanded="false" aria-controls="possible">${esc(C.reconstruct.reveal)}</button>
+<div id="possible" class="reconstruction" hidden>
+<h3>Una explicación posible</h3>
+<p>${esc(C.reconstruct.answer)}</p>
+<p>${esc(C.reconstruct.caution)}</p>
+<p class="small">${esc(C.reconstruct.reflection)}</p>
+</div>
+</div>
+<nav class="compact-links">
+<a href="#eclosion">${esc(C.reconstruct.return)}</a>
+<a href="#reencuentro">${esc(C.reconstruct.next)}</a>
+</nav>
+</section>
+<section class="chapter curation" id="reencuentro" aria-labelledby="curation-title">
+<h2 id="curation-title">${esc(C.curation.title)}</h2>
+<div class="body-copy">${paras(C.curation.paragraphs)}</div>
+<details>
+<summary>Qué significa seleccionar, relacionar y disponer</summary>${C.curation.ops
+  .map(
+    (o) => `<p>
+<strong>${esc(o.title)}</strong>
+<br>${esc(o.body)}</p>`,
+  )
+  .join("")}</details>
+<div class="choices">
+<article class="choice">
+<h3>Cuando la escucha conduce</h3>
+<p>Las voces aparecen en una secuencia. Las pausas invitan a consultar evidencias antes de reconstruir.</p>
+</article>
+<article class="choice">
+<h3>Cuando la exploración conduce</h3>
+<p>Elegís qué pieza abrir, cuáles reunir sobre la mesa y qué relación construir entre ellas.</p>
+</article>
+</div>
+<p>${esc(C.curation.translation)}</p>
+<p class="quote">${esc(C.curation.question)}</p>
+<details>
+<summary>${esc(C.curation.more)}</summary>
+<div class="table-scroll">
+<table>
+<thead>
+<tr>
+<th scope="col">Decisión</th>
+<th scope="col">Podcast</th>
+<th scope="col">Artefacto interactivo</th>
+</tr>
+</thead>
+<tbody>${C.reunion.dimensions
+  .map(
+    (d) => `<tr>
+<th scope="row">${esc(d.title)}</th>
+<td>${esc(d.podcast)}</td>
+<td>${esc(d.artefacto)}</td>
+</tr>`,
+  )
+  .join("")}</tbody>
+</table>
+</div>
+</details>
+<a class="button-link" href="#eclosion">${esc(C.curation.other)}</a>
+</section>
+<section class="chapter" id="mariposa" aria-labelledby="test-title">
+<p class="eyebrow">Mariposa</p>
+<h2 id="test-title">${esc(C.test.title)}</h2>
+<p class="lead">${esc(C.test.intro)}</p>
+<div class="story-grid">${svgPanel("wings", "final-form", "Las mismas partes permiten reconocer una forma.")}<div>
+<div class="connection-options" role="group" aria-label="Relaciones del objeto de aprendizaje">${C.connections.map((c, i) => `<button data-connection="${i}" aria-pressed="false" aria-controls="connection-view">${esc(c.title)}</button>`).join("")}</div>
+<div id="connection-view" class="connection-view">
+<p>Elegí una relación para mirar qué significa en este recorrido.</p>
+</div>
+<div class="scene-text">
+<h3 class="panel-title">${esc(C.test.selfTitle)}</h3>
+<p>${esc(C.test.self)}</p>
+<p>${esc(C.test.selfQuestion)}</p>
+</div>
+</div>
+</div>
+<div class="testing">
+<h3 class="panel-title">${esc(C.test.consistencyTitle)}</h3>
+<p>${esc(C.test.lead)}</p>
+<div class="choices">${C.consistency.scenarios.map(scenario).join("")}</div>
+<p>${esc(C.test.criterion)}</p>
+<details>
+<summary>${esc(C.test.more)}</summary>
+<ul>${C.consistency.questions.map((q) => `<li>${esc(q)}</li>`).join("")}</ul>
+<p>${esc(C.consistency.criterion)}</p>
+</details>
+</div>
+</section>
+<section class="chapter" id="tu-objeto" aria-labelledby="transfer-title">
+<h2 id="transfer-title">${esc(C.transfer.title)}</h2>
+<p class="lead">${esc(C.transfer.intro)}</p>
+<div class="notebook">${note("need", C.transfer.need)}${note("relation", C.transfer.relation)}</div>
+<div class="choices">${C.transfer.choices
+  .map(
+    (c) => `<article class="choice">
+<h3>${esc(c.title)}</h3>
+<p>${esc(c.body)}</p>
+<button class="secondary" data-transfer="${c.id}" aria-pressed="false" aria-controls="transfer-fields">${esc(c.title)}</button>
+</article>`,
+  )
+  .join("")}</div>
+<div id="transfer-fields">
+</div>
+<details class="review">
+<summary>${esc(C.transfer.feedbackTitle)}</summary>
+<p>${esc(C.transfer.feedback)}</p>
+</details>
+<div class="export-actions">
+<button id="copy">${esc(C.transfer.copy)}</button>
+<button class="secondary" id="download">${esc(C.transfer.download)}</button>
+</div>
+<p role="status" id="export-status" class="small">
+</p>
+<div id="lms-links">
+</div>
+<p>${esc(C.transfer.ending)}</p>
+<p class="quote">${esc(C.transfer.question)}</p>
+</section>
+<section class="ending">
+<details>
+<summary>${esc(C.ui.bibliography)}</summary>
+<p>${esc(C.ui.sources)}</p>
+</details>
+<nav class="compact-links">
+<a href="#larva">Volver al comienzo</a>
+<a href="#reconstruccion">Revisar mi explicación</a>
+<a href="#tu-objeto">Revisar mi decisión</a>
+</nav>
+</section>`;
+/* La primera interpretación vuelve al final. Las notas son de sesión, no se envían. */
+for (const id of ["initial", "revised", "need", "relation"])
+  document.getElementById(id).addEventListener("input", (e) => {
+    state[id] = e.target.value;
+    if (id === "initial")
+      document.getElementById("first-idea").textContent =
+        state.initial || C.reconstruct.noFirst;
+  });
+function getPiece(id) {
+  if (id.startsWith("voz")) {
+    const v = C.voices[Number(id.slice(3))];
+    return {
+      id,
+      title: v.name,
+      body: v.text,
+      source: "Testimonio del caso",
+      audio: v.audio,
+    };
+  }
+  return C.evidence.find((e) => e.id === id);
+}
+function pieceHtml(p) {
+  return `<h3>${esc(p.title)}</h3>
+<p>${esc(p.body)}</p>${p.audio ? audio(p.audio, p.title) : ""}${p.question ? `<p>${esc(p.question)}</p>` : ""}<p class="small">${esc(p.source)}</p>`;
+}
+function buttons(ids) {
+  return `<div class="piece-list" role="group" aria-label="Piezas del caso">${ids
+    .map((id) => {
+      const p = getPiece(id);
+      return `<button data-piece="${id}" aria-pressed="${state.active === id}" aria-controls="piece-open">${esc(p.title)}${state.visited.has(id) ? " · " + C.exploration.visited : ""}</button>`;
+    })
+    .join("")}</div>`;
+}
+function showPiece(id) {
+  state.active = id;
+  state.visited.add(id);
+  const p = getPiece(id);
+  document.querySelectorAll("#piece-open audio").forEach((a) => a.pause());
+  document.getElementById("piece-open").innerHTML =
+    pieceHtml(p) +
+    (state.path === "exploracion"
+      ? `<button data-pin="${id}" aria-pressed="${state.pinned.includes(id)}" aria-controls="pinned-pieces">${esc(state.pinned.includes(id) ? C.exploration.unpin : C.exploration.pin)}</button>`
+      : "");
+  document.querySelectorAll("[data-piece]").forEach((b) => {
+    const p = getPiece(b.dataset.piece);
+    b.textContent =
+      p.title + (state.visited.has(p.id) ? " · " + C.exploration.visited : "");
+    b.setAttribute("aria-pressed", p.id === id);
+  });
+}
+function renderTable() {
+  document.getElementById("pinned-pieces").innerHTML = state.pinned.length
+    ? state.pinned
+        .map(
+          (id) =>
+            `<article class="pinned-piece">${pieceHtml(getPiece(id))}<button class="secondary" data-remove="${id}">${esc(C.exploration.unpin)} · ${esc(getPiece(id).title)}</button>
+</article>`,
+        )
+        .join("")
+    : `<p>${esc(C.exploration.empty)}</p>`;
+}
+function renderBranch() {
+  document.querySelectorAll("#branch audio").forEach((a) => a.pause());
+  const b = document.getElementById("branch");
+  if (state.path === "podcast") {
+    const i = state.step,
+      p = C.podcast.steps[i];
+    let content;
+    if (p.voice !== undefined) {
+      const v = C.voices[p.voice];
+      content = `<h3>${esc(v.name)}</h3>${audio(v.audio, v.name)}<blockquote>«${esc(v.text)}»</blockquote>
+<p class="pause">${esc(p.question)}</p>`;
+    } else
+      content = `<h3>${esc(p.title)}</h3>
+<p>${esc(p.body)}</p>${buttons(["consigna", "ubicacion", "registro"])}<div class="piece-open" id="piece-open">
+<p>Elegí un material para consultarlo.</p>
+</div>`;
+    b.innerHTML = `<div class="branch">
+<h3 class="panel-title" id="branch-title" tabindex="-1">${esc(C.podcast.title)}</h3>
+<p>${esc(C.podcast.intro)}</p>
+<nav class="episode-dots" aria-label="Pausas de la escucha">${C.podcast.steps.map((p, j) => `<button data-step="${j}" aria-pressed="${j === i}" aria-controls="episode">${j < 3 ? "Voz " + (j + 1) : "Evidencias"}</button>`).join("")}</nav>
+<div class="episode" id="episode">${content}</div>
+<div class="episode-nav">
+<button class="secondary" id="episode-back" ${i === 0 ? "disabled" : ""}>${esc(C.podcast.back)}</button>${i === 3 ? `<a class="button-link" href="#reconstruccion">${esc(p.next)}</a>` : `<button id="episode-next">${esc(p.next)}</button>`}</div>
+<a href="#eclosion">Elegir otro camino</a>
+</div>`;
+    if (
+      i === 3 &&
+      state.active &&
+      ["consigna", "ubicacion", "registro"].includes(state.active)
+    )
+      showPiece(state.active);
+  } else {
+    b.innerHTML = `<div class="branch">
+<h3 class="panel-title" id="branch-title" tabindex="-1">${esc(C.exploration.title)}</h3>
+<p>${esc(C.exploration.intro)}</p>
+<div class="surface">
+<div>${buttons(["voz0", "voz1", "voz2", "consigna", "ubicacion", "registro", "guia"])}</div>
+<div class="piece-open" id="piece-open">
+<p>Elegí una pieza para abrirla.</p>
+</div>
+</div>
+<section class="compare-table">
+<h3>${esc(C.exploration.tableTitle)}</h3>
+<p>${esc(C.exploration.hint)}</p>
+<div id="pinned-pieces" class="pinned-grid">
+</div>
+<p role="status" id="pin-status" class="small">
+</p>
+</section>
+<nav class="compact-links">
+<a class="button-link" href="#reconstruccion">${esc(C.exploration.next)}</a>
+<a href="#eclosion">Elegir otro camino</a>
+</nav>
+</div>`;
+    renderTable();
+    if (state.active) showPiece(state.active);
+  }
+}
+/* Los botones deciden. El scroll nunca revela respuestas ni elige una rama. */
+document.addEventListener("click", (e) => {
+  const path = e.target.closest("[data-path]");
+  if (path) {
+    state.path = path.dataset.path;
+    renderBranch();
+    document.getElementById("path-status").textContent =
+      C.ui.selected +
+      " · " +
+      C.choose.paths.find((p) => p.id === state.path).label;
+    document
+      .querySelectorAll("[data-path]")
+      .forEach((b) =>
+        b.setAttribute("aria-pressed", b.dataset.path === state.path),
+      );
+    const h = document.getElementById("branch-title");
+    h.focus({ preventScroll: true });
+    h.scrollIntoView({ block: "start" });
+    return;
+  }
+  const step = e.target.closest("[data-step]");
+  if (step) {
+    state.step = Number(step.dataset.step);
+    renderBranch();
+    document
+      .querySelector(`[data-step="${state.step}"]`)
+      .focus({ preventScroll: true });
+    return;
+  }
+  if (e.target.id === "episode-next" || e.target.id === "episode-back") {
+    state.step += e.target.id === "episode-next" ? 1 : -1;
+    renderBranch();
+    const h = document.getElementById("branch-title");
+    h.focus({ preventScroll: true });
+    h.scrollIntoView({ block: "start" });
+    return;
+  }
+  const piece = e.target.closest("[data-piece]");
+  if (piece) {
+    showPiece(piece.dataset.piece);
+    return;
+  }
+  const pin = e.target.closest("[data-pin]"),
+    remove = e.target.closest("[data-remove]");
+  if (pin || remove) {
+    const id = pin ? pin.dataset.pin : remove.dataset.remove;
+    if (state.pinned.includes(id))
+      state.pinned = state.pinned.filter((p) => p !== id);
+    else if (state.pinned.length === 2) {
+      document.getElementById("pin-status").textContent = C.exploration.full;
+      return;
+    } else state.pinned.push(id);
+    document.getElementById("pin-status").textContent = "";
+    renderTable();
+    if (state.active) showPiece(state.active);
+    if (pin)
+      document.querySelector("[data-pin]")?.focus({ preventScroll: true });
+    else
+      document
+        .querySelector(`[data-piece="${id}"]`)
+        ?.focus({ preventScroll: true });
+    return;
+  }
+  const support = e.target.closest("[data-support]");
+  if (support) {
+    const id = support.dataset.support;
+    state.support.has(id) ? state.support.delete(id) : state.support.add(id);
+    support.setAttribute("aria-pressed", state.support.has(id));
+    return;
+  }
+  const connection = e.target.closest("[data-connection]");
+  if (connection) {
+    const i = Number(connection.dataset.connection),
+      c = C.connections[i];
+    document
+      .querySelectorAll("[data-connection]")
+      .forEach((b) =>
+        b.setAttribute("aria-pressed", Number(b.dataset.connection) === i),
+      );
+    document.getElementById("connection-view").innerHTML =
+      `<h3>${esc(c.title)}</h3>
+<p>${esc(c.body)}</p>`;
+    document.querySelectorAll("#final-form .segment").forEach((g) => {
+      const lit = c.pair.includes(Number(g.dataset.component));
+      g.classList.toggle("dim", !lit);
+      g.classList.toggle("lit", lit);
+    });
+    return;
+  }
+  const scenario = e.target.closest("[data-scenario]");
+  if (scenario) {
+    const i = Number(scenario.dataset.scenario),
+      removed = scenario.getAttribute("aria-pressed") !== "true",
+      c = C.consistency.scenarios[i];
+    scenario.setAttribute("aria-pressed", removed);
+    scenario.textContent = removed
+      ? C.consistency.restore
+      : C.consistency.remove;
+    document.getElementById("scenario-text-" + i).textContent = removed
+      ? c.after
+      : c.before;
+    document.getElementById("scenario-consequence-" + i).hidden = !removed;
+    const model = document.getElementById("model-" + i);
+    model.classList.toggle(
+      i === 0 ? "surface-removed" : "structure-removed",
+      removed,
+    );
+    model
+      .querySelectorAll(".model-piece")
+      .forEach(
+        (el, j) =>
+          (el.textContent = (
+            removed
+              ? ["Materiales", "Consulta", "Actividad"]
+              : ["Indicios", "Contraste", "Explicación"]
+          )[j]),
+      );
+    return;
+  }
+  const transfer = e.target.closest("[data-transfer]");
+  if (transfer) {
+    state.choice = transfer.dataset.transfer;
+    renderTransfer();
+  }
+});
+document.getElementById("reveal").onclick = (e) => {
+  state.revealed = !state.revealed;
+  document.getElementById("possible").hidden = !state.revealed;
+  e.currentTarget.setAttribute("aria-expanded", state.revealed);
+  e.currentTarget.textContent = state.revealed
+    ? C.reconstruct.hide
+    : C.reconstruct.reveal;
+};
+function renderTransfer() {
+  const c = C.transfer.choices.find((c) => c.id === state.choice);
+  document
+    .querySelectorAll("[data-transfer]")
+    .forEach((b) =>
+      b.setAttribute("aria-pressed", b.dataset.transfer === state.choice),
+    );
+  document.getElementById("transfer-fields").innerHTML =
+    `<div class="notebook transfer-fields">
+<h3 class="panel-title">${esc(c.title)}</h3>${c.fields
+      .map(
+        (f, i) => `<label for="field-${i}">${esc(f)}</label>
+<textarea id="field-${i}" data-field="${i}">${esc(state[c.id][i] || "")}</textarea>`,
+      )
+      .join("")}<p class="small">${esc(C.ui.privacy)}</p>
+</div>`;
+  document.getElementById("field-0").focus({ preventScroll: true });
+}
+document.addEventListener("input", (e) => {
+  if (e.target.matches("[data-field]"))
+    state[state.choice][Number(e.target.dataset.field)] = e.target.value;
+});
+function decision() {
+  const c = C.transfer.choices.find((c) => c.id === state.choice);
+  return [
+    C.transfer.need + "\n" + state.need,
+    C.transfer.relation + "\n" + state.relation,
+    c ? c.title : "Decisión todavía abierta",
+    ...(c ? c.fields.map((f, i) => f + "\n" + (state[c.id][i] || "")) : []),
+  ].join("\n\n");
+}
+function allNotes() {
+  return [
+    "El poder de la metáfora",
+    C.initial.label + "\n" + state.initial,
+    C.reconstruct.label + "\n" + state.revised,
+    "Piezas que sostienen mi explicación\n" +
+      [...state.support]
+        .map((id) => (id === "voces" ? "Voces" : getPiece(id).title))
+        .join(", "),
+    "Piezas reunidas en la mesa\n" +
+      state.pinned.map((id) => getPiece(id).title).join(", "),
+    "Mi decisión\n" + decision(),
+  ].join("\n\n");
+}
+document.getElementById("copy").onclick = async () => {
+  const status = document.getElementById("export-status");
+  if (!state.choice) {
+    status.textContent = C.ui.chooseFirst;
+    return;
+  }
+  const text = decision();
+  try {
+    await navigator.clipboard.writeText(text);
+    status.textContent = C.ui.copied;
+  } catch {
+    let area = document.getElementById("manual-copy");
+    if (!area) {
+      area = document.createElement("textarea");
+      area.id = "manual-copy";
+      area.setAttribute("aria-label", "Tu decisión para copiar");
+      status.after(area);
+    }
+    area.value = text;
+    area.focus();
+    area.select();
+    status.textContent = C.ui.copyFail;
+  }
+};
+document.getElementById("download").onclick = () => {
+  const url = URL.createObjectURL(
+      new Blob([allNotes()], { type: "text/plain;charset=utf-8" }),
+    ),
+    a = document.createElement("a");
+  a.href = url;
+  a.download = "mi-recorrido-metafora.txt";
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1500);
+};
+/* Enlaces reales del campus. No se crean destinos de ejemplo. */
+const lms = document.getElementById("lms-links");
+let hasBitacora = false;
+for (const id of ["bitacora", "aula"]) {
+  try {
+    const url = new URL(C.transfer.urls[id]);
+    if (["http:", "https:"].includes(url.protocol)) {
+      const a = document.createElement("a");
+      a.href = url.href;
+      a.textContent = C.ui[id];
+      a.className = "button-link";
+      lms.append(a);
+      if (id === "bitacora") hasBitacora = true;
+    }
+  } catch {}
+}
+if (!hasBitacora) {
+  const p = document.createElement("p");
+  p.className = "small";
+  p.textContent = C.transfer.missing;
+  lms.append(p);
+}
+const media = matchMedia("(prefers-reduced-motion: reduce)"),
+  motion = document.getElementById("motion");
+let reducedByUser = false;
+function applyMotion() {
+  const reduce = media.matches || reducedByUser;
+  document.body.classList.toggle("no-motion", reduce);
+  motion.setAttribute("aria-pressed", reduce);
+  motion.setAttribute("aria-disabled", media.matches);
+  motion.textContent = reduce ? C.ui.reduced : C.ui.motion;
+}
+motion.onclick = () => {
+  if (media.matches) return;
+  reducedByUser = !reducedByUser;
+  applyMotion();
+};
+media.addEventListener("change", applyMotion);
+applyMotion();
+/* Los estados visuales conservan las mismas formas. La lectura también funciona sin movimiento. */
+if ("IntersectionObserver" in window) {
+  const stages = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries)
+        if (entry.isIntersecting) {
+          document.querySelector("#thinking-form svg").outerHTML = organism(
+            entry.target.dataset.form,
+            "thinking-form-form",
+          );
+        }
+    },
+    { rootMargin: "-15% 0px -40% 0px" },
+  );
+  document.querySelectorAll("[data-form]").forEach((e) => stages.observe(e));
+  const phase = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries)
+        if (entry.isIntersecting)
+          document.querySelectorAll(".phase a").forEach((a) => {
+            if (a.getAttribute("href") === "#" + entry.target.id)
+              a.setAttribute("aria-current", "location");
+            else a.removeAttribute("aria-current");
+          });
+    },
+    { rootMargin: "-10% 0px -60% 0px" },
+  );
+  document
+    .querySelectorAll("#larva,#crisalida,#eclosion,#mariposa")
+    .forEach((e) => phase.observe(e));
+}
+document.addEventListener(
+  "play",
+  (e) => {
+    if (e.target.tagName === "AUDIO")
+      document.querySelectorAll("audio").forEach((a) => {
+        if (a !== e.target) a.pause();
+      });
+  },
+  true,
+);
