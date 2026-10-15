@@ -2,25 +2,31 @@
 
 Proyecto de scrollytelling educativo para un módulo sobre objetos de aprendizaje.
 
-## Versión actual
+## Base elegida para continuar
 
-La **versión 2** comienza con un caso, propone dos formas de investigarlo y recupera las primeras interpretaciones para construir una decisión de diseño propia. Las referencias teóricas acompañan la experiencia; Odetti aparece en el reencuentro.
+La **versión 1** comienza por las partes del OA y el marco conceptual. El caso aparece después. Esta es la base elegida para los próximos ajustes; se conserva sin modificaciones en su propia carpeta.
 
-- [Abrir o descargar el HTML autónomo](version-2/index.html).
-- [Código separado en HTML, CSS y JavaScript](version-2-copiable/).
-- [Instrucciones de la segunda versión](version-2/README.md).
-- [Guía de audios para leer en GitHub](documentacion/Guiones_audio_metafora_version_2.md).
-- [Guía de audios en Word](documentacion/Guiones_audio_metafora_version_2.docx).
-- [ZIP del boceto y la guía](descargas/metafora-version-2-para-compartir.zip).
-- [ZIP HTML para Moodle](descargas/metafora-version-2-moodle.zip).
+- [Versión 1 conservada](version-1/index.html).
+- [Instrucciones de la versión 1](version-1/README.md).
+- [Descargar la versión 1 en ZIP](descargas/metafora-version-1-conservada.zip).
 
-Para verlo en tu computadora, descargá el repositorio desde **Code → Download ZIP**, descomprimilo y abrí `version-2/index.html`. GitHub muestra el código de los HTML; este repositorio todavía no tiene un sitio publicado con GitHub Pages.
+La siguiente revisión abordará la narración del caso y la integración del marco conceptual, manteniendo esa ubicación del caso. No se ha aplicado todavía un nuevo guion del caso.
 
-Los audios reales y los enlaces del campus están pendientes. No hay seguimiento SCORM. Las notas del estudiante solo duran durante la sesión, con opción de descarga.
+## Alternativa conservada
 
-Los archivos fuente y documentos se guardan en Git. Los cambios futuros deberán confirmarse y subirse para conservarlos también en GitHub.
+La **versión 2** comienza por el caso. Sigue guardada para comparar, pero no es la base elegida.
 
-## Versión anterior
+- [Versión 2 en un HTML autónomo](version-2/index.html).
+- [Versión 2 con HTML, CSS y JavaScript separados](version-2-copiable/).
+- [Guía de audios de la versión 2](documentacion/Guiones_audio_metafora_version_2.md).
+- [Guía de audios de la versión 2 en Word](documentacion/Guiones_audio_metafora_version_2.docx).
+- [ZIP de la versión 2 y su guía](descargas/metafora-version-2-para-compartir.zip).
+
+Para guardar una copia en tu computadora, usá **Code → Download ZIP**, descomprimí el archivo y abrí `version-1/index.html`. GitHub muestra el código de los HTML; todavía no hay un sitio publicado con GitHub Pages.
+
+Los audios y los enlaces del aula siguen pendientes. La guía de audios de la versión 2 deberá revisarse para la narración de la versión 1 antes de grabar. Ninguna versión tiene seguimiento SCORM. Las notas del estudiante solo duran durante la sesión y pueden descargarse.
+
+## Documentación de la primera versión
 
 Se conserva el prototipo anterior en el `index.html` de la raíz. La documentación siguiente corresponde a esa primera versión del recorrido completo.
 
