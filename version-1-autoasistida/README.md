@@ -54,3 +54,7 @@ Los textos breves se muestran directamente: las seis definiciones de componentes
 Se conservan los desplegables de pistas, lecturas posibles, notas opcionales, guiones largos y administración de datos. La reconstrucción continúa requiriendo una decisión explícita. Los textos del bloque de contenido y los siete audios son los mismos. La clave de guardado local se conserva para recuperar las notas existentes.
 
 Se verificaron visibilidad de textos breves, pistas sin revelar, ambas ramas, persistencia, audios y ancho móvil de 360 px. Antes de elegir camino, los desplegables del documento pasan de 34 a 8; con el podcast abierto, de 43 a 12. No se verificó desde este entorno la publicación web de GitHub Pages.
+
+## Referencias APA
+
+El contenido incorpora citas de autor y año junto a las paráfrasis, y el cierre incluye las cuatro referencias completas con títulos en cursiva, orden alfabético y sangría francesa. Los datos bibliográficos provienen de las ediciones indicadas por la autora del curso. La bibliografía también está en `REFERENCIAS.md`. La cita de Lakoff y Johnson utiliza 1980/2004 para distinguir obra original y traducción. Este cambio no modifica las grabaciones.
