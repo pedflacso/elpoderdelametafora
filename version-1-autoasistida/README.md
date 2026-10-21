@@ -64,3 +64,7 @@ El contenido incorpora citas de autor y año junto a las paráfrasis, y el cierr
 Fondo `#f4f4fb`, predominante `#7c74b5`, detalles `#dc5429` y texto `#132d48`. Los paneles y segmentos usan tonos suaves derivados del violeta. El naranja identifica detalles, marcas de foco y líneas de énfasis.
 
 Para los botones con texto blanco se utiliza el violeta oscuro derivado `#5b538e`: el predominante exacto sobre blanco no alcanza 4,5:1 para texto pequeño. El texto principal presenta contraste aproximado 12,82:1 sobre el fondo; los controles seleccionados, 6,83:1. Esto no equivale a una auditoría completa de accesibilidad. Se comprobaron ambas ramas, conservación de los siete audios, ausencia de cambios en el contenido y ancho móvil de 360 px.
+
+## Tipografía
+
+Se aplica Roboto a títulos, textos, controles y rótulos SVG. Las fuentes normal y cursiva, con pesos variables, están incluidas en `fonts/` con su licencia SIL OFL. El ZIP contiene estas fuentes para que no dependa de Google Fonts ni de una instalación en el equipo. Se verificó su carga local en Chromium, sus estilos y el ancho móvil.
