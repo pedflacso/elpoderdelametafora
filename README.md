@@ -46,3 +46,11 @@ El navegador automatizado de este entorno no admite `file://`: la apertura por d
 ## Pruebas de audio
 
 Los siete archivos se decodificaron con FFmpeg. En Chromium se cargaron las siete fuentes MP3 y se verificó reproducción real, exclusión entre reproductores, pausa al cambiar de rama, reutilización del testimonio en exploración, ausencia de autoplay, persistencia de notas y ancho móvil. La duración y el peso de cada pieza están en `audio/manifest.json`. No se evaluó editorialmente la locución mediante escucha humana.
+
+## Revisión de desplegables
+
+Los textos breves se muestran directamente: las seis definiciones de componentes, seleccionar/relacionar/disponer, las cuatro preguntas de la caja negra, la arquitectura del episodio, las funciones de la metáfora, las preguntas de consistencia, la primera interpretación y la ayuda para revisar la decisión. Las referencias conservan un acceso opcional común, con sus textos internos visibles al abrirlo.
+
+Se conservan los desplegables de pistas, lecturas posibles, notas opcionales, guiones largos y administración de datos. La reconstrucción continúa requiriendo una decisión explícita. Los textos del bloque de contenido y los siete audios son los mismos. La clave de guardado local se conserva para recuperar las notas existentes.
+
+Se verificaron visibilidad de textos breves, pistas sin revelar, ambas ramas, persistencia, audios y ancho móvil de 360 px. Antes de elegir camino, los desplegables del documento pasan de 34 a 8; con el podcast abierto, de 43 a 12. No se verificó desde este entorno la publicación web de GitHub Pages.
