@@ -68,3 +68,9 @@ Para los botones con texto blanco se utiliza el violeta oscuro derivado `#5b538e
 ## Tipografía
 
 Se aplica Roboto a títulos, textos, controles y rótulos SVG. Las fuentes normal y cursiva, con pesos variables, están incluidas en `fonts/` con su licencia SIL OFL. El ZIP contiene estas fuentes para que no dependa de Google Fonts ni de una instalación en el equipo. Se verificó su carga local en Chromium, sus estilos y el ancho móvil.
+
+## Fondos por etapa
+
+Larva usa `#f3f4fb`, Crisálida `#b9b4da`, Eclosión `#8a85bf` y Mariposa `#7c74b5`. Los fondos abarcan todo el ancho. La elección de camino, la investigación y el reencuentro pertenecen a Eclosión; la transferencia y el cierre continúan con Mariposa.
+
+Eclosión y Mariposa incluyen superficies de lectura claras para conservar el texto `#132d48`: su contraste directo sobre esos fondos sería de aproximadamente 4,13:1 y 3,36:1, insuficiente para texto normal. Larva y Crisálida conservan lectura directa sobre sus fondos, con contraste aproximado 12,79:1 y 7,09:1. Se verificaron los nueve tramos, la continuidad de las ramas, la recuperación de notas, los siete audios, el ancho móvil y movimiento reducido.
