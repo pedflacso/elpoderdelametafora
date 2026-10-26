@@ -77,6 +77,19 @@ textarea{caret-color:var(--accent)}
 .stage-band button{border-color:var(--ink)}
 .stage-band .button-link{border:1px solid var(--ink)}
 .stage-band .workspace,.stage-band .choice,.stage-band details,.stage-band .zone{border-color:rgba(4,16,28,.3)}
+
+/* Lectura clara en los momentos oscuros, sin cubrir el lienzo. */
+:root{--eclosion-reading-bg:#70699e;--mariposa-reading-bg:#635b98}
+.stage-band[data-stage-background="eclosion"]{--stage-background:var(--eclosion-reading-bg)}
+.stage-band[data-stage-background="mariposa"]{--stage-background:var(--mariposa-reading-bg)}
+.stage-band[data-stage-background="eclosion"],.stage-band[data-stage-background="mariposa"]{--ink:#ffffff;--muted:#ffffff;--line:rgba(255,255,255,.38)}
+:is([data-stage-background="eclosion"],[data-stage-background="mariposa"]) :is(.visual,.note,.reconstruction,.pause){background:rgba(0,0,0,.12)}
+:is([data-stage-background="eclosion"],[data-stage-background="mariposa"]) :is(.workspace,.choice,details,.zone){border-color:rgba(255,255,255,.55)}
+:is([data-stage-background="eclosion"],[data-stage-background="mariposa"]) textarea{background:#f3f4fb;color:#132d48;border-color:#ffffff;caret-color:#132d48}
+:is([data-stage-background="eclosion"],[data-stage-background="mariposa"]) .path-badge{color:#132d48}
+:is([data-stage-background="eclosion"],[data-stage-background="mariposa"]) summary::marker{color:#ffffff}
+:is([data-stage-background="eclosion"],[data-stage-background="mariposa"]) ::selection{background:#f3f4fb;color:#132d48}
+:is([data-stage-background="eclosion"],[data-stage-background="mariposa"]) button:hover{filter:none;background-color:var(--action)}
 </style>
 </head>
 <body>
