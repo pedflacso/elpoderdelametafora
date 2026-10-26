@@ -38,7 +38,7 @@ Los audios y los enlaces del aula siguen pendientes. La guía de audios de la ve
 
 ## Documentación de la primera versión
 
-Se conserva el prototipo anterior en el `index.html` de la raíz. La documentación siguiente corresponde a esa primera versión del recorrido completo.
+El prototipo original se conserva en `version-1/index.html`. El `index.html` de la raíz dirige al boceto autoasistido actual. La documentación siguiente corresponde a esa primera versión del recorrido completo.
 
 ---
 

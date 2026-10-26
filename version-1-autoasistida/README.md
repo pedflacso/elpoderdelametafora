@@ -69,8 +69,18 @@ Para los botones con texto blanco se utiliza el violeta oscuro derivado `#5b538e
 
 Se aplica Roboto a títulos, textos, controles y rótulos SVG. Las fuentes normal y cursiva, con pesos variables, están incluidas en `fonts/` con su licencia SIL OFL. El ZIP contiene estas fuentes para que no dependa de Google Fonts ni de una instalación en el equipo. Se verificó su carga local en Chromium, sus estilos y el ancho móvil.
 
-## Fondos por etapa
+## Lienzo por etapa
 
-Larva usa `#f3f4fb`, Crisálida `#b9b4da`, Eclosión `#8a85bf` y Mariposa `#7c74b5`. Los fondos abarcan todo el ancho. La elección de camino, la investigación y el reencuentro pertenecen a Eclosión; la transferencia y el cierre continúan con Mariposa.
+El fondo general es `#f3f4fb` en Larva, `#b9b4da` en Crisálida, `#8a85bf` en Eclosión y `#7c74b5` en Mariposa. Se ve a todo el ancho y detrás de los textos. Se retiraron los paneles grandes claros; las tarjetas de contenido son transparentes y las superficies gráficas usan transparencia.
 
-Eclosión y Mariposa incluyen superficies de lectura claras para conservar el texto `#132d48`: su contraste directo sobre esos fondos sería de aproximadamente 4,13:1 y 3,36:1, insuficiente para texto normal. Larva y Crisálida conservan lectura directa sobre sus fondos, con contraste aproximado 12,79:1 y 7,09:1. Se verificaron los nueve tramos, la continuidad de las ramas, la recuperación de notas, los siete audios, el ancho móvil y movimiento reducido.
+El texto conserva `#132d48` en Larva y Crisálida. En Eclosión y Mariposa usa una variante azul más profunda, `#04101c`, para alcanzar contraste de texto normal (aproximadamente 5,65:1 y 4,58:1). Roboto, los audios y la clave de guardado se mantienen.
+
+## Mapa del recorrido
+
+Se retiró el bloque «¿Qué pasa si la quitamos?», sus dos situaciones y «Una prueba de consistencia». El apartado «Apliquemos la prueba a este recorrido» se reemplazó por «Mapa del recorrido»: los cuatro estados visuales, una síntesis breve y enlaces para volver a cada momento. Una nota antigua guardada en `self-note` se conserva al descargar notas, aunque su campo ya no aparezca en pantalla.
+
+## Acceso desde la raíz
+
+El `index.html` de la raíz de `main` dirige al boceto actual en `version-1-autoasistida/index.html`. La rama `gh-pages` mantiene el boceto en su propia raíz. Esto permite acceder a la versión actual si Pages usa cualquiera de esas dos raíces. No se pudo consultar la configuración ni el sitio público desde el entorno por un bloqueo de red; no se afirma qué fuente está seleccionada actualmente. La versión 1 original permanece en su carpeta.
+
+Se probaron el acceso raíz, los cuatro colores y el contraste directo de texto, la retirada de los bloques, los cuatro enlaces del mapa, las ramas, los siete audios presentes, recuperación y exportación de notas previas y ancho móvil.
