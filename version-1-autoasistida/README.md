@@ -90,3 +90,7 @@ Se probaron el acceso raíz, los cuatro colores y el contraste directo de texto,
 Eclosión y Mariposa usan texto blanco sobre variantes más profundas del violeta base: `#70699e` y `#635b98`. Los contrastes aproximados son 5:1 y 6,03:1. Es un ajuste deliberado del color efectivo del lienzo: blanco sobre los colores anteriores no alcanzaba 4,5:1 para texto normal. Larva y Crisálida mantienen sus colores y texto azul.
 
 Los recuadros que antes aclaraban el fondo usan ahora una transparencia oscura para mantener legible el texto blanco. Los campos de escritura y las etiquetas sobre fondos claros conservan texto `#132d48`. Se comprobaron muestras de títulos, párrafos, notas pequeñas, pies de gráficos, enlaces, botones y campos con al menos 4,5:1; esto no reemplaza una auditoría completa de accesibilidad. También se verificaron ambas ramas, recuperación de notas, ancho de 360 px y preferencia de movimiento reducido.
+
+## Ajuste de Eclosión
+
+Eclosión vuelve al fondo original `#8a85bf` y usa texto negro `#000000`, incluidos sus párrafos, títulos y notas. Mariposa conserva el texto blanco sobre `#635b98`. Las inversiones de color de botones seleccionados se mantienen para su legibilidad. Se verificaron los cuatro tramos de Eclosión, los tres de Mariposa, la rama podcast, los siete audios y ancho móvil.
