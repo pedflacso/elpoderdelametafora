@@ -94,3 +94,9 @@ Los recuadros que antes aclaraban el fondo usan ahora una transparencia oscura p
 ## Ajuste de Eclosión
 
 Eclosión vuelve al fondo original `#8a85bf` y usa texto negro `#000000`, incluidos sus párrafos, títulos y notas. Mariposa conserva el texto blanco sobre `#635b98`. Las inversiones de color de botones seleccionados se mantienen para su legibilidad. Se verificaron los cuatro tramos de Eclosión, los tres de Mariposa, la rama podcast, los siete audios y ancho móvil.
+
+## Colores de apoyo según la referencia
+
+Los círculos se interpretan como colores de recuadros y gráficos, no como colores obligatorios de fuente. Apoyos: Larva `#7c74b5`, Crisálida `#8a85bf`, Eclosión `#b9b4da` y Mariposa `#f3f4fb`. Se aplican a tarjetas, gráficos, evidencias, notas y ayudas, manteniendo visible el lienzo de la etapa.
+
+Cada superficie define su propio color de texto: negro en los apoyos violetas/lilas, azul `#132d48` en los casi blancos. Mariposa conserva blanco en el texto directo del lienzo y cambia a azul dentro de recuadros claros. Los botones seleccionados conservan su inversión legible. Se verificaron muestras con contraste de al menos 4,5:1, estados seleccionados y hover, las dos ramas, persistencia y ancho móvil.
