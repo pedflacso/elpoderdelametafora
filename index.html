@@ -52,18 +52,31 @@ summary::marker{color:var(--accent)}
 textarea{caret-color:var(--accent)}
 ::selection{background:#d7d3e9;color:var(--ink)}
 
-/* Fondo continuo de cada momento; superficies claras donde el violeta reduce el contraste. */
+/* Lienzo de cada etapa, visible a todo el ancho y detrás de los textos. */
 :root{--larva-bg:#f3f4fb;--crisalida-bg:#b9b4da;--eclosion-bg:#8a85bf;--mariposa-bg:#7c74b5}
 .stage-band{background:var(--stage-background);box-shadow:0 0 0 100vmax var(--stage-background);clip-path:inset(0 -100vmax);border-top:0}
 .stage-band[data-stage-background="larva"]{--stage-background:var(--larva-bg)}
 .stage-band[data-stage-background="crisalida"]{--stage-background:var(--crisalida-bg)}
 .stage-band[data-stage-background="eclosion"]{--stage-background:var(--eclosion-bg)}
 .stage-band[data-stage-background="mariposa"]{--stage-background:var(--mariposa-bg)}
-.stage-reading-panel{background:var(--paper);color:var(--ink);padding:clamp(20px,3vw,36px);border-radius:24px}
+
 .stage-band button.secondary{border-color:var(--ink)}
 .stage-band button:focus-visible,.stage-band a:focus-visible,.stage-band summary:focus-visible,.stage-band textarea:focus-visible{outline-color:var(--ink)}
-.stage-reading-panel>.eyebrow:first-child{margin-top:0}
-@media(max-width:759px){.stage-reading-panel{border-radius:18px}.stage-band .story-grid{gap:24px}}
+
+@media(max-width:759px){.stage-band .story-grid{gap:24px}}
+
+/* Mapa de síntesis y navegación, con los cuatro estados del mismo sistema visual. */
+.journey-map{margin-top:40px}.journey-map .four-forms{gap:24px 16px}.journey-map figure{min-width:0}.journey-map figcaption a{font-weight:650;display:inline-block;padding:8px 4px}.journey-map figcaption p{font-size:.9rem;margin:4px 0 0;line-height:1.5}
+
+/* El color pertenece al lienzo; los elementos se apoyan sobre él. */
+.stage-band{--muted:var(--ink);color:var(--ink)}
+.stage-band[data-stage-background="eclosion"],.stage-band[data-stage-background="mariposa"]{--ink:#04101c}
+#main>.workspace,.stage-band .workspace,.stage-band .choice,.stage-band details,.stage-band .evidence-body,.stage-band .first-reading{background:transparent}
+.stage-band .note,.stage-band .reconstruction{background:rgba(255,255,255,.14)}
+.stage-band .visual{background:rgba(255,255,255,.18)}
+.stage-band button{border-color:var(--ink)}
+.stage-band .button-link{border:1px solid var(--ink)}
+.stage-band .workspace,.stage-band .choice,.stage-band details,.stage-band .zone{border-color:rgba(4,16,28,.3)}
 </style>
 </head>
 <body>
@@ -467,40 +480,6 @@ textarea{caret-color:var(--accent)}
     ],
     "caution": "Una metáfora no tiene que intervenir en todo. Su potencia depende del trabajo que realiza donde hace falta."
   },
-  "consistency": {
-    "title": "¿Qué pasa si la quitamos?",
-    "intro": "Compará estas dos situaciones hipotéticas. Primero mirá qué cambia; después, pensá qué se pierde.",
-    "scenarios": [
-      {
-        "title": "Situación 1 · Cambia la apariencia",
-        "before": "La investigación aparece en nombres, rótulos y recursos gráficos.",
-        "after": "Al quitarla, cambian esos nombres y la estética. El recorrido, las relaciones entre materiales y las acciones permanecen iguales.",
-        "consequence": "En esta situación, la investigación incidía principalmente en la superficie del objeto."
-      },
-      {
-        "title": "Situación 2 · Cambia la experiencia",
-        "before": "La investigación organiza reunir indicios, contrastar evidencias y construir una explicación.",
-        "after": "Al quitar esa lógica, se desarman las conexiones entre las piezas y la progresión hacia una explicación. Cambia lo que tiene que hacer quien aprende.",
-        "consequence": "En esta situación, la metáfora organizaba relaciones y acciones; al retirarla, la experiencia cambia."
-      }
-    ],
-    "remove": "Quitar la metáfora",
-    "restore": "Volver a ponerla",
-    "questions": [
-      "¿Ayuda a comprender o relacionar algo del contenido?",
-      "¿Orienta una acción?",
-      "¿Construye relaciones entre partes del objeto?",
-      "¿Da sentido al recorrido, además de a sus nombres?",
-      "¿Sirve al propósito de aprendizaje?",
-      "Si la quitamos, ¿se pierde algo relevante?"
-    ],
-    "criterion": "No hace falta responder sí a todo. Buscá qué trabajo concreto hace esta metáfora en este objeto.",
-    "selfTitle": "Apliquemos la prueba a este recorrido",
-    "selfBody": "Larva, Crisálida, Eclosión y Mariposa propusieron pasar de partes disponibles a relaciones, decisiones y una forma reconocible. Ahora podemos revisar si la metamorfosis ayudó a comprender ese proceso.",
-    "selfQuestion": "Si desaparecieran la metamorfosis y sus imágenes, ¿qué cambiaría para vos? ¿Qué aportaron y qué podría funcionar igual?",
-    "selfLabel": "Tu lectura del recorrido — nota opcional",
-    "selfPlaceholder": "Me ayudó a… / Podría funcionar igual… / Revisaría…"
-  },
   "transfer": {
     "title": "Ahora, tu objeto",
     "intro": "Pensá en tu propuesta. Antes de elegir una metáfora, anotá qué necesitás que pueda hacer quien aprende y qué relación hace falta construir. Después vas a ensayar una decisión para llevar a la Bitácora.",
@@ -654,7 +633,37 @@ textarea{caret-color:var(--accent)}
     "restored": "Recuperamos tus notas anteriores. Podés seguir desde el último tramo o volver a recorrerlo."
   },
   "crisalidaAudio": "audio/05-crisalida.mp3",
-  "audioStatus": "Los textos que acompañan los audios son guiones de referencia. Su correspondencia exacta con las grabaciones todavía está pendiente de revisión."
+  "audioStatus": "Los textos que acompañan los audios son guiones de referencia. Su correspondencia exacta con las grabaciones todavía está pendiente de revisión.",
+  "journeyMap": {
+    "title": "Mapa del recorrido",
+    "intro": "Empezamos con las partes de un objeto. Las pusimos en relación, investigamos un caso y volvimos a mirar qué forma podían construir juntas. Podés volver a cualquiera de estos momentos.",
+    "stages": [
+      {
+        "title": "Larva",
+        "description": "Las partes están disponibles.",
+        "target": "larva",
+        "form": "loose"
+      },
+      {
+        "title": "Crisálida",
+        "description": "Las partes empiezan a relacionarse.",
+        "target": "crisalida",
+        "form": "cocoon"
+      },
+      {
+        "title": "Eclosión",
+        "description": "Investigamos cómo esas relaciones toman forma en una experiencia.",
+        "target": "caso",
+        "form": "open"
+      },
+      {
+        "title": "Mariposa",
+        "description": "Reconocemos lo que cambió y lo llevamos al propio diseño.",
+        "target": "mariposa",
+        "form": "wings"
+      }
+    ]
+  }
 }
 </script>
 <script>
@@ -680,7 +689,7 @@ function opening(){return `<section class="workspace" aria-labelledby="welcome-t
 <section class="chapter" id="larva" aria-labelledby="larva-title"><div class="story-grid"><aside class="visual organism-panel">${organism('loose','larva-form')}<p class="visual-caption">Larva · Las partes están disponibles</p></aside><div><p class="eyebrow">01 · Larva</p><h2 id="larva-title">${esc(C.larva.title)}</h2><p class="lead">${esc(C.larva.intro)}</p><div class="step"><p>${esc(C.larva.parts)}</p><div class="component-definitions">${briefDefinitions(C.components.map(c=>({title:c.name,body:c.meaning})))}</div></div><div class="step"><p class="quote">${esc(C.larva.question)}</p><details><summary>Si querés, dejate una nota sobre esta relación</summary>${noteBox('larva-note',C.larva.label,C.larva.placeholder)}</details><p class="small">${esc(C.reflection.privacy)}</p><p>${esc(C.larva.bridge)}</p></div></div></div></section>
 <section class="chapter" id="crisalida" aria-labelledby="crisalida-title"><p class="eyebrow">02–03 · Crisálida</p><h2 id="crisalida-title">Construir relaciones</h2><div class="concept-audio"><h3>Escuchar cómo empieza esta transformación</h3>${audioMarkup(C.crisalidaAudio,'Crisálida. Construir relaciones')}<p class="small">Podés escuchar la cápsula o seguir leyendo las ideas de este tramo. Los textos son guiones de referencia.</p></div><p class="lead">Además de ayudarnos a decir algo de otra manera, ¿una metáfora puede ayudarnos a pensar?</p><div class="story-grid"><aside class="visual organism-panel" id="concept-visual">${organism('gather','concept-form')}<p class="visual-caption" id="concept-caption">Crisálida · Las partes empiezan a relacionarse</p></aside><div>${C.concepts.map((c,i)=>`<article class="step concept-step" data-concept="${i}" id="${c.id}"><p class="eyebrow">${esc(c.source)}</p><h3 class="concept-title">${esc(c.title)}</h3>${paras(c.paragraphs)}${c.audio?audioMarkup(c.audio,c.title):''}<p class="quote">${esc(c.question)}</p>${c.note?`<details><summary>Una nota para volver a tu asociación</summary>${noteBox('association-note',c.note,'Por ejemplo: el tiempo como río…')}</details>`:''}</article>`).join('')}<details><summary>Si querés seguir pensando en las metáforas</summary>${paras(C.optionalBorges.paragraphs)}<p class="small">${esc(C.optionalBorges.source)}</p></details></div></div></section>`;}
 function ending(){return `<section class="chapter" id="reencuentro" aria-labelledby="reunion-title"><p class="eyebrow">07 · Reencuentro</p><h2 id="reunion-title">${esc(C.reunion.title)}</h2><p class="lead">${esc(C.reunion.intro)}</p><h3>Escuchar sobre el trabajo de autor-curador</h3>${audioMarkup(C.curation.audio,'Autor-curador. Seleccionar, relacionar y disponer')}<p class="small">El texto siguiente es una síntesis de referencia, pendiente de cotejo con la grabación.</p><p>${esc(C.curation.paragraph)}</p><section class="reading-block"><h3>Qué significa seleccionar, relacionar y disponer</h3>${briefDefinitions(C.curation.ops)}</section><div class="dimension-buttons" role="group" aria-label="Dimensiones de comparación">${C.reunion.dimensions.map((d,i)=>`<button class="secondary" data-dimension="${i}" aria-pressed="${i===0}" aria-controls="comparison">${esc(d.title)}</button>`).join('')}</div><div id="comparison" class="workspace"></div><p class="note">${esc(C.reunion.same)}</p><p>${esc(C.reunion.translation)}</p><p class="quote">${esc(C.reunion.question)}</p><a href="#elegir">Revisar el otro camino</a></section>
-<section class="chapter" id="mariposa" aria-labelledby="butterfly-title"><p class="eyebrow">08 · Mariposa</p><h2 id="butterfly-title">${esc(C.butterfly.title)}</h2><p class="lead">${esc(C.butterfly.intro)}</p><div class="story-grid"><aside class="visual organism-panel" id="butterfly-visual">${organism('wings','butterfly-form')}<p class="visual-caption">Mariposa · Las relaciones hacen visible una forma</p></aside><div><p>${esc(C.butterfly.lead)}</p><div class="connection-buttons" role="group" aria-label="Relaciones entre componentes">${C.butterfly.connections.map((c,i)=>`<button class="secondary" data-connection="${i}" aria-pressed="false" aria-controls="connection-description">${esc(c.title)}</button>`).join('')}</div><div class="workspace" id="connection-description"><p>Elegí una relación para revisarla en este módulo.</p></div><section class="reading-block"><h3>Qué puede aportar una metáfora a un OA</h3><ul>${C.butterfly.functions.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><p>${esc(C.butterfly.caution)}</p></section></div></div><div class="testing"><h3 class="concept-title">${esc(C.consistency.title)}</h3><p>${esc(C.consistency.intro)}</p><div class="choices">${C.consistency.scenarios.map((c,i)=>`<article class="choice scenario"><h3>${esc(c.title)}</h3><div class="mini-model" id="model-${i}" aria-hidden="true"><span class="model-piece">Voces</span><span class="model-line">→</span><span class="model-piece">Evidencias</span><span class="model-line">→</span><span class="model-piece">Explicación</span></div><p class="scenario-description" id="scenario-text-${i}">${esc(c.before)}</p><button data-scenario="${i}" aria-pressed="false" aria-controls="scenario-text-${i} scenario-consequence-${i}">${esc(C.consistency.remove)}</button><p class="small" id="scenario-consequence-${i}" hidden>${esc(c.consequence)}</p></article>`).join('')}</div><h3>Una prueba de consistencia</h3><p>${esc(C.consistency.criterion)}</p><ul class="review-questions">${C.consistency.questions.map(q=>`<li>${esc(q)}</li>`).join('')}</ul><p class="small">Volvé a una acción o una relación del caso para pensar estas preguntas.</p><div class="workspace"><h3>${esc(C.consistency.selfTitle)}</h3><p>${esc(C.consistency.selfBody)}</p><div class="four-forms">${['loose','cocoon','open','wings'].map((m,i)=>`<figure>${organism(m,'review-'+i)}<figcaption>${['Larva','Crisálida','Eclosión','Mariposa'][i]}</figcaption></figure>`).join('')}</div><p class="quote">${esc(C.consistency.selfQuestion)}</p><details><summary>Si querés, anotá qué te aportó este recorrido</summary>${noteBox('self-note',C.consistency.selfLabel,C.consistency.selfPlaceholder)}</details><p class="small">${esc(C.reflection.privacy)}</p></div></div></section>
+<section class="chapter" id="mariposa" aria-labelledby="butterfly-title"><p class="eyebrow">08 · Mariposa</p><h2 id="butterfly-title">${esc(C.butterfly.title)}</h2><p class="lead">${esc(C.butterfly.intro)}</p><div class="story-grid"><aside class="visual organism-panel" id="butterfly-visual">${organism('wings','butterfly-form')}<p class="visual-caption">Mariposa · Las relaciones hacen visible una forma</p></aside><div><p>${esc(C.butterfly.lead)}</p><div class="connection-buttons" role="group" aria-label="Relaciones entre componentes">${C.butterfly.connections.map((c,i)=>`<button class="secondary" data-connection="${i}" aria-pressed="false" aria-controls="connection-description">${esc(c.title)}</button>`).join('')}</div><div class="workspace" id="connection-description"><p>Elegí una relación para revisarla en este módulo.</p></div><section class="reading-block"><h3>Qué puede aportar una metáfora a un OA</h3><ul>${C.butterfly.functions.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><p>${esc(C.butterfly.caution)}</p></section></div></div><section class="workspace journey-map" aria-labelledby="journey-map-title"><h3 id="journey-map-title">${esc(C.journeyMap.title)}</h3><p>${esc(C.journeyMap.intro)}</p><nav class="four-forms" aria-label="Volver a los momentos del recorrido">${C.journeyMap.stages.map((stage,i)=>`<figure>${organism(stage.form,'review-'+i)}<figcaption><a href="#${stage.target}">${esc(stage.title)}</a><p>${esc(stage.description)}</p></figcaption></figure>`).join('')}</nav></section></section>
 <section class="chapter" id="tu-objeto" aria-labelledby="transfer-title"><p class="eyebrow">09 · Del caso a tu objeto</p><h2 id="transfer-title">${esc(C.transfer.title)}</h2><p class="lead">${esc(C.transfer.intro)}</p><div class="workspace">${noteBox('need-note',C.transfer.needLabel)}${noteBox('organize-note',C.transfer.organizeLabel)}<p class="small">${esc(C.transfer.privacy)}</p></div><h3>${esc(C.transfer.label)}</h3><div class="choices">${C.transfer.choices.map(c=>`<article class="choice"><h3>${esc(c.title)}</h3><p>${esc(c.body)}</p><button class="secondary" data-transfer="${c.id}" aria-pressed="false" aria-controls="transfer-fields">${esc(c.title)}</button></article>`).join('')}</div><div id="transfer-fields"></div><section class="reading-block decision-feedback"><h3>${esc(C.assistance.feedbackTitle)}</h3><p>${esc(C.assistance.feedback)}</p></section><div class="evidence-buttons"><button id="copy-decision">${esc(C.transfer.copy)}</button><button class="secondary" id="download-notes">${esc(C.transfer.download)}</button></div><p role="status" id="transfer-status" class="small"></p><div id="lms-links"></div></section>
 <section class="ending" id="cierre"><h2>${esc(C.closing.title)}</h2><p class="lead">${esc(C.closing.body)}</p><p>${esc(C.closing.synthesis)}</p><p>${esc(C.closing.continuity)}</p><p class="quote">${esc(C.closing.question)}</p><details><summary>${esc(C.closing.sourcesTitle)}</summary><p class="small">${esc(C.closing.sourcesIntro)}</p>${apaReferences(C.closing.sources)}</details><nav class="anchors" aria-label="Revisar el recorrido"><a href="#larva">Volver al inicio</a><a href="#tu-objeto">Revisar mi decisión</a><a href="#elegir">Explorar el otro camino</a></nav></section>`;}
 
@@ -709,12 +718,6 @@ function applyStageBackgrounds(){
   if(!section)continue;
   section.classList.add('stage-band');
   section.dataset.stageBackground=stage;
-  if(stage==='eclosion'||stage==='mariposa'){
-   const panel=document.createElement('div');
-   panel.className='stage-reading-panel';
-   while(section.firstChild)panel.append(section.firstChild);
-   section.append(panel);
-  }
  }
 }
 applyStageBackgrounds();
@@ -752,10 +755,9 @@ const personalNotes={},transferState={choice:null,metafora:[],otra:[]};
 function showDimension(i){const d=C.reunion.dimensions[i];document.getElementById('comparison').innerHTML=`<h3>${esc(d.title)}</h3><div class="choices"><div><p class="path-badge">Podcast</p><p>${esc(d.podcast)}</p></div><div><p class="path-badge">Artefacto interactivo</p><p>${esc(d.artefacto)}</p></div></div>`;document.querySelectorAll('[data-dimension]').forEach(b=>b.setAttribute('aria-pressed',Number(b.dataset.dimension)===i));}
 showDimension(0);
 function decisionText(){const c=C.transfer.choices.find(c=>c.id===transferState.choice);return [C.transfer.needLabel+'\n'+(personalNotes['need-note']||''),C.transfer.organizeLabel+'\n'+(personalNotes['organize-note']||''),c?c.title:'Decisión todavía abierta',...(c?c.fields.map((f,i)=>f+'\n'+(transferState[c.id][i]||'')):[])].join('\n\n');}
-function notesText(){const labels={'larva-note':C.larva.label,'association-note':C.concepts[0].note,'self-note':C.consistency.selfLabel,'case-first-note':'Mi primera interpretación del caso'};return ['El poder de la metáfora · Mis notas',...Object.entries(labels).map(([id,label])=>label+'\n'+(personalNotes[id]||'')),'Camino Podcast\n'+state.podcast.note+'\n'+state.podcast.explanation+'\n'+state.podcast.meta,'Camino Artefacto\n'+(state.artefacto.relationNote||'')+'\n'+state.artefacto.explanation+'\n'+state.artefacto.meta,...C.artefacto.zones.map((z,i)=>z+': '+[...state.artefacto.zones[i]].map(j=>C.artefacto.pieces[j]).join(', ')),'Mi decisión\n'+decisionText()].join('\n\n');}
+function notesText(){const labels={'larva-note':C.larva.label,'association-note':C.concepts[0].note,...(personalNotes['self-note']?{'self-note':'Nota de una versión anterior del recorrido'}:{}),'case-first-note':'Mi primera interpretación del caso'};return ['El poder de la metáfora · Mis notas',...Object.entries(labels).map(([id,label])=>label+'\n'+(personalNotes[id]||'')),'Camino Podcast\n'+state.podcast.note+'\n'+state.podcast.explanation+'\n'+state.podcast.meta,'Camino Artefacto\n'+(state.artefacto.relationNote||'')+'\n'+state.artefacto.explanation+'\n'+state.artefacto.meta,...C.artefacto.zones.map((z,i)=>z+': '+[...state.artefacto.zones[i]].map(j=>C.artefacto.pieces[j]).join(', ')),'Mi decisión\n'+decisionText()].join('\n\n');}
 document.addEventListener('input',e=>{if(e.target.classList.contains('personal-note'))personalNotes[e.target.id]=e.target.value;if(e.target.matches('[data-transfer-field]'))transferState[transferState.choice][Number(e.target.dataset.transferField)]=e.target.value;});
 document.addEventListener('click',e=>{const dimension=e.target.closest('[data-dimension]');if(dimension)showDimension(Number(dimension.dataset.dimension));const connection=e.target.closest('[data-connection]');if(connection){const i=Number(connection.dataset.connection),c=C.butterfly.connections[i];document.getElementById('connection-description').innerHTML=`<h3>${esc(c.title)}</h3><p>${esc(c.body)}</p>`;document.querySelectorAll('[data-connection]').forEach(b=>b.setAttribute('aria-pressed',Number(b.dataset.connection)===i));document.querySelectorAll('#butterfly-visual .segment').forEach(g=>g.classList.toggle('dim',!c.pair.includes(Number(g.dataset.component))));}
-const scenario=e.target.closest('[data-scenario]');if(scenario){const i=Number(scenario.dataset.scenario),removed=scenario.getAttribute('aria-pressed')!=='true',c=C.consistency.scenarios[i];scenario.setAttribute('aria-pressed',removed);scenario.textContent=removed?C.consistency.restore:C.consistency.remove;document.getElementById('scenario-text-'+i).textContent=removed?c.after:c.before;document.getElementById('scenario-consequence-'+i).hidden=!removed;const model=document.getElementById('model-'+i);model.classList.toggle(i===0?'surface-removed':'structure-removed',removed);}
 const choice=e.target.closest('[data-transfer]');if(choice){transferState.choice=choice.dataset.transfer;const c=C.transfer.choices.find(c=>c.id===transferState.choice);document.querySelectorAll('[data-transfer]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.transfer===c.id));document.getElementById('transfer-fields').innerHTML=`<div class="workspace"><h3>${esc(c.title)}</h3>${c.fields.map((f,i)=>`<label for="transfer-field-${i}">${esc(f)}</label><textarea id="transfer-field-${i}" data-transfer-field="${i}">${esc(transferState[c.id][i]||'')}</textarea>`).join('')}<p class="small">${esc(C.transfer.privacy)}</p></div>`;document.getElementById('transfer-field-0').focus({preventScroll:true});}});
 document.getElementById('copy-decision').onclick=async()=>{const status=document.getElementById('transfer-status');if(!transferState.choice){status.textContent='Elegí una opción para preparar tu decisión. Podés cambiarla después.';return;}const text=decisionText();try{await navigator.clipboard.writeText(text);status.textContent='Decisión copiada. Podés pegarla en la Bitácora.';}catch{let fallback=document.getElementById('copy-fallback');if(!fallback){fallback=document.createElement('textarea');fallback.id='copy-fallback';fallback.setAttribute('aria-label','Tu decisión lista para copiar');status.after(fallback);}fallback.value=text;fallback.focus();fallback.select();status.textContent=C.ui.copyFailure;}};
 document.getElementById('download-notes').onclick=()=>{const blob=new Blob([notesText()],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='mis-notas-metafora.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);};
@@ -788,7 +790,7 @@ statusElement.textContent=C.assistance.restored;document.getElementById('resume-
 readSave();
 // Los controladores originales actualizan sus estados antes de este guardado.
 document.addEventListener('input',()=>{scheduleSave();});
-document.addEventListener('click',e=>{if(restoring)return;if(e.target.closest('[data-path]')){checkpoint='investigar';userNavigated=true;}if(e.target.closest('[data-transfer]')){checkpoint='tu-objeto';userNavigated=true;}if(e.target.closest('[data-path],[data-zone],[data-evidence],[data-transfer],[data-scenario],[data-connection],#reveal,#motion'))scheduleSave();});
+document.addEventListener('click',e=>{if(restoring)return;if(e.target.closest('[data-path]')){checkpoint='investigar';userNavigated=true;}if(e.target.closest('[data-transfer]')){checkpoint='tu-objeto';userNavigated=true;}if(e.target.closest('[data-path],[data-zone],[data-evidence],[data-transfer],[data-connection],#reveal,#motion'))scheduleSave();});
 document.addEventListener('input',e=>{if(e.target.id==='case-first-note'){const view=document.getElementById('first-interpretation');if(view)view.textContent=e.target.value||'Podés recordar lo que pensabas al conocer el caso.';}});
 window.addEventListener('pagehide',()=>{clearTimeout(saveTimer);writeSave();});
 document.getElementById('save-work').onclick=()=>{clearTimeout(saveTimer);writeSave();};
