@@ -84,3 +84,9 @@ Se retiró el bloque «¿Qué pasa si la quitamos?», sus dos situaciones y «Un
 El `index.html` de la raíz de `main` dirige al boceto actual en `version-1-autoasistida/index.html`. La rama `gh-pages` mantiene el boceto en su propia raíz. Esto permite acceder a la versión actual si Pages usa cualquiera de esas dos raíces. No se pudo consultar la configuración ni el sitio público desde el entorno por un bloqueo de red; no se afirma qué fuente está seleccionada actualmente. La versión 1 original permanece en su carpeta.
 
 Se probaron el acceso raíz, los cuatro colores y el contraste directo de texto, la retirada de los bloques, los cuatro enlaces del mapa, las ramas, los siete audios presentes, recuperación y exportación de notas previas y ancho móvil.
+
+## Revisión de lectura en fondos oscuros
+
+Eclosión y Mariposa usan texto blanco sobre variantes más profundas del violeta base: `#70699e` y `#635b98`. Los contrastes aproximados son 5:1 y 6,03:1. Es un ajuste deliberado del color efectivo del lienzo: blanco sobre los colores anteriores no alcanzaba 4,5:1 para texto normal. Larva y Crisálida mantienen sus colores y texto azul.
+
+Los recuadros que antes aclaraban el fondo usan ahora una transparencia oscura para mantener legible el texto blanco. Los campos de escritura y las etiquetas sobre fondos claros conservan texto `#132d48`. Se comprobaron muestras de títulos, párrafos, notas pequeñas, pies de gráficos, enlaces, botones y campos con al menos 4,5:1; esto no reemplaza una auditoría completa de accesibilidad. También se verificaron ambas ramas, recuperación de notas, ancho de 360 px y preferencia de movimiento reducido.
