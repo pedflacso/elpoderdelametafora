@@ -100,6 +100,7 @@ Los cambios futuros en la carpeta de trabajo deberán volver a actualizar la ram
 
 Propuesta de guía en tres páginas, con la paleta violeta y dos alternativas de diseño al mismo nivel.
 
+- [PDF rellenable para completar y guardar](descargas/Kit_del_caso_a_tu_objeto_rellenable.pdf).
 - [PDF para imprimir](descargas/Kit_del_caso_a_tu_objeto.pdf).
 - [Word editable](descargas/Kit_del_caso_a_tu_objeto.docx).
 - [Contenido e indicaciones](documentacion/kit-metafora/).
