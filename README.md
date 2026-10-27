@@ -95,3 +95,11 @@ La rama `gh-pages` contiene la revisión autoasistida en su raíz, con los audio
 Cuando GitHub termine de publicar, el sitio corresponde a `https://pedflacso.github.io/elpoderdelametafora/`. No se debe confundir preparar esta rama con verificar una publicación exitosa.
 
 Los cambios futuros en la carpeta de trabajo deberán volver a actualizar la rama de publicación. Las versiones anteriores se conservan en `main`. El ZIP incluye MP3 para distribuir; los originales M4A también se conservan en el repositorio.
+
+## Kit de herramientas para llevar al foro
+
+Propuesta de guía en tres páginas, con la paleta violeta y dos alternativas de diseño al mismo nivel.
+
+- [PDF para imprimir](descargas/Kit_del_caso_a_tu_objeto.pdf).
+- [Word editable](descargas/Kit_del_caso_a_tu_objeto.docx).
+- [Contenido e indicaciones](documentacion/kit-metafora/).
