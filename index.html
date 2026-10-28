@@ -147,6 +147,25 @@ textarea{caret-color:var(--accent)}
 #traslado .reflection-invitation{border:0;padding-top:4px}
 #traslado details.reading-reference{border:0;margin-top:24px}
 @media(max-width:759px){.metaphor-drawer summary{padding:20px;font-size:1.15rem}.drawer-content{padding:0 20px 20px}}
+/* Escucha centrada y reproductor de onda para Crisálida. */
+#crisalida .concept-audio{max-width:920px;margin:32px auto 48px;text-align:center;padding:30px 24px}
+#crisalida .concept-audio>.quote{border:0;padding:0;max-width:650px;margin:0 auto 18px;font-size:clamp(1.35rem,3vw,1.8rem)}
+#crisalida .concept-audio>p{max-width:680px;margin-left:auto;margin-right:auto}
+.wave-player{margin:28px auto 22px;max-width:820px}
+.wave-player-ui{background:#292830;color:#f3f4fb;border-radius:28px;padding:24px;--ink:#f3f4fb;--muted:#f3f4fb}
+.wave-player-main{display:flex;align-items:center;gap:18px}
+.wave-player .wave-toggle{display:grid;place-items:center;width:50px;height:50px;flex:0 0 50px;padding:0;border:0;border-radius:50%;background:#f3f4fb;color:#292830;font-size:20px;line-height:1}
+.wave-player .wave-toggle:hover{box-shadow:0 0 0 3px #b9b4da}
+.wave-seek{position:relative;flex:1;min-width:0;height:78px;border-radius:6px}
+.wave-seek svg{display:block;width:100%;height:100%}
+.wave-seek input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.wave-seek:focus-within{outline:3px solid #f3f4fb;outline-offset:5px}
+.wave-time{font-size:.85rem;white-space:nowrap;font-variant-numeric:tabular-nums;min-width:90px;text-align:right}
+.wave-volume{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:18px}
+.wave-volume input{width:min(240px,60%);accent-color:#c5baff;min-height:32px;cursor:pointer}
+.wave-player :is(button,input):focus-visible{outline:3px solid #f3f4fb;outline-offset:5px}
+.wave-player-status{font-size:.85rem;margin:10px 0 0}.wave-player-status:empty{display:none}
+@media(max-width:599px){#crisalida .concept-audio{padding:24px 16px}.wave-player-ui{padding:20px 16px;border-radius:22px}.wave-player-main{flex-wrap:wrap;gap:12px}.wave-seek{height:64px}.wave-time{width:100%;text-align:center}.wave-player .wave-toggle{width:46px;height:46px;flex-basis:46px}}
 </style>
 </head>
 <body>
@@ -852,6 +871,166 @@ textarea{caret-color:var(--accent)}
     ],
     "readingLabel": "Volver a las ideas por escrito",
     "readingHint": "Estos textos son una alternativa de lectura. Su correspondencia exacta con la grabación final todavía está pendiente de cotejo."
+  },
+  "crisalidaPlayer": {
+    "duration": 55.613333,
+    "waveform": [
+      0.072,
+      0.075,
+      0.071,
+      0.09,
+      0.163,
+      0.085,
+      0.081,
+      0.081,
+      0.053,
+      0.055,
+      0.059,
+      0.886,
+      0.86,
+      0.795,
+      0.392,
+      0.593,
+      0.298,
+      0.56,
+      0.302,
+      0.04,
+      0.518,
+      0.723,
+      0.684,
+      0.779,
+      0.594,
+      0.751,
+      0.182,
+      0.04,
+      0.04,
+      0.69,
+      0.761,
+      0.214,
+      0.638,
+      0.421,
+      0.362,
+      0.662,
+      0.808,
+      0.688,
+      0.447,
+      0.613,
+      0.521,
+      0.272,
+      0.745,
+      0.46,
+      0.792,
+      0.374,
+      0.571,
+      0.55,
+      0.212,
+      0.054,
+      0.04,
+      0.815,
+      0.647,
+      0.707,
+      0.333,
+      0.485,
+      0.518,
+      0.434,
+      0.305,
+      0.751,
+      0.299,
+      0.104,
+      0.04,
+      0.04,
+      0.667,
+      0.741,
+      0.297,
+      0.892,
+      0.429,
+      0.691,
+      0.532,
+      0.872,
+      0.341,
+      0.347,
+      0.362,
+      0.16,
+      0.04,
+      1.0,
+      0.525,
+      0.824,
+      0.544,
+      0.697,
+      0.394,
+      0.04,
+      0.486,
+      0.664,
+      0.561,
+      0.326,
+      0.662,
+      0.773,
+      0.55,
+      0.599,
+      0.89,
+      0.604,
+      0.56,
+      0.632,
+      0.264,
+      0.441,
+      0.73,
+      0.694,
+      0.542,
+      0.52,
+      0.287,
+      0.153,
+      0.04,
+      0.04,
+      0.462,
+      0.697,
+      0.47,
+      0.517,
+      0.431,
+      0.594,
+      0.648,
+      0.689,
+      0.694,
+      0.741,
+      0.587,
+      0.458,
+      0.33,
+      0.093,
+      0.04,
+      0.478,
+      0.691,
+      0.523,
+      0.446,
+      0.266,
+      0.515,
+      0.04,
+      0.7,
+      0.645,
+      0.466,
+      0.669,
+      0.658,
+      0.617,
+      0.468,
+      0.524,
+      0.398,
+      0.43,
+      0.202,
+      0.214,
+      0.079,
+      0.065,
+      0.069,
+      0.066,
+      0.11,
+      0.095,
+      0.055,
+      0.04,
+      0.04,
+      0.04
+    ],
+    "play": "Reproducir audio de Crisálida",
+    "pause": "Pausar audio de Crisálida",
+    "seek": "Posición del audio de Crisálida",
+    "volume": "Volumen del audio de Crisálida",
+    "error": "No se pudo reproducir el audio. Podés usar los controles del reproductor original."
   }
 }
 </script>
@@ -880,9 +1059,27 @@ function noteBox(id,label,placeholder=''){return `<label for="${id}">${esc(label
 function metaphorConcept(c){const t=c.layout;return `<p class="drawer-intro">Una metáfora puede ser algo más que una figura retórica.</p><p class="small">${esc(t.drawerHint)}</p><div class="metaphor-drawers">${t.drawers.map((drawer,i)=>`<details class="metaphor-drawer drawer-${i+1}"><summary><span class="drawer-label">${esc(drawer.title)}</span><span class="drawer-handle" aria-hidden="true"></span></summary><div class="drawer-content">${paras(drawer.paragraphs)}${drawer.examples?`<dl class="drawer-examples">${drawer.examples.map(e=>`<div><dt>«${esc(e.phrase)}»</dt><dd>${esc(e.relation)}</dd></div>`).join('')}</dl>`:''}</div></details>`).join('')}</div><section class="reflection-invitation" aria-label="Una pausa para pensar"><p>${esc(c.question)}</p><details><summary>Una nota para volver a tu asociación</summary>${noteBox('association-note',c.note,'Por ejemplo: el tiempo como río…')}</details></section><details class="reading-reference"><summary>${esc(c.reading.title)}</summary>${paras(c.reading.paragraphs)}</details>`;}
 
 function conceptOrganism(mode){let svg=organism(mode,'concept-form');if(mode==='gather'){svg=svg.replace('<g class="segment"',`<path d="M145 75 Q205 20 265 95 M145 75 Q80 135 135 195 M265 95 Q320 150 270 205 M135 195 Q200 155 270 205 M135 195 Q75 250 145 305 M270 205 Q325 270 275 310 M145 305 Q210 365 275 310" fill="none" stroke="currentColor" stroke-width="2" opacity=".45" aria-hidden="true"/><g class="segment"`);}return svg;}
+/* La onda representa la amplitud del archivo final; los controles nativos quedan como respaldo. */
+function crisalidaPlayer(){const t=C.crisalidaPlayer;const bars=t.waveform.map((value,i)=>{const h=4+value*68;return `<rect x="${i*5}" y="${(78-h)/2}" width="2" height="${h}" rx="1"/>`;}).join('');return `<div class="wave-player">${audioMarkup(C.crisalidaAudio,'Crisálida. Construir relaciones')}<div class="wave-player-ui" hidden><div class="wave-player-main"><button type="button" class="wave-toggle" aria-label="${esc(t.play)}"><span aria-hidden="true">▶</span></button><div class="wave-seek"><svg viewBox="0 0 750 78" preserveAspectRatio="none" aria-hidden="true"><defs><clipPath id="crisalida-wave-progress"><rect width="0" height="78"/></clipPath></defs><g fill="#aaa5b8">${bars}</g><g fill="#e6dcff" clip-path="url(#crisalida-wave-progress)">${bars}</g></svg><input class="wave-position" type="range" min="0" max="1000" step="1" value="0" aria-label="${esc(t.seek)}" aria-valuetext="0:00"></div><span class="wave-time">0:00 / 0:56</span></div><div class="wave-volume"><span aria-hidden="true">◖))</span><input type="range" min="0" max="1" step="0.05" value="1" aria-label="${esc(t.volume)}"></div></div><p class="wave-player-status" role="status"></p></div>`;}
+function initCrisalidaPlayer(){
+ const root=document.querySelector('.wave-player');if(!root)return;
+ const audio=root.querySelector('audio'),ui=root.querySelector('.wave-player-ui'),toggle=root.querySelector('.wave-toggle'),seek=root.querySelector('.wave-position'),volume=root.querySelector('.wave-volume input'),time=root.querySelector('.wave-time'),progress=root.querySelector('clipPath rect'),status=root.querySelector('[role="status"]'),t=C.crisalidaPlayer;
+ const format=value=>{const seconds=Math.max(0,Math.floor(value||0));return Math.floor(seconds/60)+':'+String(seconds%60).padStart(2,'0');};
+ function update(){const duration=Number.isFinite(audio.duration)&&audio.duration>0?audio.duration:t.duration;seek.value=String(Math.round(audio.currentTime/duration*1000));seek.setAttribute('aria-valuetext',format(audio.currentTime)+' de '+format(duration));progress.setAttribute('width',String(Math.min(750,audio.currentTime/duration*750)));time.textContent=format(audio.currentTime)+' / '+format(duration);toggle.setAttribute('aria-label',audio.paused?t.play:t.pause);toggle.querySelector('span').textContent=audio.paused?'▶':'Ⅱ';}
+ function fallback(){audio.controls=true;ui.hidden=true;status.textContent=t.error;}
+ toggle.addEventListener('click',async()=>{try{if(audio.paused){await audio.play();status.textContent='';}else audio.pause();}catch(error){if(error.name!=='AbortError')fallback();}});
+ // Si aún no hay metadatos, cargar antes de aplicar la posición solicitada.
+ let pendingSeek=null;
+ seek.addEventListener('input',()=>{const fraction=Number(seek.value)/1000;if(audio.readyState>=1&&Number.isFinite(audio.duration)){audio.currentTime=fraction*audio.duration;update();}else{pendingSeek=fraction;audio.load();}});
+ audio.addEventListener('loadedmetadata',()=>{if(pendingSeek!==null){audio.currentTime=pendingSeek*audio.duration;pendingSeek=null;}update();});
+ volume.addEventListener('input',()=>{audio.volume=Number(volume.value);});
+ audio.addEventListener('volumechange',()=>{volume.value=String(audio.volume);});
+ for(const name of ['play','pause','ended','timeupdate','durationchange'])audio.addEventListener(name,update);
+ audio.addEventListener('error',fallback);update();audio.controls=false;ui.hidden=false;
+}
 function opening(){return `<section class="workspace" aria-labelledby="welcome-title"><h2 id="welcome-title">${esc(C.welcome.title)}</h2><p class="lead">${esc(C.welcome.greeting)}</p><p class="small">${esc(C.welcome.instructions)}</p><p>${esc(C.assistance.notesIntro)}</p>${orientation()}${savingPanel()}<p>${esc(C.welcome.audioLead)}</p><section class="listening-focus" aria-label="Una pregunta para acompañar la bienvenida"><p class="quote">${esc(C.listening.welcomeQuestion)}</p><p>${esc(C.listening.welcomeHint)}</p>${audioMarkup(C.welcome.audio,'Bienvenida')}</section><details><summary>${esc(C.listening.readingLabel)}</summary><p>${esc(C.listening.readingHint)}</p><p>${esc(C.welcome.body)}</p><p>${esc(C.welcome.script)}</p></details></section>
 <section class="chapter" id="larva" aria-labelledby="larva-title"><div class="story-grid"><aside class="visual organism-panel">${organism('loose','larva-form')}<p class="visual-caption">Larva · Las partes están disponibles</p></aside><div><p class="eyebrow">01 · Larva</p><h2 id="larva-title">${esc(C.larva.title)}</h2><p class="lead">${esc(C.larva.intro)}</p><div class="step"><p>${esc(C.larva.parts)}</p><div class="component-definitions">${briefDefinitions(C.components.map(c=>({title:c.name,body:c.meaning})))}</div></div><div class="step"><p class="quote">${esc(C.larva.question)}</p><p>${esc(C.larva.bridge)}</p></div></div></div></section>
-<section class="chapter" id="crisalida" aria-labelledby="crisalida-title"><p class="eyebrow">02–03 · Crisálida</p><h2 id="crisalida-title">Construir relaciones</h2><section class="concept-audio listening-focus" aria-label="Una pregunta para acompañar Crisálida"><p class="quote">${esc(C.listening.crisalidaQuestion)}</p><p>${esc(C.listening.crisalidaHint)}</p>${audioMarkup(C.crisalidaAudio,'Crisálida. Construir relaciones')}<p class="small">También podés seguir las ideas de este tramo por escrito.</p></section><div class="story-grid"><aside class="visual organism-panel" id="concept-visual">${conceptOrganism('gather')}<p class="visual-caption" id="concept-caption">Crisálida · Las partes empiezan a relacionarse</p></aside><div>${C.concepts.map((c,i)=>`<article class="step concept-step" data-concept="${i}" id="${c.id}">${c.source?`<p class="eyebrow">${bibliographyMention(c.source)}</p>`:''}<h3 class="concept-title">${esc(c.title)}</h3>${c.layout?metaphorConcept(c):`${paras(c.paragraphs)}${c.audio?audioMarkup(c.audio,c.title):''}<p class="quote">${esc(c.question)}</p>`}</article>`).join('')}<details><summary>Si querés seguir pensando en las metáforas</summary>${paras(C.optionalBorges.paragraphs)}<p class="small">${esc(C.optionalBorges.source)}</p></details></div></div></section>`;}
+<section class="chapter" id="crisalida" aria-labelledby="crisalida-title"><p class="eyebrow">02–03 · Crisálida</p><h2 id="crisalida-title">Construir relaciones</h2><section class="concept-audio listening-focus" aria-label="Una pregunta para acompañar Crisálida"><p class="quote">${esc(C.listening.crisalidaQuestion)}</p><p>${esc(C.listening.crisalidaHint)}</p>${crisalidaPlayer()}<p class="small">También podés seguir las ideas de este tramo por escrito.</p></section><div class="story-grid"><aside class="visual organism-panel" id="concept-visual">${conceptOrganism('gather')}<p class="visual-caption" id="concept-caption">Crisálida · Las partes empiezan a relacionarse</p></aside><div>${C.concepts.map((c,i)=>`<article class="step concept-step" data-concept="${i}" id="${c.id}">${c.source?`<p class="eyebrow">${bibliographyMention(c.source)}</p>`:''}<h3 class="concept-title">${esc(c.title)}</h3>${c.layout?metaphorConcept(c):`${paras(c.paragraphs)}${c.audio?audioMarkup(c.audio,c.title):''}<p class="quote">${esc(c.question)}</p>`}</article>`).join('')}<details><summary>Si querés seguir pensando en las metáforas</summary>${paras(C.optionalBorges.paragraphs)}<p class="small">${esc(C.optionalBorges.source)}</p></details></div></div></section>`;}
 function ending(){return `<section class="chapter" id="reencuentro" aria-labelledby="reunion-title"><p class="eyebrow">07 · Reencuentro</p><h2 id="reunion-title">${esc(C.reunion.title)}</h2><p class="lead">${esc(C.reunion.intro)}</p><section class="listening-focus" aria-labelledby="curation-listening-title"><h3 id="curation-listening-title">${esc(C.listening.curationQuestion)}</h3><p>${esc(C.listening.curationHint)}</p><ul class="curation-cards">${C.listening.curationCards.map(card=>`<li><h4>${esc(card.title)}</h4><p>${esc(card.body)}</p></li>`).join('')}</ul>${audioMarkup(C.curation.audio,'Autor-curador. Seleccionar, relacionar y disponer')}<p class="small">Una mirada sobre el trabajo de autor-curador con ${bibliographyMention('Odetti (2012)')}.</p></section><details><summary>${esc(C.listening.readingLabel)}</summary><p>${esc(C.listening.readingHint)}</p><p>${bibliographyMention(C.curation.paragraph)}</p><h3>Qué significa seleccionar, relacionar y disponer</h3>${briefDefinitions(C.curation.ops)}</details><div class="dimension-buttons" role="group" aria-label="Dimensiones de comparación">${C.reunion.dimensions.map((d,i)=>`<button class="secondary" data-dimension="${i}" aria-pressed="${i===0}" aria-controls="comparison">${esc(d.title)}</button>`).join('')}</div><div id="comparison" class="workspace"></div><p class="note">${esc(C.reunion.same)}</p><p>${esc(C.reunion.translation)}</p><p class="quote">${esc(C.reunion.question)}</p><a href="#elegir">Revisar el otro camino</a></section>
 <section class="chapter" id="mariposa" aria-labelledby="butterfly-title"><p class="eyebrow">08 · Mariposa</p><h2 id="butterfly-title">${esc(C.butterfly.title)}</h2><p class="lead">${esc(C.butterfly.intro)}</p><div class="story-grid"><aside class="visual organism-panel" id="butterfly-visual">${organism('wings','butterfly-form')}<p class="visual-caption">Mariposa · Las relaciones hacen visible una forma</p></aside><div><p>${esc(C.butterfly.lead)}</p><div class="connection-buttons" role="group" aria-label="Relaciones entre componentes">${C.butterfly.connections.map((c,i)=>`<button class="secondary" data-connection="${i}" aria-pressed="false" aria-controls="connection-description">${esc(c.title)}</button>`).join('')}</div><div class="workspace" id="connection-description"><p>Elegí una relación para revisarla en este módulo.</p></div><section class="reading-block"><h3>Qué puede aportar una metáfora a un OA</h3><ul>${C.butterfly.functions.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><p>${esc(C.butterfly.caution)}</p></section></div></div><section class="workspace journey-map" aria-labelledby="journey-map-title"><h3 id="journey-map-title">${esc(C.journeyMap.title)}</h3><p>${esc(C.journeyMap.intro)}</p><nav class="four-forms" aria-label="Volver a los momentos del recorrido">${C.journeyMap.stages.map((stage,i)=>`<figure>${organism(stage.form,'review-'+i)}<figcaption><a href="#${stage.target}">${esc(stage.title)}</a><p>${esc(stage.description)}</p></figcaption></figure>`).join('')}</nav></section></section>
 <section class="chapter" id="tu-objeto" aria-labelledby="transfer-title"><p class="eyebrow">09 · Del caso a tu objeto</p><h2 id="transfer-title">${esc(C.transfer.title)}</h2><p class="lead">${esc(C.transfer.intro)}</p><div class="evidence-buttons">${C.transfer.guideDownloads.map(file=>`<a class="button-link" href="${esc(file.href)}" download>${esc(file.label)}</a>`).join('')}</div><h3>${esc(C.transfer.forumTitle)}</h3><p>${esc(C.transfer.forumIntro)}</p></section>
@@ -904,6 +1101,8 @@ main.innerHTML=`<section class="hero"><span class="pill">${esc(C.hero.note)}</sp
 <section class="chapter" id="elegir" aria-labelledby="choose-title"><p class="eyebrow">02 · Dos caminos</p><h2 id="choose-title">${esc(C.choose.title)}</h2><p class="lead">${esc(C.choose.lead)}</p><p>${esc(C.choose.watch)}</p><p class="note">${esc(C.choose.note)}</p><div class="choices">${C.choose.paths.map(p=>`<article class="choice" data-card="${p.id}"><span class="symbol" aria-hidden="true">${p.symbol}</span><p class="small">${esc(p.label)}</p><h3>${esc(p.title)}</h3><p>${esc(p.body)}</p><button data-path="${p.id}" aria-pressed="false" aria-controls="investigation-content">${esc(p.button)}</button></article>`).join('')}</div></section>
 <section class="chapter" id="investigar" aria-labelledby="investigation-title"><p class="eyebrow">03 · Poner las piezas en relación</p><h2 id="investigation-title">La investigación</h2><p id="path-status" role="status">${esc(C.ui.noPath)}</p><div id="investigation-content"></div></section>
 ${ending()}`;
+
+initCrisalidaPlayer();
 
 /* El diálogo queda fuera de los fondos de etapa y devuelve el foco a su activador. */
 document.body.insertAdjacentHTML('beforeend',`<dialog id="bibliography-dialog" class="bibliography-dialog" aria-labelledby="bibliography-dialog-title" aria-describedby="bibliography-dialog-reference"><h2 id="bibliography-dialog-title">${esc(C.bibliographyPopup.title)}</h2><p id="bibliography-dialog-reference">${esc(C.bibliographyPopup.reference)}</p><p><a href="${esc(C.bibliographyPopup.url)}" target="_blank" rel="noopener noreferrer">${esc(C.bibliographyPopup.linkLabel)} <span class="small">(se abre en otra pestaña)</span></a></p><form method="dialog"><button autofocus>${esc(C.bibliographyPopup.closeLabel)}</button></form></dialog>`);

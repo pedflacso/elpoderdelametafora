@@ -145,3 +145,8 @@ La entrada distingue frase inicial, definición, dos ejemplos, posibilidades par
 ### Cajones del primer concepto
 
 La sección comienza con «Una metáfora puede ser…» y tres recuadros desplegables: figura retórica, manera de mover el pensamiento y ayuda para diseñar una experiencia. Sustituyen las separaciones con rayas de la versión anterior. Los tres se pueden abrir de manera independiente con controles nativos de teclado; no se suman actividades ni se altera el guardado de la nota.
+
+
+### Audio de Crisálida centrado
+
+El recuadro de escucha de Crisálida centra pregunta, orientación y alternativa escrita. El reproductor muestra la onda de amplitud calculada desde el MP3 final, progreso, reproducción/pausa, tiempo y volumen. Usa rangos nativos de teclado; no reproduce automáticamente. El reproductor original queda como respaldo ante un error. Las otras cápsulas conservan sus controles. No se agregan dependencias ni animaciones.
