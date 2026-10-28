@@ -72,7 +72,7 @@ Si una metáfora no aporta a lo que necesitás resolver, podés sostener la prop
 
 
 
-## 3. Revisá tu decisión antes de llevarla al foro
+## 3. Revisá tu decisión antes de entregar
 
 Volvé al aprendizaje que te propusiste favorecer. ¿La decisión que ensayaste ayuda a comprender el contenido, conectar las partes u orientar una acción? Pensá qué podrías observar al probar el objeto para reconocer si ese aporte ocurre.
 

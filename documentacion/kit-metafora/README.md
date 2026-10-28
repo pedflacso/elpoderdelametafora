@@ -22,3 +22,6 @@ Descargá `Kit_del_caso_a_tu_objeto_rellenable.pdf` y abrilo con un lector que a
 El archivo distribuido está vacío. Se verificaron tres páginas, doce campos únicos y multilínea, etiquetas, guardado y recuperación de respuestas con acentos y saltos de línea mediante PyMuPDF y pypdf, y las apariencias imprimibles. La prueba completada se conserva únicamente como archivo temporal, fuera del repositorio. No se afirma compatibilidad comprobada con todos los lectores o una auditoría completa de accesibilidad.
 
 Para regenerar los campos a partir del PDF imprimible, ejecutá `python documentacion/kit-metafora/generar_rellenable.py` desde la raíz del repositorio, con PyMuPDF instalado.
+
+
+La plantilla es el entregable. Se presenta en el espacio de entrega que defina el equipo, separado del foro de intercambio sobre metáforas. El último apartado dice «Revisá tu decisión antes de entregar».
