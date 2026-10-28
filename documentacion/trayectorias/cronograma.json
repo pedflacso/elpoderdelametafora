@@ -1,0 +1,116 @@
+{
+  "complete": [
+    {
+      "title": "Anatomía de un OA",
+      "weeks": 1,
+      "start": "2026-04-14",
+      "end": "2026-04-20",
+      "firstWeek": 1,
+      "lastWeek": 1,
+      "note": "Reconocer los componentes de un objeto de aprendizaje."
+    },
+    {
+      "title": "El poder de la metáfora",
+      "weeks": 2,
+      "start": "2026-04-21",
+      "end": "2026-05-04",
+      "firstWeek": 2,
+      "lastWeek": 3,
+      "note": "Pensar qué relaciones necesita construir el propio objeto."
+    },
+    {
+      "title": "Podcast · Frecuencia modulada",
+      "weeks": 4,
+      "start": "2026-05-05",
+      "end": "2026-06-01",
+      "firstWeek": 4,
+      "lastWeek": 7,
+      "note": "Tres semanas de cursada y una para el trabajo final."
+    },
+    {
+      "title": "Streaming",
+      "weeks": 5,
+      "start": "2026-06-02",
+      "end": "2026-07-06",
+      "firstWeek": 8,
+      "lastWeek": 12,
+      "note": "Cuatro semanas de cursada y una para el trabajo final."
+    },
+    {
+      "title": "Laboratorio de simulaciones",
+      "weeks": 4,
+      "start": "2026-07-07",
+      "end": "2026-08-03",
+      "firstWeek": 13,
+      "lastWeek": 16,
+      "note": "Una semana por movimiento, con sus entregas."
+    },
+    {
+      "title": "SCORM",
+      "weeks": 1,
+      "start": "2026-08-04",
+      "end": "2026-08-10",
+      "firstWeek": 17,
+      "lastWeek": 17,
+      "note": "Recorrido breve con demostración y autoevaluación."
+    }
+  ],
+  "common": [
+    {
+      "title": "Anatomía de un OA",
+      "weeks": 1,
+      "start": "2026-04-14",
+      "end": "2026-04-20",
+      "firstWeek": 1,
+      "lastWeek": 1,
+      "note": "Reconocer los componentes de un objeto de aprendizaje."
+    },
+    {
+      "title": "El poder de la metáfora",
+      "weeks": 2,
+      "start": "2026-04-21",
+      "end": "2026-05-04",
+      "firstWeek": 2,
+      "lastWeek": 3,
+      "note": "Pensar qué relaciones necesita construir el propio objeto."
+    },
+    {
+      "title": "SCORM",
+      "weeks": 1,
+      "start": "2026-05-05",
+      "end": "2026-05-11",
+      "firstWeek": 4,
+      "lastWeek": 4,
+      "note": "Recorrido breve con demostración y autoevaluación."
+    }
+  ],
+  "electives": [
+    {
+      "title": "Podcast · Frecuencia modulada",
+      "weeks": 4,
+      "start": "2026-05-12",
+      "end": "2026-06-08",
+      "firstWeek": 5,
+      "lastWeek": 8,
+      "note": "Ficha del episodio, guion didáctico y guion técnico-literario."
+    },
+    {
+      "title": "Streaming",
+      "weeks": 5,
+      "start": "2026-05-12",
+      "end": "2026-06-15",
+      "firstWeek": 5,
+      "lastWeek": 9,
+      "note": "Ficha inicial, storyline, sinopsis, escaleta y guion de un episodio."
+    },
+    {
+      "title": "Laboratorio de simulaciones",
+      "weeks": 4,
+      "start": "2026-05-12",
+      "end": "2026-06-08",
+      "firstWeek": 5,
+      "lastWeek": 8,
+      "note": "Informe, anteproyecto, prototipo y dossier final a lo largo del módulo."
+    }
+  ]
+}

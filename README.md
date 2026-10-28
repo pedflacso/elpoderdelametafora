@@ -104,3 +104,12 @@ Propuesta de guía en tres páginas, con la paleta violeta y dos alternativas de
 - [PDF para imprimir](descargas/Kit_del_caso_a_tu_objeto.pdf).
 - [Word editable](descargas/Kit_del_caso_a_tu_objeto.docx).
 - [Contenido e indicaciones](documentacion/kit-metafora/).
+
+
+## Dos trayectorias de cursada
+
+Propuesta con inicio el 14/04/2026: certificación completa de 17 semanas y recorrido por módulos con base común de 4 semanas y elección entre Podcast, Streaming y Simulaciones.
+
+- [Árbol y cronogramas](version-1-autoasistida/trayectorias/index.html).
+- [Cronograma editable en Excel](version-1-autoasistida/trayectorias/Cronograma_trayectorias_OA.xlsx).
+- [Fundamentos y criterios de planificación](documentacion/trayectorias/PROPUESTA.md).
