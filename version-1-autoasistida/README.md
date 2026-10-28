@@ -115,3 +115,8 @@ Larva invita a observar sin escritura. La asociación en Crisálida y las notas 
 ### Consulta bibliográfica de Lakoff y Johnson
 
 Las menciones a Lakoff y Johnson en Crisálida y en las referencias abren una ventana con la referencia APA y el enlace editorial a *Metáforas de la vida cotidiana*. El enlace abre Cátedra en otra pestaña. La ventana admite teclado, cierre con Escape y devolución del foco a la mención que la abrió. Los textos y el enlace se editan en `bibliographyPopup`, dentro del bloque JSON del HTML. Se comprobaron apertura, cierre y recuperación del foco en Chromium con ancho móvil.
+
+
+### Odetti y entrega de la plantilla
+
+La mención a Odetti en el reencuentro y su entrada en las referencias abren la referencia bibliográfica con enlace a PENT FLACSO, mediante la misma ventana accesible de Lakoff y Johnson. La actividad final consiste en descargar la plantilla, completarla y compartir el archivo en el foro; no requiere una respuesta adicional. Los enlaces a Moodle siguen pendientes.
