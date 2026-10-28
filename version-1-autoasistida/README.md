@@ -130,3 +130,8 @@ La plantilla completada se presenta como entregable en el espacio de entrega del
 ### Reemplazo de voces por grabaciones finales
 
 Se incorporaron los MP3 finales recibidos de Estudiante 1, Docente y Estudiante 2 en las voces del caso. Se conservan los archivos originales recibidos sin recodificación, con nombres nuevos para evitar reutilizar versiones anteriores de la caché. El manifiesto incluye origen, duración y SHA-256. Se comprobaron carga, reproducción y pausa exclusiva en Chromium. Los textos siguen siendo guiones de referencia, sin cotejo de transcripción. Las cuatro cápsulas numeradas también se reemplazaron con la correspondencia confirmada por el equipo: Audio 1, bienvenida; Audio 2, Crisálida; Audio 3, autor-curador/Odetti; Audio 4, presentación del caso. Los siete audios activos corresponden a las versiones finales recibidas.
+
+
+### Acompañamiento visual de los audios
+
+Bienvenida y Crisálida incorporan preguntas de escucha; el espacio de autor-curador muestra tres relaciones con la investigación ya realizada. Son propuestas editoriales de acompañamiento, no citas ni preguntas adicionales para entregar. Las ideas escritas de bienvenida y autor-curador siguen en apartados de lectura opcional, sin presentarse como transcripciones cotejadas. Se conserva el desarrollo conceptual de Crisálida, las combinaciones del caso, sus voces y actividades. El caso mantiene el apartado «Leer el caso completo». No hay reproducción automática ni animación dependiente de la duración del audio.
