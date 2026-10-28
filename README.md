@@ -150,3 +150,8 @@ La sección comienza con «Una metáfora puede ser…» y tres recuadros despleg
 ### Audio de Crisálida centrado
 
 El recuadro de escucha de Crisálida centra pregunta, orientación y alternativa escrita. El reproductor muestra la onda de amplitud calculada desde el MP3 final, progreso, reproducción/pausa, tiempo y volumen. Usa rangos nativos de teclado; no reproduce automáticamente. El reproductor original queda como respaldo ante un error. Las otras cápsulas conservan sus controles. No se agregan dependencias ni animaciones.
+
+
+### Reproductores visuales en todos los audios
+
+Los siete MP3 finales comparten reproductor con onda calculada del archivo correspondiente, reproducción/pausa, búsqueda, tiempo y volumen. Las instancias dinámicas de las ramas se inicializan al mostrarse, con identificadores SVG únicos. Se mantiene reproducción exclusiva, respaldo nativo y ausencia de autoplay. Se centra el acompañamiento de las cápsulas y se conservan las combinaciones de voces, lectura del caso y actividades. Se quita la onda decorativa anterior de las voces.
