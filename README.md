@@ -140,3 +140,8 @@ Bienvenida y Crisálida incorporan preguntas de escucha; el espacio de autor-cur
 ### Jerarquía visual del primer concepto de Crisálida
 
 La entrada distingue frase inicial, definición, dos ejemplos, posibilidades para el pensamiento y pregunta de diseño. La reflexión personal y su nota preceden a la lectura opcional sobre etimología. El gráfico reduce su altura y agrega conexiones entre las piezas; su epígrafe repetitivo queda disponible solo para lectores de pantalla. Los ejemplos no son botones y no se agregan actividades. Se mantiene la paleta violeta del módulo.
+
+
+### Cajones del primer concepto
+
+La sección comienza con «Una metáfora puede ser…» y tres recuadros desplegables: figura retórica, manera de mover el pensamiento y ayuda para diseñar una experiencia. Sustituyen las separaciones con rayas de la versión anterior. Los tres se pueden abrir de manera independiente con controles nativos de teclado; no se suman actividades ni se altera el guardado de la nota.
