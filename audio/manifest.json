@@ -1,31 +1,43 @@
 [
   {
     "id": "01-bienvenida",
-    "source_name": "01. Empieza el recorrido.m4a",
-    "mp3": "audio/01-bienvenida.mp3",
-    "duration_seconds": 97.02,
-    "size_bytes": 776563
+    "source_name": "Audio 1.mp3",
+    "mp3": "audio/01-bienvenida-final-432c9645.mp3",
+    "duration_seconds": 69.37,
+    "size_bytes": 1682403,
+    "sha256": "432c96451656654a8d7b403e5136bfbf8ebe7805d46867ec9ca15ed075782682",
+    "version": "final",
+    "placement": "Bienvenida"
   },
   {
     "id": "05-crisalida",
-    "source_name": "05. Crisálida · construir relaciones.m4a",
-    "mp3": "audio/05-crisalida.mp3",
-    "duration_seconds": 62.3,
-    "size_bytes": 498829
+    "source_name": "Audio 2.mp3",
+    "mp3": "audio/05-crisalida-final-a95ed608.mp3",
+    "duration_seconds": 55.61,
+    "size_bytes": 1352489,
+    "sha256": "a95ed608bf780b9faaa79cf47461cb379786730535371bc1818d37270309cb54",
+    "version": "final",
+    "placement": "Crisálida"
   },
   {
     "id": "06-autor-curador",
-    "source_name": "06. Curar y construir un recorrido  .m4a",
-    "mp3": "audio/06-autor-curador.mp3",
-    "duration_seconds": 75.83,
-    "size_bytes": 607080
+    "source_name": "Audio 3.mp3",
+    "mp3": "audio/06-autor-curador-final-44058dd9.mp3",
+    "duration_seconds": 48.1,
+    "size_bytes": 1172201,
+    "sha256": "44058dd92a8778d46273757aa25538243c22336d300f0e59cbdd3dd61839c9f5",
+    "version": "final",
+    "placement": "Autor-curador / Odetti"
   },
   {
     "id": "08-caso",
-    "source_name": "08. Apertura y presentación del caso .m4a",
-    "mp3": "audio/08-caso.mp3",
-    "duration_seconds": 64.31,
-    "size_bytes": 514920
+    "source_name": "Audio 4.mp3",
+    "mp3": "audio/08-caso-final-17b5df6b.mp3",
+    "duration_seconds": 69.94,
+    "size_bytes": 1696335,
+    "sha256": "17b5df6b78b4944fe38296578ed989a9583597b84eca0538c8c8b793cd340715",
+    "version": "final",
+    "placement": "Presentación del caso"
   },
   {
     "id": "12-estudiante-1",
