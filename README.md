@@ -108,7 +108,7 @@ Propuesta de guía en tres páginas, con la paleta violeta y dos alternativas de
 
 ## Dos trayectorias de cursada
 
-Propuesta con inicio el 14/04/2026: certificación completa de 21 semanas y recorrido por módulos con base común de 7 semanas y elección entre Podcast, Streaming y Simulaciones.
+Propuesta con inicio el 14/04/2026: certificación completa de 20 semanas y recorrido por módulos con base común de 6 semanas y elección entre Podcast, Streaming y Simulaciones.
 
 - [Árbol y cronogramas](version-1-autoasistida/trayectorias/index.html).
 - [Cronograma editable en Excel](version-1-autoasistida/trayectorias/Cronograma_trayectorias_OA.xlsx).
