@@ -130,6 +130,23 @@ textarea{caret-color:var(--accent)}
 #traslado details.reading-reference{background:transparent;border:0;border-top:1px solid currentColor;border-radius:0;margin-top:36px;padding:16px 0;font-size:.9rem}
 @media(min-width:760px){#crisalida>.story-grid{grid-template-columns:.65fr 1.35fr}}
 @media(max-width:759px){#concept-visual svg{max-height:230px}#traslado .concept-title{margin-top:8px}}
+/* Cajones de exploración nativos: abrir y cerrar con mouse o teclado. */
+#traslado .concept-title{max-width:none;margin-bottom:20px}
+.drawer-intro{font-size:1.12rem;max-width:44ch}
+.metaphor-drawers{display:grid;gap:18px;margin:28px 0 38px}
+#traslado details.metaphor-drawer{border:0;border-radius:20px;padding:0;box-shadow:0 5px 0 rgba(19,45,72,.14);overflow:visible;background:#f3f4fb;color:#132d48;--ink:#132d48;--muted:#132d48}
+#traslado details.drawer-2{background:#e4e0f1}#traslado details.drawer-3{background:#d1cae8}
+.metaphor-drawer summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px;list-style:none;border-radius:20px;font-size:1.25rem;line-height:1.35}
+.metaphor-drawer summary::-webkit-details-marker{display:none}
+.drawer-handle{width:34px;height:34px;flex:0 0 34px;border-radius:50%;background:#5b538e;color:#fff;display:grid;place-items:center}
+.drawer-handle:before{content:'+';font-size:24px;font-weight:400;line-height:1}
+.metaphor-drawer[open] .drawer-handle:before{content:'−'}
+.drawer-content{padding:0 24px 24px}.drawer-content p:first-child{margin-top:0}.drawer-content p:last-child{margin-bottom:0}
+.drawer-examples{display:grid;gap:18px;margin:24px 0 0}.drawer-examples div{padding:18px;border-radius:14px;background:rgba(124,116,181,.13)}
+.drawer-examples dt{font-size:1.1rem;font-weight:700}.drawer-examples dd{margin:8px 0 0;font-size:.95rem}
+#traslado .reflection-invitation{border:0;padding-top:4px}
+#traslado details.reading-reference{border:0;margin-top:24px}
+@media(max-width:759px){.metaphor-drawer summary{padding:20px;font-size:1.15rem}.drawer-content{padding:0 20px 20px}}
 </style>
 </head>
 <body>
@@ -415,7 +432,7 @@ textarea{caret-color:var(--accent)}
   "concepts": [
     {
       "id": "traslado",
-      "title": "Una metáfora puede mover el pensamiento",
+      "title": "Una metáfora puede ser…",
       "source": "",
       "paragraphs": [
         "Una metáfora puede ser algo más que una figura retórica. En el lenguaje, nos permite nombrar algo a partir de otra cosa con la que encontramos una semejanza. Cuando decimos «tus ojos son dos luceros», relacionamos los ojos con el brillo de las estrellas. Cuando decimos «el tiempo es oro», destacamos su valor.",
@@ -452,7 +469,39 @@ textarea{caret-color:var(--accent)}
           "imaginar una forma de actuar"
         ],
         "designIntro": "En un objeto de aprendizaje, esa posibilidad abre una pregunta de diseño.",
-        "designQuestion": "¿Podría ayudarnos a organizar el contenido y orientar lo que hace quien aprende?"
+        "designQuestion": "¿Podría ayudarnos a organizar el contenido y orientar lo que hace quien aprende?",
+        "drawerHint": "Abrí los recuadros para explorar estas posibilidades. Podés volver a cerrarlos cuando quieras.",
+        "drawers": [
+          {
+            "title": "Una figura retórica",
+            "paragraphs": [
+              "En el lenguaje, nos permite nombrar algo a partir de otra cosa con la que encontramos una semejanza."
+            ],
+            "examples": [
+              {
+                "phrase": "Tus ojos son dos luceros",
+                "relation": "Relacionamos los ojos con el brillo de las estrellas."
+              },
+              {
+                "phrase": "El tiempo es oro",
+                "relation": "Destacamos el valor del tiempo."
+              }
+            ]
+          },
+          {
+            "title": "Una manera de mover el pensamiento",
+            "paragraphs": [
+              "A nosotros nos interesa explorar qué más puede hacer esa relación. Una metáfora puede ayudarnos a mirar algo conocido desde otra perspectiva, reconocer conexiones o imaginar una forma de actuar."
+            ]
+          },
+          {
+            "title": "Una ayuda para diseñar una experiencia",
+            "paragraphs": [
+              "En un objeto de aprendizaje, esa posibilidad abre una pregunta de diseño.",
+              "¿Podría ayudarnos a organizar el contenido y orientar lo que hace quien aprende?"
+            ]
+          }
+        ]
       }
     },
     {
@@ -828,7 +877,8 @@ function visual(){return `<aside class="visual" id="case-visual"><svg viewBox="0
 function organism(mode,id){const layouts={loose:[[30,30,-18],[230,25,15],[115,130,-8],[285,180,20],[20,260,8],[180,290,-15]],gather:[[90,40,-12],[210,60,12],[80,160,0],[215,170,0],[90,270,10],[220,275,-10]],cocoon:[[135,25,0],[135,85,0],[135,145,0],[135,205,0],[135,265,0],[135,325,0]],open:[[110,25,-8],[170,85,8],[90,145,-15],[185,205,15],[110,265,-12],[170,325,12]],wings:[[90,60,-28],[200,65,28],[45,160,-18],[250,160,18],[90,265,20],[210,265,-20]]};const colors=['#d7d3e9','#e9e6f3','#d1cde5','#e2deef','#fbe9e3','#dcd8ec'];const positions=layouts[mode];return `<svg class="organism ${mode}" viewBox="0 0 400 440" role="img" aria-labelledby="${id}-title ${id}-desc"><title id="${id}-title">${esc({loose:'Las seis partes disponibles',gather:'Las partes empiezan a acercarse',cocoon:'Una forma en construcción',open:'Las partes empiezan a desplegarse',wings:'Las mismas partes conectadas'}[mode])}</title><desc id="${id}-desc">Propósitos, contenidos, actividades, orientaciones, recursos y retroalimentación. ${mode==='wings'?'Se distribuyen a ambos lados de un eje y evocan alas.':'Su disposición acompaña este momento del recorrido.'}</desc>${mode==='wings'?'<path d="M145 95 L255 100 L305 195 L265 310 L145 310 L100 195 Z M145 95 L265 310 M255 100 L145 310" class="organism-links" fill="none" stroke="#7c74b5" stroke-width="2"/>':''}${positions.map(([x,y,a],i)=>`<g class="segment" data-component="${i}" transform="translate(${x} ${y}) rotate(${a} 55 35)"><path d="M8 8 C30 -6 89 -2 106 15 C126 33 107 63 87 69 C54 83 2 69 0 40 C-3 25 0 16 8 8Z" fill="${colors[i]}" stroke="#7c74b5" stroke-width="1.2"/><text x="54" y="39" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" fill="#132d48">${esc(C.components[i].name)}</text></g>`).join('')}</svg>`;}
 function noteBox(id,label,placeholder=''){return `<label for="${id}">${esc(label)}</label><textarea class="personal-note" id="${id}" placeholder="${esc(placeholder)}"></textarea>`;}
 /* Composición editorial del primer concepto; el contenido sigue siendo editable en JSON. */
-function metaphorConcept(c){const t=c.layout;return `<p class="metaphor-lead">${esc(t.lead)}</p><p>${esc(t.definition)}</p><dl class="metaphor-examples">${t.examples.map(e=>`<div><dt>«${esc(e.phrase)}»</dt><dd>${esc(e.relation)}</dd></div>`).join('')}</dl><div class="metaphor-pivot"><p>${esc(t.pivot)}</p><p>Una metáfora puede ayudarnos a</p><ul class="metaphor-possibilities">${t.possibilities.map(x=>`<li><strong>${esc(x)}</strong></li>`).join('')}</ul></div><div class="metaphor-design"><p>${esc(t.designIntro)}</p><p>${esc(t.designQuestion)}</p></div><section class="reflection-invitation" aria-label="Una pausa para pensar"><p>${esc(c.question)}</p><details><summary>Una nota para volver a tu asociación</summary>${noteBox('association-note',c.note,'Por ejemplo: el tiempo como río…')}</details></section><details class="reading-reference"><summary>${esc(c.reading.title)}</summary>${paras(c.reading.paragraphs)}</details>`;}
+function metaphorConcept(c){const t=c.layout;return `<p class="drawer-intro">Una metáfora puede ser algo más que una figura retórica.</p><p class="small">${esc(t.drawerHint)}</p><div class="metaphor-drawers">${t.drawers.map((drawer,i)=>`<details class="metaphor-drawer drawer-${i+1}"><summary><span class="drawer-label">${esc(drawer.title)}</span><span class="drawer-handle" aria-hidden="true"></span></summary><div class="drawer-content">${paras(drawer.paragraphs)}${drawer.examples?`<dl class="drawer-examples">${drawer.examples.map(e=>`<div><dt>«${esc(e.phrase)}»</dt><dd>${esc(e.relation)}</dd></div>`).join('')}</dl>`:''}</div></details>`).join('')}</div><section class="reflection-invitation" aria-label="Una pausa para pensar"><p>${esc(c.question)}</p><details><summary>Una nota para volver a tu asociación</summary>${noteBox('association-note',c.note,'Por ejemplo: el tiempo como río…')}</details></section><details class="reading-reference"><summary>${esc(c.reading.title)}</summary>${paras(c.reading.paragraphs)}</details>`;}
+
 function conceptOrganism(mode){let svg=organism(mode,'concept-form');if(mode==='gather'){svg=svg.replace('<g class="segment"',`<path d="M145 75 Q205 20 265 95 M145 75 Q80 135 135 195 M265 95 Q320 150 270 205 M135 195 Q200 155 270 205 M135 195 Q75 250 145 305 M270 205 Q325 270 275 310 M145 305 Q210 365 275 310" fill="none" stroke="currentColor" stroke-width="2" opacity=".45" aria-hidden="true"/><g class="segment"`);}return svg;}
 function opening(){return `<section class="workspace" aria-labelledby="welcome-title"><h2 id="welcome-title">${esc(C.welcome.title)}</h2><p class="lead">${esc(C.welcome.greeting)}</p><p class="small">${esc(C.welcome.instructions)}</p><p>${esc(C.assistance.notesIntro)}</p>${orientation()}${savingPanel()}<p>${esc(C.welcome.audioLead)}</p><section class="listening-focus" aria-label="Una pregunta para acompañar la bienvenida"><p class="quote">${esc(C.listening.welcomeQuestion)}</p><p>${esc(C.listening.welcomeHint)}</p>${audioMarkup(C.welcome.audio,'Bienvenida')}</section><details><summary>${esc(C.listening.readingLabel)}</summary><p>${esc(C.listening.readingHint)}</p><p>${esc(C.welcome.body)}</p><p>${esc(C.welcome.script)}</p></details></section>
 <section class="chapter" id="larva" aria-labelledby="larva-title"><div class="story-grid"><aside class="visual organism-panel">${organism('loose','larva-form')}<p class="visual-caption">Larva · Las partes están disponibles</p></aside><div><p class="eyebrow">01 · Larva</p><h2 id="larva-title">${esc(C.larva.title)}</h2><p class="lead">${esc(C.larva.intro)}</p><div class="step"><p>${esc(C.larva.parts)}</p><div class="component-definitions">${briefDefinitions(C.components.map(c=>({title:c.name,body:c.meaning})))}</div></div><div class="step"><p class="quote">${esc(C.larva.question)}</p><p>${esc(C.larva.bridge)}</p></div></div></div></section>
