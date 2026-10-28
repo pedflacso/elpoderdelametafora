@@ -100,3 +100,8 @@ Eclosión vuelve al fondo original `#8a85bf` y usa texto negro `#000000`, inclui
 Los círculos se interpretan como colores de recuadros y gráficos, no como colores obligatorios de fuente. Apoyos: Larva `#7c74b5`, Crisálida `#8a85bf`, Eclosión `#b9b4da` y Mariposa `#f3f4fb`. Se aplican a tarjetas, gráficos, evidencias, notas y ayudas, manteniendo visible el lienzo de la etapa.
 
 Cada superficie define su propio color de texto: negro en los apoyos violetas/lilas, azul `#132d48` en los casi blancos. Mariposa conserva blanco en el texto directo del lienzo y cambia a azul dentro de recuadros claros. Los botones seleccionados conservan su inversión legible. Se verificaron muestras con contraste de al menos 4,5:1, estados seleccionados y hover, las dos ramas, persistencia y ancho móvil.
+
+
+### Guía para compartir en el foro
+
+«Del caso a tu objeto» ofrece la plantilla en PDF rellenable y Word editable, incluida en `descargas/`. Reemplaza los campos de esa sección. Las respuestas guardadas en versiones anteriores siguen disponibles al descargar las notas desde el inicio. Los enlaces a Moodle se incorporarán más adelante.
