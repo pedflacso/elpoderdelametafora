@@ -110,3 +110,8 @@ Cada superficie define su propio color de texto: negro en los apoyos violetas/li
 ### Pausas y descarga de notas
 
 Larva invita a observar sin escritura. La asociación en Crisálida y las notas de relación son opcionales. El caso conserva la interpretación inicial y una explicación posterior que integra la revisión de esa primera idea, sin una segunda respuesta de metarreflexión. La bienvenida explica estas posibilidades. Al final se descargan solo respuestas no vacías y zonas con piezas seleccionadas, identificadas por consigna y camino. Se preservan también las respuestas antiguas, aunque sus campos ya no se muestren. La plantilla para el foro sigue siendo independiente.
+
+
+### Consulta bibliográfica de Lakoff y Johnson
+
+Las menciones a Lakoff y Johnson en Crisálida y en las referencias abren una ventana con la referencia APA y el enlace editorial a *Metáforas de la vida cotidiana*. El enlace abre Cátedra en otra pestaña. La ventana admite teclado, cierre con Escape y devolución del foco a la mención que la abrió. Los textos y el enlace se editan en `bibliographyPopup`, dentro del bloque JSON del HTML. Se comprobaron apertura, cierre y recuperación del foco en Chromium con ancho móvil.
