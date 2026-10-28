@@ -135,3 +135,8 @@ Se incorporaron los MP3 finales recibidos de Estudiante 1, Docente y Estudiante 
 ### Acompañamiento visual de los audios
 
 Bienvenida y Crisálida incorporan preguntas de escucha; el espacio de autor-curador muestra tres relaciones con la investigación ya realizada. Son propuestas editoriales de acompañamiento, no citas ni preguntas adicionales para entregar. Las ideas escritas de bienvenida y autor-curador siguen en apartados de lectura opcional, sin presentarse como transcripciones cotejadas. Se conserva el desarrollo conceptual de Crisálida, las combinaciones del caso, sus voces y actividades. El caso mantiene el apartado «Leer el caso completo». No hay reproducción automática ni animación dependiente de la duración del audio.
+
+
+### Jerarquía visual del primer concepto de Crisálida
+
+La entrada distingue frase inicial, definición, dos ejemplos, posibilidades para el pensamiento y pregunta de diseño. La reflexión personal y su nota preceden a la lectura opcional sobre etimología. El gráfico reduce su altura y agrega conexiones entre las piezas; su epígrafe repetitivo queda disponible solo para lectores de pantalla. Los ejemplos no son botones y no se agregan actividades. Se mantiene la paleta violeta del módulo.
