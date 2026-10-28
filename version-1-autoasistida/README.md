@@ -105,3 +105,8 @@ Cada superficie define su propio color de texto: negro en los apoyos violetas/li
 ### Guía para compartir en el foro
 
 «Del caso a tu objeto» ofrece la plantilla en PDF rellenable y Word editable, incluida en `descargas/`. Reemplaza los campos de esa sección. Las respuestas guardadas en versiones anteriores siguen disponibles al descargar las notas desde el inicio. Los enlaces a Moodle se incorporarán más adelante.
+
+
+### Pausas y descarga de notas
+
+Larva invita a observar sin escritura. La asociación en Crisálida y las notas de relación son opcionales. El caso conserva la interpretación inicial y una explicación posterior que integra la revisión de esa primera idea, sin una segunda respuesta de metarreflexión. La bienvenida explica estas posibilidades. Al final se descargan solo respuestas no vacías y zonas con piezas seleccionadas, identificadas por consigna y camino. Se preservan también las respuestas antiguas, aunque sus campos ya no se muestren. La plantilla para el foro sigue siendo independiente.
