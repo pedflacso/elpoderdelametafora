@@ -2,115 +2,165 @@
   "complete": [
     {
       "title": "Anatomía de un OA",
-      "weeks": 1,
-      "start": "2026-04-14",
-      "end": "2026-04-20",
-      "firstWeek": 1,
-      "lastWeek": 1,
-      "note": "Reconocer los componentes de un objeto de aprendizaje."
-    },
-    {
-      "title": "El poder de la metáfora",
+      "studyWeeks": 1,
+      "deliveryWeeks": 1,
       "weeks": 2,
-      "start": "2026-04-21",
-      "end": "2026-05-04",
-      "firstWeek": 2,
-      "lastWeek": 3,
-      "note": "Pensar qué relaciones necesita construir el propio objeto."
-    },
-    {
-      "title": "Podcast · Frecuencia modulada",
-      "weeks": 4,
-      "start": "2026-05-05",
-      "end": "2026-06-01",
-      "firstWeek": 4,
-      "lastWeek": 7,
-      "note": "Tres semanas de cursada y una para el trabajo final."
-    },
-    {
-      "title": "Streaming",
-      "weeks": 5,
-      "start": "2026-06-02",
-      "end": "2026-07-06",
-      "firstWeek": 8,
-      "lastWeek": 12,
-      "note": "Cuatro semanas de cursada y una para el trabajo final."
-    },
-    {
-      "title": "Laboratorio de simulaciones",
-      "weeks": 4,
-      "start": "2026-07-07",
-      "end": "2026-08-03",
-      "firstWeek": 13,
-      "lastWeek": 16,
-      "note": "Una semana por movimiento, con sus entregas."
+      "firstWeek": 1,
+      "lastWeek": 2,
+      "start": "2026-04-14",
+      "studyEnd": "2026-04-20",
+      "deliveryStart": "2026-04-21",
+      "end": "2026-04-27",
+      "forum": true
     },
     {
       "title": "SCORM",
-      "weeks": 1,
-      "start": "2026-08-04",
-      "end": "2026-08-10",
+      "studyWeeks": 1,
+      "deliveryWeeks": 1,
+      "weeks": 2,
+      "firstWeek": 3,
+      "lastWeek": 4,
+      "start": "2026-04-28",
+      "studyEnd": "2026-05-04",
+      "deliveryStart": "2026-05-05",
+      "end": "2026-05-11",
+      "forum": true
+    },
+    {
+      "title": "El poder de la metáfora",
+      "studyWeeks": 2,
+      "deliveryWeeks": 1,
+      "weeks": 3,
+      "firstWeek": 5,
+      "lastWeek": 7,
+      "start": "2026-05-12",
+      "studyEnd": "2026-05-25",
+      "deliveryStart": "2026-05-26",
+      "end": "2026-06-01",
+      "forum": true
+    },
+    {
+      "title": "Podcast · Frecuencia modulada",
+      "studyWeeks": 3,
+      "deliveryWeeks": 1,
+      "weeks": 4,
+      "firstWeek": 8,
+      "lastWeek": 11,
+      "start": "2026-06-02",
+      "studyEnd": "2026-06-22",
+      "deliveryStart": "2026-06-23",
+      "end": "2026-06-29",
+      "forum": true
+    },
+    {
+      "title": "Streaming",
+      "studyWeeks": 4,
+      "deliveryWeeks": 1,
+      "weeks": 5,
+      "firstWeek": 12,
+      "lastWeek": 16,
+      "start": "2026-06-30",
+      "studyEnd": "2026-07-27",
+      "deliveryStart": "2026-07-28",
+      "end": "2026-08-03",
+      "forum": true
+    },
+    {
+      "title": "Laboratorio de simulaciones",
+      "studyWeeks": 4,
+      "deliveryWeeks": 1,
+      "weeks": 5,
       "firstWeek": 17,
-      "lastWeek": 17,
-      "note": "Recorrido breve con demostración y autoevaluación."
+      "lastWeek": 21,
+      "start": "2026-08-04",
+      "studyEnd": "2026-08-31",
+      "deliveryStart": "2026-09-01",
+      "end": "2026-09-07",
+      "forum": true
     }
   ],
   "common": [
     {
       "title": "Anatomía de un OA",
-      "weeks": 1,
-      "start": "2026-04-14",
-      "end": "2026-04-20",
-      "firstWeek": 1,
-      "lastWeek": 1,
-      "note": "Reconocer los componentes de un objeto de aprendizaje."
-    },
-    {
-      "title": "El poder de la metáfora",
+      "studyWeeks": 1,
+      "deliveryWeeks": 1,
       "weeks": 2,
-      "start": "2026-04-21",
-      "end": "2026-05-04",
-      "firstWeek": 2,
-      "lastWeek": 3,
-      "note": "Pensar qué relaciones necesita construir el propio objeto."
+      "firstWeek": 1,
+      "lastWeek": 2,
+      "start": "2026-04-14",
+      "studyEnd": "2026-04-20",
+      "deliveryStart": "2026-04-21",
+      "end": "2026-04-27",
+      "forum": true
     },
     {
       "title": "SCORM",
-      "weeks": 1,
-      "start": "2026-05-05",
-      "end": "2026-05-11",
-      "firstWeek": 4,
+      "studyWeeks": 1,
+      "deliveryWeeks": 1,
+      "weeks": 2,
+      "firstWeek": 3,
       "lastWeek": 4,
-      "note": "Recorrido breve con demostración y autoevaluación."
+      "start": "2026-04-28",
+      "studyEnd": "2026-05-04",
+      "deliveryStart": "2026-05-05",
+      "end": "2026-05-11",
+      "forum": true
+    },
+    {
+      "title": "El poder de la metáfora",
+      "studyWeeks": 2,
+      "deliveryWeeks": 1,
+      "weeks": 3,
+      "firstWeek": 5,
+      "lastWeek": 7,
+      "start": "2026-05-12",
+      "studyEnd": "2026-05-25",
+      "deliveryStart": "2026-05-26",
+      "end": "2026-06-01",
+      "forum": true
     }
   ],
   "electives": [
     {
       "title": "Podcast · Frecuencia modulada",
+      "studyWeeks": 3,
+      "deliveryWeeks": 1,
       "weeks": 4,
-      "start": "2026-05-12",
-      "end": "2026-06-08",
-      "firstWeek": 5,
-      "lastWeek": 8,
-      "note": "Ficha del episodio, guion didáctico y guion técnico-literario."
+      "firstWeek": 8,
+      "lastWeek": 11,
+      "start": "2026-06-02",
+      "studyEnd": "2026-06-22",
+      "deliveryStart": "2026-06-23",
+      "end": "2026-06-29",
+      "forum": true
     },
     {
       "title": "Streaming",
+      "studyWeeks": 4,
+      "deliveryWeeks": 1,
       "weeks": 5,
-      "start": "2026-05-12",
-      "end": "2026-06-15",
-      "firstWeek": 5,
-      "lastWeek": 9,
-      "note": "Ficha inicial, storyline, sinopsis, escaleta y guion de un episodio."
+      "firstWeek": 8,
+      "lastWeek": 12,
+      "start": "2026-06-02",
+      "studyEnd": "2026-06-29",
+      "deliveryStart": "2026-06-30",
+      "end": "2026-07-06",
+      "forum": true
     },
     {
       "title": "Laboratorio de simulaciones",
-      "weeks": 4,
-      "start": "2026-05-12",
-      "end": "2026-06-08",
-      "firstWeek": 5,
-      "lastWeek": 8,
-      "note": "Informe, anteproyecto, prototipo y dossier final a lo largo del módulo."
+      "studyWeeks": 4,
+      "deliveryWeeks": 1,
+      "weeks": 5,
+      "firstWeek": 8,
+      "lastWeek": 12,
+      "start": "2026-06-02",
+      "studyEnd": "2026-06-29",
+      "deliveryStart": "2026-06-30",
+      "end": "2026-07-06",
+      "forum": true
     }
-  ]
+  ],
+  "completeProject": "Diseñar un objeto de aprendizaje propio.",
+  "planningNote": "El diseño del objeto propio se plantea durante el recorrido. No se agrega una semana independiente para una entrega integradora; su articulación con los trabajos de módulo queda pendiente de definición."
 }
