@@ -125,3 +125,8 @@ La mención a Odetti en el reencuentro y su entrada en las referencias abren la 
 ### Separación entre entregable y foro
 
 La plantilla completada se presenta como entregable en el espacio de entrega del aula. El foro tiene otra dinámica: intercambiar metáforas que les estudiantes están pensando para sus contenidos. El equipo prevé abrirlo con un audio sobre la metáfora de este módulo y otro ejemplo sobre IA y micelio. Esas piezas van directamente en el foro, no en el scrollytelling. No se incorporaron audios ni enlaces ficticios. Esta definición reemplaza las indicaciones anteriores de subir la plantilla al foro. Los PDF y Word también actualizan el título del último apartado a «Revisá tu decisión antes de entregar».
+
+
+### Reemplazo de voces por grabaciones finales
+
+Se incorporaron los MP3 finales recibidos de Estudiante 1, Docente y Estudiante 2 en las voces del caso. Se conservan los archivos originales recibidos sin recodificación, con nombres nuevos para evitar reutilizar versiones anteriores de la caché. El manifiesto incluye origen, duración y SHA-256. Se comprobaron carga, reproducción y pausa exclusiva en Chromium. Los textos siguen siendo guiones de referencia, sin cotejo de transcripción. Las cuatro cápsulas numeradas esperan confirmación de correspondencia antes de reemplazarlas.

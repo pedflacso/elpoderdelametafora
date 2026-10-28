@@ -29,23 +29,32 @@
   },
   {
     "id": "12-estudiante-1",
-    "source_name": "12. Estudiante 1.m4a",
-    "mp3": "audio/12-estudiante-1.mp3",
-    "duration_seconds": 12.33,
-    "size_bytes": 99051
+    "source_name": "Estudiante 1.mp3",
+    "mp3": "audio/12-estudiante-1-final-78801477.mp3",
+    "duration_seconds": 8.12,
+    "size_bytes": 207745,
+    "sha256": "7880147769e3d9f105ef00c4a3d572a437256dea442b6150932d35b8a479a43e",
+    "version": "final",
+    "placement": "Voz de Estudiante 1"
   },
   {
     "id": "12-docente",
-    "source_name": "12. docente.m4a",
-    "mp3": "audio/12-docente.mp3",
-    "duration_seconds": 8.23,
-    "size_bytes": 66275
+    "source_name": "Docente.mp3",
+    "mp3": "audio/12-docente-final-7bd935a0.mp3",
+    "duration_seconds": 9.25,
+    "size_bytes": 234812,
+    "sha256": "7bd935a03203b8113ab35e751ec6438a003cfc229ed252403a3462c01682f470",
+    "version": "final",
+    "placement": "Voz docente"
   },
   {
     "id": "12-estudiante-2",
-    "source_name": "12. Estudiante 2.m4a",
-    "mp3": "audio/12-estudiante-2.mp3",
-    "duration_seconds": 13.04,
-    "size_bytes": 104693
+    "source_name": "Estudiante 2.mp3",
+    "mp3": "audio/12-estudiante-2-final-12390ebb.mp3",
+    "duration_seconds": 10.64,
+    "size_bytes": 268225,
+    "sha256": "12390ebb8386003514f001662ca1d2a378d921be61f4bb76711e19e9831d74bb",
+    "version": "final",
+    "placement": "Voz de Estudiante 2"
   }
 ]
