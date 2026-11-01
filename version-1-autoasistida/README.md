@@ -263,3 +263,8 @@ La lectura de etimología y semejanzas se abre desde un rótulo con icono origin
 ### Ejemplo de Aristóteles
 
 La lectura opcional incorpora la analogía día/atardecer y vida/vejez del capítulo 21 de la Poética. El texto se identifica como paráfrasis, sin cita literal ni número de página no cotejado de la edición de 1974. Dos relaciones visuales acompañan la explicación.
+
+
+### Grafismos de tinta e hilo
+
+Los cuatro grafismos enviados por el equipo sustituyen las formas genéricas de las etapas. Larva reúne las partes alrededor del entramado; Crisálida vincula los términos con hilos que salen de la envoltura; Eclosión conserva actividad, guía y pregunta en el dibujo que se abre; Mariposa permite destacar relaciones sobre el despliegue final. Las versiones de montaje tienen transparencia y los hilos y textos son capas independientes. Se conservan todos los esquemas educativos del caso, incluida la caja negra, y las actividades. El movimiento reducido muestra las conexiones completas.
