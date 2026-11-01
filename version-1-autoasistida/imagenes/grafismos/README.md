@@ -7,3 +7,5 @@ Los hilos coloreados son SVG independientes de las imágenes. Las etiquetas y de
 La animación de los hilos acompaña el scroll, sin reproducción automática de audio ni ocultación de textos. Con movimiento reducido, se muestran las conexiones completas. El mapa final recupera las cuatro imágenes. Las rutas, descripciones y pies se editan en `inkArt` del JSON del HTML.
 
 Se redujo el peso conjunto de los WebP de aproximadamente 3,6 MB a 1,9 MB. Los nombres incluyen una huella de contenido para distinguir las versiones y evitar reutilizar archivos antiguos. Larva se precarga; Larva y Crisálida se solicitan desde el inicio.
+
+La versión activa utiliza ahora los PNG originales de montaje, conservando los WebP anteriores. El manifiesto describe los PNG activos.

@@ -324,3 +324,5 @@ Autores con popup destacados en naranja. Aristóteles cuenta con popup bibliogr�
 Popup de Aristóteles actualizado con el enlace al PDF trilingüe proporcionado por la usuaria, alojado en Desarmando la cultura (WordPress). La descarga desde el entorno sigue bloqueada; se incorpora el enlace provisto sin afirmar cotejo del PDF.
 
 Recuperación de grafismos ante errores de carga: si una imagen WebP falla desde Pages, se solicita la copia del mismo archivo en el commit cd1f9cb de GitHub. Se probaron la carga normal y la recuperación de las 13 instancias, simulando fallos de la ruta local y sirviendo la copia alternativa. El servidor público de Pages no es accesible desde el entorno de revisión.
+
+Ante el reporte persistente de imágenes ausentes, se utilizan los PNG originales transparentes en lugar de WebP para descartar compatibilidad de formato. Se verificaron las 13 imágenes cargadas y Larva/Crisálida con dimensiones y opacidad visibles en Chromium. La causa en la página pública aún no se pudo reproducir por el bloqueo de acceso del entorno.
