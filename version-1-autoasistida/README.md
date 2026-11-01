@@ -243,3 +243,8 @@ Los tres textos iniciales conservan su contenido y unifican tamaño (19 px de ba
 ### Precisión de la entrada y las preguntas de Larva
 
 La bienvenida introduce «un objeto de aprendizaje». Larva pregunta cómo conectar las partes para que funcionen juntas dentro de un objeto de aprendizaje y propone explícitamente una metáfora como modo de conectarlas.
+
+
+### Orientación sin duplicar el entregable
+
+La aclaración sobre avanzar a ritmo propio suma un icono de tiempo. Se elimina del mapa inicial el bloque repetido «Una plantilla como entregable»; la indicación de descarga y entrega y la invitación al foro siguen en «Del caso a tu objeto».
