@@ -160,3 +160,8 @@ Los siete MP3 finales comparten reproductor con onda calculada del archivo corre
 ### Esquema visual de autor-curador
 
 El reencuentro incorpora «De los materiales a un recorrido», en lugar de las tres tarjetas de texto anteriores. Materiales del caso, selección, relaciones y disposición se sintetizan con SVG originales, preguntas breves y superficies claras en violetas complementarios. El propósito de aprendizaje orienta el conjunto. El esquema es estático y completamente legible sin animación, se apila en celular y no exige interacciones adicionales. Las figuras son decorativas: toda la información está en texto visible, con orden de lectura lógico. Mantiene el reproductor y la referencia de Odetti. Los textos se editan en `curationScheme` del JSON.
+
+
+### Vínculos visuales por segmento
+
+La selección de materiales se expresa como «Seleccionar materiales que contribuyan al propósito de enseñanza». Larva usa un mosaico con iconos de sus seis componentes; Crisálida conserva los cajones y añade puentes entre los términos de los ejemplos; el caso se presenta como expediente sin adelantar la explicación; autor-curador conserva sus tres decisiones; la comparación usa secuencia y red en paralelo; Mariposa mantiene la red de componentes interactiva; el objeto propio presenta una bifurcación de decisiones sin botones adicionales. Los SVG son originales y decorativos, con su significado expresado en texto visible. Los datos de apoyo están en `segmentVisuals`. Se conserva la paleta de cada etapa.
