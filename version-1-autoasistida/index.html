@@ -2721,7 +2721,11 @@ function refreshInkMotion(){
  const reduced=media.matches||userReduced,height=window.innerHeight;
  document.querySelectorAll('[data-ink-stage]').forEach(scene=>{
   const rect=scene.getBoundingClientRect();
-  const progress=reduced?1:Math.max(0,Math.min(1,(height*.92-rect.top)/(height*.65+Math.min(rect.height,height)*.25)));
+  // Larva completa los hilos al entrar: la relación debe verse antes de empezar a leer las partes.
+  const isLarva=scene.dataset.inkStage==='larva';
+  const start=isLarva?height*1.15:height*.92;
+  const distance=isLarva?height*.25:height*.65+Math.min(rect.height,height)*.25;
+  const progress=reduced?1:Math.max(0,Math.min(1,(start-rect.top)/distance));
   scene.style.setProperty('--ink-progress',String(progress));
   scene.classList.toggle('ink-motion',!reduced);
  });
