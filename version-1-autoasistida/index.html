@@ -3135,6 +3135,19 @@ if(location.hash){const destination=document.getElementById(decodeURIComponent(l
 document.addEventListener('input',()=>{scheduleSave();});
 document.addEventListener('click',e=>{if(restoring)return;if(e.target.closest('[data-path]')){checkpoint='investigar';userNavigated=true;}if(e.target.closest('[data-transfer]')){checkpoint='tu-objeto';userNavigated=true;}if(e.target.closest('[data-path],[data-zone],[data-evidence],[data-transfer],[data-connection],#reveal,#motion'))scheduleSave();});
 document.addEventListener('input',e=>{if(e.target.id==='case-first-note'){const view=document.getElementById('first-interpretation');if(view)view.textContent=e.target.value||'Podés recordar lo que pensabas al conocer el caso.';}});
+// Recuperar los grafismos desde la copia versionada si falla el recurso de Pages.
+const inkBackupBase='https://raw.githubusercontent.com/pedflacso/elpoderdelametafora/cd1f9cb/version-1-autoasistida/';
+function recoverInkImage(img){
+ if(!(img instanceof HTMLImageElement)||img.dataset.inkFallback)return;
+ const src=img.getAttribute('src')||'',match=src.match(/(?:^|\/)imagenes\/grafismos\/([^/?#]+\.webp)(?:[?#].*)?$/);
+ if(!match)return;
+ img.dataset.inkFallback='true';
+ const backup=inkBackupBase+'imagenes/grafismos/'+match[1];
+ img.src=backup;
+ if(img.classList.contains('eclosion-art'))document.querySelectorAll('.eclosion-wing-color').forEach(wing=>wing.style.setProperty('--eclosion-mask',`url("${backup}")`));
+}
+document.addEventListener('error',event=>recoverInkImage(event.target),true);
+document.querySelectorAll('img').forEach(img=>{if(img.complete&&!img.naturalWidth)recoverInkImage(img);});
 document.addEventListener('load',event=>{if(event.target instanceof HTMLImageElement&&event.target.matches('.ink-current,.ink-previous'))scheduleInkMotion();},true);
 window.addEventListener('scroll',scheduleInkMotion,{passive:true});
 window.addEventListener('resize',scheduleInkMotion);
