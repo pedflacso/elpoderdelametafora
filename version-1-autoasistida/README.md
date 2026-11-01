@@ -198,3 +198,8 @@ Las fichas seleccionadas de la zona durazno usan naranja `#c34c16`, con contrast
 ### Elección de caminos como bifurcación visual
 
 La elección parte de un mismo caso con voces y evidencias, abre dos entradas con iconografía de escucha y exploración y converge en construir una explicación. Los botones conservan sus atributos y el guardado de estado. Se distingue escucha secuenciada de exploración con conexiones revisables, sin cambiar las actividades. El reencuentro se anticipa en el pie del esquema. Los textos se editan en `choose.scheme`.
+
+
+### Color en la elección de caminos
+
+Escucha usa naranja `#c34c16` y exploración azul `#132d48`, ambos con texto e iconos blancos y botones claros. Las selecciones suman marca y contorno. El blanco sobre naranja alcanza 4,81:1. Se conservan las conexiones del esquema y la paleta violeta del lienzo.
