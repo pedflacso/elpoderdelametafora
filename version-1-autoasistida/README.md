@@ -316,3 +316,5 @@ Comparación con organización espacial: Podcast ocupa el centro de cuatro círc
 Relaciones de la mariposa: el botón seleccionado se marca en lila; los dos componentes y sus hilos se iluminan en naranja. Al cambiar de relación se actualizan ambos estados.
 
 Se amplían los centros de la comparación: podcast como círculo principal y artefacto como ícono de pantalla de gran tamaño, sin tarjeta envolvente. Ambos diagramas se muestran uno debajo del otro.
+
+Se refuerzan los rellenos de selección de la mariposa: naranja #ff9b55 en los componentes y lila #c7bce6 en el botón activo.
