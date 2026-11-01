@@ -288,3 +288,8 @@ El trazado empieza antes de que el grafismo entre en pantalla y se completa cuan
 ### Transformación entre etapas
 
 Desde Crisálida, cada composición retoma el grafismo anterior y pasa al actual mediante escala y fundido ligados al scroll. Crisálida concentra el entramado; Eclosión abre la envoltura; Mariposa completa el despliegue. Se reutilizan los cuatro archivos existentes, sin generar nuevas imágenes ni modificar sus trazos. Las imágenes decorativas anteriores se excluyen de la lectura accesible. Las etiquetas permanecen visibles. Con movimiento reducido se presenta directamente la forma final de cada etapa.
+
+
+### Mesa de conexiones en el camino podcast
+
+La tabla de voces y evidencias se reemplaza por una mesa de selección. Cada persona elige una voz y una evidencia; sus textos se muestran próximos y un hilo señala la relación a explorar, sin corrección automática ni explicaciones prefijadas. La nota opcional se conserva al cambiar las piezas. Las elecciones se guardan junto con las notas y se incluyen en la descarga. Se puede volver al testimonio sonoro desde la tarjeta. Los controles son botones nativos con `aria-pressed`, con foco conservado al actualizar las tarjetas. La rama artefacto mantiene sus actividades.

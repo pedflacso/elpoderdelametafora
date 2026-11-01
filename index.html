@@ -556,6 +556,33 @@ p,li,dd{overflow-wrap:break-word}
 @media(max-width:420px){#butterfly-visual .ink-previous{height:270px}}
 @media(prefers-reduced-motion:reduce){.ink-transition .ink-previous{display:none!important}.ink-transition .ink-current{transform:none!important;opacity:1!important}}
 .no-motion .ink-transition .ink-previous{display:none!important}.no-motion .ink-transition .ink-current{transform:none!important;opacity:1!important}
+/* Comparar consiste en elegir piezas y verlas próximas; el hilo no impone una interpretación. */
+.pair-board{margin:26px 0;color:#132d48}
+.pair-selectors{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:30px}
+.pair-selectors h4{display:flex;align-items:center;gap:10px;font-size:1.05rem;margin:0 0 14px;line-height:1.4}
+.pair-selectors h4 svg{width:28px;height:28px;flex:0 0 28px;color:#5b538e}
+.pair-options{display:flex;flex-wrap:wrap;gap:10px}
+#investigation-content .pair-options button{font-size:1rem;background:#f3f4fb;color:#132d48;border:1px solid #5b538e;padding:10px 15px;min-height:44px;line-height:1.5}
+#investigation-content .pair-options [data-pair-voice][aria-pressed="true"]{background:#c34c16;color:#fff;border-color:#c34c16}
+#investigation-content .pair-options [data-pair-evidence][aria-pressed="true"]{background:#132d48;color:#fff;border-color:#132d48}
+#investigation-content .pair-options button:focus-visible{outline:3px solid #132d48;outline-offset:4px}
+.pair-composition{display:grid;grid-template-columns:minmax(0,1fr) 150px minmax(0,1fr);align-items:center;gap:18px}
+.pair-source-card{padding:26px 24px;border-radius:24px;background:#fff0e8;min-height:220px;min-width:0}
+.pair-evidence-card{background:#e0e9ef}
+.pair-source-type{font-size:.95rem;font-weight:500;color:#5b538e;margin:0 0 10px}
+.pair-source-card h4{font-size:1.15rem;margin:0 0 16px;line-height:1.4}
+.pair-source-card p,.pair-source-card blockquote{font-size:1rem;line-height:1.75;margin:0}
+.pair-source-card .pair-source-type{font-size:.95rem;margin-bottom:10px}
+.pair-source-card a{display:inline-block;font-size:.95rem;color:#5b538e;margin-top:18px;text-underline-offset:4px}
+.pair-empty-icon{display:block;width:38px;height:38px;margin-bottom:18px;color:#5b538e}
+.pair-link{text-align:center;color:#5b538e}.pair-link svg{display:block;width:100%;height:56px;fill:none;stroke:#5b538e;stroke-width:2;stroke-dasharray:5 7}
+.pair-link strong{display:block;font-size:1rem;line-height:1.5;margin-top:12px}
+.has-pair .pair-link svg{stroke:#c34c16;stroke-dasharray:none;stroke-width:3}
+.pair-link-hint{text-align:center;font-size:1rem;max-width:760px;margin:24px auto 12px}
+.pair-status{text-align:center;font-size:.95rem;line-height:1.6;max-width:800px;margin:0 auto;color:#132d48}
+@media(max-width:899px){.pair-selectors{grid-template-columns:1fr;gap:22px}.pair-composition{grid-template-columns:1fr}.pair-link{display:flex;align-items:center;justify-content:center;gap:14px}.pair-link svg{width:80px;height:44px}.pair-link strong{margin:0}.pair-source-card{min-height:0}.pair-link-hint{text-align:left}.pair-status{text-align:left}}
+@media(max-width:420px){.pair-source-card{padding:22px 18px}.pair-options{gap:8px}#investigation-content .pair-options button{padding:10px 13px}}
+#mesa-conexiones{scroll-margin-top:7rem}
 </style>
 </head>
 <body>
@@ -2695,6 +2722,18 @@ p,li,dd{overflow-wrap:break-word}
     ],
     "question": "¿Qué ocurrió entre estas dos piezas?",
     "caption": "El diseño empieza a abrirse a la mirada. Vamos a investigar cómo se vivió esa experiencia."
+  },
+  "pairBoard": {
+    "voiceTitle": "Elegí una voz",
+    "evidenceTitle": "Elegí una evidencia",
+    "voiceEmpty": "Al elegir una voz, vas a poder releer acá su testimonio.",
+    "evidenceEmpty": "Al elegir una evidencia, vas a poder consultar acá lo que aporta.",
+    "linkLabel": "¿Qué relación encontrás?",
+    "linkHint": "Qué muestra cada pieza y qué podés comprender al ponerlas juntas.",
+    "initialStatus": "Podés probar distintas combinaciones. Tu nota se conserva cuando cambiás las piezas.",
+    "listenAgain": "Volver a escuchar esta voz",
+    "voiceLabel": "Voz",
+    "evidenceLabel": "Evidencia"
   }
 }
 </script>
@@ -2710,7 +2749,7 @@ const details=xs=>xs.map(x=>`<details><summary>${esc(x.title)}</summary><p>${esc
 /* Las definiciones breves se leen de corrido, sin abrir cada título. */
 const briefDefinitions=xs=>`<dl class="brief-definitions">${xs.map(x=>`<div><dt>${esc(x.title)}</dt><dd>${esc(x.body)}</dd></div>`).join('')}</dl>`;
 const visibleTexts=xs=>xs.map(x=>`<section class="visible-text"><h4>${esc(x.title)}</h4><p>${esc(x.body)}</p></section>`).join('');
-const state={path:null,podcast:{note:'',explanation:'',revealed:false,visited:new Set(),active:null,meta:''},artefacto:{explanation:'',revealed:false,visited:new Set(),active:null,meta:'',zones:[new Set(),new Set(),new Set()]}};
+const state={path:null,podcast:{compareVoice:'',compareEvidence:'',note:'',explanation:'',revealed:false,visited:new Set(),active:null,meta:''},artefacto:{explanation:'',revealed:false,visited:new Set(),active:null,meta:'',zones:[new Set(),new Set(),new Set()]}};
 let audioPlayerSequence=0;
 function audioMarkup(src,text){
  if(!src)return `<p class="small">${esc(C.ui.audioMissing)}</p>`;
@@ -2866,16 +2905,30 @@ function applyStageBackgrounds(){
 applyStageBackgrounds();
 
 /* Mapa sonoro: reúne testimonios sin convertir sus relaciones en una explicación anticipada. */
+/* Mesa de conexiones: elegir no equivale a acertar; la relación la construye quien aprende. */
+function pairBoard(){const t=C.pairBoard;return `<section class="pair-board" id="mesa-conexiones" aria-label="Vincular una voz y una evidencia"><div class="pair-selectors"><div><h4>${learningIcon(0)}${esc(t.voiceTitle)}</h4><div class="pair-options" role="group" aria-label="${esc(t.voiceTitle)}">${C.voices.map(v=>`<button type="button" data-pair-voice="${esc(v.id)}" aria-pressed="false" aria-controls="pair-voice-card">${esc(v.name)}</button>`).join('')}</div></div><div><h4>${learningIcon(1)}${esc(t.evidenceTitle)}</h4><div class="pair-options" role="group" aria-label="${esc(t.evidenceTitle)}">${C.evidence.filter(e=>e.id!=='guia').map(e=>`<button type="button" data-pair-evidence="${esc(e.id)}" aria-pressed="false" aria-controls="pair-evidence-card">${esc(e.title)}</button>`).join('')}</div></div></div><div class="pair-composition"><article id="pair-voice-card" class="pair-source-card pair-voice-card"></article><div class="pair-link"><svg viewBox="0 0 160 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0 28C30 0 50 56 80 28s50-28 80 0"/></svg><strong>${esc(t.linkLabel)}</strong></div><article id="pair-evidence-card" class="pair-source-card pair-evidence-card"></article></div><p class="pair-link-hint">${esc(t.linkHint)}</p><p class="pair-status" id="pair-status" role="status"></p></section>`;}
+function updatePairBoard(){
+ const board=document.querySelector('.pair-board');if(!board)return;
+ const t=C.pairBoard,v=C.voices.find(x=>x.id===state.podcast.compareVoice),e=C.evidence.find(x=>x.id===state.podcast.compareEvidence&&x.id!=='guia');
+ const voiceCard=document.getElementById('pair-voice-card'),evidenceCard=document.getElementById('pair-evidence-card');
+ voiceCard.innerHTML=v?`<p class="pair-source-type">${esc(t.voiceLabel)}</p><h4>${esc(v.name)}</h4><blockquote>«${esc(v.text)}»</blockquote><a href="#sound-voice-title-${C.voices.indexOf(v)}">${esc(t.listenAgain)}</a>`:`<span class="pair-empty-icon">${learningIcon(0)}</span><p>${esc(t.voiceEmpty)}</p>`;
+ evidenceCard.innerHTML=e?`<p class="pair-source-type">${esc(t.evidenceLabel)}</p><h4>${esc(e.title)}</h4><p>${esc(e.body)}</p>`:`<span class="pair-empty-icon">${learningIcon(1)}</span><p>${esc(t.evidenceEmpty)}</p>`;
+ board.querySelectorAll('[data-pair-voice]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.pairVoice===v?.id)));
+ board.querySelectorAll('[data-pair-evidence]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.pairEvidence===e?.id)));
+ board.classList.toggle('has-pair',Boolean(v&&e));
+ document.getElementById('pair-status').textContent=v&&e?v.name+' y '+e.title+': ahora podés explorar qué relación encontrás entre estas piezas.':t.initialStatus;
+}
+document.addEventListener('click',event=>{const voice=event.target.closest('[data-pair-voice]'),evidence=event.target.closest('[data-pair-evidence]');if(voice||evidence){if(voice)state.podcast.compareVoice=voice.dataset.pairVoice;if(evidence)state.podcast.compareEvidence=evidence.dataset.pairEvidence;updatePairBoard();scheduleSave();}});
 function soundPortrait(index){return `<svg viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="36" cy="25" r="10"/><path d="M17 59v-5a19 19 0 0 1 38 0v5M24 23a12 12 0 0 1 24 0"/>${index===1?'<path d="M49 45h12v10H49m4-10v10"/>':'<path d="M18 23v11m36-11v11M14 31h7v10h-7zM51 31h7v10h-7z"/>'}</svg>`;}
 function soundMap(){const t=C.soundMap;return `<section class="sound-map" aria-labelledby="sound-map-title"><header class="sound-map-heading"><span class="sound-map-symbol">${learningIcon(0)}</span><h3 id="sound-map-title">${esc(t.title)}</h3><p>${esc(t.intro)}</p></header><div class="sound-map-question"><p>${esc(t.question)}</p></div><svg class="sound-map-links" viewBox="0 0 900 95" preserveAspectRatio="none" aria-hidden="true"><path d="M450 0v20M450 20Q150 20 150 95M450 20v75M450 20Q750 20 750 95"/><path d="M150 80Q300 15 450 80Q600 15 750 80" class="sound-map-orbit"/></svg><div class="sound-voices" role="group" aria-label="${esc(t.connection)}">${C.voices.map((v,i)=>`<article class="sound-voice sound-voice-${i+1}" aria-labelledby="sound-voice-title-${i}"><div class="sound-voice-person"><span class="sound-portrait">${soundPortrait(i)}</span><h4 id="sound-voice-title-${i}">${esc(v.name)}</h4></div>${audioMarkup(v.audio,v.name)}<p class="sound-reference">${esc(t.referenceLabel)}</p><blockquote>«${esc(v.text)}»</blockquote><div class="sound-pause"><span>${esc(t.pauseLabel)}</span><p>${esc(C.podcast.steps[i])}</p></div></article>`).join('')}</div><p class="sound-map-caption">${esc(t.caption)}</p></section>`;}
 function voice(v,i){return `<article class="voice"><h3>${esc(v.name)}</h3>${audioMarkup(v.audio,v.name)}<p class="small">Guion de referencia del testimonio</p><blockquote>«${esc(v.text)}»</blockquote>${i===undefined?'':`<p class="pause">${esc(C.podcast.steps[i])}</p>`}</article>`;}
 function evidenceList(explore){const items=explore?[{id:'voz',title:C.ui.voicePiece},...C.evidence]:C.evidence.filter(e=>e.id!=='guia');return `<div class="evidence-buttons" role="group" aria-label="Piezas consultables">${items.map(e=>`<button class="secondary" data-evidence="${e.id}" aria-pressed="false" aria-controls="evidence-body">${esc(e.title)}</button>`).join('')}</div><div id="evidence-body" class="evidence-body"><p>${esc(C.ui.evidenceHint)}</p></div>`;}
 function reflection(path){return `<div class="workspace reflection"><h3>${esc(C.reflection.title)}</h3><p>${esc(C.reflection.intro)}</p><section class="reading-block first-reading"><h4>Tu primera interpretación</h4><p class="first-interpretation" id="first-interpretation"></p></section>${hintMarkup()}<label for="explanation">${esc(C.reflection.label)}</label><textarea id="explanation" placeholder="${esc(C.reflection.placeholder)}" aria-describedby="privacy">${esc(state[path].explanation)}</textarea><p class="small" id="privacy">${esc(C.reflection.privacy)}</p><button id="copy" class="secondary">${esc(C.ui.copy)}</button><p class="small status" id="copy-status" role="status"></p><p>${esc(C.reflection.compareHelp)}</p><button id="reveal" aria-expanded="${state[path].revealed}" aria-controls="reconstruction">${esc(state[path].revealed?C.reflection.hide:C.reflection.reveal)}</button><section id="reconstruction" class="reconstruction" ${state[path].revealed?'':'hidden'}><h3>${esc(C.reflection.answerTitle)}</h3><p>${esc(C.reflection.answer)}</p><p class="small">${esc(C.reflection.caution)}</p><p>${esc(C.assistance.review)}</p></section></div>`;}
 function renderPath(path){const s=state[path],p=C[path];document.getElementById('investigation-title').textContent=p.title;document.getElementById('path-status').textContent=C.choose.paths.find(x=>x.id===path).label;let body='';
-if(path==='podcast')body=`<p class="note">${esc(p.audioNotice)}</p>${soundMap()}<div class="workspace"><h3>${esc(p.evidenceTitle)}</h3><p>${esc(p.evidenceIntro)}</p>${evidenceList(false)}</div><div class="workspace"><h3>${esc(p.contrastTitle)}</h3><p>${esc(p.contrastIntro)}</p><div class="table-scroll"><table><caption class="small">Voces y evidencias disponibles para comparar</caption><thead><tr><th scope="col">Voces</th><th scope="col">Evidencias</th></tr></thead><tbody><tr><td>${C.voices.map(v=>`<p><strong>${esc(v.name)}</strong><br>${esc(v.text)}</p>`).join('')}</td><td>${C.evidence.filter(e=>e.id!=='guia').map(e=>`<p><strong>${esc(e.title)}</strong><br>${esc(e.body)}</p>`).join('')}</td></tr></tbody></table></div><details><summary>Si te sirve, anotá una relación</summary><label for="contrast-note">${esc(p.contrastLabel)}</label><textarea id="contrast-note" placeholder="${esc(p.contrastPlaceholder)}">${esc(s.note)}</textarea><p class="small">${esc(C.reflection.privacy)}</p></details></div><div class="workspace"><h3>${esc(p.architectureTitle)}</h3><p>${esc(p.architectureIntro)}</p><div class="details-grid">${visibleTexts(p.nodes)}</div></div>`;
+if(path==='podcast')body=`<p class="note">${esc(p.audioNotice)}</p>${soundMap()}<div class="workspace"><h3>${esc(p.evidenceTitle)}</h3><p>${esc(p.evidenceIntro)}</p>${evidenceList(false)}</div><div class="workspace"><h3>${esc(p.contrastTitle)}</h3><p>${esc(p.contrastIntro)}</p>${pairBoard()}<details><summary>Si te sirve, anotá una relación</summary><label for="contrast-note">${esc(p.contrastLabel)}</label><textarea id="contrast-note" placeholder="${esc(p.contrastPlaceholder)}">${esc(s.note)}</textarea><p class="small">${esc(C.reflection.privacy)}</p></details></div><div class="workspace"><h3>${esc(p.architectureTitle)}</h3><p>${esc(p.architectureIntro)}</p><div class="details-grid">${visibleTexts(p.nodes)}</div></div>`;
 else body=`<div class="workspace"><h3>${esc(p.exploreTitle)}</h3><p>${esc(p.exploreIntro)}</p>${evidenceList(true)}</div><div class="workspace"><h3>${esc(p.relationsTitle)}</h3><p>${esc(p.relationsIntro)}</p><details><summary>Si te sirve, anotá la relación entre dos piezas</summary><label for="relation-note">Tu relación entre dos piezas — nota opcional</label><textarea id="relation-note" placeholder="${esc(C.ui.relationPlaceholder)}">${esc(s.relationNote||'')}</textarea><p class="small">${esc(C.reflection.privacy)}</p></details><div class="details-grid">${details(p.relations.map(r=>({title:r.title+' · Lectura posible',body:r.body})))}</div></div><div class="workspace evidence-organizer" id="ordenar-indicios"><h3>${esc(p.organizeTitle)}</h3><p>${esc(p.organizeIntro)}</p><div class="zones">${p.zones.map((z,i)=>`<div class="zone"><h3>${esc(z)}</h3><div role="group" aria-label="${esc(z)}">${p.pieces.map((piece,j)=>`<button data-zone="${i}" data-piece="${j}" aria-pressed="${s.zones[i].has(j)}"><span class="zone-check" aria-hidden="true">✓</span>${esc(piece)}</button>`).join('')}</div></div>`).join('')}</div></div>`;
 document.getElementById('investigation-content').innerHTML=`<div class="path-head"><p class="lead">${esc(p.intro)}</p><button id="switch-path" class="secondary">${esc(C.ui.switch)}</button></div>${body}${reflection(path)}<p class="note">${esc(p.closing)}</p><div class="workspace"><a class="button-link" href="#reencuentro">${esc(C.branchEnd.button)}</a></div>`;
-initAudioPlayers();
+initAudioPlayers();updatePairBoard();
 document.getElementById('first-interpretation').textContent=personalNotes['case-first-note']||'No dejaste una nota. Podés recordar lo que pensabas al conocer el caso y compararlo con lo que encontraste.';const active=s.active;if(active)showEvidence(active);else updateEvidenceButtons();
 document.getElementById('explanation').addEventListener('input',e=>s.explanation=e.target.value);
 const relationNote=document.getElementById('relation-note');if(relationNote)relationNote.addEventListener('input',e=>s.relationNote=e.target.value);const note=document.getElementById('contrast-note');if(note)note.addEventListener('input',e=>s.note=e.target.value);
@@ -2919,6 +2972,11 @@ function notesText(){
  for(const path of ['podcast','artefacto']){
   const s=state[path],entries=[];
   const item=(label,value)=>{if(typeof value==='string'&&value.trim())entries.push(label+'\n'+value.trim());};
+  if(path==='podcast'){
+   const voice=C.voices.find(v=>v.id===s.compareVoice),evidence=C.evidence.find(e=>e.id===s.compareEvidence&&e.id!=='guia');
+   item('Voz elegida para relacionar',voice?voice.name+'\n'+voice.text:'');
+   item('Evidencia elegida para relacionar',evidence?evidence.title+'\n'+evidence.body:'');
+  }
   item(path==='podcast'?C.podcast.contrastLabel:'Mi relación entre dos piezas',path==='podcast'?s.note:s.relationNote);
   item(C.reflection.label,s.explanation);
   item('Reflexión guardada en una versión anterior',s.meta);
@@ -2957,7 +3015,7 @@ function scheduleSave(){if(restoring||corruptCopy!==null)return;clearTimeout(sav
 function selectPathWithoutJump(path){state.path=path;renderPath(path);document.querySelectorAll('[data-path]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.path===path));document.querySelectorAll('[data-card]').forEach(b=>b.dataset.selected=b.dataset.card===path);}
 function readSave(){let raw=null;try{raw=localStorage.getItem(STORAGE_KEY);}catch{storageBlocked=true;statusElement.textContent=C.assistance.unavailable;return;}if(!raw){writeSave();return;}try{const data=JSON.parse(raw);if(data.version!==1||!validNotes(data.notes)||!validNotes(data.branches)||!validNotes(data.transfer))throw Error('Formato de guardado incompatible');restoring=true;
 for(const [id,value] of Object.entries(data.notes)){if(typeof value==='string'){personalNotes[id]=value;const el=document.getElementById(id);if(el?.classList.contains('personal-note'))el.value=value;}}
-for(const path of ['podcast','artefacto']){const saved=data.branches[path];if(!validNotes(saved)||!Array.isArray(saved.visited))throw Error('Camino incompatible');const target=state[path];for(const key of ['note','explanation','meta','relationNote'])target[key]=stringValue(saved[key]);target.revealed=saved.revealed===true;target.visited=new Set(saved.visited.filter(x=>['voz','consigna','ubicacion','registro','guia'].includes(x)));target.active=target.visited.has(saved.active)?saved.active:null;if(path==='artefacto'){if(!Array.isArray(saved.zones)||saved.zones.length!==3)throw Error('Zonas incompatibles');target.zones=saved.zones.map(xs=>{if(!Array.isArray(xs))throw Error('Zona incompatible');return new Set(xs.filter(x=>Number.isInteger(x)&&x>=0&&x<C.artefacto.pieces.length));});}}
+for(const path of ['podcast','artefacto']){const saved=data.branches[path];if(!validNotes(saved)||!Array.isArray(saved.visited))throw Error('Camino incompatible');const target=state[path];for(const key of ['note','explanation','meta','relationNote','compareVoice','compareEvidence'])target[key]=stringValue(saved[key]);target.revealed=saved.revealed===true;target.visited=new Set(saved.visited.filter(x=>['voz','consigna','ubicacion','registro','guia'].includes(x)));target.active=target.visited.has(saved.active)?saved.active:null;if(path==='artefacto'){if(!Array.isArray(saved.zones)||saved.zones.length!==3)throw Error('Zonas incompatibles');target.zones=saved.zones.map(xs=>{if(!Array.isArray(xs))throw Error('Zona incompatible');return new Set(xs.filter(x=>Number.isInteger(x)&&x>=0&&x<C.artefacto.pieces.length));});}}
 for(const choice of ['metafora','otra'])transferState[choice]=Array.isArray(data.transfer[choice])?data.transfer[choice].map(stringValue):[];
 if(['metafora','otra'].includes(data.transfer.choice))transferState.choice=data.transfer.choice;
 if(['podcast','artefacto'].includes(data.branches.path))selectPathWithoutJump(data.branches.path);
