@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es-AR">
 <head>
-<link rel="preload" as="image" href="imagenes/grafismos/larva-4cc05216.webp" fetchpriority="high">
+<link rel="preload" as="image" href="imagenes/grafismos/larva-4cc05216.png" fetchpriority="high">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>El poder de la metáfora · Recorrido completo</title>
@@ -2764,28 +2764,28 @@ p,li,dd{overflow-wrap:break-word}
   },
   "inkArt": {
     "larva": {
-      "src": "imagenes/grafismos/larva-4cc05216.webp",
+      "src": "imagenes/grafismos/larva-4cc05216.png",
       "width": 1698,
       "height": 926,
       "alt": "Entramado horizontal de trazos de tinta y escritura, todavía dispersos.",
       "caption": "Larva · Las partes están disponibles."
     },
     "crisalida": {
-      "src": "imagenes/grafismos/crisalida-80c32686.webp",
+      "src": "imagenes/grafismos/crisalida-80c32686.png",
       "width": 1089,
       "height": 1444,
       "alt": "Los trazos de tinta se concentran en una envoltura vertical con forma de crisálida.",
       "caption": "Crisálida · Las partes empiezan a relacionarse."
     },
     "eclosion": {
-      "src": "imagenes/grafismos/eclosion-f2c91b6f.webp",
+      "src": "imagenes/grafismos/eclosion-f2c91b6f.png",
       "width": 1470,
       "height": 1070,
       "alt": "La envoltura de tinta comienza a abrirse en trazos que se despliegan hacia los lados.",
       "caption": "Eclosión · Una actividad, una guía y una relación por comprender."
     },
     "mariposa": {
-      "src": "imagenes/grafismos/mariposa-86a20bed.webp",
+      "src": "imagenes/grafismos/mariposa-86a20bed.png",
       "width": 1470,
       "height": 1070,
       "alt": "Los mismos grafismos forman una mariposa de alas abiertas, hecha de tinta e hilos de escritura.",
@@ -3136,10 +3136,10 @@ document.addEventListener('input',()=>{scheduleSave();});
 document.addEventListener('click',e=>{if(restoring)return;if(e.target.closest('[data-path]')){checkpoint='investigar';userNavigated=true;}if(e.target.closest('[data-transfer]')){checkpoint='tu-objeto';userNavigated=true;}if(e.target.closest('[data-path],[data-zone],[data-evidence],[data-transfer],[data-connection],#reveal,#motion'))scheduleSave();});
 document.addEventListener('input',e=>{if(e.target.id==='case-first-note'){const view=document.getElementById('first-interpretation');if(view)view.textContent=e.target.value||'Podés recordar lo que pensabas al conocer el caso.';}});
 // Recuperar los grafismos desde la copia versionada si falla el recurso de Pages.
-const inkBackupBase='https://raw.githubusercontent.com/pedflacso/elpoderdelametafora/cd1f9cb/version-1-autoasistida/';
+const inkBackupBase='https://raw.githubusercontent.com/pedflacso/elpoderdelametafora/main/version-1-autoasistida/';
 function recoverInkImage(img){
  if(!(img instanceof HTMLImageElement)||img.dataset.inkFallback)return;
- const src=img.getAttribute('src')||'',match=src.match(/(?:^|\/)imagenes\/grafismos\/([^/?#]+\.webp)(?:[?#].*)?$/);
+ const src=img.getAttribute('src')||'',match=src.match(/(?:^|\/)imagenes\/grafismos\/([^/?#]+\.(?:webp|png))(?:[?#].*)?$/);
  if(!match)return;
  img.dataset.inkFallback='true';
  const backup=inkBackupBase+'imagenes/grafismos/'+match[1];
