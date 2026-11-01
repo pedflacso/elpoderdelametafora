@@ -180,3 +180,8 @@ Larva presenta un esquema de propósito, actividad y retroalimentación con vín
 ### Contraste en Ordená los indicios
 
 Las tres zonas se distinguen con fondos claro, lila y durazno. Las fichas sin seleccionar tienen fondo blanco y texto azul; las seleccionadas usan violeta oscuro, texto blanco y una marca visible de selección, además de `aria-pressed`. Los cambios no alteran las selecciones ni su persistencia.
+
+
+### Mayor diferenciación del organizador de indicios
+
+El organizador usa base clara y zonas durazno, blanca y lila con mayor diferencia de luminosidad. Las selecciones son naranja oscuro, azul y violeta según la zona, conservando texto blanco y marca de selección.
