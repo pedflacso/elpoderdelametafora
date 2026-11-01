@@ -273,3 +273,8 @@ Los cuatro grafismos enviados por el equipo sustituyen las formas genéricas de 
 ### Acceso a Larva y carga de imágenes
 
 La bienvenida termina con un acceso explícito a «01 · Larva — Antes de tomar forma», acompañado por una miniatura del grafismo. Larva conserva su lugar como primer momento del recorrido después de la orientación. Se optimizan los WebP y se precarga Larva; los archivos nuevos llevan nombres con huella de contenido.
+
+
+### Nueva composición de Eclosión
+
+La etapa se presenta como una envoltura que se abre hacia dos piezas del caso. El grafismo conserva su transparencia; dos contornos y dos hilos independientes salen hacia actividad y guía, con iconos y explicaciones. Las piezas convergen en una pregunta por su relación, sin anticipar la explicación. Se mantienen la lectura del caso, audios, notas y caja negra. La apertura es sutil con scroll y estática con movimiento reducido. Textos editables en `eclosionReveal`.

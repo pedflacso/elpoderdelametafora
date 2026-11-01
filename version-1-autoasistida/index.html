@@ -514,6 +514,31 @@ p,li,dd{overflow-wrap:break-word}
 .welcome-to-larva>a strong{display:block;font-size:1.1rem;text-decoration:underline;text-underline-offset:4px}.welcome-to-larva>a strong+span{display:block;font-size:.95rem;margin-top:7px}
 .begin-arrow{margin-left:auto;font-size:1.8rem}.welcome-to-larva>a:focus-visible{outline:3px solid #132d48;outline-offset:4px}
 @media(max-width:599px){.welcome-to-larva>a{padding:16px;gap:12px}.begin-ink-preview{width:62px;flex-basis:62px}.begin-ink-preview img{height:56px}.begin-arrow{font-size:1.4rem}}
+/* Eclosión: el capullo se abre como un territorio de investigación. */
+#case-visual.eclosion-reveal-panel{background:transparent;padding:0;border:0}
+.eclosion-reveal{margin:0;color:#132d48;text-align:center;--thread-a:#ffd5b9;--thread-b:#132d48}
+.eclosion-kicker{font-size:.95rem;font-weight:600;letter-spacing:.08em;margin:0 0 8px}
+.eclosion-reveal>h3{font-size:1.5rem;font-weight:500;line-height:1.4;margin:0 auto 16px;max-width:24ch}
+.eclosion-opening{position:relative;isolation:isolate;height:290px}
+.eclosion-shell{position:absolute;inset:0;z-index:0;width:100%!important;height:100%!important;max-height:none!important;fill:none;stroke:#eee8f6;stroke-width:2;overflow:visible}
+.eclosion-shell .shell-thread{stroke:#f9cfb7;stroke-width:1.7}
+.eclosion-art{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:contain;pointer-events:none}
+.ink-motion .shell-left{transform:translateX(calc(-12px * var(--ink-progress)))}.ink-motion .shell-right{transform:translateX(calc(12px * var(--ink-progress)))}
+.eclosion-trails{display:block;width:100%!important;height:54px!important;max-height:none!important;overflow:visible;fill:none}
+.eclosion-trails .ink-thread{stroke-width:2.5}
+.eclosion-pieces{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
+.eclosion-piece{padding:20px 16px;background:#ffe0cf;border-radius:22px;color:#132d48;min-width:0}
+.eclosion-piece:nth-child(2){background:#dce6ed}
+.eclosion-piece>span{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:rgba(255,255,255,.55);margin:0 auto 12px;color:#5b538e}
+.eclosion-piece h4{font-size:1.1rem;margin:0 0 10px}.eclosion-piece p{font-size:1rem;line-height:1.6;margin:0}
+.eclosion-question-links{display:block;width:100%!important;height:45px!important;max-height:none!important;fill:none;stroke:#f3f4fb;stroke-width:2}
+.eclosion-question{display:flex;align-items:center;gap:12px;justify-content:center;padding:18px 20px;margin:0;background:#132d48;color:#fff;border-radius:22px;font-size:1rem;font-weight:500;line-height:1.6}
+.eclosion-question>span{flex:0 0 32px;display:grid;place-items:center;width:32px;height:32px;background:#e4ddf0;color:#132d48;border-radius:50%;font-size:1.15rem}
+.eclosion-reveal figcaption{font-size:.95rem;line-height:1.7;margin:20px auto 0;max-width:46ch}
+@media(max-width:759px){.eclosion-reveal{max-width:600px;margin:auto}.eclosion-opening{height:310px}.eclosion-piece{padding:20px}.eclosion-reveal>h3{font-size:1.35rem}}
+@media(max-width:420px){.eclosion-opening{height:250px}.eclosion-pieces{gap:12px}.eclosion-piece{padding:18px 12px}.eclosion-piece p{font-size:.95rem}.eclosion-question{padding:18px 14px;font-size:1rem}}
+@media(prefers-reduced-motion:reduce){.eclosion-shell path{transform:none!important}}
+.no-motion .eclosion-shell path{transform:none!important}
 </style>
 </head>
 <body>
@@ -2635,6 +2660,24 @@ p,li,dd{overflow-wrap:break-word}
       "alt": "Los mismos grafismos forman una mariposa de alas abiertas, hecha de tinta e hilos de escritura.",
       "caption": "Mariposa · Las mismas partes, otra forma."
     }
+  },
+  "eclosionReveal": {
+    "title": "Una relación por descubrir",
+    "eyebrow": "Eclosión",
+    "pieces": [
+      {
+        "title": "Actividad",
+        "body": "Lo que se propone hacer con el contenido.",
+        "icon": 2
+      },
+      {
+        "title": "Guía",
+        "body": "Los criterios disponibles para trabajar.",
+        "icon": 1
+      }
+    ],
+    "question": "¿Qué ocurrió entre estas dos piezas?",
+    "caption": "El diseño empieza a abrirse a la mirada. Vamos a investigar cómo se vivió esa experiencia."
   }
 }
 </script>
@@ -2684,7 +2727,8 @@ function refreshInkMotion(){
  });
 }
 function scheduleInkMotion(){if(inkMotionFrame)return;inkMotionFrame=requestAnimationFrame(()=>{inkMotionFrame=0;refreshInkMotion();});}
-function visual(){return `<aside class="visual ink-stage-panel ink-case-panel" id="case-visual">${stageArtwork('eclosion')}</aside>`;}
+/* Eclosión abre el entramado y lleva la atención hacia una relación del caso, sin resolverla. */
+function visual(){const t=C.eclosionReveal,art=C.inkArt.eclosion;return `<aside class="visual ink-stage-panel eclosion-reveal-panel" id="case-visual"><figure class="eclosion-reveal" data-ink-stage="eclosion" aria-labelledby="eclosion-reveal-title"><p class="eclosion-kicker">${esc(t.eyebrow)}</p><h3 id="eclosion-reveal-title">${esc(t.title)}</h3><div class="eclosion-opening"><svg class="eclosion-shell" viewBox="0 0 600 360" aria-hidden="true"><path class="shell-left" d="M294 28C175 43 112 120 130 210c12 64 74 112 149 127"/><path class="shell-right" d="M306 28c119 15 182 92 164 182-12 64-74 112-149 127"/><path class="shell-thread" d="M105 120c-45 20-49 63-14 76m418-76c45 20 49 63 14 76"/></svg><img class="eclosion-art" src="${esc(art.src)}" width="${art.width}" height="${art.height}" alt="${esc(art.alt)}" loading="lazy" decoding="async"></div><svg class="eclosion-trails" viewBox="0 0 600 70" preserveAspectRatio="none" aria-hidden="true"><path class="ink-thread" d="M300 0C295 40 145 2 145 68" pathLength="1"/><path class="ink-thread" d="M300 0C305 40 455 2 455 68" pathLength="1"/></svg><div class="eclosion-pieces">${t.pieces.map(piece=>`<div class="eclosion-piece"><span>${segmentIcon(piece.icon)}</span><h4>${esc(piece.title)}</h4><p>${esc(piece.body)}</p></div>`).join('')}</div><svg class="eclosion-question-links" viewBox="0 0 600 55" preserveAspectRatio="none" aria-hidden="true"><path d="M145 0v13q0 12 12 12h131q12 0 12 12v18m155-55v13q0 12-12 12H312q-12 0-12 12"/></svg><p class="eclosion-question"><span aria-hidden="true">?</span>${esc(t.question)}</p><figcaption>${esc(t.caption)}</figcaption></figure></aside>`;}
 // El título admite etiquetas del contenido editorial local.
 
 /* Las seis formas se reutilizan: cambia su disposición, no su identidad. */
