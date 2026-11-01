@@ -233,3 +233,8 @@ Roboto se conserva con base de 18 px, texto principal de 19 px e interlineado 1,
 ### Ciclo de investigación revisable
 
 La explicación de la metáfora de investigación presenta cuatro momentos: pregunta e hipótesis inicial, fuentes e indicios, comparación y análisis, explicación y revisión. La hipótesis revisable ocupa el centro. La adaptación se basa en la correspondencia con INTEF compartida por el equipo; se documenta su alcance en `documentacion/Investigacion_ciclo.md`. No se atribuye a la fuente un esquema gráfico copiado.
+
+
+### Aclaraciones de bienvenida
+
+Los tres textos iniciales conservan su contenido y unifican tamaño (19 px de base), peso, interlineado y ancho de lectura. Cada uno comienza con un pequeño SVG original para distinguir propósito, orientaciones de participación y notas. Los iconos son decorativos; el texto conserva toda la información.
