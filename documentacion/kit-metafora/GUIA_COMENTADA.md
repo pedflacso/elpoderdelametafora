@@ -1,31 +1,45 @@
-# De una intuición a una decisión de diseño
+# Un mapa para construir un recorrido
 
-Esta guía comenta un ejemplo hipotético. Permite mirar cómo se fundamenta una posibilidad antes de desarrollar un objeto.
+Analizamos una propuesta documentada de Falconer y Aburrow (2004): un recurso electrónico para la enseñanza y el aprendizaje de métodos de investigación. Las diapositivas permiten observar cómo la metáfora del observatorio y el mapa estelar orientó su organización.
 
-Imaginemos un material para aprender a sostener una afirmación con fuentes. La idea inicial es organizarlo como una mesa de edición.
+El problema de diseño: disponer de recursos reutilizables y compartibles, y ofrecer una manera de orientarse entre ellos. Las autoras exploran un modelo en el que quien aprende busca y consulta los materiales, en lugar de recibirlos únicamente en una secuencia dirigida.
 
-## 1. Precisar qué esperamos que la persona aprenda
+## 1. Partir de una necesidad de enseñanza
 
-Que la persona pueda elegir fuentes pertinentes, contrastar lo que aportan y usarlas para fundamentar una afirmación. La necesidad es reconocer qué relación hay entre lo que se afirma y las evidencias que lo sostienen.
+La presentación parte de la posibilidad de crear un recurso electrónico para enseñar y aprender métodos de investigación. Señala dos necesidades de un modelo de búsqueda: contar con recursos y disponer de una manera de navegar por ellos y darles sentido.
 
-**Para mirar la decisión:** El propósito permite decidir qué acciones necesita proponer el material.
+En el documento: diapositivas 2 y 3.
 
-## 2. Explorar una relación que pueda ayudar
+Nuestro análisis: la necesidad de orientación permite preguntar qué organización ayudaría a encontrar materiales y comprender sus relaciones. El documento no detalla resultados de aprendizaje específicos.
 
-En una mesa de edición se revisan afirmaciones, se consultan fuentes y se decide qué necesita sostén o una nueva búsqueda. Esa relación podría hacer visible que argumentar requiere elegir, contrastar y revisar.
+## 2. Encontrar una relación que organice
 
-**Para mirar la decisión:** La metáfora ofrece una posible organización de las acciones de quien aprende.
+Las autoras exploran mapas y paisajes de aprendizaje. En el observatorio de investigación, agrupan objetos de aprendizaje en «constelaciones». El mapa estelar permite representar relaciones entre materiales y mirarlos desde diferentes perspectivas.
 
-## 3. Anticipar una decisión concreta
+En el documento: diapositivas 5, 6, 8 y 9.
 
-Podríamos presentar una afirmación y varias fuentes breves. La persona elegiría cuáles consultar, compararía dos aportes y decidiría si mantiene, matiza o reformula la afirmación. Una orientación cercana recordaría qué mirar para justificar esa decisión.
+Nuestro análisis: la metáfora propone una relación entre objetos, agrupaciones y puntos de observación. Esa relación puede orientar cómo se organiza el conjunto y cómo se hace visible para quien aprende.
 
-**Para mirar la decisión:** La relación empieza a tomar forma en una actividad, unos recursos y una orientación. Es una propuesta que todavía necesita probarse.
+## 3. Mirar la decisión en el material
 
-## 4. Fundamentar y reconocer qué falta comprobar
+En la diapositiva 8 se ven tres agrupaciones de estrellas y un observatorio. El texto explicita la correspondencia entre esas agrupaciones y los objetos de aprendizaje. La diapositiva 5 presenta lo que un mapa puede ofrecer: ubicación relativa, formas de llegar a otro lugar, extensión del entorno y relaciones de cercanía y distancia.
 
-Esperamos que esta organización ayude a relacionar las fuentes con lo que se afirma. Para revisarlo, miraríamos si las explicaciones usan información pertinente y reconocen diferencias entre las fuentes. También habría que comprobar si las decisiones se comprenden sin conocer previamente el trabajo editorial.
+En el documento: diapositivas 5 y 8; la figura reproducida arriba corresponde a la 8.
 
-**Para mirar la decisión:** La justificación anticipa un aporte y explicita sus límites. Si la mesa de edición dificulta comprender la tarea, podría ajustarse o elegirse otra organización.
+Nuestro análisis: la decisión observable es agrupar y disponer los objetos mediante una representación espacial. Para analizar el recorrido completo necesitaríamos conocer qué integra cada constelación y cómo se accede a sus materiales. Estas diapositivas no permiten comprobar un efecto de iluminación al pasar el cursor.
 
-La decisión queda abierta: ensayar esta organización y revisar si ayuda a fundamentar una afirmación. Este ejemplo permite analizar una posibilidad de diseño; no exige producir un objeto terminado.
+## 4. Fundamentar la elección y reconocer qué falta comprobar
+
+Las autoras justifican el mapa estelar por la posibilidad de mirar el mismo material desde distintas perspectivas y definir patrones de constelaciones. Al cierre, dejan abiertas varias alternativas: elegir una metáfora, no elegirla y continuar la discusión.
+
+En el documento: diapositivas 9 y 11.
+
+Nuestro análisis: para revisar esta propuesta habría que observar si las agrupaciones se comprenden, si ayudan a localizar recursos y qué orientaciones necesita la navegación. El PDF no presenta una evaluación con participantes ni evidencia suficiente para afirmar que mejoró el aprendizaje.
+
+El caso permite reconocer una decisión fundamentada: usar relaciones espaciales y agrupaciones para organizar el acceso a los materiales. También permite distinguir lo que el diseño propone de lo que todavía necesitaríamos observar para valorar su funcionamiento.
+
+Falconer, L., & Aburrow, Y. (2004). Using metaphor as a navigation device in e-learning design [Presentación].
+
+[Presentación completa](../../version-1-autoasistida/lecturas/Falconer_Aburrow_2004_observatorio.pdf)
+
+[Repositorio de UWE](https://uwe-repository.worktribe.com/OutputFile/1058174)
