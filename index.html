@@ -539,6 +539,23 @@ p,li,dd{overflow-wrap:break-word}
 @media(max-width:420px){.eclosion-opening{height:250px}.eclosion-pieces{gap:12px}.eclosion-piece{padding:18px 12px}.eclosion-piece p{font-size:.95rem}.eclosion-question{padding:18px 14px;font-size:1rem}}
 @media(prefers-reduced-motion:reduce){.eclosion-shell path{transform:none!important}}
 .no-motion .eclosion-shell path{transform:none!important}
+/* De la forma anterior a la nueva, sin sustituir ni deformar los trazos de tinta. */
+.ink-transition{--form-progress:1}
+.ink-previous{display:none;position:absolute;object-fit:contain;pointer-events:none;z-index:1;left:5%;top:0;width:90%;height:100%;transform-origin:center center}
+.ink-transition.is-transforming .ink-previous{display:block;opacity:calc(1 - var(--form-progress))}
+.ink-transition.is-transforming .ink-current,#butterfly-visual .ink-transition.is-transforming .ink-current{opacity:var(--form-progress)}
+[data-ink-transition="crisalida"].is-transforming .ink-previous{transform:scaleX(calc(1.12 - var(--form-progress)*.32)) scaleY(calc(.82 + var(--form-progress)*.18))}
+[data-ink-transition="crisalida"].is-transforming .ink-current{transform:scaleX(calc(1.18 - var(--form-progress)*.18)) scaleY(calc(.84 + var(--form-progress)*.16))}
+[data-ink-transition="eclosion"] .ink-previous{left:0;width:100%;height:100%;top:0;z-index:1}
+[data-ink-transition="eclosion"].is-transforming .ink-previous{transform:scaleX(calc(.85 + var(--form-progress)*.45)) scaleY(calc(1 - var(--form-progress)*.12))}
+[data-ink-transition="eclosion"].is-transforming .ink-current{transform:scaleX(calc(.7 + var(--form-progress)*.3)) scaleY(calc(.9 + var(--form-progress)*.1))}
+#butterfly-visual .ink-previous{filter:brightness(0) invert(1);left:0;top:8%;width:100%;height:84%}
+[data-ink-transition="mariposa"].is-transforming .ink-previous{transform:scaleX(calc(.85 + var(--form-progress)*.22)) scaleY(calc(1 - var(--form-progress)*.06))}
+[data-ink-transition="mariposa"].is-transforming .ink-current{transform:scaleX(calc(.78 + var(--form-progress)*.22)) scaleY(calc(.9 + var(--form-progress)*.1))}
+@media(max-width:759px){#concept-visual .ink-previous{height:360px;left:0;top:0;width:100%}#butterfly-visual .ink-previous{top:0;height:310px}.ink-transition .ink-previous{height:310px}}
+@media(max-width:420px){#butterfly-visual .ink-previous{height:270px}}
+@media(prefers-reduced-motion:reduce){.ink-transition .ink-previous{display:none!important}.ink-transition .ink-current{transform:none!important;opacity:1!important}}
+.no-motion .ink-transition .ink-previous{display:none!important}.no-motion .ink-transition .ink-current{transform:none!important;opacity:1!important}
 </style>
 </head>
 <body>
@@ -2709,10 +2726,12 @@ function inkThreadPath(index,stage){
  const [x,y]=ends[index],side=x<350?-1:1;
  return `M350 250 C${350+side*110} ${215+(index-2)*18} ${x-side*115} ${y+50} ${x} ${y}`;
 }
+/* Cada etapa retoma la imagen anterior: composición y fundido controlados por scroll. */
+function previousInkImage(stage){const previous={crisalida:'larva',eclosion:'crisalida',mariposa:'eclosion'}[stage];if(!previous)return '';const art=C.inkArt[previous];return `<img class="ink-previous" src="${esc(art.src)}" width="${art.width}" height="${art.height}" alt="" aria-hidden="true" loading="eager" fetchpriority="low" decoding="async">`;}
 function stageArtwork(stage,{definitions=false,captionId='',caption=true}={}){
  const t=C.inkArt[stage],isCase=stage==='eclosion';
  const nodes=isCase?[{name:'Actividad',meaning:''},{name:'Guía',meaning:''}]:C.components;
- return `<figure class="ink-stage ink-${stage}${definitions?' ink-with-definitions':''}" data-ink-stage="${stage}"><div class="ink-canvas"><img class="ink-original" src="${esc(t.src)}" width="${t.width}" height="${t.height}" alt="${esc(t.alt)}" loading="${['larva','crisalida'].includes(stage)?'eager':'lazy'}" fetchpriority="${stage==='larva'?'high':'low'}" decoding="async"><svg class="ink-threads" viewBox="0 0 700 500" preserveAspectRatio="none" aria-hidden="true">${nodes.map((node,i)=>`<path class="ink-thread segment" data-component="${i}" d="${inkThreadPath(i,stage)}" pathLength="1"/>`).join('')}</svg>${isCase?'<span class="ink-case-question" aria-hidden="true">?</span>':''}<dl class="ink-annotations" aria-label="${esc(isCase?'Piezas del caso':'Partes del objeto de aprendizaje')}">${nodes.map((node,i)=>`<div class="ink-node ink-node-${i} segment" data-component="${i}"><dt>${esc(node.name)}</dt>${definitions?`<dd>${esc(node.meaning)}</dd>`:''}</div>`).join('')}</dl></div>${caption?`<figcaption${captionId?` id="${captionId}"`:''}>${esc(t.caption)}</figcaption>`:''}</figure>`;
+ return `<figure class="ink-stage ink-${stage}${definitions?' ink-with-definitions':''}" data-ink-stage="${stage}"><div class="ink-canvas${stage!=='larva'?' ink-transition':''}"${stage!=='larva'?` data-ink-transition="${stage}"`:''}>${previousInkImage(stage)}<img class="ink-original ink-current" src="${esc(t.src)}" width="${t.width}" height="${t.height}" alt="${esc(t.alt)}" loading="${['larva','crisalida'].includes(stage)?'eager':'lazy'}" fetchpriority="${stage==='larva'?'high':'low'}" decoding="async"><svg class="ink-threads" viewBox="0 0 700 500" preserveAspectRatio="none" aria-hidden="true">${nodes.map((node,i)=>`<path class="ink-thread segment" data-component="${i}" d="${inkThreadPath(i,stage)}" pathLength="1"/>`).join('')}</svg>${isCase?'<span class="ink-case-question" aria-hidden="true">?</span>':''}<dl class="ink-annotations" aria-label="${esc(isCase?'Piezas del caso':'Partes del objeto de aprendizaje')}">${nodes.map((node,i)=>`<div class="ink-node ink-node-${i} segment" data-component="${i}"><dt>${esc(node.name)}</dt>${definitions?`<dd>${esc(node.meaning)}</dd>`:''}</div>`).join('')}</dl></div>${caption?`<figcaption${captionId?` id="${captionId}"`:''}>${esc(t.caption)}</figcaption>`:''}</figure>`;
 }
 function inkThumbnail(stage){const t=C.inkArt[stage];return `<img class="journey-ink" src="${esc(t.src)}" width="${t.width}" height="${t.height}" alt="${esc(t.alt)}" loading="lazy" decoding="async">`;}
 // Solo se dibujan los hilos con el desplazamiento. Las imágenes y etiquetas nunca se ocultan.
@@ -2728,11 +2747,19 @@ function refreshInkMotion(){
   const progress=reduced?1:Math.max(0,Math.min(1,(start-rect.top)/distance));
   scene.style.setProperty('--ink-progress',String(progress));
   scene.classList.toggle('ink-motion',!reduced);
+  const frame=scene.querySelector('[data-ink-transition]');
+  if(frame){
+   const frameRect=frame.getBoundingClientRect(),current=frame.querySelector('.ink-current'),previous=frame.querySelector('.ink-previous');
+   const ready=current?.complete&&current.naturalWidth>0;
+   const formProgress=reduced?1:ready?Math.max(0,Math.min(1,(height*1.05-frameRect.top)/(height*.5))):0;
+   frame.style.setProperty('--form-progress',String(formProgress));
+   frame.classList.toggle('is-transforming',!reduced&&formProgress<1&&Boolean(previous?.complete&&previous.naturalWidth>0));
+  }
  });
 }
 function scheduleInkMotion(){if(inkMotionFrame)return;inkMotionFrame=requestAnimationFrame(()=>{inkMotionFrame=0;refreshInkMotion();});}
 /* Eclosión abre el entramado y lleva la atención hacia una relación del caso, sin resolverla. */
-function visual(){const t=C.eclosionReveal,art=C.inkArt.eclosion;return `<aside class="visual ink-stage-panel eclosion-reveal-panel" id="case-visual"><figure class="eclosion-reveal" data-ink-stage="eclosion" aria-labelledby="eclosion-reveal-title"><p class="eclosion-kicker">${esc(t.eyebrow)}</p><h3 id="eclosion-reveal-title">${esc(t.title)}</h3><div class="eclosion-opening"><svg class="eclosion-shell" viewBox="0 0 600 360" aria-hidden="true"><path class="shell-left" d="M294 28C175 43 112 120 130 210c12 64 74 112 149 127"/><path class="shell-right" d="M306 28c119 15 182 92 164 182-12 64-74 112-149 127"/><path class="shell-thread" d="M105 120c-45 20-49 63-14 76m418-76c45 20 49 63 14 76"/></svg><img class="eclosion-art" src="${esc(art.src)}" width="${art.width}" height="${art.height}" alt="${esc(art.alt)}" loading="lazy" decoding="async"></div><svg class="eclosion-trails" viewBox="0 0 600 70" preserveAspectRatio="none" aria-hidden="true"><path class="ink-thread" d="M300 0C295 40 145 2 145 68" pathLength="1"/><path class="ink-thread" d="M300 0C305 40 455 2 455 68" pathLength="1"/></svg><div class="eclosion-pieces">${t.pieces.map(piece=>`<div class="eclosion-piece"><span>${segmentIcon(piece.icon)}</span><h4>${esc(piece.title)}</h4><p>${esc(piece.body)}</p></div>`).join('')}</div><svg class="eclosion-question-links" viewBox="0 0 600 55" preserveAspectRatio="none" aria-hidden="true"><path d="M145 0v13q0 12 12 12h131q12 0 12 12v18m155-55v13q0 12-12 12H312q-12 0-12 12"/></svg><p class="eclosion-question"><span aria-hidden="true">?</span>${esc(t.question)}</p><figcaption>${esc(t.caption)}</figcaption></figure></aside>`;}
+function visual(){const t=C.eclosionReveal,art=C.inkArt.eclosion;return `<aside class="visual ink-stage-panel eclosion-reveal-panel" id="case-visual"><figure class="eclosion-reveal" data-ink-stage="eclosion" aria-labelledby="eclosion-reveal-title"><p class="eclosion-kicker">${esc(t.eyebrow)}</p><h3 id="eclosion-reveal-title">${esc(t.title)}</h3><div class="eclosion-opening ink-transition" data-ink-transition="eclosion">${previousInkImage('eclosion')}<svg class="eclosion-shell" viewBox="0 0 600 360" aria-hidden="true"><path class="shell-left" d="M294 28C175 43 112 120 130 210c12 64 74 112 149 127"/><path class="shell-right" d="M306 28c119 15 182 92 164 182-12 64-74 112-149 127"/><path class="shell-thread" d="M105 120c-45 20-49 63-14 76m418-76c45 20 49 63 14 76"/></svg><img class="eclosion-art ink-current" src="${esc(art.src)}" width="${art.width}" height="${art.height}" alt="${esc(art.alt)}" loading="lazy" decoding="async"></div><svg class="eclosion-trails" viewBox="0 0 600 70" preserveAspectRatio="none" aria-hidden="true"><path class="ink-thread" d="M300 0C295 40 145 2 145 68" pathLength="1"/><path class="ink-thread" d="M300 0C305 40 455 2 455 68" pathLength="1"/></svg><div class="eclosion-pieces">${t.pieces.map(piece=>`<div class="eclosion-piece"><span>${segmentIcon(piece.icon)}</span><h4>${esc(piece.title)}</h4><p>${esc(piece.body)}</p></div>`).join('')}</div><svg class="eclosion-question-links" viewBox="0 0 600 55" preserveAspectRatio="none" aria-hidden="true"><path d="M145 0v13q0 12 12 12h131q12 0 12 12v18m155-55v13q0 12-12 12H312q-12 0-12 12"/></svg><p class="eclosion-question"><span aria-hidden="true">?</span>${esc(t.question)}</p><figcaption>${esc(t.caption)}</figcaption></figure></aside>`;}
 // El título admite etiquetas del contenido editorial local.
 
 /* Las seis formas se reutilizan: cambia su disposición, no su identidad. */
@@ -2946,6 +2973,7 @@ if(location.hash){const destination=document.getElementById(decodeURIComponent(l
 document.addEventListener('input',()=>{scheduleSave();});
 document.addEventListener('click',e=>{if(restoring)return;if(e.target.closest('[data-path]')){checkpoint='investigar';userNavigated=true;}if(e.target.closest('[data-transfer]')){checkpoint='tu-objeto';userNavigated=true;}if(e.target.closest('[data-path],[data-zone],[data-evidence],[data-transfer],[data-connection],#reveal,#motion'))scheduleSave();});
 document.addEventListener('input',e=>{if(e.target.id==='case-first-note'){const view=document.getElementById('first-interpretation');if(view)view.textContent=e.target.value||'Podés recordar lo que pensabas al conocer el caso.';}});
+document.addEventListener('load',event=>{if(event.target instanceof HTMLImageElement&&event.target.matches('.ink-current,.ink-previous'))scheduleInkMotion();},true);
 window.addEventListener('scroll',scheduleInkMotion,{passive:true});
 window.addEventListener('resize',scheduleInkMotion);
 requestAnimationFrame(refreshInkMotion);
