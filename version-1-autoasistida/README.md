@@ -293,3 +293,8 @@ Desde Crisálida, cada composición retoma el grafismo anterior y pasa al actual
 ### Mesa de conexiones en el camino podcast
 
 La tabla de voces y evidencias se reemplaza por una mesa de selección. Cada persona elige una voz y una evidencia; sus textos se muestran próximos y un hilo señala la relación a explorar, sin corrección automática ni explicaciones prefijadas. La nota opcional se conserva al cambiar las piezas. Las elecciones se guardan junto con las notas y se incluyen en la descarga. Se puede volver al testimonio sonoro desde la tarjeta. Los controles son botones nativos con `aria-pressed`, con foco conservado al actualizar las tarjetas. La rama artefacto mantiene sus actividades.
+
+
+### Eclosión después del caso y alas en color
+
+La presentación del caso, su audio, la lectura completa y la primera interpretación aparecen primero. A continuación Eclosión ocupa un momento propio a todo el ancho, antes de abrir la caja negra. Dos capas CSS, basadas en la transparencia del grafismo, colorean los trazos laterales de las alas en durazno y azul claro, dejando el núcleo de tinta visible. El color emerge con la transición de Crisálida a Eclosión y permanece completo en movimiento reducido. No se modifican los archivos de las imágenes.
