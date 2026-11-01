@@ -258,3 +258,8 @@ Las partes se presentan primero en un mosaico amplio, con sus definiciones. Desp
 ### Entrada iconográfica a Aristóteles
 
 La lectura de etimología y semejanzas se abre desde un rótulo con icono original de pensador. Se conserva el desplegable nativo, el acceso por teclado y todo el texto de referencia. El icono es decorativo y la apertura se identifica por texto y signo más/menos.
+
+
+### Ejemplo de Aristóteles
+
+La lectura opcional incorpora la analogía día/atardecer y vida/vejez del capítulo 21 de la Poética. El texto se identifica como paráfrasis, sin cita literal ni número de página no cotejado de la edición de 1974. Dos relaciones visuales acompañan la explicación.
