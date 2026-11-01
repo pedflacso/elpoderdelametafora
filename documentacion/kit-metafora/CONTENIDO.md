@@ -4,7 +4,7 @@
 
 Esta plantilla es de uso personal y opcional. Puede ayudarte a pensar un posible objeto, aunque todavía no lo estés diseñando. Usá los apartados que te sirvan para explorar una decisión y preparar tu aporte al foro del aula.
 
-## 1. Empezá por lo que querés ayudar a aprender
+## 1. Empezá por lo que esperás que la persona aprenda
 
 Antes de elegir una metáfora, volvé al contenido y al propósito de tu objeto. Pensá qué debería poder comprender o hacer quien lo recorra y qué necesitás organizar para que eso sea posible.
 

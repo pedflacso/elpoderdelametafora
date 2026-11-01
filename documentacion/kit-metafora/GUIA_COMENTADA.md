@@ -4,7 +4,7 @@ Esta guía comenta un ejemplo hipotético. Permite mirar cómo se fundamenta una
 
 Imaginemos un material para aprender a sostener una afirmación con fuentes. La idea inicial es organizarlo como una mesa de edición.
 
-## 1. Precisar qué se quiere ayudar a aprender
+## 1. Precisar qué esperamos que la persona aprenda
 
 Que la persona pueda elegir fuentes pertinentes, contrastar lo que aportan y usarlas para fundamentar una afirmación. La necesidad es reconocer qué relación hay entre lo que se afirma y las evidencias que lo sostienen.
 
