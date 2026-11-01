@@ -165,3 +165,13 @@ El reencuentro incorpora «De los materiales a un recorrido», en lugar de las t
 ### Vínculos visuales por segmento
 
 La selección de materiales se expresa como «Seleccionar materiales que contribuyan al propósito de enseñanza». Larva usa un mosaico con iconos de sus seis componentes; Crisálida conserva los cajones y añade puentes entre los términos de los ejemplos; el caso se presenta como expediente sin adelantar la explicación; autor-curador conserva sus tres decisiones; la comparación usa secuencia y red en paralelo; Mariposa mantiene la red de componentes interactiva; el objeto propio presenta una bifurcación de decisiones sin botones adicionales. Los SVG son originales y decorativos, con su significado expresado en texto visible. Los datos de apoyo están en `segmentVisuals`. Se conserva la paleta de cada etapa.
+
+
+### Mapa de orientación y comparación educativa
+
+«Cómo recorrer esta propuesta» presenta las cuatro etapas con iconos, acciones explícitas y una explicación breve. Eclosión anticipa las dos opciones de camino y el reencuentro. Los enlaces permiten ir a cada etapa. La comparación reemplaza las figuras abstractas por acciones con icono y explicación: escuchar/contrastar/relacionar/explicar y explorar/conectar/organizar/explicar. Se explicita que se puede volver sobre los materiales. Los esquemas permanecen legibles sin animación y se apilan en celular. Los textos son editables en `assistance.orientation` y `learningPaths`.
+
+
+### Relaciones con función educativa
+
+Larva presenta un esquema de propósito, actividad y retroalimentación con vínculos rotulados; contenidos, recursos y orientaciones se agrupan alrededor del trabajo de la actividad. En autor-curador el propósito de enseñanza reúne las tres decisiones. La orientación inicial explicita gráficamente la bifurcación y el reencuentro. Son representaciones de relaciones ya desarrolladas en el módulo, sin nuevas actividades ni dependencia de animación.
