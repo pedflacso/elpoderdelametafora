@@ -2,13 +2,13 @@
 
 ## Del caso a tu objeto
 
-Esta guía te acompaña a pensar cómo organizar el objeto de aprendizaje que estás diseñando. Vas a reconocer qué relaciones necesitás construir y decidir si una metáfora puede ayudarte. Podés revisar tus respuestas a medida que la propuesta tome forma.
+Esta plantilla es de uso personal y opcional. Puede ayudarte a pensar un posible objeto, aunque todavía no lo estés diseñando. Usá los apartados que te sirvan para explorar una decisión y preparar tu aporte al foro del aula.
 
 ## 1. Empezá por lo que querés ayudar a aprender
 
 Antes de elegir una metáfora, volvé al contenido y al propósito de tu objeto. Pensá qué debería poder comprender o hacer quien lo recorra y qué necesitás organizar para que eso sea posible.
 
-**El objeto de aprendizaje que estoy diseñando aborda…**
+**Un posible objeto de aprendizaje abordaría…**
 
 
 
@@ -72,7 +72,7 @@ Si una metáfora no aporta a lo que necesitás resolver, podés sostener la prop
 
 
 
-## 3. Revisá tu decisión antes de entregar
+## 3. Volvé sobre tu decisión
 
 Volvé al aprendizaje que te propusiste favorecer. ¿La decisión que ensayaste ayuda a comprender el contenido, conectar las partes u orientar una acción? Pensá qué podrías observar al probar el objeto para reconocer si ese aporte ocurre.
 

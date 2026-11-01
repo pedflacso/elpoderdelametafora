@@ -11,7 +11,7 @@ SOURCE = ROOT / 'descargas' / 'Kit_del_caso_a_tu_objeto.pdf'
 TARGET = ROOT / 'descargas' / 'Kit_del_caso_a_tu_objeto_rellenable.pdf'
 FIELDS = [
     [
-        ('objeto_contenido', 'El objeto de aprendizaje que estoy diseñando aborda…'),
+        ('objeto_contenido', 'Un posible objeto de aprendizaje abordaría…'),
         ('aprendizaje_esperado', 'Quiero que quien lo recorra pueda…'),
         ('relaciones_necesarias', 'Para que eso ocurra, necesito organizar, relacionar o hacer visible…'),
     ],
