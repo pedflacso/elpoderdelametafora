@@ -291,6 +291,33 @@ textarea{caret-color:var(--accent)}
 @media(min-width:760px) and (max-width:999px){.blackbox-map{grid-template-columns:1fr 150px 1fr;gap:18px 14px}.blackbox-node{padding:18px}}
 @media(max-width:759px){.blackbox-map{grid-template-columns:1fr 1fr;gap:16px}.blackbox-core{grid-column:1/-1;grid-row:1;max-width:240px;margin:0 auto 12px}.blackbox-object{max-height:150px}.blackbox-node-1{grid-column:1;grid-row:2}.blackbox-node-2{grid-column:2;grid-row:2}.blackbox-node-3{grid-column:1;grid-row:3}.blackbox-node-4{grid-column:2;grid-row:3}.blackbox-node{padding:18px}.blackbox-connectors{display:none}.blackbox-node-heading{gap:8px}}
 @media(max-width:499px){.blackbox-map{grid-template-columns:1fr}.blackbox-core{grid-column:1;grid-row:auto}.blackbox-node{grid-column:1;grid-row:auto}.blackbox-node-heading{margin-bottom:12px}.blackbox-section>h3{font-size:1.5rem}}
+/* Bifurcación narrativa: caso compartido, dos entradas y explicación común. */
+.investigation-choice{margin:36px 0 24px;text-align:center;color:#132d48}
+.investigation-source{max-width:580px;margin:auto;background:#f3f4fb;padding:26px;border-radius:28px}
+.investigation-source-icon{display:block;width:46px;height:46px;margin:0 auto 12px;color:#5b538e}
+.investigation-source h3{font-size:1.5rem;margin:0 0 10px}.investigation-source p{font-size:.95rem;margin:0}
+.investigation-pieces{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;list-style:none;padding:0;margin:22px 0 0}
+.investigation-pieces li{display:flex;align-items:center;gap:8px;background:#e4ddf0;border-radius:12px;padding:10px 13px;font-size:.82rem}
+.investigation-pieces svg{width:22px;height:22px;color:#5b538e;flex:0 0 22px}
+.choice-fork-label{margin:20px 0 0;font-size:.9rem;font-weight:600;color:#132d48}
+.choice-fork-lines{display:block;width:100%;height:60px;fill:none;stroke:#f3f4fb;stroke-width:2.5}
+#elegir .investigation-options{margin:0;gap:28px;text-align:left;align-items:stretch}
+#elegir .investigation-options .choice{background:#fff0e8;color:#132d48;--ink:#132d48;--muted:#132d48;display:flex;flex-direction:column;border:2px solid transparent;border-radius:26px;padding:28px}
+#elegir .investigation-options .choice:nth-child(2){background:#e4ddf0}
+#elegir .investigation-options .choice[data-selected="true"]{border-color:#132d48;box-shadow:0 0 0 4px rgba(243,244,251,.65);padding:28px}
+.investigation-path-icon{width:52px;height:52px;color:#5b538e;background:rgba(255,255,255,.6);padding:11px;border-radius:16px;display:block;margin-bottom:18px}
+.investigation-path-icon svg{width:100%;height:100%}
+#elegir .investigation-options .choice h3{font-size:1.65rem;margin:0 0 14px}
+#elegir .investigation-options .choice .small{margin-bottom:10px}
+#elegir .investigation-path-actions{font-size:.85rem;margin:8px 0 20px;font-weight:600}
+#elegir .investigation-options button{background:#5b538e;color:white;border-color:#5b538e;margin-top:auto;min-height:48px}
+#elegir .investigation-options button[aria-pressed="true"]{background:#132d48;border-color:#132d48}
+.investigation-shared{max-width:580px;margin:auto;padding:24px 28px;background:#132d48;color:#fff;border-radius:28px}
+.investigation-shared>span{display:block;width:38px;height:38px;margin:0 auto 12px;color:#d8c9f1}
+.investigation-shared h3{font-size:1.35rem;margin:0 0 12px}.investigation-shared p{font-size:.95rem;margin:0}
+.investigation-choice figcaption{font-size:.88rem;max-width:650px;margin:18px auto 0}
+.choice-guidance{max-width:760px;margin:28px auto 0;text-align:center;font-size:.95rem}
+@media(max-width:759px){#elegir .investigation-options{grid-template-columns:1fr;gap:20px}.choice-fork-lines{height:36px}.investigation-source,.investigation-shared{padding:24px 20px}#elegir .investigation-options .choice{padding:24px}#elegir .investigation-options .choice[data-selected="true"]{padding:24px}}
 </style>
 </head>
 <body>
@@ -362,7 +389,24 @@ textarea{caret-color:var(--accent)}
         "button": "Elegir la exploración"
       }
     ],
-    "watch": "Mientras buscás una explicación, prestá atención también a cómo esta metáfora organiza tu recorrido."
+    "watch": "Mientras buscás una explicación, prestá atención también a cómo esta metáfora organiza tu recorrido.",
+    "scheme": {
+      "source": "Un mismo caso",
+      "sourceHint": "Voces y evidencias para comprender qué pasó.",
+      "pieces": [
+        "Voces",
+        "Consigna",
+        "Registro de navegación"
+      ],
+      "forkLabel": "Dos maneras de investigar",
+      "sharedPurpose": "Construir una explicación",
+      "sharedHint": "Poner las piezas en relación y explicar lo ocurrido con apoyo en los indicios.",
+      "reunion": "Después, volvemos a encontrarnos para mirar las decisiones de diseño.",
+      "pathActions": {
+        "podcast": "Escuchar → consultar → relacionar",
+        "artefacto": "Explorar ↔ conectar ↔ organizar"
+      }
+    }
   },
   "voices": [
     {
@@ -2322,6 +2366,8 @@ function oaRelationshipScheme(){const t=C.oaScheme;return `<figure class="oa-rel
 /* Cuatro preguntas rodean la caja: no hay un orden obligatorio de lectura visual. */
 function blackboxIcon(index){const paths=[`<path d="M2 16s5-9 14-9 14 9 14 9-5 9-14 9S2 16 2 16z"/><circle cx="16" cy="16" r="4"/>`,`<path d="M5 25h7a5 5 0 0 0 0-10h8a5 5 0 0 0 0-10h-4M5 21v8m-4-4h8"/><circle cx="24" cy="5" r="3"/>`,`<path d="m12 20 8-8M13 8l3-3a6 6 0 0 1 9 9l-3 3M19 24l-3 3a6 6 0 0 1-9-9l3-3"/>`,`<path d="M8 29V4m0 2h16l5 6-5 6H8M13 12h10m-3-3 3 3-3 3"/>`];return `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[index]}</svg>`;}
 function blackboxScheme(){const t=C.blackboxScheme;return `<section class="blackbox-section" aria-labelledby="blackbox-title"><h3 id="blackbox-title">${esc(C.case.blackboxTitle)}</h3><p class="blackbox-intro">${esc(C.case.blackboxLead)}</p><figure class="blackbox-map" aria-describedby="blackbox-caption"><svg class="blackbox-connectors" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true"><path d="M500 250Q360 250 225 120M500 250Q640 250 775 120M500 250Q360 250 225 380M500 250Q640 250 775 380"/></svg><div class="blackbox-core"><svg class="blackbox-object" viewBox="0 0 200 180" aria-hidden="true"><ellipse cx="100" cy="150" rx="72" ry="14" fill="#5b538e" opacity=".2"/><path d="m30 75 70-30 70 30-70 33z" fill="#b9b4da"/><path d="m30 75 70 33v59l-70-33z" fill="#132d48"/><path d="m100 108 70-33v59l-70 33z" fill="#253f5d"/><path d="m30 60 70-30 70 30-70 33z" fill="#132d48" transform="rotate(-13 30 60) translate(0 -10)"/><path d="M65 75v-9m35 20V65m35 9v-9" stroke="#dc5429" stroke-width="4" stroke-linecap="round"/></svg><h4>${esc(t.center)}</h4><p>${esc(t.centerHint)}</p></div>${t.nodes.map((node,i)=>`<section class="blackbox-node blackbox-node-${i+1}"><div class="blackbox-node-heading"><span class="blackbox-icon">${blackboxIcon(i)}</span><span>${esc(node.label)}</span></div><h4>${esc(C.case.questions[i].title)}</h4><p>${esc(node.body)}</p></section>`).join('')}<figcaption id="blackbox-caption">${esc(t.caption)}</figcaption></figure><details class="blackbox-reading"><summary>${esc(t.reading)}</summary>${visibleTexts(C.case.questions)}</details></section>`;}
+/* La misma investigación se abre en dos formas de recorrerla y un propósito compartido. */
+function investigationChoice(){const t=C.choose.scheme;return `<figure class="investigation-choice" aria-labelledby="investigation-map-title"><div class="investigation-source"><span class="investigation-source-icon">${learningIcon(4)}</span><h3 id="investigation-map-title">${esc(t.source)}</h3><p>${esc(t.sourceHint)}</p><ul class="investigation-pieces">${t.pieces.map((piece,i)=>`<li>${learningIcon(i===0?0:1)}<span>${esc(piece)}</span></li>`).join('')}</ul></div><div class="choice-fork-label">${esc(t.forkLabel)}</div><svg class="choice-fork-lines" viewBox="0 0 800 60" preserveAspectRatio="none" aria-hidden="true"><path d="M400 0v12Q400 25 385 25H155q-15 0-15 15v20M400 12q0 13 15 13h230q15 0 15 15v20"/></svg><div class="choices investigation-options">${C.choose.paths.map(path=>`<article class="choice" data-card="${path.id}"><span class="investigation-path-icon">${learningIcon(path.id==='podcast'?0:5)}</span><p class="small">${esc(path.label)}</p><h3>${esc(path.title)}</h3><p>${esc(path.body)}</p><p class="investigation-path-actions">${esc(t.pathActions[path.id])}</p><button data-path="${path.id}" aria-pressed="false" aria-controls="investigation-content">${esc(path.button)}</button></article>`).join('')}</div><svg class="choice-fork-lines choice-reunion-lines" viewBox="0 0 800 60" preserveAspectRatio="none" aria-hidden="true"><path d="M140 0v20q0 15 15 15h230q15 0 15 15v10M660 0v20q0 15-15 15H415q-15 0-15 15"/></svg><div class="investigation-shared"><span>${learningIcon(3)}</span><h3>${esc(t.sharedPurpose)}</h3><p>${esc(t.sharedHint)}</p></div><figcaption>${esc(t.reunion)}</figcaption></figure>`;}
 function opening(){return `<section class="workspace" aria-labelledby="welcome-title"><h2 id="welcome-title">${esc(C.welcome.title)}</h2><p class="lead">${esc(C.welcome.greeting)}</p><p class="small">${esc(C.welcome.instructions)}</p><p>${esc(C.assistance.notesIntro)}</p>${orientation()}${savingPanel()}<p>${esc(C.welcome.audioLead)}</p><section class="listening-focus" aria-label="Una pregunta para acompañar la bienvenida"><p class="quote">${esc(C.listening.welcomeQuestion)}</p><p>${esc(C.listening.welcomeHint)}</p>${audioMarkup(C.welcome.audio,'Bienvenida')}</section><details><summary>${esc(C.listening.readingLabel)}</summary><p>${esc(C.listening.readingHint)}</p><p>${esc(C.welcome.body)}</p><p>${esc(C.welcome.script)}</p></details></section>
 <section class="chapter" id="larva" aria-labelledby="larva-title"><div class="story-grid"><aside class="visual oa-scheme-panel">${oaRelationshipScheme()}</aside><div><p class="eyebrow">01 · Larva</p><h2 id="larva-title">${esc(C.larva.title)}</h2><p class="lead">${esc(C.larva.intro)}</p><div class="step"><p>${esc(C.larva.parts)}</p><div class="component-definitions">${componentMosaic()}</div></div><div class="step"><p class="quote">${esc(C.larva.question)}</p><p>${esc(C.larva.bridge)}</p></div></div></div></section>
 <section class="chapter" id="crisalida" aria-labelledby="crisalida-title"><p class="eyebrow">02–03 · Crisálida</p><h2 id="crisalida-title">Construir relaciones</h2><section class="concept-audio listening-focus" aria-label="Una pregunta para acompañar Crisálida"><p class="quote">${esc(C.listening.crisalidaQuestion)}</p><p>${esc(C.listening.crisalidaHint)}</p>${audioMarkup(C.crisalidaAudio,'Crisálida. Construir relaciones')}<p class="small">También podés seguir las ideas de este tramo por escrito.</p></section><div class="story-grid"><aside class="visual organism-panel" id="concept-visual">${conceptOrganism('gather')}<p class="visual-caption" id="concept-caption">Crisálida · Las partes empiezan a relacionarse</p></aside><div>${C.concepts.map((c,i)=>`<article class="step concept-step" data-concept="${i}" id="${c.id}">${c.source?`<p class="eyebrow">${bibliographyMention(c.source)}</p>`:''}<h3 class="concept-title">${esc(c.title)}</h3>${c.layout?metaphorConcept(c):`${paras(c.paragraphs)}${c.audio?audioMarkup(c.audio,c.title):''}<p class="quote">${esc(c.question)}</p>`}</article>`).join('')}<details><summary>Si querés seguir pensando en las metáforas</summary>${paras(C.optionalBorges.paragraphs)}<p class="small">${esc(C.optionalBorges.source)}</p></details></div></div></section>`;}
@@ -2355,7 +2401,7 @@ function apaReferences(items){return `<div class="apa-references">${items.map(it
 const main=document.getElementById('main');
 main.innerHTML=`<section class="hero"><span class="pill">${esc(C.hero.note)}</span><p class="eyebrow">${esc(C.hero.eyebrow)}</p><h1>${C.hero.title}</h1><p class="lead">${esc(C.hero.lead)}</p><nav class="anchors" aria-label="Secciones del recorrido"><a href="#larva">Larva</a><a href="#crisalida">Crisálida</a><a href="#caso">${esc(C.ui.caseAnchor)}</a><a href="#elegir">${esc(C.ui.chooseAnchor)}</a><a href="#investigar">${esc(C.ui.investigateAnchor)}</a><a href="#reencuentro">Reencuentro</a><a href="#mariposa">Mariposa</a><a href="#tu-objeto">Tu objeto</a></nav></section>${opening()}
 <section class="chapter" id="caso" aria-labelledby="case-title"><div class="story-grid">${visual()}<div><div class="step" data-stage="intro"><p class="eyebrow">01 · El caso</p><h2 id="case-title">${esc(C.case.title)}</h2><p class="lead">${esc(C.case.lead)}</p>${paras(C.case.paragraphs.slice(0,1))}<div class="audio-slot"><h3>Escuchar el caso completo</h3>${audioMarkup(C.case.audio,'Presentación completa del caso')}<p class="small">La grabación presenta el caso completo. Si preferís conocerlo por partes, podés continuar leyendo y después abrir las voces y evidencias.</p></div><details><summary>${esc(C.ui.readScript)}</summary>${paras(C.case.paragraphs)}</details></div><div class="step" data-stage="signals">${paras(C.case.paragraphs.slice(1))}<p class="quote">${esc(C.case.question)}</p><div class="workspace">${noteBox('case-first-note','Tu primera interpretación, si querés anotarla','Por ahora, pienso que…')}<p class="small">${esc(C.reflection.privacy)}</p></div></div></div></div>${blackboxScheme()}</section>
-<section class="chapter" id="elegir" aria-labelledby="choose-title"><p class="eyebrow">02 · Dos caminos</p><h2 id="choose-title">${esc(C.choose.title)}</h2><p class="lead">${esc(C.choose.lead)}</p><p>${esc(C.choose.watch)}</p><p class="note">${esc(C.choose.note)}</p><div class="choices">${C.choose.paths.map(p=>`<article class="choice" data-card="${p.id}"><span class="symbol" aria-hidden="true">${p.symbol}</span><p class="small">${esc(p.label)}</p><h3>${esc(p.title)}</h3><p>${esc(p.body)}</p><button data-path="${p.id}" aria-pressed="false" aria-controls="investigation-content">${esc(p.button)}</button></article>`).join('')}</div></section>
+<section class="chapter" id="elegir" aria-labelledby="choose-title"><p class="eyebrow">02 · Dos caminos</p><h2 id="choose-title">${esc(C.choose.title)}</h2><p class="lead">${esc(C.choose.lead)}</p><p>${esc(C.choose.watch)}</p>${investigationChoice()}<p class="choice-guidance">${esc(C.choose.note)}</p></section>
 <section class="chapter" id="investigar" aria-labelledby="investigation-title"><p class="eyebrow">03 · Poner las piezas en relación</p><h2 id="investigation-title">La investigación</h2><p id="path-status" role="status">${esc(C.ui.noPath)}</p><div id="investigation-content"></div></section>
 ${ending()}`;
 
