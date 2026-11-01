@@ -238,3 +238,8 @@ La explicación de la metáfora de investigación presenta cuatro momentos: preg
 ### Aclaraciones de bienvenida
 
 Los tres textos iniciales conservan su contenido y unifican tamaño (19 px de base), peso, interlineado y ancho de lectura. Cada uno comienza con un pequeño SVG original para distinguir propósito, orientaciones de participación y notas. Los iconos son decorativos; el texto conserva toda la información.
+
+
+### Precisión de la entrada y las preguntas de Larva
+
+La bienvenida introduce «un objeto de aprendizaje». Larva pregunta cómo conectar las partes para que funcionen juntas dentro de un objeto de aprendizaje y propone explícitamente una metáfora como modo de conectarlas.
