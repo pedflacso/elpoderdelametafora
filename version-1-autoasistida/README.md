@@ -185,3 +185,11 @@ Las tres zonas se distinguen con fondos claro, lila y durazno. Las fichas sin se
 ### Mayor diferenciación del organizador de indicios
 
 El organizador usa base clara y zonas durazno, blanca y lila con mayor diferencia de luminosidad. Las selecciones son naranja oscuro, azul y violeta según la zona, conservando texto blanco y marca de selección.
+
+
+### Caja negra del diseño
+
+El apartado de preguntas del caso sale de la columna lateral y ocupa todo el ancho con una composición radial. Una caja abierta en el centro reúne cuatro miradas: recursos visibles, recorrido esperado, relaciones y orientaciones. Cada mirada tiene icono original, pregunta y explicación breve. Los desarrollos anteriores se conservan en lectura opcional. La presentación no revela la explicación del caso y no añade respuestas obligatorias. Se adapta a dos columnas o una en pantallas pequeñas, con orden de lectura lógico. Los textos breves se editan en `blackboxScheme`.
+
+
+Las fichas seleccionadas de la zona durazno usan naranja `#c34c16`, con contraste de 4,81:1 sobre blanco.
