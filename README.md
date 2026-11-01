@@ -218,3 +218,8 @@ Autor-curador muestra las mismas cuatro piezas en tres disposiciones, acompañad
 ### Suavizado de los caminos y enlaces de revisión
 
 Los fondos de escucha y exploración pasan a durazno `#e6b398` y azul suave `#a7bfd1`, con texto azul oscuro para conservar lectura y diferenciación. Se permiten enlaces con `?camino=podcast` o `?camino=artefacto` para revisar directamente los contenidos dinámicos de cada rama. Los enlaces con fragmento se posicionan después de restaurar y montar el contenido.
+
+
+### Reordenamiento de la elección y la metáfora de investigación
+
+Después de «Construir una explicación», una flecha conduce al recuadro del reencuentro. Luego se aclara que se elige un camino y se puede visitar el otro. El esquema sobre reunir piezas, compararlas y construir una explicación se presenta debajo, con la invitación a observar cómo la metáfora organiza el recorrido. Se conserva la funcionalidad de los botones y las notas.
