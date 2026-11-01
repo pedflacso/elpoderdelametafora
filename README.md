@@ -328,3 +328,5 @@ Recuperación de grafismos ante errores de carga: si una imagen WebP falla desde
 Ante el reporte persistente de imágenes ausentes, se utilizan los PNG originales transparentes en lugar de WebP para descartar compatibilidad de formato. Se verificaron las 13 imágenes cargadas y Larva/Crisálida con dimensiones y opacidad visibles en Chromium. La causa en la página pública aún no se pudo reproducir por el bloqueo de acceso del entorno.
 
 Los cuatro grafismos se incorporan como PNG embebidos en el contenido HTML para eliminar descargas independientes de imágenes de etapa. Se verificaron 13 instancias completas en escritorio y celular con todas las rutas externas de grafismos bloqueadas. El HTML aumenta de tamaño; los archivos PNG se conservan como fuentes editables.
+
+Síntesis del Reencuentro: se retira la frase «Se mantiene la lógica de investigación…» y se destaca en el recuadro el párrafo sobre traducir una metáfora a otro lenguaje. La pregunta recupera cómo la lógica de investigación ayudó a conectar materiales y construir una explicación del caso.
