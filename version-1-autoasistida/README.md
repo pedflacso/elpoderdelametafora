@@ -248,3 +248,8 @@ La bienvenida introduce «un objeto de aprendizaje». Larva pregunta cómo conec
 ### Orientación sin duplicar el entregable
 
 La aclaración sobre avanzar a ritmo propio suma un icono de tiempo. Se elimina del mapa inicial el bloque repetido «Una plantilla como entregable»; la indicación de descarga y entrega y la invitación al foro siguen en «Del caso a tu objeto».
+
+
+### Larva en dos momentos de scroll
+
+Las partes se presentan primero en un mosaico amplio, con sus definiciones. Después de la pregunta sobre cómo conectarlas, aparece el esquema de relaciones en una segunda escena. Se elimina la presentación simultánea en dos columnas. El esquema se distribuye horizontalmente en pantallas amplias y verticalmente en las pequeñas. El avance depende solo del desplazamiento normal, sin esconder información ni exigir animaciones.
