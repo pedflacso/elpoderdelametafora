@@ -308,3 +308,5 @@ La presentación del caso, su audio, la lectura completa y la primera interpreta
 ### Comparación sin botones de dimensión
 
 La comparación del reencuentro muestra ahora dos infografías completas: un centro sonoro para podcast y una pantalla de piezas conectadas para el artefacto. Alrededor aparecen las cuatro dimensiones de organización; debajo, las acciones de quien aprende. Se retiran las pestañas, que cambiaban textos pero repetían casi toda la representación. Todos los contenidos comparativos quedan disponibles simultáneamente. No se alteran los botones de elección de camino ni las actividades.
+
+Comparación visual refinada: podcast con nodos circulares y explicaciones abiertas; artefacto con tarjetas rectangulares. Se reducen las superficies de color y se amplía el espacio entre elementos, conservando los textos y la comparación simultánea.
