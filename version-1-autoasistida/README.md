@@ -326,3 +326,5 @@ Popup de Aristóteles actualizado con el enlace al PDF trilingüe proporcionado 
 Recuperación de grafismos ante errores de carga: si una imagen WebP falla desde Pages, se solicita la copia del mismo archivo en el commit cd1f9cb de GitHub. Se probaron la carga normal y la recuperación de las 13 instancias, simulando fallos de la ruta local y sirviendo la copia alternativa. El servidor público de Pages no es accesible desde el entorno de revisión.
 
 Ante el reporte persistente de imágenes ausentes, se utilizan los PNG originales transparentes en lugar de WebP para descartar compatibilidad de formato. Se verificaron las 13 imágenes cargadas y Larva/Crisálida con dimensiones y opacidad visibles en Chromium. La causa en la página pública aún no se pudo reproducir por el bloqueo de acceso del entorno.
+
+Los cuatro grafismos se incorporan como PNG embebidos en el contenido HTML para eliminar descargas independientes de imágenes de etapa. Se verificaron 13 instancias completas en escritorio y celular con todas las rutas externas de grafismos bloqueadas. El HTML aumenta de tamaño; los archivos PNG se conservan como fuentes editables.
