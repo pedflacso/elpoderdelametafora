@@ -344,3 +344,5 @@ El ejemplo hipotético se reemplaza por el análisis documentado de Falconer y A
 Se retira el enlace visible a INTEF del esquema de investigación por indicación de la usuaria. Se conserva el ciclo y su contenido.
 
 Ajuste de Eclosión conservando el diseño de la caja negra: las cuatro tarjetas y su lectura ampliada proponen observaciones abiertas. La interpretación más específica queda después de investigar, al abrir la reconstrucción posible. Se formula como hipótesis compatible con los indicios y se añade qué permite explicar, qué falta conocer y qué observar en una próxima prueba. Se conserva la interacción sin nuevos campos de respuesta.
+
+El análisis opcional del observatorio incorpora un esquema explicativo con rótulos en español, identificado como elaboración de la guía a partir de la diapositiva 8. La fuente original en inglés conserva sus enlaces. El cierre retoma primero el módulo, ofrece la plantilla y, debajo de sus descargas, muestra un recuadro de lectura opcional «Podés leer otro caso». Se revisa la paginación del PDF para evitar una última página con un único enlace.

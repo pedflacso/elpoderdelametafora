@@ -40,6 +40,8 @@ El caso permite reconocer una decisión fundamentada: usar relaciones espaciales
 
 Falconer, L., & Aburrow, Y. (2004). Using metaphor as a navigation device in e-learning design [Presentación].
 
+También pueden consultar el material original, disponible en inglés.
+
 [Presentación completa](../../version-1-autoasistida/lecturas/Falconer_Aburrow_2004_observatorio.pdf)
 
 [Repositorio de UWE](https://uwe-repository.worktribe.com/OutputFile/1058174)
