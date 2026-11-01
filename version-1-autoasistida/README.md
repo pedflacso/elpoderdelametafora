@@ -155,3 +155,8 @@ El recuadro de escucha de Crisálida centra pregunta, orientación y alternativa
 ### Reproductores visuales en todos los audios
 
 Los siete MP3 finales comparten reproductor con onda calculada del archivo correspondiente, reproducción/pausa, búsqueda, tiempo y volumen. Las instancias dinámicas de las ramas se inicializan al mostrarse, con identificadores SVG únicos. Se mantiene reproducción exclusiva, respaldo nativo y ausencia de autoplay. Se centra el acompañamiento de las cápsulas y se conservan las combinaciones de voces, lectura del caso y actividades. Se quita la onda decorativa anterior de las voces.
+
+
+### Esquema visual de autor-curador
+
+El reencuentro incorpora «De los materiales a un recorrido», en lugar de las tres tarjetas de texto anteriores. Materiales del caso, selección, relaciones y disposición se sintetizan con SVG originales, preguntas breves y superficies claras en violetas complementarios. El propósito de aprendizaje orienta el conjunto. El esquema es estático y completamente legible sin animación, se apila en celular y no exige interacciones adicionales. Las figuras son decorativas: toda la información está en texto visible, con orden de lectura lógico. Mantiene el reproductor y la referencia de Odetti. Los textos se editan en `curationScheme` del JSON.

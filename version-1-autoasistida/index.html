@@ -175,6 +175,23 @@ textarea{caret-color:var(--accent)}
 .wave-player{text-align:center;width:100%}.wave-player-ui{box-sizing:border-box}
 .voice .wave-player{margin-top:20px;margin-bottom:20px}
 .wave-player .wave-toggle span{font-family:Arial,sans-serif;font-variant-emoji:text}
+/* Esquema de autor-curador: formas originales y superficies de apoyo. */
+.curation-scheme{margin:28px 0 32px;text-align:left;color:#132d48}
+.curation-scheme>h4{font-size:1.4rem;font-weight:500;text-align:center;margin:0 0 22px}
+.curation-materials{text-align:center;margin-bottom:24px}.curation-materials>p{font-size:.86rem;margin:0 0 10px}
+.material-tokens{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.material-tokens li{background:#eeeaf7;color:#132d48;border-radius:10px;padding:8px 12px;font-size:.84rem;box-shadow:0 3px 0 rgba(19,45,72,.12)}
+.curation-diagram{display:grid;gap:18px;list-style:none;margin:0;padding:0}
+.curation-diagram>li{background:#f3f4fb;border-radius:20px;padding:22px;color:#132d48;position:relative}
+.curation-diagram>li:nth-child(2){background:#e5dff2}.curation-diagram>li:nth-child(3){background:#d1c9e7}
+.curation-diagram h5{font-size:1.2rem;margin:0 0 12px}.curation-diagram .scheme-question{font-weight:700;line-height:1.5;margin:18px 0 12px}
+.curation-diagram p{font-size:.94rem;line-height:1.6;margin:0 0 12px}.curation-diagram p:last-child{font-size:.84rem;margin-bottom:0}
+.curation-symbol{display:block;width:100%;height:100px;margin:0 auto;color:#5b538e;overflow:visible}
+.curation-outcome{max-width:640px;margin:24px auto 16px;padding:18px 24px;border-radius:40px;background:#132d48;color:#fff;text-align:center;font-size:1.05rem;font-weight:500}
+.curation-scheme figcaption{font-size:.85rem;max-width:650px;margin:0 auto;text-align:center;color:#132d48}
+@media(min-width:900px){.curation-diagram{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.curation-diagram>li{padding:20px}.curation-diagram>li+li:before{content:'↔';position:absolute;left:-17px;top:104px;z-index:1;color:#132d48;font-size:24px;font-weight:700}}
+@media(max-width:899px){.curation-diagram>li{display:grid;grid-template-columns:100px 1fr;gap:0 20px;align-items:start}.curation-diagram h5{grid-column:1/-1}.curation-symbol{grid-column:1;grid-row:2/5}.curation-diagram p{grid-column:2}.curation-diagram .scheme-question{margin-top:0}}
+@media(max-width:420px){.curation-diagram>li{display:block}.curation-symbol{max-width:190px;height:90px;margin:10px auto 18px}.curation-diagram>li{padding:20px}.curation-outcome{border-radius:18px}}
 </style>
 </head>
 <body>
@@ -1974,6 +1991,38 @@ textarea{caret-color:var(--accent)}
     "seek": "Posición del audio",
     "volume": "Volumen del audio",
     "error": "No se pudo reproducir el audio. Podés usar los controles del reproductor original."
+  },
+  "curationScheme": {
+    "title": "De los materiales a un recorrido",
+    "materialsLabel": "Las piezas del caso",
+    "materials": [
+      "Voces",
+      "Consigna",
+      "Guía",
+      "Registro de navegación"
+    ],
+    "steps": [
+      {
+        "title": "Seleccionar",
+        "question": "¿Qué aporta cada pieza?",
+        "body": "Elegir materiales en función de lo que queremos ayudar a aprender.",
+        "detail": "En el caso, cada pieza permite mirar algo de la experiencia."
+      },
+      {
+        "title": "Relacionar",
+        "question": "¿Qué podemos comprender al conectarlas?",
+        "body": "Poner en relación lo que cuentan las personas y las condiciones del recorrido.",
+        "detail": "Voces, consigna y ubicación de la guía ayudan a construir una explicación."
+      },
+      {
+        "title": "Disponer",
+        "question": "¿Cómo las ponemos al alcance?",
+        "body": "Decidir cuándo aparecen los materiales y cómo se puede llegar a ellos.",
+        "detail": "Desde la escucha o desde la exploración, cambia la manera de encontrarlos."
+      }
+    ],
+    "result": "Una experiencia que ayuda a encontrar relaciones",
+    "caption": "Podés volver sobre estas decisiones mientras diseñás tu objeto. Cada una se apoya en lo que querés ayudar a aprender."
   }
 }
 </script>
@@ -2031,7 +2080,16 @@ function initAudioPlayers(){
 function opening(){return `<section class="workspace" aria-labelledby="welcome-title"><h2 id="welcome-title">${esc(C.welcome.title)}</h2><p class="lead">${esc(C.welcome.greeting)}</p><p class="small">${esc(C.welcome.instructions)}</p><p>${esc(C.assistance.notesIntro)}</p>${orientation()}${savingPanel()}<p>${esc(C.welcome.audioLead)}</p><section class="listening-focus" aria-label="Una pregunta para acompañar la bienvenida"><p class="quote">${esc(C.listening.welcomeQuestion)}</p><p>${esc(C.listening.welcomeHint)}</p>${audioMarkup(C.welcome.audio,'Bienvenida')}</section><details><summary>${esc(C.listening.readingLabel)}</summary><p>${esc(C.listening.readingHint)}</p><p>${esc(C.welcome.body)}</p><p>${esc(C.welcome.script)}</p></details></section>
 <section class="chapter" id="larva" aria-labelledby="larva-title"><div class="story-grid"><aside class="visual organism-panel">${organism('loose','larva-form')}<p class="visual-caption">Larva · Las partes están disponibles</p></aside><div><p class="eyebrow">01 · Larva</p><h2 id="larva-title">${esc(C.larva.title)}</h2><p class="lead">${esc(C.larva.intro)}</p><div class="step"><p>${esc(C.larva.parts)}</p><div class="component-definitions">${briefDefinitions(C.components.map(c=>({title:c.name,body:c.meaning})))}</div></div><div class="step"><p class="quote">${esc(C.larva.question)}</p><p>${esc(C.larva.bridge)}</p></div></div></div></section>
 <section class="chapter" id="crisalida" aria-labelledby="crisalida-title"><p class="eyebrow">02–03 · Crisálida</p><h2 id="crisalida-title">Construir relaciones</h2><section class="concept-audio listening-focus" aria-label="Una pregunta para acompañar Crisálida"><p class="quote">${esc(C.listening.crisalidaQuestion)}</p><p>${esc(C.listening.crisalidaHint)}</p>${audioMarkup(C.crisalidaAudio,'Crisálida. Construir relaciones')}<p class="small">También podés seguir las ideas de este tramo por escrito.</p></section><div class="story-grid"><aside class="visual organism-panel" id="concept-visual">${conceptOrganism('gather')}<p class="visual-caption" id="concept-caption">Crisálida · Las partes empiezan a relacionarse</p></aside><div>${C.concepts.map((c,i)=>`<article class="step concept-step" data-concept="${i}" id="${c.id}">${c.source?`<p class="eyebrow">${bibliographyMention(c.source)}</p>`:''}<h3 class="concept-title">${esc(c.title)}</h3>${c.layout?metaphorConcept(c):`${paras(c.paragraphs)}${c.audio?audioMarkup(c.audio,c.title):''}<p class="quote">${esc(c.question)}</p>`}</article>`).join('')}<details><summary>Si querés seguir pensando en las metáforas</summary>${paras(C.optionalBorges.paragraphs)}<p class="small">${esc(C.optionalBorges.source)}</p></details></div></div></section>`;}
-function ending(){return `<section class="chapter" id="reencuentro" aria-labelledby="reunion-title"><p class="eyebrow">07 · Reencuentro</p><h2 id="reunion-title">${esc(C.reunion.title)}</h2><p class="lead">${esc(C.reunion.intro)}</p><section class="listening-focus" aria-labelledby="curation-listening-title"><h3 id="curation-listening-title">${esc(C.listening.curationQuestion)}</h3><p>${esc(C.listening.curationHint)}</p><ul class="curation-cards">${C.listening.curationCards.map(card=>`<li><h4>${esc(card.title)}</h4><p>${esc(card.body)}</p></li>`).join('')}</ul>${audioMarkup(C.curation.audio,'Autor-curador. Seleccionar, relacionar y disponer')}<p class="small">Una mirada sobre el trabajo de autor-curador con ${bibliographyMention('Odetti (2012)')}.</p></section><details><summary>${esc(C.listening.readingLabel)}</summary><p>${esc(C.listening.readingHint)}</p><p>${bibliographyMention(C.curation.paragraph)}</p><h3>Qué significa seleccionar, relacionar y disponer</h3>${briefDefinitions(C.curation.ops)}</details><div class="dimension-buttons" role="group" aria-label="Dimensiones de comparación">${C.reunion.dimensions.map((d,i)=>`<button class="secondary" data-dimension="${i}" aria-pressed="${i===0}" aria-controls="comparison">${esc(d.title)}</button>`).join('')}</div><div id="comparison" class="workspace"></div><p class="note">${esc(C.reunion.same)}</p><p>${esc(C.reunion.translation)}</p><p class="quote">${esc(C.reunion.question)}</p><a href="#elegir">Revisar el otro camino</a></section>
+/* Les esquemas sintetizan decisiones del caso con SVG originales y texto visible. */
+function curationSymbol(index){
+ const drawings=[
+ `<rect x="12" y="21" width="50" height="55" rx="9" fill="#ddd6ec" stroke="currentColor"/><rect x="75" y="13" width="50" height="55" rx="9" fill="#b9b4da" stroke="currentColor"/><rect x="138" y="21" width="50" height="55" rx="9" fill="#eeeaf7" stroke="currentColor"/><path d="M26 44h22m-22 9h16M89 36h22m-22 9h16M152 44h22m-22 9h16" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="100" cy="75" r="14" fill="#132d48"/><path d="m93 75 5 5 9-11" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>`,
+ `<path d="M40 28 100 72 160 28M40 28h120" stroke="currentColor" stroke-width="3" fill="none"/><circle cx="40" cy="28" r="18" fill="#b9b4da" stroke="currentColor"/><rect x="82" y="54" width="36" height="36" rx="9" fill="#f3f4fb" stroke="currentColor"/><circle cx="160" cy="28" r="18" fill="#eeeaf7" stroke="currentColor"/><circle cx="100" cy="72" r="5" fill="#dc5429"/>`,
+ `<path d="M20 26h160M20 78h55l40-25h65" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="25" cy="26" r="9" fill="#f3f4fb" stroke="currentColor"/><circle cx="100" cy="26" r="9" fill="#b9b4da" stroke="currentColor"/><circle cx="175" cy="26" r="9" fill="#f3f4fb" stroke="currentColor"/><circle cx="25" cy="78" r="9" fill="#f3f4fb" stroke="currentColor"/><circle cx="85" cy="71" r="9" fill="#b9b4da" stroke="currentColor"/><circle cx="175" cy="53" r="9" fill="#f3f4fb" stroke="currentColor"/>`
+ ];return `<svg class="curation-symbol" viewBox="0 0 200 105" aria-hidden="true" focusable="false">${drawings[index]}</svg>`;
+}
+function curationScheme(){const t=C.curationScheme;return `<figure class="curation-scheme" aria-labelledby="curation-scheme-title"><h4 id="curation-scheme-title">${esc(t.title)}</h4><div class="curation-materials"><p>${esc(t.materialsLabel)}</p><ul class="material-tokens">${t.materials.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><ul class="curation-diagram">${t.steps.map((step,i)=>`<li><h5>${esc(step.title)}</h5>${curationSymbol(i)}<p class="scheme-question">${esc(step.question)}</p><p>${esc(step.body)}</p><p>${esc(step.detail)}</p></li>`).join('')}</ul><p class="curation-outcome">${esc(t.result)}</p><figcaption>${esc(t.caption)}</figcaption></figure>`;}
+function ending(){return `<section class="chapter" id="reencuentro" aria-labelledby="reunion-title"><p class="eyebrow">07 · Reencuentro</p><h2 id="reunion-title">${esc(C.reunion.title)}</h2><p class="lead">${esc(C.reunion.intro)}</p><section class="listening-focus" aria-labelledby="curation-listening-title"><h3 id="curation-listening-title">${esc(C.listening.curationQuestion)}</h3><p>${esc(C.listening.curationHint)}</p>${curationScheme()}${audioMarkup(C.curation.audio,'Autor-curador. Seleccionar, relacionar y disponer')}<p class="small">Una mirada sobre el trabajo de autor-curador con ${bibliographyMention('Odetti (2012)')}.</p></section><details><summary>${esc(C.listening.readingLabel)}</summary><p>${esc(C.listening.readingHint)}</p><p>${bibliographyMention(C.curation.paragraph)}</p><h3>Qué significa seleccionar, relacionar y disponer</h3>${briefDefinitions(C.curation.ops)}</details><div class="dimension-buttons" role="group" aria-label="Dimensiones de comparación">${C.reunion.dimensions.map((d,i)=>`<button class="secondary" data-dimension="${i}" aria-pressed="${i===0}" aria-controls="comparison">${esc(d.title)}</button>`).join('')}</div><div id="comparison" class="workspace"></div><p class="note">${esc(C.reunion.same)}</p><p>${esc(C.reunion.translation)}</p><p class="quote">${esc(C.reunion.question)}</p><a href="#elegir">Revisar el otro camino</a></section>
 <section class="chapter" id="mariposa" aria-labelledby="butterfly-title"><p class="eyebrow">08 · Mariposa</p><h2 id="butterfly-title">${esc(C.butterfly.title)}</h2><p class="lead">${esc(C.butterfly.intro)}</p><div class="story-grid"><aside class="visual organism-panel" id="butterfly-visual">${organism('wings','butterfly-form')}<p class="visual-caption">Mariposa · Las relaciones hacen visible una forma</p></aside><div><p>${esc(C.butterfly.lead)}</p><div class="connection-buttons" role="group" aria-label="Relaciones entre componentes">${C.butterfly.connections.map((c,i)=>`<button class="secondary" data-connection="${i}" aria-pressed="false" aria-controls="connection-description">${esc(c.title)}</button>`).join('')}</div><div class="workspace" id="connection-description"><p>Elegí una relación para revisarla en este módulo.</p></div><section class="reading-block"><h3>Qué puede aportar una metáfora a un OA</h3><ul>${C.butterfly.functions.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><p>${esc(C.butterfly.caution)}</p></section></div></div><section class="workspace journey-map" aria-labelledby="journey-map-title"><h3 id="journey-map-title">${esc(C.journeyMap.title)}</h3><p>${esc(C.journeyMap.intro)}</p><nav class="four-forms" aria-label="Volver a los momentos del recorrido">${C.journeyMap.stages.map((stage,i)=>`<figure>${organism(stage.form,'review-'+i)}<figcaption><a href="#${stage.target}">${esc(stage.title)}</a><p>${esc(stage.description)}</p></figcaption></figure>`).join('')}</nav></section></section>
 <section class="chapter" id="tu-objeto" aria-labelledby="transfer-title"><p class="eyebrow">09 · Del caso a tu objeto</p><h2 id="transfer-title">${esc(C.transfer.title)}</h2><p class="lead">${esc(C.transfer.intro)}</p><div class="evidence-buttons">${C.transfer.guideDownloads.map(file=>`<a class="button-link" href="${esc(file.href)}" download>${esc(file.label)}</a>`).join('')}</div><h3>${esc(C.transfer.forumTitle)}</h3><p>${esc(C.transfer.forumIntro)}</p></section>
 <section class="ending" id="cierre"><h2>${esc(C.closing.title)}</h2><p class="lead">${esc(C.closing.body)}</p><p>${esc(C.closing.synthesis)}</p><p>${esc(C.closing.continuity)}</p><p class="quote">${esc(C.closing.question)}</p><section class="workspace" aria-labelledby="notes-title"><h3 id="notes-title">${esc(C.assistance.notesTitle)}</h3><p>${esc(C.assistance.notesBody)}</p><button id="download-notes">${esc(C.assistance.download)}</button><p id="notes-status" role="status"></p></section><details><summary>${esc(C.closing.sourcesTitle)}</summary><p class="small">${esc(C.closing.sourcesIntro)}</p>${apaReferences(C.closing.sources)}</details><nav class="anchors" aria-label="Revisar el recorrido"><a href="#larva">Volver al inicio</a><a href="#tu-objeto">Volver a la plantilla</a><a href="#elegir">Explorar el otro camino</a></nav></section>`;}
