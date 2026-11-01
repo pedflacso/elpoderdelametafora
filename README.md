@@ -318,3 +318,5 @@ Relaciones de la mariposa: el botón seleccionado se marca en lila; los dos comp
 Se amplían los centros de la comparación: podcast como círculo principal y artefacto como ícono de pantalla de gran tamaño, sin tarjeta envolvente. Ambos diagramas se muestran uno debajo del otro.
 
 Se refuerzan los rellenos de selección de la mariposa: naranja #ff9b55 en los componentes y lila #c7bce6 en el botón activo.
+
+Autores con popup destacados en naranja. Aristóteles cuenta con popup bibliográfico de Poética (1974), traducción de V. García Yebra, Gredos. El enlace al texto completo queda pendiente de verificar: el entorno bloquea la búsqueda web. El popup no muestra un enlace sin verificar.
