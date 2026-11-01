@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="es-AR">
 <head>
+<link rel="preload" as="image" href="imagenes/grafismos/larva-4cc05216.webp" fetchpriority="high">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>El poder de la metáfora · Recorrido completo</title>
@@ -506,6 +507,13 @@ p,li,dd{overflow-wrap:break-word}
 @media(prefers-reduced-motion:reduce){.ink-thread{stroke-dasharray:none!important;stroke-dashoffset:0!important}.ink-stage .segment{transition:none!important}}
 .no-motion .ink-thread{stroke-dasharray:none!important;stroke-dashoffset:0!important}
 .ink-stage .ink-threads{height:100%;width:100%}
+/* La entrada orienta; este acceso identifica el comienzo del primer momento. */
+.welcome-to-larva{margin:30px 0 0;padding-top:8px}.welcome-to-larva>p{font-size:1rem;line-height:1.7;max-width:76ch}
+.welcome-to-larva>a{display:flex;align-items:center;gap:18px;max-width:760px;padding:18px 22px;background:#e4ddf0;color:#132d48;border-radius:20px;text-decoration:none;min-height:90px}
+.begin-ink-preview{width:100px;flex:0 0 100px}.begin-ink-preview img{display:block;width:100%;height:68px;object-fit:contain}
+.welcome-to-larva>a strong{display:block;font-size:1.1rem;text-decoration:underline;text-underline-offset:4px}.welcome-to-larva>a strong+span{display:block;font-size:.95rem;margin-top:7px}
+.begin-arrow{margin-left:auto;font-size:1.8rem}.welcome-to-larva>a:focus-visible{outline:3px solid #132d48;outline-offset:4px}
+@media(max-width:599px){.welcome-to-larva>a{padding:16px;gap:12px}.begin-ink-preview{width:62px;flex-basis:62px}.begin-ink-preview img{height:56px}.begin-arrow{font-size:1.4rem}}
 </style>
 </head>
 <body>
@@ -803,7 +811,10 @@ p,li,dd{overflow-wrap:break-word}
     "script": "Cuando pensamos en una metáfora, quizás lo primero que nos venga a la mente sea una manera de decir algo. Acá vamos a explorar qué puede aportar cuando diseñamos un objeto de aprendizaje. Podemos contar con propósitos, contenidos, actividades, recursos, orientaciones y retroalimentación. Pero ¿cómo hacemos para que esas partes trabajen juntas? Vamos a recorrer cuatro momentos de una metamorfosis: Larva, Crisálida, Eclosión y Mariposa. La idea es que, al terminar, puedas preguntarte qué podría aportar una metáfora a la experiencia que estás diseñando.",
     "instructions": "Las preguntas son invitaciones a pensar y las notas son opcionales. No hay preguntas con puntuación ni hace falta recorrer los dos caminos. Al final vas a encontrar la plantilla para tu entregable en el aula. Podés escuchar los audios o consultar las alternativas de lectura.",
     "greeting": "Este módulo es una invitación a mirar cómo va tomando forma un objeto de aprendizaje. Vamos a explorar qué puede aportar una metáfora para organizar los contenidos, construir relaciones y acompañar a quien aprende.",
-    "audioLead": "Para empezar, te invitamos a escuchar esta bienvenida. Si preferís leer, encontrás las ideas por escrito debajo del audio."
+    "audioLead": "Para empezar, te invitamos a escuchar esta bienvenida. Si preferís leer, encontrás las ideas por escrito debajo del audio.",
+    "beginLabel": "Empezar el recorrido",
+    "beginStage": "01 · Larva — Antes de tomar forma",
+    "beginHint": "Después de la bienvenida, empezamos por reconocer las partes de un objeto de aprendizaje."
   },
   "components": [
     {
@@ -2597,28 +2608,28 @@ p,li,dd{overflow-wrap:break-word}
   },
   "inkArt": {
     "larva": {
-      "src": "imagenes/grafismos/larva.webp",
+      "src": "imagenes/grafismos/larva-4cc05216.webp",
       "width": 1698,
       "height": 926,
       "alt": "Entramado horizontal de trazos de tinta y escritura, todavía dispersos.",
       "caption": "Larva · Las partes están disponibles."
     },
     "crisalida": {
-      "src": "imagenes/grafismos/crisalida.webp",
+      "src": "imagenes/grafismos/crisalida-80c32686.webp",
       "width": 1089,
       "height": 1444,
       "alt": "Los trazos de tinta se concentran en una envoltura vertical con forma de crisálida.",
       "caption": "Crisálida · Las partes empiezan a relacionarse."
     },
     "eclosion": {
-      "src": "imagenes/grafismos/eclosion.webp",
+      "src": "imagenes/grafismos/eclosion-f2c91b6f.webp",
       "width": 1470,
       "height": 1070,
       "alt": "La envoltura de tinta comienza a abrirse en trazos que se despliegan hacia los lados.",
       "caption": "Eclosión · Una actividad, una guía y una relación por comprender."
     },
     "mariposa": {
-      "src": "imagenes/grafismos/mariposa.webp",
+      "src": "imagenes/grafismos/mariposa-86a20bed.webp",
       "width": 1470,
       "height": 1070,
       "alt": "Los mismos grafismos forman una mariposa de alas abiertas, hecha de tinta e hilos de escritura.",
@@ -2658,7 +2669,7 @@ function inkThreadPath(index,stage){
 function stageArtwork(stage,{definitions=false,captionId='',caption=true}={}){
  const t=C.inkArt[stage],isCase=stage==='eclosion';
  const nodes=isCase?[{name:'Actividad',meaning:''},{name:'Guía',meaning:''}]:C.components;
- return `<figure class="ink-stage ink-${stage}${definitions?' ink-with-definitions':''}" data-ink-stage="${stage}"><div class="ink-canvas"><img class="ink-original" src="${esc(t.src)}" width="${t.width}" height="${t.height}" alt="${esc(t.alt)}" loading="${stage==='larva'?'eager':'lazy'}" decoding="async"><svg class="ink-threads" viewBox="0 0 700 500" preserveAspectRatio="none" aria-hidden="true">${nodes.map((node,i)=>`<path class="ink-thread segment" data-component="${i}" d="${inkThreadPath(i,stage)}" pathLength="1"/>`).join('')}</svg>${isCase?'<span class="ink-case-question" aria-hidden="true">?</span>':''}<dl class="ink-annotations" aria-label="${esc(isCase?'Piezas del caso':'Partes del objeto de aprendizaje')}">${nodes.map((node,i)=>`<div class="ink-node ink-node-${i} segment" data-component="${i}"><dt>${esc(node.name)}</dt>${definitions?`<dd>${esc(node.meaning)}</dd>`:''}</div>`).join('')}</dl></div>${caption?`<figcaption${captionId?` id="${captionId}"`:''}>${esc(t.caption)}</figcaption>`:''}</figure>`;
+ return `<figure class="ink-stage ink-${stage}${definitions?' ink-with-definitions':''}" data-ink-stage="${stage}"><div class="ink-canvas"><img class="ink-original" src="${esc(t.src)}" width="${t.width}" height="${t.height}" alt="${esc(t.alt)}" loading="${['larva','crisalida'].includes(stage)?'eager':'lazy'}" fetchpriority="${stage==='larva'?'high':'low'}" decoding="async"><svg class="ink-threads" viewBox="0 0 700 500" preserveAspectRatio="none" aria-hidden="true">${nodes.map((node,i)=>`<path class="ink-thread segment" data-component="${i}" d="${inkThreadPath(i,stage)}" pathLength="1"/>`).join('')}</svg>${isCase?'<span class="ink-case-question" aria-hidden="true">?</span>':''}<dl class="ink-annotations" aria-label="${esc(isCase?'Piezas del caso':'Partes del objeto de aprendizaje')}">${nodes.map((node,i)=>`<div class="ink-node ink-node-${i} segment" data-component="${i}"><dt>${esc(node.name)}</dt>${definitions?`<dd>${esc(node.meaning)}</dd>`:''}</div>`).join('')}</dl></div>${caption?`<figcaption${captionId?` id="${captionId}"`:''}>${esc(t.caption)}</figcaption>`:''}</figure>`;
 }
 function inkThumbnail(stage){const t=C.inkArt[stage];return `<img class="journey-ink" src="${esc(t.src)}" width="${t.width}" height="${t.height}" alt="${esc(t.alt)}" loading="lazy" decoding="async">`;}
 // Solo se dibujan los hilos con el desplazamiento. Las imágenes y etiquetas nunca se ocultan.
@@ -2719,7 +2730,7 @@ function blackboxScheme(){const t=C.blackboxScheme;return `<section class="black
 function researchScheme(){const t=C.choose.research;return `<section class="research-meaning research-cycle-section" aria-labelledby="research-meaning-title"><h3 id="research-meaning-title">${esc(t.title)}</h3><p>${esc(t.intro)}</p><figure class="research-cycle" aria-describedby="research-cycle-caption"><svg class="research-cycle-arrows" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true"><defs><marker id="research-cycle-arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="m2 2 8 4-8 4" fill="none" stroke="#5b538e" stroke-width="2" stroke-linejoin="round"/></marker></defs><path d="M260 55Q500-20 740 55M935 190Q1010 300 935 410M740 545Q500 620 260 545M65 410Q-10 300 65 190" marker-end="url(#research-cycle-arrow)"/></svg><div class="research-cycle-core"><svg viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 20a22 22 0 0 1 39 7M50 12l3 15-15-2M50 44a22 22 0 0 1-39-7M14 52l-3-15 15 2"/></svg><strong>${esc(t.center)}</strong><p>${esc(t.centerHint)}</p></div>${t.steps.map((step,i)=>`<section class="research-cycle-node cycle-node-${i+1}"><span class="research-step-icon">${learningIcon(step.icon)}</span><h4>${esc(step.title)}</h4><p class="cycle-question">${esc(step.question)}</p><p>${esc(step.body)}</p></section>`).join('')}<figcaption id="research-cycle-caption">${esc(t.caption)}</figcaption></figure><p class="research-watch">${esc(C.choose.watch)}</p><p class="research-source"><a href="${esc(t.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(t.sourceLabel)}</a> (se abre en otra pestaña)</p></section>`;}
 
 function investigationChoice(){const t=C.choose.scheme;return `<figure class="investigation-choice" aria-labelledby="investigation-map-title"><div class="investigation-source"><span class="investigation-source-icon">${learningIcon(4)}</span><h3 id="investigation-map-title">${esc(t.source)}</h3><p>${esc(t.sourceHint)}</p><ul class="investigation-pieces">${t.pieces.map((piece,i)=>`<li>${learningIcon(i===0?0:1)}<span>${esc(piece)}</span></li>`).join('')}</ul></div><div class="choice-fork-label">${esc(t.forkLabel)}</div><svg class="choice-fork-lines" viewBox="0 0 800 60" preserveAspectRatio="none" aria-hidden="true"><path d="M400 0v12Q400 25 385 25H155q-15 0-15 15v20M400 12q0 13 15 13h230q15 0 15 15v20"/></svg><div class="choices investigation-options">${C.choose.paths.map(path=>`<article class="choice" data-card="${path.id}"><span class="investigation-path-icon">${learningIcon(path.id==='podcast'?0:5)}</span><p class="small">${esc(path.label)}</p><h3>${esc(path.title)}</h3><p>${esc(path.body)}</p><p class="investigation-path-actions">${esc(t.pathActions[path.id])}</p><button data-path="${path.id}" aria-pressed="false" aria-controls="investigation-content">${esc(path.button)}</button></article>`).join('')}</div><svg class="choice-fork-lines choice-reunion-lines" viewBox="0 0 800 60" preserveAspectRatio="none" aria-hidden="true"><path d="M140 0v20q0 15 15 15h230q15 0 15 15v10M660 0v20q0 15-15 15H415q-15 0-15 15"/></svg><div class="investigation-shared"><span>${learningIcon(3)}</span><h3>${esc(t.sharedPurpose)}</h3><p>${esc(t.sharedHint)}</p></div><svg class="reunion-next-arrow" viewBox="0 0 40 60" aria-hidden="true"><path d="M20 2v48m-9-10 9 10 9-10"/></svg><figcaption class="reunion-destination">${esc(t.reunion)}</figcaption></figure>`;}
-function opening(){return `<section class="workspace" aria-labelledby="welcome-title"><h2 id="welcome-title">${esc(C.welcome.title)}</h2><ul class="welcome-clarifications" aria-label="Aclaraciones antes de empezar"><li><span class="welcome-clarification-icon">${segmentIcon(0)}</span><p>${esc(C.welcome.greeting)}</p></li><li><span class="welcome-clarification-icon">${segmentIcon(3)}</span><p>${esc(C.welcome.instructions)}</p></li><li><span class="welcome-clarification-icon">${segmentIcon(2)}</span><p>${esc(C.assistance.notesIntro)}</p></li></ul>${orientation()}${savingPanel()}<p>${esc(C.welcome.audioLead)}</p><section class="listening-focus" aria-label="Una pregunta para acompañar la bienvenida"><p class="quote">${esc(C.listening.welcomeQuestion)}</p><p>${esc(C.listening.welcomeHint)}</p>${audioMarkup(C.welcome.audio,'Bienvenida')}</section><details><summary>${esc(C.listening.readingLabel)}</summary><p>${esc(C.listening.readingHint)}</p><p>${esc(C.welcome.body)}</p><p>${esc(C.welcome.script)}</p></details></section>
+function opening(){return `<section class="workspace" aria-labelledby="welcome-title"><h2 id="welcome-title">${esc(C.welcome.title)}</h2><ul class="welcome-clarifications" aria-label="Aclaraciones antes de empezar"><li><span class="welcome-clarification-icon">${segmentIcon(0)}</span><p>${esc(C.welcome.greeting)}</p></li><li><span class="welcome-clarification-icon">${segmentIcon(3)}</span><p>${esc(C.welcome.instructions)}</p></li><li><span class="welcome-clarification-icon">${segmentIcon(2)}</span><p>${esc(C.assistance.notesIntro)}</p></li></ul>${orientation()}${savingPanel()}<p>${esc(C.welcome.audioLead)}</p><section class="listening-focus" aria-label="Una pregunta para acompañar la bienvenida"><p class="quote">${esc(C.listening.welcomeQuestion)}</p><p>${esc(C.listening.welcomeHint)}</p>${audioMarkup(C.welcome.audio,'Bienvenida')}</section><details><summary>${esc(C.listening.readingLabel)}</summary><p>${esc(C.listening.readingHint)}</p><p>${esc(C.welcome.body)}</p><p>${esc(C.welcome.script)}</p></details><div class="welcome-to-larva"><p>${esc(C.welcome.beginHint)}</p><a href="#larva"><span class="begin-ink-preview"><img src="${esc(C.inkArt.larva.src)}" width="${C.inkArt.larva.width}" height="${C.inkArt.larva.height}" alt="" loading="eager" decoding="async"></span><span><strong>${esc(C.welcome.beginLabel)}</strong><span>${esc(C.welcome.beginStage)}</span></span><span class="begin-arrow" aria-hidden="true">↓</span></a></div></section>
 <section class="chapter" id="larva" aria-labelledby="larva-title"><div class="larva-parts-scene"><p class="eyebrow">01 · Larva</p><h2 id="larva-title">${esc(C.larva.title)}</h2><p class="lead">${esc(C.larva.intro)}</p><p class="larva-parts-intro">${esc(C.larva.parts)}</p><div class="component-definitions ink-first-composition">${stageArtwork('larva',{definitions:true})}</div><p class="larva-connection-question">${esc(C.larva.question)}</p></div><div class="larva-relations-scene">${oaRelationshipScheme()}<p class="larva-metaphor-bridge">${esc(C.larva.bridge)}</p></div></section>
 <section class="chapter" id="crisalida" aria-labelledby="crisalida-title"><p class="eyebrow">02–03 · Crisálida</p><h2 id="crisalida-title">Construir relaciones</h2><section class="concept-audio listening-focus" aria-label="Una pregunta para acompañar Crisálida"><p class="quote">${esc(C.listening.crisalidaQuestion)}</p><p>${esc(C.listening.crisalidaHint)}</p>${audioMarkup(C.crisalidaAudio,'Crisálida. Construir relaciones')}<p class="small">También podés seguir las ideas de este tramo por escrito.</p></section><div class="story-grid"><aside class="visual ink-stage-panel" id="concept-visual">${stageArtwork('crisalida',{captionId:'concept-caption'})}</aside><div>${C.concepts.map((c,i)=>`<article class="step concept-step" data-concept="${i}" id="${c.id}">${c.source?`<p class="eyebrow">${bibliographyMention(c.source)}</p>`:''}<h3 class="concept-title">${esc(c.title)}</h3>${c.layout?metaphorConcept(c):`${paras(c.paragraphs)}${c.audio?audioMarkup(c.audio,c.title):''}<p class="quote">${esc(c.question)}</p>`}</article>`).join('')}<details><summary>Si querés seguir pensando en las metáforas</summary>${paras(C.optionalBorges.paragraphs)}<p class="small">${esc(C.optionalBorges.source)}</p></details></div></div></section>`;}
 /* Les esquemas sintetizan decisiones del caso con SVG originales y texto visible. */
