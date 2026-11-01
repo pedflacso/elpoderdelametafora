@@ -193,3 +193,8 @@ El apartado de preguntas del caso sale de la columna lateral y ocupa todo el anc
 
 
 Las fichas seleccionadas de la zona durazno usan naranja `#c34c16`, con contraste de 4,81:1 sobre blanco.
+
+
+### Elección de caminos como bifurcación visual
+
+La elección parte de un mismo caso con voces y evidencias, abre dos entradas con iconografía de escucha y exploración y converge en construir una explicación. Los botones conservan sus atributos y el guardado de estado. Se distingue escucha secuenciada de exploración con conexiones revisables, sin cambiar las actividades. El reencuentro se anticipa en el pie del esquema. Los textos se editan en `choose.scheme`.
