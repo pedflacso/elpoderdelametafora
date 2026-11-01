@@ -175,3 +175,8 @@ La selección de materiales se expresa como «Seleccionar materiales que contrib
 ### Relaciones con función educativa
 
 Larva presenta un esquema de propósito, actividad y retroalimentación con vínculos rotulados; contenidos, recursos y orientaciones se agrupan alrededor del trabajo de la actividad. En autor-curador el propósito de enseñanza reúne las tres decisiones. La orientación inicial explicita gráficamente la bifurcación y el reencuentro. Son representaciones de relaciones ya desarrolladas en el módulo, sin nuevas actividades ni dependencia de animación.
+
+
+### Contraste en Ordená los indicios
+
+Las tres zonas se distinguen con fondos claro, lila y durazno. Las fichas sin seleccionar tienen fondo blanco y texto azul; las seleccionadas usan violeta oscuro, texto blanco y una marca visible de selección, además de `aria-pressed`. Los cambios no alteran las selecciones ni su persistencia.
