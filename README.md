@@ -322,3 +322,5 @@ Se refuerzan los rellenos de selección de la mariposa: naranja #ff9b55 en los c
 Autores con popup destacados en naranja. Aristóteles cuenta con popup bibliográfico de Poética (1974), traducción de V. García Yebra, Gredos. El enlace al texto completo queda pendiente de verificar: el entorno bloquea la búsqueda web. El popup no muestra un enlace sin verificar.
 
 Popup de Aristóteles actualizado con el enlace al PDF trilingüe proporcionado por la usuaria, alojado en Desarmando la cultura (WordPress). La descarga desde el entorno sigue bloqueada; se incorpora el enlace provisto sin afirmar cotejo del PDF.
+
+Recuperación de grafismos ante errores de carga: si una imagen WebP falla desde Pages, se solicita la copia del mismo archivo en el commit cd1f9cb de GitHub. Se probaron la carga normal y la recuperación de las 13 instancias, simulando fallos de la ruta local y sirviendo la copia alternativa. El servidor público de Pages no es accesible desde el entorno de revisión.
