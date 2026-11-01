@@ -621,25 +621,30 @@ p,li,dd{overflow-wrap:break-word}
 /* Dos infografías comparables: escuchar y explorar, sin pestañas que oculten información. */
 .comparison-infographic{margin:42px 0 34px;scroll-margin-top:7rem}
 .comparison-infographic>h3{text-align:center;font-size:1.5rem;line-height:1.4;margin:0 0 32px}
-.comparison-universes{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.comparison-universe{min-width:0;--comparison-accent:#b45128;--comparison-surface:#fff0e8}
-.universe-artefacto{--comparison-accent:#132d48;--comparison-surface:#e0e9ef}
-.comparison-orbit{display:grid;grid-template-columns:minmax(0,1fr) 128px minmax(0,1fr);grid-template-rows:auto auto;gap:18px 12px;position:relative;isolation:isolate;align-items:center}
-.comparison-spokes{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:#f3f4fb;stroke-width:2;z-index:-1}
-.comparison-hub{grid-column:2;grid-row:1/3;display:flex;align-items:center;justify-content:center;flex-direction:column;width:128px;min-height:150px;padding:15px 10px;border-radius:64px;background:var(--comparison-accent);color:#fff;text-align:center}
-.comparison-emblem-icon{width:100%;height:65px;overflow:visible;margin-bottom:10px}
-.comparison-hub h4{font-size:1rem;line-height:1.4;margin:0;overflow-wrap:normal}
-.comparison-fact{padding:20px 15px;background:var(--comparison-surface);color:#132d48;border-radius:22px;align-self:stretch;min-width:0}
-.comparison-fact-1{grid-column:1;grid-row:1}.comparison-fact-2{grid-column:3;grid-row:1}
-.comparison-fact-3{grid-column:1;grid-row:2;background:#f3f4fb}.comparison-fact-4{grid-column:3;grid-row:2;background:#e4ddf0}
-.comparison-fact-icon{display:block;width:29px;height:29px;color:#5b538e;margin-bottom:14px}.comparison-fact-icon svg{width:100%;height:100%}
-.comparison-fact h5{font-size:1rem;line-height:1.5;margin:0 0 12px}.comparison-fact p{font-size:1rem;line-height:1.7;margin:0}
-.comparison-actions{margin-top:24px;padding:24px;border-radius:24px;background:var(--comparison-surface);color:#132d48}
+/* Dos lenguajes visuales: escucha circular y exploración modular. */
+.comparison-universes{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:36px}
+.comparison-universe{min-width:0;--comparison-accent:#754b3a;--comparison-surface:#f8e4d8}
+.universe-artefacto{--comparison-accent:#294d66;--comparison-surface:#dfeaf0}
+.comparison-orbit{display:grid;grid-template-columns:1fr 1fr;gap:32px 28px;position:relative;align-items:start}
+.comparison-spokes{display:none}
+.comparison-hub{grid-column:1/-1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;padding:0 0 24px;color:#132d48;text-align:center;border-bottom:1px solid rgba(19,45,72,.25)}
+.comparison-emblem-icon{width:92px;height:92px;padding:16px;border-radius:50%;background:var(--comparison-surface);color:var(--comparison-accent)}
+.universe-artefacto .comparison-emblem-icon{border-radius:12px}
+.comparison-hub h4{font-size:1.3rem;line-height:1.4;margin:0}
+.comparison-fact{display:flex;flex-direction:column;align-items:center;min-width:0;text-align:center;color:#132d48}
+.comparison-fact-icon{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:50%;background:var(--comparison-surface);color:var(--comparison-accent);margin-bottom:12px}
+.comparison-fact-icon svg{width:27px;height:27px}
+.comparison-fact h5{font-size:1rem;line-height:1.5;margin:0 0 12px;font-weight:700}
+.comparison-fact p{font-size:1rem;line-height:1.7;margin:0;max-width:28em}
+.universe-artefacto .comparison-fact{align-items:flex-start;text-align:left;border-top:2px solid #a7bfd1;padding:18px;background:rgba(243,244,251,.4);border-radius:8px}
+.universe-artefacto .comparison-fact-icon{border-radius:8px}
+.comparison-actions{margin-top:36px;padding-top:24px;border-top:1px solid rgba(19,45,72,.25);color:#132d48}
 .comparison-actions>h5{font-size:1.1rem;line-height:1.4;margin:0 0 14px}.comparison-actions-summary{font-size:1rem;line-height:1.7;margin:0 0 16px}
-.comparison-actions .path-hint{display:none}.comparison-actions .learning-path{margin:0}.comparison-actions .learning-path p{font-size:1rem;line-height:1.7}.comparison-actions .path-return{font-size:.95rem;line-height:1.6;margin-bottom:0}
-@media(max-width:1200px){.comparison-universes{grid-template-columns:1fr;gap:36px}.comparison-orbit{grid-template-columns:1fr 180px 1fr;gap:20px}.comparison-hub{width:180px;min-height:180px;border-radius:50%;padding:25px}.comparison-emblem-icon{height:75px}.comparison-actions .learning-path{grid-template-columns:1fr 1fr;gap:20px}}
-@media(max-width:759px){.comparison-orbit{grid-template-columns:1fr 1fr;gap:16px}.comparison-hub{grid-column:1/-1;grid-row:1;margin:0 auto 10px}.comparison-fact-1{grid-column:1;grid-row:2}.comparison-fact-2{grid-column:2;grid-row:2}.comparison-fact-3{grid-column:1;grid-row:3}.comparison-fact-4{grid-column:2;grid-row:3}.comparison-spokes{display:none}.comparison-fact{padding:20px}.comparison-actions .learning-path{grid-template-columns:1fr}}
-@media(max-width:499px){.comparison-orbit{grid-template-columns:1fr}.comparison-hub,.comparison-fact{grid-column:1;grid-row:auto}.comparison-fact{padding:22px}.comparison-fact-icon{float:left;margin:0 12px 10px 0}.comparison-fact p{clear:both}.comparison-actions{padding:22px}}
+.comparison-actions .path-hint{display:none}.comparison-actions .learning-path{margin:0;grid-template-columns:1fr;gap:18px}.comparison-actions .learning-path p{font-size:1rem;line-height:1.7}.comparison-actions .path-return{font-size:.95rem;line-height:1.6;margin-bottom:0}
+@media(max-width:1000px){.comparison-universes{grid-template-columns:1fr;gap:60px}.comparison-actions .learning-path{grid-template-columns:1fr 1fr}}
+@media(max-width:599px){.comparison-orbit{gap:28px 18px}.comparison-fact p{font-size:1rem}.comparison-actions .learning-path{grid-template-columns:1fr}.universe-artefacto .comparison-fact{padding:14px}}
+@media(max-width:379px){.comparison-orbit{grid-template-columns:1fr}.comparison-fact{max-width:28em;width:100%;margin:auto}}
+
 </style>
 </head>
 <body>
