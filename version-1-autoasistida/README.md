@@ -283,3 +283,8 @@ La etapa se presenta como una envoltura que se abre hacia dos piezas del caso. E
 ### Aparición temprana de los hilos de Larva
 
 El trazado empieza antes de que el grafismo entre en pantalla y se completa cuando su borde superior alcanza el 90 % del alto visible. Las conexiones están disponibles mientras se leen las partes. Se conserva la versión estática de movimiento reducido.
+
+
+### Transformación entre etapas
+
+Desde Crisálida, cada composición retoma el grafismo anterior y pasa al actual mediante escala y fundido ligados al scroll. Crisálida concentra el entramado; Eclosión abre la envoltura; Mariposa completa el despliegue. Se reutilizan los cuatro archivos existentes, sin generar nuevas imágenes ni modificar sus trazos. Las imágenes decorativas anteriores se excluyen de la lectura accesible. Las etiquetas permanecen visibles. Con movimiento reducido se presenta directamente la forma final de cada etapa.
