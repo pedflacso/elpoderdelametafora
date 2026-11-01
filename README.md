@@ -253,3 +253,8 @@ La aclaración sobre avanzar a ritmo propio suma un icono de tiempo. Se elimina 
 ### Larva en dos momentos de scroll
 
 Las partes se presentan primero en un mosaico amplio, con sus definiciones. Después de la pregunta sobre cómo conectarlas, aparece el esquema de relaciones en una segunda escena. Se elimina la presentación simultánea en dos columnas. El esquema se distribuye horizontalmente en pantallas amplias y verticalmente en las pequeñas. El avance depende solo del desplazamiento normal, sin esconder información ni exigir animaciones.
+
+
+### Entrada iconográfica a Aristóteles
+
+La lectura de etimología y semejanzas se abre desde un rótulo con icono original de pensador. Se conserva el desplegable nativo, el acceso por teclado y todo el texto de referencia. El icono es decorativo y la apertura se identifica por texto y signo más/menos.
