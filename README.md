@@ -278,3 +278,8 @@ La bienvenida termina con un acceso explícito a «01 · Larva — Antes de toma
 ### Nueva composición de Eclosión
 
 La etapa se presenta como una envoltura que se abre hacia dos piezas del caso. El grafismo conserva su transparencia; dos contornos y dos hilos independientes salen hacia actividad y guía, con iconos y explicaciones. Las piezas convergen en una pregunta por su relación, sin anticipar la explicación. Se mantienen la lectura del caso, audios, notas y caja negra. La apertura es sutil con scroll y estática con movimiento reducido. Textos editables en `eclosionReveal`.
+
+
+### Aparición temprana de los hilos de Larva
+
+El trazado empieza antes de que el grafismo entre en pantalla y se completa cuando su borde superior alcanza el 90 % del alto visible. Las conexiones están disponibles mientras se leen las partes. Se conserva la versión estática de movimiento reducido.
