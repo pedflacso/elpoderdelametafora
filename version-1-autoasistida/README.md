@@ -312,3 +312,5 @@ La comparación del reencuentro muestra ahora dos infografías completas: un cen
 Comparación visual refinada: podcast con nodos circulares y explicaciones abiertas; artefacto con tarjetas rectangulares. Se reducen las superficies de color y se amplía el espacio entre elementos, conservando los textos y la comparación simultánea.
 
 Comparación con organización espacial: Podcast ocupa el centro de cuatro círculos conectados. Artefacto interactivo se representa como una red de recuadros desplazados, con conectores ortogonales, puntos de origen y flechas. En pantallas pequeñas los elementos se apilan para conservar la lectura.
+
+Relaciones de la mariposa: el botón seleccionado se marca en lila; los dos componentes y sus hilos se iluminan en naranja. Al cambiar de relación se actualizan ambos estados.

@@ -499,6 +499,10 @@ p,li,dd{overflow-wrap:break-word}
 #butterfly-visual .ink-node dt{background:#f3f4fb;color:#132d48}
 #butterfly-visual .segment{transition:opacity .2s}
 #butterfly-visual .segment.dim{opacity:.2}#butterfly-visual .ink-node.dim{opacity:.5}
+#mariposa .connection-buttons button[aria-pressed="true"]{background:#d5c6ec;color:#132d48;border-color:#d5c6ec;font-weight:700}
+#butterfly-visual .ink-node.is-highlighted dt{background:#ffb577;color:#132d48;box-shadow:none}
+#butterfly-visual .ink-thread.is-highlighted{stroke:#ffb577;stroke-width:3;opacity:1}
+
 .journey-map .journey-ink{display:block;width:100%;height:180px;object-fit:contain;margin:0 auto 14px}
 @media(min-width:760px){#mariposa>.story-grid{grid-template-columns:1fr 1fr;gap:36px}}
 @media(max-width:1050px){.ink-node dt{font-size:.95rem}.ink-with-definitions .ink-node{max-width:32%;width:32%}}
@@ -3077,7 +3081,7 @@ function notesText(){
  return sections.length?['El poder de la metáfora · Mis notas',...sections].join('\n\n'):'';
 }
 document.addEventListener('input',e=>{if(e.target.classList.contains('personal-note'))personalNotes[e.target.id]=e.target.value;});
-document.addEventListener('click',e=>{const connection=e.target.closest('[data-connection]');if(connection){const i=Number(connection.dataset.connection),c=C.butterfly.connections[i];document.getElementById('connection-description').innerHTML=`<h3>${esc(c.title)}</h3><p>${esc(c.body)}</p>`;document.querySelectorAll('[data-connection]').forEach(b=>b.setAttribute('aria-pressed',Number(b.dataset.connection)===i));document.querySelectorAll('#butterfly-visual .segment').forEach(g=>g.classList.toggle('dim',!c.pair.includes(Number(g.dataset.component))));}
+document.addEventListener('click',e=>{const connection=e.target.closest('[data-connection]');if(connection){const i=Number(connection.dataset.connection),c=C.butterfly.connections[i];document.getElementById('connection-description').innerHTML=`<h3>${esc(c.title)}</h3><p>${esc(c.body)}</p>`;document.querySelectorAll('[data-connection]').forEach(b=>b.setAttribute('aria-pressed',Number(b.dataset.connection)===i));document.querySelectorAll('#butterfly-visual .segment').forEach(g=>{const selected=c.pair.includes(Number(g.dataset.component));g.classList.toggle('dim',!selected);g.classList.toggle('is-highlighted',selected);});}
 });
 function downloadNotes(){
  const text=notesText(),status=document.getElementById('notes-status');
