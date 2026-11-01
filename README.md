@@ -228,3 +228,8 @@ Después de «Construir una explicación», una flecha conduce al recuadro del r
 ### Legibilidad y tamaño de reproductores
 
 Roboto se conserva con base de 18 px, texto principal de 19 px e interlineado 1,75. Los rótulos y textos secundarios suben a un mínimo de 0,95 rem (17,1 px con configuración predeterminada), y las explicaciones principales de esquemas usan al menos 1 rem. Los reproductores reducen altura de onda y márgenes, con botones de 44 px y controles de teclado intactos. Los testimonios y tarjetas de curaduría se reorganizan según el espacio y la escala del texto. La verificación simula anchos reducidos y texto ampliado; queda pendiente probar el iframe del Moodle real.
+
+
+### Ciclo de investigación revisable
+
+La explicación de la metáfora de investigación presenta cuatro momentos: pregunta e hipótesis inicial, fuentes e indicios, comparación y análisis, explicación y revisión. La hipótesis revisable ocupa el centro. La adaptación se basa en la correspondencia con INTEF compartida por el equipo; se documenta su alcance en `documentacion/Investigacion_ciclo.md`. No se atribuye a la fuente un esquema gráfico copiado.
