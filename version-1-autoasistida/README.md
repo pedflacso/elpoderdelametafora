@@ -203,3 +203,13 @@ La elección parte de un mismo caso con voces y evidencias, abre dos entradas co
 ### Color en la elección de caminos
 
 Escucha usa naranja `#c34c16` y exploración azul `#132d48`, ambos con texto e iconos blancos y botones claros. Las selecciones suman marca y contorno. El blanco sobre naranja alcanza 4,81:1. Se conservan las conexiones del esquema y la paleta violeta del lienzo.
+
+
+### Mapa sonoro de testimonios
+
+El camino podcast reúne las tres voces en un territorio de escucha compartido. Una pregunta común conecta los testimonios con iconos originales, fondos durazno, claro y lila, controles individuales y sus guiones de referencia. Se conservan las tres pausas de escucha. El mapa enfatiza la voz en reproducción, mantiene exclusividad y se apila en celular. Las conexiones no atribuyen causalidad ni anticipan la explicación del caso. No se reutiliza el diseño ni los iconos de la referencia aportada. Textos editables en `soundMap`.
+
+
+### Transformación de materiales y puente final
+
+Autor-curador muestra las mismas cuatro piezas en tres disposiciones, acompañadas por las decisiones de seleccionar, relacionar y disponer. El scroll puede destacar los momentos visibles sin ocultar información ni disparar audio. La preferencia de movimiento reducido conserva una representación estática. Antes de la plantilla se recuperan vínculos entre propósito, actividad, orientaciones y retroalimentación, con la pregunta sobre qué relación necesita construir el objeto propio. La plantilla sigue siendo entregable del aula y el foro mantiene su dinámica separada.

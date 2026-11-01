@@ -322,6 +322,44 @@ textarea{caret-color:var(--accent)}
 .investigation-choice figcaption{font-size:.88rem;max-width:650px;margin:18px auto 0}
 .choice-guidance{max-width:760px;margin:28px auto 0;text-align:center;font-size:.95rem}
 @media(max-width:759px){#elegir .investigation-options{grid-template-columns:1fr;gap:20px}.choice-fork-lines{height:36px}.investigation-source,.investigation-shared{padding:24px 20px}#elegir .investigation-options .choice{padding:24px}#elegir .investigation-options .choice[data-selected="true"]{padding:24px}}
+/* Territorio de escucha compartido: tres voces próximas, relacionadas y con control propio. */
+.sound-map{margin:30px 0 40px;padding:28px;border-radius:30px;background:#ede8f7;color:#132d48;--ink:#132d48;--muted:#132d48}
+.sound-map-heading{text-align:center;max-width:690px;margin:0 auto 24px}.sound-map-heading h3{font-size:1.6rem;margin:12px 0}
+.sound-map-heading p{font-size:.95rem;margin:0}.sound-map-symbol{width:48px;height:48px;display:block;margin:auto;color:#5b538e}
+.sound-map-question{max-width:580px;margin:auto;padding:18px 26px;background:#132d48;color:#fff;border-radius:24px;text-align:center}
+.sound-map-question p{font-size:1.1rem;font-weight:600;line-height:1.5;margin:0}
+.sound-map-links{width:100%;height:70px;display:block;fill:none;stroke:#7c74b5;stroke-width:2.5}
+.sound-map-links .sound-map-orbit{stroke:#c34c16;stroke-width:1.7;stroke-dasharray:4 6}
+.sound-voices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
+.sound-voice{padding:20px 16px;border:2px solid transparent;border-radius:24px;background:#ffe0cf;color:#132d48;position:relative;min-width:0}
+.sound-voice-2{background:#fff}.sound-voice-3{background:#d5c6ec}
+.sound-voice-person{text-align:center}.sound-portrait{display:block;width:72px;height:72px;margin:-4px auto 12px;background:rgba(255,255,255,.55);color:#5b538e;border-radius:50%}
+.sound-portrait svg{width:100%;height:100%}.sound-voice h4{font-size:1.12rem;margin:0 0 18px}
+.sound-map .wave-player{margin:14px 0 20px}.sound-map .wave-player-ui{padding:18px 12px;border-radius:20px}
+.sound-map .wave-player-main{flex-wrap:wrap;gap:10px}.sound-map .wave-seek{height:56px}.sound-map .wave-toggle{width:40px;height:40px;flex-basis:40px;font-size:17px}
+.sound-map .wave-time{width:100%;text-align:center;font-size:.8rem}.sound-map .wave-volume{margin-top:10px;gap:8px}
+.sound-map .wave-volume input{width:65%}.sound-voice .sound-reference{font-size:.72rem;text-align:center;color:#5b538e;margin:0 0 8px}
+.sound-voice blockquote{font-size:.95rem;line-height:1.65;margin:0 0 20px}
+.sound-pause{padding:16px 0 0}.sound-pause>span{display:block;font-size:.73rem;font-weight:600;color:#5b538e;margin-bottom:8px}
+.sound-pause p{font-size:.88rem;line-height:1.6;margin:0}
+.sound-map-caption{font-size:.86rem;text-align:center;max-width:760px;margin:24px auto 0}
+.sound-voice.is-speaking{border-color:#132d48;box-shadow:0 0 0 3px #fff}.sound-voice.is-speaking .sound-portrait{background:#132d48;color:#fff}
+@media(min-width:760px) and (max-width:1000px){.sound-map{padding:24px 18px}.sound-voices{gap:12px}.sound-voice{padding:18px 12px}}
+@media(max-width:759px){.sound-map{padding:24px 16px;border-radius:24px}.sound-voices{grid-template-columns:1fr;gap:24px}.sound-map-links{height:38px}.sound-map-links path{display:none}.sound-map-links{background:linear-gradient(#7c74b5,#7c74b5) center/2px 100% no-repeat}.sound-voice{padding:24px 20px}.sound-voice-person{display:flex;align-items:center;gap:16px;text-align:left;margin-bottom:18px}.sound-portrait{flex:0 0 64px;width:64px;height:64px;margin:0}.sound-voice h4{margin:0}.sound-map .wave-player-ui{padding:20px 16px}.sound-map .wave-seek{height:65px}}
+/* Transformación visible de los materiales y puente final hacia la propuesta propia. */
+.curation-material-graphic{display:block;width:100%;height:145px;margin:0 auto 10px}
+.curation-diagram .curation-transformation-label{font-size:.8rem;color:#5b538e;font-weight:600;line-height:1.5;margin:0 0 18px}
+.curation-diagram>li[data-curation-step]{outline:3px solid transparent;outline-offset:3px}
+.curation-diagram>li.is-in-view{outline-color:#132d48}
+.design-bridge-title{font-size:1.5rem;line-height:1.4;color:#fff;margin:0 0 18px}.design-bridge-intro,.design-bridge-hint{color:#fff;font-size:.95rem}
+.design-bridge-relations{display:grid;gap:12px;list-style:none;padding:0;margin:26px 0}
+.design-bridge-relations li{display:grid;grid-template-columns:1fr 130px 1fr;align-items:center;gap:10px;background:#f3f4fb;color:#132d48;border-radius:20px;padding:18px}
+.design-bridge-relations li:nth-child(2){background:#e4ddf0}.design-bridge-relations li:nth-child(3){background:#fff0e8}
+.design-bridge-part{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;font-size:.9rem}
+.design-bridge-link{font-size:.8rem;color:#5b538e}.design-bridge-link>span{display:block;font-size:22px;line-height:1.2}
+.proposal-fork .design-bridge-hint{margin:22px 0 28px}
+@media(min-width:421px) and (max-width:899px){.curation-material-graphic{grid-column:1;grid-row:2/6;height:120px}.curation-diagram .curation-transformation-label{grid-column:2}}
+@media(max-width:599px){.design-bridge-relations li{grid-template-columns:1fr 78px 1fr;padding:16px 10px;gap:6px}.design-bridge-part{font-size:.8rem;gap:6px}.design-bridge-link{font-size:.73rem}.design-bridge-title{font-size:1.3rem}}
 </style>
 </head>
 <body>
@@ -2189,7 +2227,18 @@ textarea{caret-color:var(--accent)}
     "result": "Una experiencia que ayuda a encontrar relaciones",
     "caption": "Podés volver sobre estas decisiones mientras diseñás tu objeto. Cada una se apoya en lo que querés ayudar a aprender.",
     "purposeTitle": "El propósito de enseñanza",
-    "purposeBody": "Orienta qué seleccionamos, qué relaciones construimos y cómo presentamos los materiales."
+    "purposeBody": "Orienta qué seleccionamos, qué relaciones construimos y cómo presentamos los materiales.",
+    "transformationLabels": [
+      "Reconocer qué aporta cada material",
+      "Construir vínculos entre las piezas",
+      "Darles un lugar en la experiencia"
+    ],
+    "graphicMaterials": [
+      "Voces",
+      "Consigna",
+      "Guía",
+      "Registro"
+    ]
   },
   "segmentVisuals": {
     "componentLabel": "Las partes de un objeto de aprendizaje",
@@ -2305,6 +2354,49 @@ textarea{caret-color:var(--accent)}
         "body": "Qué indicaciones permiten saber qué consultar, cuándo usarlo y cómo llegar a ese recurso."
       }
     ]
+  },
+  "soundMap": {
+    "title": "Un caso, tres voces",
+    "question": "¿Qué aporta cada voz para comprender lo ocurrido?",
+    "intro": "Escuchá los testimonios y ponelos en relación. Cada persona cuenta algo de la misma experiencia.",
+    "connection": "Miradas sobre una misma experiencia",
+    "referenceLabel": "Guion de referencia",
+    "pauseLabel": "Para escuchar con atención",
+    "caption": "Podés pausar, volver a una voz y contrastarla con las otras. Después vas a encontrar las evidencias del caso."
+  },
+  "designBridge": {
+    "title": "¿Qué relación necesitás construir en tu propio objeto?",
+    "intro": "Podés volver a las mismas partes y pensar qué vínculo necesita tu propuesta.",
+    "relations": [
+      {
+        "from": "Propósito",
+        "link": "orienta la",
+        "to": "Actividad",
+        "icons": [
+          0,
+          2
+        ]
+      },
+      {
+        "from": "Orientaciones",
+        "link": "acompañan la",
+        "to": "Actividad",
+        "icons": [
+          3,
+          2
+        ]
+      },
+      {
+        "from": "Retroalimentación",
+        "link": "permite revisar la",
+        "to": "Actividad",
+        "icons": [
+          5,
+          2
+        ]
+      }
+    ],
+    "hint": "Usá la plantilla para ensayar una decisión sobre esas relaciones. Podés probar una metáfora o elegir otra organización."
   }
 }
 </script>
@@ -2364,7 +2456,7 @@ function segmentIcon(index){const paths=[`<circle cx="16" cy="16" r="11"/><circl
 function componentMosaic(){return `<dl class="component-mosaic" aria-label="${esc(C.segmentVisuals.componentLabel)}">${C.components.map((part,i)=>`<div><dt>${segmentIcon(i)}${esc(part.name)}</dt><dd>${esc(part.meaning)}</dd></div>`).join('')}</dl>`;}
 function associationBridge(pair){return pair?`<div class="association-bridge"><span>${esc(pair[0])}</span><svg viewBox="0 0 60 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 17Q30-10 55 17m-8-1 8 1-2-8"/></svg><span>${esc(pair[1])}</span></div>`:'';}
 function comparisonRoute(path){const t=C.learningPaths[path];return `<p class="path-hint">${esc(t.hint)}</p><ul class="learning-path">${t.steps.map(step=>`<li><span class="learning-action-icon">${learningIcon(step.icon)}</span><strong>${esc(step.title)}</strong><p>${esc(step.body)}</p></li>`).join('')}</ul><p class="path-return">${esc(t.footer)}</p>`;}
-function proposalFork(){const t=C.segmentVisuals;return `<figure class="proposal-fork"><p class="fork-root">${esc(t.forkRoot)}</p><svg class="fork-links" viewBox="0 0 300 45" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M150 0v15Q150 22 140 22H20q-10 0-10 10v13M150 15q0 7 10 7h120q10 0 10 10v13"/></svg><ul class="fork-options">${t.forkOptions.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><figcaption>${esc(t.forkCaption)}</figcaption></figure>`;}
+function proposalFork(){const t=C.segmentVisuals;return `<figure class="proposal-fork"><h3 class="design-bridge-title">${esc(C.designBridge.title)}</h3><p class="design-bridge-intro">${esc(C.designBridge.intro)}</p><ul class="design-bridge-relations">${C.designBridge.relations.map(relation=>`<li><span class="design-bridge-part">${segmentIcon(relation.icons[0])}<strong>${esc(relation.from)}</strong></span><span class="design-bridge-link">${esc(relation.link)}<span aria-hidden="true">→</span></span><span class="design-bridge-part">${segmentIcon(relation.icons[1])}<strong>${esc(relation.to)}</strong></span></li>`).join('')}</ul><p class="design-bridge-hint">${esc(C.designBridge.hint)}</p><p class="fork-root">${esc(t.forkRoot)}</p><svg class="fork-links" viewBox="0 0 300 45" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M150 0v15Q150 22 140 22H20q-10 0-10 10v13M150 15q0 7 10 7h120q10 0 10 10v13"/></svg><ul class="fork-options">${t.forkOptions.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><figcaption>${esc(t.forkCaption)}</figcaption></figure>`;}
 /* Esquema del OA: los rótulos de las conexiones explican el vínculo. */
 function oaRelationshipScheme(){const t=C.oaScheme;return `<figure class="oa-relationship" aria-labelledby="oa-relationship-title"><h3 id="oa-relationship-title">${esc(t.title)}</h3><div class="oa-purpose">${segmentIcon(0)}<h4>${esc(t.purpose)}</h4><p>${esc(t.purposeBody)}</p></div><p class="oa-link">${esc(t.firstLink)}<span aria-hidden="true">↓</span></p><div class="oa-activity">${segmentIcon(2)}<h4>${esc(t.activity)}</h4><p>${esc(t.activityBody)}</p><ul class="oa-supports">${t.supports.map(x=>`<li><strong>${esc(x.title)}</strong><span>${esc(x.body)}</span></li>`).join('')}</ul></div><p class="oa-link">${esc(t.secondLink)}<span aria-hidden="true">↓</span></p><div class="oa-feedback">${segmentIcon(5)}<h4>${esc(t.feedback)}</h4><p>${esc(t.feedbackBody)}</p></div><figcaption>${esc(t.caption)}</figcaption></figure>`;}
 /* Cuatro preguntas rodean la caja: no hay un orden obligatorio de lectura visual. */
@@ -2383,7 +2475,9 @@ function curationSymbol(index){
  `<path d="M20 26h160M20 78h55l40-25h65" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="25" cy="26" r="9" fill="#f3f4fb" stroke="currentColor"/><circle cx="100" cy="26" r="9" fill="#b9b4da" stroke="currentColor"/><circle cx="175" cy="26" r="9" fill="#f3f4fb" stroke="currentColor"/><circle cx="25" cy="78" r="9" fill="#f3f4fb" stroke="currentColor"/><circle cx="85" cy="71" r="9" fill="#b9b4da" stroke="currentColor"/><circle cx="175" cy="53" r="9" fill="#f3f4fb" stroke="currentColor"/>`
  ];return `<svg class="curation-symbol" viewBox="0 0 200 105" aria-hidden="true" focusable="false">${drawings[index]}</svg>`;
 }
-function curationScheme(){const t=C.curationScheme;return `<figure class="curation-scheme" aria-labelledby="curation-scheme-title"><h4 id="curation-scheme-title">${esc(t.title)}</h4><div class="curation-purpose"><strong>${esc(t.purposeTitle)}</strong><p>${esc(t.purposeBody)}</p></div><div class="curation-materials"><p>${esc(t.materialsLabel)}</p><ul class="material-tokens">${t.materials.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><ul class="curation-diagram">${t.steps.map((step,i)=>`<li><h5>${esc(step.title)}</h5>${curationSymbol(i)}<p class="scheme-question">${esc(step.question)}</p><p>${esc(step.body)}</p><p>${esc(step.detail)}</p></li>`).join('')}</ul><p class="curation-outcome">${esc(t.result)}</p><figcaption>${esc(t.caption)}</figcaption></figure>`;}
+/* Los mismos cuatro materiales reaparecen en distintas disposiciones. */
+function curationMaterialGraphic(index){const labels=C.curationScheme.graphicMaterials;if(index===2){return `<svg class="curation-material-graphic" viewBox="0 0 222 145" aria-hidden="true"><text x="111" y="13" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" fill="#132d48">Escucha</text><text x="111" y="88" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" fill="#132d48">Exploración</text><path d="M25 40h172M25 115h172" stroke="#7c74b5" stroke-width="2"/>${[24,99].map(y=>labels.map((label,i)=>`<g><rect x="${3+i*55}" y="${y}" width="50" height="32" rx="8" fill="${['#ffe0cf','#f3f4fb','#d5c6ec','#eee8f6'][i]}" stroke="#5b538e"/><text x="${28+i*55}" y="${y+20}" text-anchor="middle" font-family="Roboto, sans-serif" font-size="8" fill="#132d48">${esc(label)}</text></g>`).join('')).join('')}</svg>`;}const positions=index===0?[[8,15],[118,15],[8,70],[118,70]]:index===1?[[8,10],[118,10],[8,85],[118,85]]:[[4,20],[116,20],[4,94],[116,94]];const cards=positions.map(([x,y],i)=>`<g><rect x="${x}" y="${y}" width="96" height="38" rx="10" fill="${['#ffe0cf','#f3f4fb','#d5c6ec','#eee8f6'][i]}" stroke="#5b538e"/><text x="${x+48}" y="${y+23}" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11" fill="#132d48">${esc(labels[i])}</text></g>`).join('');let links='';if(index===1)links='<path d="M56 29 166 104M166 29 56 104M56 29v75m110-75v75" stroke="#7c74b5" stroke-width="2" fill="none"/>';if(index===2)links='<path d="M52 39h112M52 113h112m-55-62 7-12-7-12m0 98 7-12-7-12" stroke="#5b538e" stroke-width="2" fill="none"/>';return `<svg class="curation-material-graphic" viewBox="0 0 222 145" aria-hidden="true">${links}${cards}${index===2?'<text x="111" y="10" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" fill="#132d48">Escucha</text><text x="111" y="85" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" fill="#132d48">Exploración</text>':''}</svg>`;}
+function curationScheme(){const t=C.curationScheme;return `<figure class="curation-scheme" aria-labelledby="curation-scheme-title"><h4 id="curation-scheme-title">${esc(t.title)}</h4><div class="curation-purpose"><strong>${esc(t.purposeTitle)}</strong><p>${esc(t.purposeBody)}</p></div><div class="curation-materials"><p>${esc(t.materialsLabel)}</p><ul class="material-tokens">${t.materials.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><ul class="curation-diagram">${t.steps.map((step,i)=>`<li data-curation-step="${i}"><h5>${esc(step.title)}</h5>${curationMaterialGraphic(i)}<p class="curation-transformation-label">${esc(t.transformationLabels[i])}</p><p class="scheme-question">${esc(step.question)}</p><p>${esc(step.body)}</p><p>${esc(step.detail)}</p></li>`).join('')}</ul><p class="curation-outcome">${esc(t.result)}</p><figcaption>${esc(t.caption)}</figcaption></figure>`;}
 function ending(){return `<section class="chapter" id="reencuentro" aria-labelledby="reunion-title"><p class="eyebrow">07 · Reencuentro</p><h2 id="reunion-title">${esc(C.reunion.title)}</h2><p class="lead">${esc(C.reunion.intro)}</p><section class="listening-focus" aria-labelledby="curation-listening-title"><h3 id="curation-listening-title">${esc(C.listening.curationQuestion)}</h3><p>${esc(C.listening.curationHint)}</p>${curationScheme()}${audioMarkup(C.curation.audio,'Autor-curador. Seleccionar, relacionar y disponer')}<p class="small">Una mirada sobre el trabajo de autor-curador con ${bibliographyMention('Odetti (2012)')}.</p></section><details><summary>${esc(C.listening.readingLabel)}</summary><p>${esc(C.listening.readingHint)}</p><p>${bibliographyMention(C.curation.paragraph)}</p><h3>Qué significa seleccionar, relacionar y disponer</h3>${briefDefinitions(C.curation.ops)}</details><div class="dimension-buttons" role="group" aria-label="Dimensiones de comparación">${C.reunion.dimensions.map((d,i)=>`<button class="secondary" data-dimension="${i}" aria-pressed="${i===0}" aria-controls="comparison">${esc(d.title)}</button>`).join('')}</div><div id="comparison" class="workspace"></div><p class="note">${esc(C.reunion.same)}</p><p>${esc(C.reunion.translation)}</p><p class="quote">${esc(C.reunion.question)}</p><a href="#elegir">Revisar el otro camino</a></section>
 <section class="chapter" id="mariposa" aria-labelledby="butterfly-title"><p class="eyebrow">08 · Mariposa</p><h2 id="butterfly-title">${esc(C.butterfly.title)}</h2><p class="lead">${esc(C.butterfly.intro)}</p><div class="story-grid"><aside class="visual organism-panel" id="butterfly-visual">${organism('wings','butterfly-form')}<p class="visual-caption">Mariposa · Las relaciones hacen visible una forma</p></aside><div><p>${esc(C.butterfly.lead)}</p><div class="connection-buttons" role="group" aria-label="Relaciones entre componentes">${C.butterfly.connections.map((c,i)=>`<button class="secondary" data-connection="${i}" aria-pressed="false" aria-controls="connection-description">${esc(c.title)}</button>`).join('')}</div><div class="workspace" id="connection-description"><p>Elegí una relación para revisarla en este módulo.</p></div><section class="reading-block"><h3>Qué puede aportar una metáfora a un OA</h3><ul>${C.butterfly.functions.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><p>${esc(C.butterfly.caution)}</p></section></div></div><section class="workspace journey-map" aria-labelledby="journey-map-title"><h3 id="journey-map-title">${esc(C.journeyMap.title)}</h3><p>${esc(C.journeyMap.intro)}</p><nav class="four-forms" aria-label="Volver a los momentos del recorrido">${C.journeyMap.stages.map((stage,i)=>`<figure>${organism(stage.form,'review-'+i)}<figcaption><a href="#${stage.target}">${esc(stage.title)}</a><p>${esc(stage.description)}</p></figcaption></figure>`).join('')}</nav></section></section>
 <section class="chapter" id="tu-objeto" aria-labelledby="transfer-title"><p class="eyebrow">09 · Del caso a tu objeto</p><h2 id="transfer-title">${esc(C.transfer.title)}</h2><p class="lead">${esc(C.transfer.intro)}</p>${proposalFork()}<div class="evidence-buttons">${C.transfer.guideDownloads.map(file=>`<a class="button-link" href="${esc(file.href)}" download>${esc(file.label)}</a>`).join('')}</div><h3>${esc(C.transfer.forumTitle)}</h3><p>${esc(C.transfer.forumIntro)}</p></section>
@@ -2430,11 +2524,14 @@ function applyStageBackgrounds(){
 }
 applyStageBackgrounds();
 
+/* Mapa sonoro: reúne testimonios sin convertir sus relaciones en una explicación anticipada. */
+function soundPortrait(index){return `<svg viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="36" cy="25" r="10"/><path d="M17 59v-5a19 19 0 0 1 38 0v5M24 23a12 12 0 0 1 24 0"/>${index===1?'<path d="M49 45h12v10H49m4-10v10"/>':'<path d="M18 23v11m36-11v11M14 31h7v10h-7zM51 31h7v10h-7z"/>'}</svg>`;}
+function soundMap(){const t=C.soundMap;return `<section class="sound-map" aria-labelledby="sound-map-title"><header class="sound-map-heading"><span class="sound-map-symbol">${learningIcon(0)}</span><h3 id="sound-map-title">${esc(t.title)}</h3><p>${esc(t.intro)}</p></header><div class="sound-map-question"><p>${esc(t.question)}</p></div><svg class="sound-map-links" viewBox="0 0 900 95" preserveAspectRatio="none" aria-hidden="true"><path d="M450 0v20M450 20Q150 20 150 95M450 20v75M450 20Q750 20 750 95"/><path d="M150 80Q300 15 450 80Q600 15 750 80" class="sound-map-orbit"/></svg><div class="sound-voices" role="group" aria-label="${esc(t.connection)}">${C.voices.map((v,i)=>`<article class="sound-voice sound-voice-${i+1}" aria-labelledby="sound-voice-title-${i}"><div class="sound-voice-person"><span class="sound-portrait">${soundPortrait(i)}</span><h4 id="sound-voice-title-${i}">${esc(v.name)}</h4></div>${audioMarkup(v.audio,v.name)}<p class="sound-reference">${esc(t.referenceLabel)}</p><blockquote>«${esc(v.text)}»</blockquote><div class="sound-pause"><span>${esc(t.pauseLabel)}</span><p>${esc(C.podcast.steps[i])}</p></div></article>`).join('')}</div><p class="sound-map-caption">${esc(t.caption)}</p></section>`;}
 function voice(v,i){return `<article class="voice"><h3>${esc(v.name)}</h3>${audioMarkup(v.audio,v.name)}<p class="small">Guion de referencia del testimonio</p><blockquote>«${esc(v.text)}»</blockquote>${i===undefined?'':`<p class="pause">${esc(C.podcast.steps[i])}</p>`}</article>`;}
 function evidenceList(explore){const items=explore?[{id:'voz',title:C.ui.voicePiece},...C.evidence]:C.evidence.filter(e=>e.id!=='guia');return `<div class="evidence-buttons" role="group" aria-label="Piezas consultables">${items.map(e=>`<button class="secondary" data-evidence="${e.id}" aria-pressed="false" aria-controls="evidence-body">${esc(e.title)}</button>`).join('')}</div><div id="evidence-body" class="evidence-body"><p>${esc(C.ui.evidenceHint)}</p></div>`;}
 function reflection(path){return `<div class="workspace reflection"><h3>${esc(C.reflection.title)}</h3><p>${esc(C.reflection.intro)}</p><section class="reading-block first-reading"><h4>Tu primera interpretación</h4><p class="first-interpretation" id="first-interpretation"></p></section>${hintMarkup()}<label for="explanation">${esc(C.reflection.label)}</label><textarea id="explanation" placeholder="${esc(C.reflection.placeholder)}" aria-describedby="privacy">${esc(state[path].explanation)}</textarea><p class="small" id="privacy">${esc(C.reflection.privacy)}</p><button id="copy" class="secondary">${esc(C.ui.copy)}</button><p class="small status" id="copy-status" role="status"></p><p>${esc(C.reflection.compareHelp)}</p><button id="reveal" aria-expanded="${state[path].revealed}" aria-controls="reconstruction">${esc(state[path].revealed?C.reflection.hide:C.reflection.reveal)}</button><section id="reconstruction" class="reconstruction" ${state[path].revealed?'':'hidden'}><h3>${esc(C.reflection.answerTitle)}</h3><p>${esc(C.reflection.answer)}</p><p class="small">${esc(C.reflection.caution)}</p><p>${esc(C.assistance.review)}</p></section></div>`;}
 function renderPath(path){const s=state[path],p=C[path];document.getElementById('investigation-title').textContent=p.title;document.getElementById('path-status').textContent=C.choose.paths.find(x=>x.id===path).label;let body='';
-if(path==='podcast')body=`<p class="note">${esc(p.audioNotice)}</p><div class="workspace">${C.voices.map((v,i)=>voice(v,i)).join('')}</div><div class="workspace"><h3>${esc(p.evidenceTitle)}</h3><p>${esc(p.evidenceIntro)}</p>${evidenceList(false)}</div><div class="workspace"><h3>${esc(p.contrastTitle)}</h3><p>${esc(p.contrastIntro)}</p><div class="table-scroll"><table><caption class="small">Voces y evidencias disponibles para comparar</caption><thead><tr><th scope="col">Voces</th><th scope="col">Evidencias</th></tr></thead><tbody><tr><td>${C.voices.map(v=>`<p><strong>${esc(v.name)}</strong><br>${esc(v.text)}</p>`).join('')}</td><td>${C.evidence.filter(e=>e.id!=='guia').map(e=>`<p><strong>${esc(e.title)}</strong><br>${esc(e.body)}</p>`).join('')}</td></tr></tbody></table></div><details><summary>Si te sirve, anotá una relación</summary><label for="contrast-note">${esc(p.contrastLabel)}</label><textarea id="contrast-note" placeholder="${esc(p.contrastPlaceholder)}">${esc(s.note)}</textarea><p class="small">${esc(C.reflection.privacy)}</p></details></div><div class="workspace"><h3>${esc(p.architectureTitle)}</h3><p>${esc(p.architectureIntro)}</p><div class="details-grid">${visibleTexts(p.nodes)}</div></div>`;
+if(path==='podcast')body=`<p class="note">${esc(p.audioNotice)}</p>${soundMap()}<div class="workspace"><h3>${esc(p.evidenceTitle)}</h3><p>${esc(p.evidenceIntro)}</p>${evidenceList(false)}</div><div class="workspace"><h3>${esc(p.contrastTitle)}</h3><p>${esc(p.contrastIntro)}</p><div class="table-scroll"><table><caption class="small">Voces y evidencias disponibles para comparar</caption><thead><tr><th scope="col">Voces</th><th scope="col">Evidencias</th></tr></thead><tbody><tr><td>${C.voices.map(v=>`<p><strong>${esc(v.name)}</strong><br>${esc(v.text)}</p>`).join('')}</td><td>${C.evidence.filter(e=>e.id!=='guia').map(e=>`<p><strong>${esc(e.title)}</strong><br>${esc(e.body)}</p>`).join('')}</td></tr></tbody></table></div><details><summary>Si te sirve, anotá una relación</summary><label for="contrast-note">${esc(p.contrastLabel)}</label><textarea id="contrast-note" placeholder="${esc(p.contrastPlaceholder)}">${esc(s.note)}</textarea><p class="small">${esc(C.reflection.privacy)}</p></details></div><div class="workspace"><h3>${esc(p.architectureTitle)}</h3><p>${esc(p.architectureIntro)}</p><div class="details-grid">${visibleTexts(p.nodes)}</div></div>`;
 else body=`<div class="workspace"><h3>${esc(p.exploreTitle)}</h3><p>${esc(p.exploreIntro)}</p>${evidenceList(true)}</div><div class="workspace"><h3>${esc(p.relationsTitle)}</h3><p>${esc(p.relationsIntro)}</p><details><summary>Si te sirve, anotá la relación entre dos piezas</summary><label for="relation-note">Tu relación entre dos piezas — nota opcional</label><textarea id="relation-note" placeholder="${esc(C.ui.relationPlaceholder)}">${esc(s.relationNote||'')}</textarea><p class="small">${esc(C.reflection.privacy)}</p></details><div class="details-grid">${details(p.relations.map(r=>({title:r.title+' · Lectura posible',body:r.body})))}</div></div><div class="workspace evidence-organizer" id="ordenar-indicios"><h3>${esc(p.organizeTitle)}</h3><p>${esc(p.organizeIntro)}</p><div class="zones">${p.zones.map((z,i)=>`<div class="zone"><h3>${esc(z)}</h3><div role="group" aria-label="${esc(z)}">${p.pieces.map((piece,j)=>`<button data-zone="${i}" data-piece="${j}" aria-pressed="${s.zones[i].has(j)}"><span class="zone-check" aria-hidden="true">✓</span>${esc(piece)}</button>`).join('')}</div></div>`).join('')}</div></div>`;
 document.getElementById('investigation-content').innerHTML=`<div class="path-head"><p class="lead">${esc(p.intro)}</p><button id="switch-path" class="secondary">${esc(C.ui.switch)}</button></div>${body}${reflection(path)}<p class="note">${esc(p.closing)}</p><div class="workspace"><a class="button-link" href="#reencuentro">${esc(C.branchEnd.button)}</a></div>`;
 initAudioPlayers();
@@ -2452,10 +2549,16 @@ document.querySelectorAll('#evidence-body audio').forEach(a=>a.pause());document
 document.addEventListener('click',e=>{const choose=e.target.closest('[data-path]');if(choose){document.querySelectorAll('#investigation-content audio').forEach(a=>a.pause());state.path=choose.dataset.path;renderPath(state.path);document.querySelectorAll('[data-path]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.path===state.path));document.querySelectorAll('[data-card]').forEach(b=>b.dataset.selected=b.dataset.card===state.path);const h=document.getElementById('investigation-title');h.tabIndex=-1;h.focus({preventScroll:true});document.getElementById('investigar').scrollIntoView();return;}const evidence=e.target.closest('[data-evidence]');if(evidence){showEvidence(evidence.dataset.evidence);return;}const zone=e.target.closest('[data-zone]');if(zone){const s=state.artefacto.zones[Number(zone.dataset.zone)],piece=Number(zone.dataset.piece);s.has(piece)?s.delete(piece):s.add(piece);zone.setAttribute('aria-pressed',s.has(piece));}});
 /* Movimiento: preferencia del sistema más control explícito de la persona. */
 const media=matchMedia('(prefers-reduced-motion: reduce)'),motion=document.getElementById('motion');let userReduced=false;
-function applyMotion(){const reduced=media.matches||userReduced;document.body.classList.toggle('no-motion',reduced);motion.setAttribute('aria-pressed',reduced);motion.setAttribute('aria-disabled',media.matches);motion.textContent=reduced?C.ui.motionOff:C.ui.motionOn;}
+function applyMotion(){const reduced=media.matches||userReduced;document.body.classList.toggle('no-motion',reduced);motion.setAttribute('aria-pressed',reduced);motion.setAttribute('aria-disabled',media.matches);motion.textContent=reduced?C.ui.motionOff:C.ui.motionOn;if(reduced)document.querySelectorAll('[data-curation-step]').forEach(card=>card.classList.remove('is-in-view'));}
 motion.onclick=()=>{if(media.matches)return;userReduced=!userReduced;applyMotion();};media.addEventListener('change',applyMotion);applyMotion();
 /* El scroll cambia solo el SVG; nunca decide una rama ni revela una respuesta. */
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{for(const entry of entries)if(entry.isIntersecting)document.getElementById('case-visual').classList.toggle('connected',false);},{rootMargin:'-20% 0px -35% 0px',threshold:0});document.querySelectorAll('[data-stage]').forEach(el=>observer.observe(el));}
+// La voz que suena se destaca dentro del mapa; el audio sigue bajo control de la persona.
+document.addEventListener('play',event=>{const active=event.target.closest('.sound-voice');document.querySelectorAll('.sound-voice').forEach(card=>card.classList.toggle('is-speaking',card===active));},true);
+document.addEventListener('pause',event=>{event.target.closest('.sound-voice')?.classList.remove('is-speaking');},true);
+document.addEventListener('ended',event=>{event.target.closest('.sound-voice')?.classList.remove('is-speaking');},true);
+// En movimiento reducido, los tres momentos mantienen el mismo peso visual.
+if('IntersectionObserver' in window){const highlights=new IntersectionObserver(entries=>{for(const entry of entries)entry.target.classList.toggle('is-in-view',entry.isIntersecting&&!media.matches&&!userReduced);},{rootMargin:'-15% 0px -20% 0px',threshold:.45});document.querySelectorAll('[data-curation-step]').forEach(card=>highlights.observe(card));}
 // Evitar dos testimonios reproduciéndose al mismo tiempo.
 document.addEventListener('play',e=>{if(e.target.tagName==='AUDIO')document.querySelectorAll('audio').forEach(a=>{if(a!==e.target)a.pause();});},true);
 
