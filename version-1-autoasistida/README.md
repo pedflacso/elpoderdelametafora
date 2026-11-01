@@ -213,3 +213,8 @@ El camino podcast reúne las tres voces en un territorio de escucha compartido. 
 ### Transformación de materiales y puente final
 
 Autor-curador muestra las mismas cuatro piezas en tres disposiciones, acompañadas por las decisiones de seleccionar, relacionar y disponer. El scroll puede destacar los momentos visibles sin ocultar información ni disparar audio. La preferencia de movimiento reducido conserva una representación estática. Antes de la plantilla se recuperan vínculos entre propósito, actividad, orientaciones y retroalimentación, con la pregunta sobre qué relación necesita construir el objeto propio. La plantilla sigue siendo entregable del aula y el foro mantiene su dinámica separada.
+
+
+### Suavizado de los caminos y enlaces de revisión
+
+Los fondos de escucha y exploración pasan a durazno `#e6b398` y azul suave `#a7bfd1`, con texto azul oscuro para conservar lectura y diferenciación. Se permiten enlaces con `?camino=podcast` o `?camino=artefacto` para revisar directamente los contenidos dinámicos de cada rama. Los enlaces con fragmento se posicionan después de restaurar y montar el contenido.

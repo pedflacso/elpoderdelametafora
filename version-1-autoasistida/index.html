@@ -302,10 +302,10 @@ textarea{caret-color:var(--accent)}
 .choice-fork-label{margin:20px 0 0;font-size:.9rem;font-weight:600;color:#132d48}
 .choice-fork-lines{display:block;width:100%;height:60px;fill:none;stroke:#f3f4fb;stroke-width:2.5}
 #elegir .investigation-options{margin:0;gap:28px;text-align:left;align-items:stretch}
-#elegir .investigation-options .choice{background:#c34c16;color:#ffffff;--ink:#ffffff;--muted:#ffffff;display:flex;flex-direction:column;border:2px solid transparent;border-radius:26px;padding:28px}
-#elegir .investigation-options .choice:nth-child(2){background:#132d48}
+#elegir .investigation-options .choice{background:#e6b398;color:#132d48;--ink:#132d48;--muted:#132d48;display:flex;flex-direction:column;border:2px solid transparent;border-radius:26px;padding:28px}
+#elegir .investigation-options .choice:nth-child(2){background:#a7bfd1}
 #elegir .investigation-options .choice[data-selected="true"]{border-color:#132d48;box-shadow:0 0 0 4px rgba(243,244,251,.65);padding:28px}
-.investigation-path-icon{width:52px;height:52px;color:#ffffff;background:rgba(255,255,255,.16);padding:11px;border-radius:16px;display:block;margin-bottom:18px}
+.investigation-path-icon{width:52px;height:52px;color:#132d48;background:rgba(255,255,255,.45);padding:11px;border-radius:16px;display:block;margin-bottom:18px}
 .investigation-path-icon svg{width:100%;height:100%}
 #elegir .investigation-options .choice h3{font-size:1.65rem;margin:0 0 14px}
 #elegir .investigation-options .choice .small{margin-bottom:10px}
@@ -315,7 +315,7 @@ textarea{caret-color:var(--accent)}
 #elegir .investigation-options button[aria-pressed="true"]::before{content:"✓ ";}
 #elegir .investigation-options button:focus-visible{outline:3px solid #ffffff;outline-offset:5px}
 #elegir .investigation-options .choice[data-selected="true"]{border-color:#ffffff;box-shadow:0 0 0 4px #132d48}
-#elegir .investigation-options .choice .small{color:#ffffff}
+#elegir .investigation-options .choice .small{color:#132d48}
 .investigation-shared{max-width:580px;margin:auto;padding:24px 28px;background:#132d48;color:#fff;border-radius:28px}
 .investigation-shared>span{display:block;width:38px;height:38px;margin:0 auto 12px;color:#d8c9f1}
 .investigation-shared h3{font-size:1.35rem;margin:0 0 12px}.investigation-shared p{font-size:.95rem;margin:0}
@@ -360,6 +360,7 @@ textarea{caret-color:var(--accent)}
 .proposal-fork .design-bridge-hint{margin:22px 0 28px}
 @media(min-width:421px) and (max-width:899px){.curation-material-graphic{grid-column:1;grid-row:2/6;height:120px}.curation-diagram .curation-transformation-label{grid-column:2}}
 @media(max-width:599px){.design-bridge-relations li{grid-template-columns:1fr 78px 1fr;padding:16px 10px;gap:6px}.design-bridge-part{font-size:.8rem;gap:6px}.design-bridge-link{font-size:.73rem}.design-bridge-title{font-size:1.3rem}}
+#sound-map-title,#curation-scheme-title,#tu-objeto,#elegir{scroll-margin-top:105px}
 </style>
 </head>
 <body>
@@ -2624,6 +2625,10 @@ checkpoint=Object.hasOwn(checkpointNames,data.checkpoint)?data.checkpoint:'larva
 statusElement.textContent=C.assistance.restored;document.getElementById('resume-description').textContent='Último punto de retorno: '+checkpointLabel()+'. Tus notas están disponibles aunque prefieras volver al inicio.';document.getElementById('resume-work').hidden=false;
 }catch{corruptCopy=raw;statusElement.textContent=C.assistance.invalid;document.getElementById('download-raw').hidden=false;}finally{if(restoring&&document.activeElement instanceof HTMLElement)document.activeElement.blur();restoring=false;}}
 readSave();
+// Un enlace al mapa sonoro puede abrir explícitamente el camino podcast.
+const entryPath=new URLSearchParams(location.search).get('camino');
+if(['podcast','artefacto'].includes(entryPath))selectPathWithoutJump(entryPath);
+if(location.hash){const destination=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(destination)requestAnimationFrame(()=>destination.scrollIntoView({block:'start',behavior:'instant'}));}
 // Los controladores originales actualizan sus estados antes de este guardado.
 document.addEventListener('input',()=>{scheduleSave();});
 document.addEventListener('click',e=>{if(restoring)return;if(e.target.closest('[data-path]')){checkpoint='investigar';userNavigated=true;}if(e.target.closest('[data-transfer]')){checkpoint='tu-objeto';userNavigated=true;}if(e.target.closest('[data-path],[data-zone],[data-evidence],[data-transfer],[data-connection],#reveal,#motion'))scheduleSave();});
