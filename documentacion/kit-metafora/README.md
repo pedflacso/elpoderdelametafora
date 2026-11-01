@@ -2,12 +2,6 @@
 
 La participación compartida del módulo se realiza en el foro del aula, según la consigna del equipo. Las notas y herramientas del recorrido son de uso personal. La plantilla no constituye otra entrega ni hay corrección automática de las explicaciones.
 
-## Otro caso documentado · lectura opcional
-
-[Análisis del observatorio de investigación](GUIA_COMENTADA.md), de Falconer y Aburrow (2004). El módulo ofrece un enlace «Podés leer otro caso» al [PDF de análisis](../../version-1-autoasistida/descargas/Otro_caso_Observatorio_de_investigacion.pdf). El caso se conserva como ampliación opcional, fuera del recorrido principal, sin una tarea nueva.
-
-El análisis se apoya en el PDF de once diapositivas proporcionado por la usuaria. Incluye un esquema explicativo en español basado en la diapositiva 8 y separa lo observado en la fuente de la interpretación didáctica. La fuente documenta agrupaciones de objetos de aprendizaje en constelaciones, observatorio, mapas y perspectivas; no permite verificar el comportamiento al pasar el cursor ni resultados de aprendizaje. Se conserva la [presentación original](../../version-1-autoasistida/lecturas/Falconer_Aburrow_2004_observatorio.pdf).
-
 ## Plantilla opcional
 
 - [PDF rellenable](../../descargas/Kit_del_caso_a_tu_objeto_rellenable.pdf)
