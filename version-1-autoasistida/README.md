@@ -298,3 +298,8 @@ La tabla de voces y evidencias se reemplaza por una mesa de selección. Cada per
 ### Eclosión después del caso y alas en color
 
 La presentación del caso, su audio, la lectura completa y la primera interpretación aparecen primero. A continuación Eclosión ocupa un momento propio a todo el ancho, antes de abrir la caja negra. Dos capas CSS, basadas en la transparencia del grafismo, colorean los trazos laterales de las alas en durazno y azul claro, dejando el núcleo de tinta visible. El color emerge con la transición de Crisálida a Eclosión y permanece completo en movimiento reducido. No se modifican los archivos de las imágenes.
+
+
+### Cierre con infografía de mariposa
+
+«La forma que construimos» reúne los textos existentes en cuatro recuadros conectados a la mariposa: recorrido realizado, aporte de la metáfora, opción con metáfora y otra organización. Se conservan todas las ideas del cierre, la pregunta final, descarga de notas y referencias. Los fondos durazno, claro, azul suave y lila distinguen los bloques sin depender de su color para comprenderlos. El dibujo central reutiliza el archivo transparente y se presenta en tinta clara sobre el lienzo violeta. En pantallas pequeñas los bloques se reorganizan sin ocultar texto.
