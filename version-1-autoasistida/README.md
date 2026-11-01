@@ -268,3 +268,8 @@ La lectura opcional incorpora la analogía día/atardecer y vida/vejez del capí
 ### Grafismos de tinta e hilo
 
 Los cuatro grafismos enviados por el equipo sustituyen las formas genéricas de las etapas. Larva reúne las partes alrededor del entramado; Crisálida vincula los términos con hilos que salen de la envoltura; Eclosión conserva actividad, guía y pregunta en el dibujo que se abre; Mariposa permite destacar relaciones sobre el despliegue final. Las versiones de montaje tienen transparencia y los hilos y textos son capas independientes. Se conservan todos los esquemas educativos del caso, incluida la caja negra, y las actividades. El movimiento reducido muestra las conexiones completas.
+
+
+### Acceso a Larva y carga de imágenes
+
+La bienvenida termina con un acceso explícito a «01 · Larva — Antes de tomar forma», acompañado por una miniatura del grafismo. Larva conserva su lugar como primer momento del recorrido después de la orientación. Se optimizan los WebP y se precarga Larva; los archivos nuevos llevan nombres con huella de contenido.

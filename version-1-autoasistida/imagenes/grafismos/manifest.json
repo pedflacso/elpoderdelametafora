@@ -1,38 +1,38 @@
 [
   {
+    "stage": "larva",
+    "file": "larva-4cc05216.webp",
+    "width": 1698,
+    "height": 926,
+    "bytes": 569390,
+    "sha256": "4cc05216f0adddfd1f468d408ac43b82b249900fabc466a5d438d418d20916fc",
+    "alpha": true
+  },
+  {
     "stage": "crisalida",
-    "file": "crisalida.webp",
+    "file": "crisalida-80c32686.webp",
     "width": 1089,
     "height": 1444,
-    "bytes": 755554,
-    "sha256": "486b2259f27752a0bc0be91dd10be250cafd263f2113e4db5c6b1b9aee1bcfa7",
+    "bytes": 378840,
+    "sha256": "80c32686a4c9299c4a17c58eb41eea0ec2e1ff46bc04d18352bf933aebb20b0b",
     "alpha": true
   },
   {
     "stage": "eclosion",
-    "file": "eclosion.webp",
+    "file": "eclosion-f2c91b6f.webp",
     "width": 1470,
     "height": 1070,
-    "bytes": 745562,
-    "sha256": "0159c8597d8e63c912eae59729023734f6aed7b608b0d986af1dcb9f6b0e9af8",
-    "alpha": true
-  },
-  {
-    "stage": "larva",
-    "file": "larva.webp",
-    "width": 1698,
-    "height": 926,
-    "bytes": 1051190,
-    "sha256": "789c76a221a9226e4aafa104cfc4327c4e380e427503b8e78f7f8cfcfd8a5afd",
+    "bytes": 407552,
+    "sha256": "f2c91b6ff3a816f92c7dc2a1f3939420f1fd34a9500e9344b72547107e094a3f",
     "alpha": true
   },
   {
     "stage": "mariposa",
-    "file": "mariposa.webp",
+    "file": "mariposa-86a20bed.webp",
     "width": 1470,
     "height": 1070,
-    "bytes": 1031032,
-    "sha256": "45af9964fd703dfa131c8da212e19e7fd6dc7040eb142938a5cc0fe2880634f5",
+    "bytes": 589362,
+    "sha256": "86a20bed9a4e3d8aa3217a5346eb2a623d588a68622deccd1648c93ad3252966",
     "alpha": true
   }
 ]
