@@ -688,23 +688,23 @@ p,li,dd{overflow-wrap:break-word}
     "audio": "audio/08-caso-final-17b5df6b.mp3",
     "caption": "Una actividad, una guía. Todavía necesitamos entender qué ocurrió entre ellas.",
     "blackboxTitle": "Abrir la caja negra del diseño",
-    "blackboxLead": "Cuando vemos un objeto terminado, algunas decisiones quedan fuera de la vista. Estas preguntas pueden ayudarte a mirar el recorrido. No hace falta responderlas todas.",
+    "blackboxLead": "Cuando vemos un objeto terminado, algunas decisiones quedan fuera de la vista. Estas preguntas pueden orientar tu observación. Después vas a contrastar lo que pensás con las voces y los materiales del caso.",
     "questions": [
       {
         "title": "¿Qué puede ver quien aprende?",
-        "body": "Volvé a la consigna y al recorrido. ¿Qué recursos aparecen al resolver la actividad? No alcanza con que la guía exista: necesitamos revisar si podía reconocerse como relevante y si era accesible."
+        "body": "Observá la consigna y los materiales. ¿Qué encuentra la persona al llegar a la actividad? ¿Qué información tiene disponible en ese momento?"
       },
       {
         "title": "¿Qué recorrido se esperaba?",
-        "body": "¿Se daba por supuesto que la persona había leído la guía, que la recordaba o que sabía volver a una sección anterior? Compará ese recorrido esperado con las acciones del caso."
+        "body": "Reconstruí los pasos que se esperaba que siguiera la persona. ¿Qué tendría que consultar o hacer para resolver la actividad?"
       },
       {
         "title": "¿Qué relación debía reconocer?",
-        "body": "La actividad necesita criterios que están en otro recurso. ¿Cómo se hacía visible ese vínculo? ¿Qué parte de reconocerlo quedaba a cargo de quien aprende?"
+        "body": "Compará las piezas del caso. ¿Qué vínculos aparecen explícitos y cuáles tendría que construir quien aprende?"
       },
       {
         "title": "¿Qué orientación necesitaba?",
-        "body": "¿Qué indicación habría permitido saber qué guía consultar, cuándo usarla y cómo llegar a ella? Las orientaciones también forman parte del diseño del recorrido."
+        "body": "Buscá las indicaciones que acompañan la actividad. ¿Qué señalan? ¿Qué preguntas sobre cómo continuar dejan abiertas?"
       }
     ]
   },
@@ -919,7 +919,7 @@ p,li,dd{overflow-wrap:break-word}
     "reveal": "Comparar con una explicación posible",
     "hide": "Ocultar la explicación posible",
     "answerTitle": "Una reconstrucción posible",
-    "answer": "La dificultad no estaba en una pieza aislada. La guía estaba. La actividad también. Lo que no estaba suficientemente construido era el vínculo entre ambas: el recorrido no hacía evidente cuándo consultar la guía ni cómo sus criterios ayudaban a resolver la actividad.",
+    "answer": "Una interpretación compatible con las piezas del caso es que el vínculo entre la actividad y la guía no resultaba suficientemente visible o accesible. La guía estaba disponible y la consigna pedía usar sus criterios, pero había que volver a una sección anterior para encontrarla. El testimonio de quien tuvo que buscarla y el registro de quienes no la abrieron dan sustento a esta hipótesis.",
     "caution": "Es una hipótesis de diseño apoyada en las piezas del caso. Para comprobarla, habría que probar una orientación y un acceso directo, y observar qué cambia.",
     "compareHelp": "Después, podés abrir otra interpretación, comparar en qué se apoya y ajustar la tuya.",
     "reviewTitle": "Revisá tu explicación",
@@ -928,7 +928,10 @@ p,li,dd{overflow-wrap:break-word}
       "¿Qué indicios sostienen tu explicación y qué aporta cada uno?",
       "¿Cómo se relacionan? ¿Hay alguna voz o material que te haga matizar tu interpretación?",
       "¿Qué podés afirmar con estas piezas y qué necesitarías comprobar?"
-    ]
+    ],
+    "furtherTitle": "Qué permite explicar y qué queda abierto",
+    "furtherBody": "Esta lectura relaciona las dificultades para continuar con la organización del recorrido. Para saber si también había dificultades al interpretar o aplicar los criterios, necesitaríamos consultar el contenido completo de la guía y observar cómo se resolvía la actividad.",
+    "furtherQuestion": "Una próxima prueba podría acercar la guía a la actividad y observar qué cambia: ¿se consulta con más facilidad?, ¿se comprenden sus criterios?, ¿se usan para fundamentar el análisis?"
   },
   "ui": {
     "caseAnchor": "Eclosión",
@@ -2720,19 +2723,19 @@ p,li,dd{overflow-wrap:break-word}
     "nodes": [
       {
         "label": "Lo visible",
-        "body": "Qué recursos encuentra la persona y cómo reconoce cuáles necesita para resolver la actividad."
+        "body": "Qué recursos e información encuentra la persona al llegar a la actividad."
       },
       {
         "label": "El recorrido",
-        "body": "Qué acciones se esperaban y qué se daba por supuesto sobre cómo avanzar o volver atrás."
+        "body": "Qué acciones se esperaban y qué pasos permitirían realizarlas."
       },
       {
         "label": "Las relaciones",
-        "body": "Cómo se hace visible el vínculo entre la actividad y los criterios que necesita para resolverla."
+        "body": "Qué vínculos aparecen explícitos y cuáles necesita construir quien aprende."
       },
       {
         "label": "Las orientaciones",
-        "body": "Qué indicaciones permiten saber qué consultar, cuándo usarlo y cómo llegar a ese recurso."
+        "body": "Qué indicaciones acompañan la actividad y qué dudas sobre cómo continuar quedan abiertas."
       }
     ]
   },
@@ -3101,7 +3104,7 @@ function soundPortrait(index){return `<svg viewBox="0 0 72 72" fill="none" strok
 function soundMap(){const t=C.soundMap;return `<section class="sound-map" aria-labelledby="sound-map-title"><header class="sound-map-heading"><span class="sound-map-symbol">${learningIcon(0)}</span><h3 id="sound-map-title">${esc(t.title)}</h3><p>${esc(t.intro)}</p></header><div class="sound-map-question"><p>${esc(t.question)}</p></div><svg class="sound-map-links" viewBox="0 0 900 95" preserveAspectRatio="none" aria-hidden="true"><path d="M450 0v20M450 20Q150 20 150 95M450 20v75M450 20Q750 20 750 95"/><path d="M150 80Q300 15 450 80Q600 15 750 80" class="sound-map-orbit"/></svg><div class="sound-voices" role="group" aria-label="${esc(t.connection)}">${C.voices.map((v,i)=>`<article class="sound-voice sound-voice-${i+1}" aria-labelledby="sound-voice-title-${i}"><div class="sound-voice-person"><span class="sound-portrait">${soundPortrait(i)}</span><h4 id="sound-voice-title-${i}">${esc(v.name)}</h4></div>${audioMarkup(v.audio,v.name)}<p class="sound-reference">${esc(t.referenceLabel)}</p><blockquote>«${esc(v.text)}»</blockquote><div class="sound-pause"><span>${esc(t.pauseLabel)}</span><p>${esc(C.podcast.steps[i])}</p></div></article>`).join('')}</div><p class="sound-map-caption">${esc(t.caption)}</p></section>`;}
 function voice(v,i){return `<article class="voice"><h3>${esc(v.name)}</h3>${audioMarkup(v.audio,v.name)}<p class="small">Guion de referencia del testimonio</p><blockquote>«${esc(v.text)}»</blockquote>${i===undefined?'':`<p class="pause">${esc(C.podcast.steps[i])}</p>`}</article>`;}
 function evidenceList(explore){const items=explore?[{id:'voz',title:C.ui.voicePiece},...C.evidence]:C.evidence.filter(e=>e.id!=='guia');return `<div class="evidence-buttons" role="group" aria-label="Piezas consultables">${items.map(e=>`<button class="secondary" data-evidence="${e.id}" aria-pressed="false" aria-controls="evidence-body">${esc(e.title)}</button>`).join('')}</div><div id="evidence-body" class="evidence-body"><p>${esc(C.ui.evidenceHint)}</p></div>`;}
-function reflection(path){return `<div class="workspace reflection"><h3>${esc(C.reflection.title)}</h3><p>${esc(C.reflection.intro)}</p><section class="reading-block first-reading"><h4>Tu primera interpretación</h4><p class="first-interpretation" id="first-interpretation"></p></section>${hintMarkup()}<label for="explanation">${esc(C.reflection.label)}</label><textarea id="explanation" placeholder="${esc(C.reflection.placeholder)}" aria-describedby="privacy">${esc(state[path].explanation)}</textarea><p class="small" id="privacy">${esc(C.reflection.privacy)}</p><button id="copy" class="secondary">${esc(C.ui.copy)}</button><p class="small status" id="copy-status" role="status"></p><section class="explanation-review" aria-labelledby="explanation-review-title"><h4 id="explanation-review-title">${esc(C.reflection.reviewTitle)}</h4><p>${esc(C.reflection.reviewHint)}</p><ul>${C.reflection.reviewQuestions.map(question=>`<li>${esc(question)}</li>`).join('')}</ul></section><p>${esc(C.reflection.compareHelp)}</p><button id="reveal" aria-expanded="${state[path].revealed}" aria-controls="reconstruction">${esc(state[path].revealed?C.reflection.hide:C.reflection.reveal)}</button><section id="reconstruction" class="reconstruction" ${state[path].revealed?'':'hidden'}><h3>${esc(C.reflection.answerTitle)}</h3><p>${esc(C.reflection.answer)}</p><p class="small">${esc(C.reflection.caution)}</p><p>${esc(C.assistance.review)}</p></section></div>`;}
+function reflection(path){return `<div class="workspace reflection"><h3>${esc(C.reflection.title)}</h3><p>${esc(C.reflection.intro)}</p><section class="reading-block first-reading"><h4>Tu primera interpretación</h4><p class="first-interpretation" id="first-interpretation"></p></section>${hintMarkup()}<label for="explanation">${esc(C.reflection.label)}</label><textarea id="explanation" placeholder="${esc(C.reflection.placeholder)}" aria-describedby="privacy">${esc(state[path].explanation)}</textarea><p class="small" id="privacy">${esc(C.reflection.privacy)}</p><button id="copy" class="secondary">${esc(C.ui.copy)}</button><p class="small status" id="copy-status" role="status"></p><section class="explanation-review" aria-labelledby="explanation-review-title"><h4 id="explanation-review-title">${esc(C.reflection.reviewTitle)}</h4><p>${esc(C.reflection.reviewHint)}</p><ul>${C.reflection.reviewQuestions.map(question=>`<li>${esc(question)}</li>`).join('')}</ul></section><p>${esc(C.reflection.compareHelp)}</p><button id="reveal" aria-expanded="${state[path].revealed}" aria-controls="reconstruction">${esc(state[path].revealed?C.reflection.hide:C.reflection.reveal)}</button><section id="reconstruction" class="reconstruction" ${state[path].revealed?'':'hidden'}><h3>${esc(C.reflection.answerTitle)}</h3><p>${esc(C.reflection.answer)}</p><p class="small">${esc(C.reflection.caution)}</p><h4>${esc(C.reflection.furtherTitle)}</h4><p>${esc(C.reflection.furtherBody)}</p><p>${esc(C.reflection.furtherQuestion)}</p><p>${esc(C.assistance.review)}</p></section></div>`;}
 function renderPath(path){const s=state[path],p=C[path];document.getElementById('investigation-title').textContent=p.title;document.getElementById('path-status').textContent=C.choose.paths.find(x=>x.id===path).label;let body='';
 if(path==='podcast')body=`<p class="note">${esc(p.audioNotice)}</p>${soundMap()}<div class="workspace"><h3>${esc(p.evidenceTitle)}</h3><p>${esc(p.evidenceIntro)}</p>${evidenceList(false)}</div><div class="workspace"><h3>${esc(p.contrastTitle)}</h3><p>${esc(p.contrastIntro)}</p>${pairBoard()}<details><summary>Si te sirve, anotá una relación</summary><label for="contrast-note">${esc(p.contrastLabel)}</label><textarea id="contrast-note" placeholder="${esc(p.contrastPlaceholder)}">${esc(s.note)}</textarea><p class="small">${esc(C.reflection.privacy)}</p></details></div><details class="path-extension"><summary>Para ampliar: cómo se organizó este episodio</summary><h3>${esc(p.architectureTitle)}</h3><p>${esc(p.architectureIntro)}</p><div class="details-grid">${visibleTexts(p.nodes)}</div></details>`;
 else body=`<div class="workspace"><h3>${esc(p.exploreTitle)}</h3><p>${esc(p.exploreIntro)}</p>${evidenceList(true)}</div><div class="workspace"><h3>${esc(p.relationsTitle)}</h3><p>${esc(p.relationsIntro)}</p><details><summary>Si te sirve, anotá la relación entre dos piezas</summary><label for="relation-note">Tu relación entre dos piezas — nota opcional</label><textarea id="relation-note" placeholder="${esc(C.ui.relationPlaceholder)}">${esc(s.relationNote||'')}</textarea><p class="small">${esc(C.reflection.privacy)}</p></details><div class="details-grid">${details(p.relations.map(r=>({title:r.title+' · Lectura posible',body:r.body})))}</div></div><details class="workspace evidence-organizer" id="ordenar-indicios"><summary>${esc(p.organizeTitle)}</summary><p>${esc(p.organizeIntro)}</p><div class="zones">${p.zones.map((z,i)=>`<div class="zone"><h3>${esc(z)}</h3><div role="group" aria-label="${esc(z)}">${p.pieces.map((piece,j)=>`<button data-zone="${i}" data-piece="${j}" aria-pressed="${s.zones[i].has(j)}"><span class="zone-check" aria-hidden="true">✓</span>${esc(piece)}</button>`).join('')}</div></div>`).join('')}</div></details>`;
