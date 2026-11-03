@@ -368,3 +368,5 @@ Se añade a Eclosión un pequeño fragmento de ala asomando por el lateral super
 Ajuste final: larva menos erguida; Eclosión conserva la apertura inferior y suma el alita cruzada en el costado opuesto; se retiran los aros exteriores.
 
 Se añade a Eclosión un pequeño fragmento de ala asomando por el lateral superior, como capa independiente de trazo suave. Se conserva intacto el dibujo base seleccionado y se actualizan sus apariciones, incluida la transición hacia Mariposa y el mapa del recorrido. Las otras tres figuras, las palabras exteriores y las interacciones mantienen su contenido.
+
+Revisión de proporciones: se retira el fragmento lateral añadido a Eclosión. Se conserva el dibujo seleccionado con la apertura inferior, sin aros exteriores; la larva aprobada permanece.
