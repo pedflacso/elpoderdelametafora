@@ -119,3 +119,7 @@ Propuesta con inicio el 14/04/2026: certificación completa de 15 semanas y reco
 En `version-1-autoasistida/propuesta-metamorfosis.html`, la entrada ocupa la pantalla y construye la crisálida con hilos al desplazarse. El diagrama de Larva despliega sus seis relaciones en seis momentos de scroll. Crisálida incorpora los dos recuadros sobre la pregunta de diseño; los ejemplos de lenguaje quedan como lectura opcional. La versión principal permanece intacta.
 
 Verificación: seis etapas, ambos textos, caja interactiva, contraste, anchos de 320 a 1440 px y movimiento reducido manual y del sistema; sin errores de JavaScript. En móvil y con movimiento reducido se presenta la composición completa.
+
+## Prueba integral de narración por capas
+
+`version-1-autoasistida/propuesta-capas.html` explora escenas persistentes, recuadros superpuestos, caja que se abre y materiales que se reordenan con el scroll, manteniendo el contenido y las interacciones. La versión principal y la prueba de metamorfosis quedan intactas. [Escenas y validación para la revisión](documentacion/scrollytelling/PRUEBA-CAPAS.md).
