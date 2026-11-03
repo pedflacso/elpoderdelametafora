@@ -925,15 +925,6 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
 #larva .ink-node:nth-child(odd) dt{box-shadow:inset 3px 0 #8A6A3A}
 #larva .ink-node:nth-child(even) dt{box-shadow:inset -3px 0 #8A6A3A}
 #larva .ink-knot{fill:#C1A04A;stroke:#8A6A3A;stroke-width:1.3;opacity:var(--ink-progress,1)}
-.stage-band[data-stage-background="crisalida"]{--stage-background:#FBFAF6;--stage-action:#5B4260;--stage-accent:#5B4260;--accent-tint:#E6D9E4;--surface:#FBFAF6;--soft:#F3ECF1}
-#crisalida .concept-audio,#concept-visual.ink-stage-panel{background:#F3ECF1;border-radius:22px}
-#crisalida .ink-stage{--thread-a:#5B4260;--thread-b:#5B4260}
-#concept-visual .ink-node dt{background:#E6D9E4;color:#5B4260;border:1px solid #8A6A8F;box-shadow:none}
-#traslado details.metaphor-drawer{background:#FBFAF6;border-color:#8A6A8F}
-#traslado details.metaphor-drawer:nth-child(2){background:#F3ECF1}
-#traslado details.metaphor-drawer:nth-child(3){background:#E6D9E4}
-#crisalida :is(.drawer-icon,.thinker-icon,.drawer-handle,.thinker-toggle){color:#5B4260}
-#crisalida :is(.drawer-handle,.thinker-toggle){background:#5B4260;color:#FBFAF6}
 #case-visual .eclosion-piece:first-child{background:#EDE4EC;border:1px solid #7A5A80;color:#263c30}
 #case-visual .eclosion-piece:first-child :is(h4,span){color:#5B4260}
 #case-visual .eclosion-piece:nth-child(2){background:#DCEAEA;border:1px solid #3F7A80;color:#263c30}
@@ -942,13 +933,6 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
 #case-visual .eclosion-trails .ink-thread:nth-child(2){stroke:#3F7A80}
 #case-visual .eclosion-question-links{stroke:url(#piece-link-grad)}
 #case-visual .eclosion-question{background:#273222;color:#FBFAF6}
-.stage-band .blackbox-node-1{background:#EDE4EC;border:1px solid #8A6A8F;--look-ink:#5B4260;color:#263c30}
-.stage-band .blackbox-node-2{background:#F7E3E0;border:1px solid #A8706B;--look-ink:#824B49;color:#263c30}
-.stage-band .blackbox-node-3{background:#253F5D;border:1px solid #253F5D;--look-ink:#FBFAF6;color:#FBFAF6}
-.stage-band .blackbox-node-4{background:#28481C;border:1px solid #28481C;--look-ink:#FBFAF6;color:#FBFAF6}
-.stage-band .blackbox-node :is(.blackbox-node-heading,.blackbox-icon){color:var(--look-ink)}
-.stage-band .blackbox-icon{background:transparent}
-.blackbox-object path[fill="#b9b4da"]{fill:#E6D9E4}.blackbox-object path[fill="#253f5d"]{fill:#28481C}
 #elegir .investigation-options .choice{--path-action:#5B4260;--path-tint:#E6D9E4;background:#F3ECF1;border:1px solid #8A6A8F;box-shadow:none!important}
 #elegir .investigation-options .choice:nth-child(2){--path-action:#2F6F7A;--path-tint:#DCEAEA;background:#E3EFEF;border-color:#3F7A80}
 #elegir .investigation-options .choice[data-selected="true"]{border-width:1px;outline:none;box-shadow:none!important}
@@ -976,11 +960,19 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
 
 #case-visual .eclosion-piece:first-child .segment-icon{color:#5B4260}
 #case-visual .eclosion-piece:nth-child(2) .segment-icon{color:#2F6F7A}
-#crisalida .wave-player-ui{background:#5B4260;color:#FBFAF6}
-#crisalida .wave-player-ui .wave-toggle{background:#5B4260;color:#FBFAF6!important;border-color:#E6D9E4}
+
+/* Revisión combinada: recuperar bloques aprobados y afinar solo lo indicado. */
+#larva .ink-thread{stroke:#D9722B;stroke-width:2;opacity:1}
+#case-visual .eclosion-piece:first-child,#case-visual .eclosion-piece:nth-child(2){background:#FFFFFF}
+.stage-band .cycle-node-1{background:#EDF3F3;border-color:#8FA9AE;color:#263c30}
+.stage-band .episode-scheme li:first-child{background:#C5D9B0;color:#122509;border-color:#70905E}
+.stage-band .episode-scheme li:nth-child(2){background:#95B27F;color:#122509;border-color:#70905E}
+.stage-band .episode-scheme li:nth-child(3){background:#70905E;color:#0B1D08;border-color:#70905E}
+.stage-band .episode-scheme li:nth-child(4){background:#28481C;color:#FAFBF2;border-color:#28481C}
+
 </style>
 </head>
-<body><nav class="visual-version-nav" aria-label="Versiones del diseño"><a href="propuesta-tramas.html">Comparar con la prueba anterior</a><a href="index.html">Ver el sitio actual</a></nav>
+<body><nav class="visual-version-nav" aria-label="Versiones del diseño"><a href="propuesta-matices.html#caso">Comparar oliva y celeste</a><a href="propuesta-tramas.html">Comparar con la prueba anterior</a><a href="index.html">Ver el sitio actual</a></nav>
 <a class="skip" href="#main">Ir al contenido</a>
 <header class="header"><div class="wrap header-inner"><a class="brand" href="#main">El poder de la metáfora</a><div class="phase" aria-label="Momento del recorrido"><a href="#larva">Larva</a><a href="#crisalida">Crisálida</a><a href="#caso">Eclosión</a><a href="#mariposa">Mariposa</a></div><button id="motion" class="secondary" aria-pressed="false">Reducir movimiento</button></div></header>
 <main id="main" class="wrap" tabindex="-1"></main>
@@ -2907,19 +2899,16 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
     "steps": [
       {
         "title": "Seleccionar",
-        "question": "¿Qué aporta cada pieza?",
         "body": "Seleccionar materiales que contribuyan al propósito de enseñanza.",
         "detail": "En el caso, cada pieza permite mirar algo de la experiencia."
       },
       {
         "title": "Relacionar",
-        "question": "¿Qué podemos comprender al conectarlas?",
         "body": "Poner en relación lo que cuentan las personas y las condiciones del recorrido.",
         "detail": "Voces, consigna y ubicación de la guía ayudan a construir una explicación."
       },
       {
         "title": "Disponer",
-        "question": "¿Cómo las ponemos al alcance?",
         "body": "Decidir cuándo aparecen los materiales y cómo se puede llegar a ellos.",
         "detail": "Desde la escucha o desde la exploración, cambia la manera de encontrarlos."
       }
@@ -3316,7 +3305,7 @@ function curationSymbol(index){
 }
 /* Los mismos cuatro materiales reaparecen en distintas disposiciones. */
 function curationMaterialGraphic(index){const labels=C.curationScheme.graphicMaterials;if(index===2){return `<svg class="curation-material-graphic" viewBox="0 0 222 145" aria-hidden="true"><text x="111" y="13" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" fill="#132d48">Escucha</text><text x="111" y="88" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" fill="#132d48">Exploración</text><path d="M25 40h172M25 115h172" stroke="#7c74b5" stroke-width="2"/>${[24,99].map(y=>labels.map((label,i)=>`<g><rect x="${3+i*55}" y="${y}" width="50" height="32" rx="8" fill="${['#ffe0cf','#f3f4fb','#d5c6ec','#eee8f6'][i]}" stroke="#5b538e"/><text x="${28+i*55}" y="${y+20}" text-anchor="middle" font-family="Roboto, sans-serif" font-size="8" fill="#132d48">${esc(label)}</text></g>`).join('')).join('')}</svg>`;}const positions=index===0?[[8,15],[118,15],[8,70],[118,70]]:index===1?[[8,10],[118,10],[8,85],[118,85]]:[[4,20],[116,20],[4,94],[116,94]];const cards=positions.map(([x,y],i)=>`<g><rect x="${x}" y="${y}" width="96" height="38" rx="10" fill="${['#ffe0cf','#f3f4fb','#d5c6ec','#eee8f6'][i]}" stroke="#5b538e"/><text x="${x+48}" y="${y+23}" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11" fill="#132d48">${esc(labels[i])}</text></g>`).join('');let links='';if(index===1)links='<path d="M56 29 166 104M166 29 56 104M56 29v75m110-75v75" stroke="#7c74b5" stroke-width="2" fill="none"/>';if(index===2)links='<path d="M52 39h112M52 113h112m-55-62 7-12-7-12m0 98 7-12-7-12" stroke="#5b538e" stroke-width="2" fill="none"/>';return `<svg class="curation-material-graphic" viewBox="0 0 222 145" aria-hidden="true">${links}${cards}${index===2?'<text x="111" y="10" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" fill="#132d48">Escucha</text><text x="111" y="85" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" fill="#132d48">Exploración</text>':''}</svg>`;}
-function curationScheme(){const t=C.curationScheme;return `<figure class="curation-scheme" aria-labelledby="curation-scheme-title"><h4 id="curation-scheme-title">${esc(t.title)}</h4><div class="curation-purpose"><strong>${esc(t.purposeTitle)}</strong><p>${esc(t.purposeBody)}</p></div><div class="curation-materials"><p>${esc(t.materialsLabel)}</p><ul class="material-tokens">${t.materials.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><ul class="curation-diagram">${t.steps.map((step,i)=>`<li data-curation-step="${i}"><h5>${esc(step.title)}</h5>${curationMaterialGraphic(i)}<p class="curation-transformation-label">${esc(t.transformationLabels[i])}</p><p class="scheme-question">${esc(step.question)}</p><p>${esc(step.body)}</p><p>${esc(step.detail)}</p></li>`).join('')}</ul><p class="curation-outcome">${esc(t.result)}</p><figcaption>${esc(t.caption)}</figcaption></figure>`;}
+function curationScheme(){const t=C.curationScheme;return `<figure class="curation-scheme" aria-labelledby="curation-scheme-title"><h4 id="curation-scheme-title">${esc(t.title)}</h4><div class="curation-purpose"><strong>${esc(t.purposeTitle)}</strong><p>${esc(t.purposeBody)}</p></div><div class="curation-materials"><p>${esc(t.materialsLabel)}</p><ul class="material-tokens">${t.materials.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><ul class="curation-diagram">${t.steps.map((step,i)=>`<li data-curation-step="${i}"><h5>${esc(step.title)}</h5>${curationMaterialGraphic(i)}<p class="curation-transformation-label">${esc(t.transformationLabels[i])}</p><p>${esc(step.body)}</p><p>${esc(step.detail)}</p></li>`).join('')}</ul><p class="curation-outcome">${esc(t.result)}</p><figcaption>${esc(t.caption)}</figcaption></figure>`;}
 /* La mariposa reúne el recorrido y abre dos decisiones; todos los textos permanecen visibles. */
 function butterflySummary(){const t=C.closing.infographic,art=C.inkArt.mariposa,bodies=[C.closing.body,C.closing.synthesis,...t.decisions];return `<figure class="butterfly-summary" aria-label="${esc(t.figureLabel)}"><svg class="summary-threads" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true"><path d="M500 300C400 210 360 125 180 125M500 300c100-90 140-175 320-175M500 300c-100 90-140 175-320 175M500 300c100 90 140 175 320 175"/></svg><div class="summary-butterfly-core"><img src="${esc(art.src)}" width="${art.width}" height="${art.height}" alt="${esc(art.alt)}" loading="lazy" decoding="async"><p>${esc(t.centerCaption)}</p></div>${t.labels.map((label,i)=>`<section class="summary-wing summary-wing-${i+1}"><h3><span class="summary-wing-icon">${learningIcon([2,3,4,5][i])}</span>${esc(label)}</h3><p>${esc(bodies[i])}</p></section>`).join('')}<figcaption>${esc(C.closing.continuity)}</figcaption></figure>`;}
 /* Comparación visible: dos centros reconocibles y sus decisiones alrededor. */
