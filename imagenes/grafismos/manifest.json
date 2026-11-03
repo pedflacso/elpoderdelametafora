@@ -1,42 +1,70 @@
 [
   {
     "stage": "larva",
-    "file": "larva-montaje-6dd7bb93.png",
-    "width": 1448,
-    "height": 1086,
-    "bytes": 928970,
-    "sha256": "6dd7bb93ac15033aa7127d54c74da55a8c76372d993d99bba2647ec34e4deed7",
+    "file": "larva-grafismo-suave-411c8f40.svg",
+    "width": 535,
+    "height": 340,
+    "bytes": 2996320,
+    "sha256": "411c8f4097556723e3546e3bce24fc67f04533aedce681d53952b6de6cd99834",
     "alpha": true,
-    "treatment": "Edición de la ilustración de Larva: cabeza simplificada, sin prolongaciones ni ojo; se conservan cuerpo segmentado, rama, trazo negro e interiores blancos."
+    "source": "lamina-grafismos-suaves.png",
+    "crop": [
+      0,
+      260,
+      535,
+      340
+    ],
+    "treatment": "Recorte visual SVG de la lámina seleccionada; tinta separada del fondo mediante filtro de presentación, sin redibujar las figuras."
   },
   {
     "stage": "crisalida",
-    "file": "crisalida-montaje-e37f4378.png",
-    "width": 1024,
-    "height": 1536,
-    "bytes": 1485225,
-    "sha256": "e37f437852d83b8a1f5209a75a4874446d3eac72a86966c676372ecbd600815b",
+    "file": "crisalida-grafismo-suave-efc8ac8d.svg",
+    "width": 240,
+    "height": 620,
+    "bytes": 2996325,
+    "sha256": "efc8ac8dab3e3f505371241bfcbffd2ed8530f9b484477517bfadefe384d7560",
     "alpha": true,
-    "treatment": "Versión separada para montaje mediante herramienta de edición de imágenes; los originales del chat siguen siendo referencia artística."
+    "source": "lamina-grafismos-suaves.png",
+    "crop": [
+      530,
+      60,
+      240,
+      620
+    ],
+    "treatment": "Recorte visual SVG de la lámina seleccionada; tinta separada del fondo mediante filtro de presentación, sin redibujar las figuras."
   },
   {
     "stage": "eclosion",
-    "file": "eclosion-montaje-8e96361f.png",
-    "width": 1024,
-    "height": 1536,
-    "bytes": 1757227,
-    "sha256": "8e96361fe864d96e7c104aff05d801a07c3db4746a7c5fbf21055238bd81f1ab",
+    "file": "eclosion-grafismo-suave-db12d321.svg",
+    "width": 335,
+    "height": 675,
+    "bytes": 2996337,
+    "sha256": "db12d321a1ef4d0d75180d8342bb4d8f07cff51c439fbedec7f62ae4a1ae1a28",
     "alpha": true,
-    "treatment": "Versión separada para montaje mediante herramienta de edición de imágenes; los originales del chat siguen siendo referencia artística."
+    "source": "lamina-grafismos-suaves.png",
+    "crop": [
+      772,
+      60,
+      335,
+      675
+    ],
+    "treatment": "Recorte visual SVG de la lámina seleccionada; tinta separada del fondo mediante filtro de presentación, sin redibujar las figuras."
   },
   {
     "stage": "mariposa",
-    "file": "mariposa-montaje-8ab1940a.png",
-    "width": 1448,
-    "height": 1086,
-    "bytes": 1689179,
-    "sha256": "8ab1940a66758e7f6e8c7b1b3e59fa89ba95a3af536162040dd3045c2cf40640",
+    "file": "mariposa-grafismo-suave-fd369b2c.svg",
+    "width": 669,
+    "height": 650,
+    "bytes": 2996335,
+    "sha256": "fd369b2cb87bcfd6c03300905b6fb767a873956d70c125b3b947831f1ee06f8b",
     "alpha": true,
-    "treatment": "Versión separada para montaje mediante herramienta de edición de imágenes; los originales del chat siguen siendo referencia artística."
+    "source": "lamina-grafismos-suaves.png",
+    "crop": [
+      1105,
+      65,
+      669,
+      650
+    ],
+    "treatment": "Recorte visual SVG de la lámina seleccionada; tinta separada del fondo mediante filtro de presentación, sin redibujar las figuras."
   }
 ]
