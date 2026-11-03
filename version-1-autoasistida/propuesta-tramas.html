@@ -895,15 +895,16 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
 
 
 /* Tramas dibujadas: ventanas SVG acotadas al alto de pantalla, sin imágenes nuevas. */
-.stage-band:not([data-stage-background="mariposa"])::before{display:none}
+.stage-band:not([data-stage-background="mariposa"])::before{opacity:.06}
+.stage-band[data-stage-background="eclosion"]::before{opacity:.03}
 .sketch-field{position:absolute;inset:0;left:calc((100% - 100vw)/2);width:100vw;z-index:-1;overflow:clip;pointer-events:none;color:#315b4f}
-.sketch-window{position:sticky;top:76px;width:100%;height:calc(100svh - 76px);opacity:.18;mask-image:linear-gradient(90deg,#000,rgba(0,0,0,.12) 28%,rgba(0,0,0,.12) 72%,#000);transform:translate3d(0,var(--weave-shift,0px),0)}
+.sketch-window{position:sticky;top:76px;width:100%;height:calc(100svh - 76px);opacity:.12;mask-image:linear-gradient(90deg,#000,rgba(0,0,0,.12) 28%,rgba(0,0,0,.12) 72%,#000);transform:translate3d(0,var(--weave-shift,0px),0)}
 .sketch-window svg{display:block;width:100%;height:100%;max-height:none;overflow:visible;transform-origin:50% 48%;animation:sketch-breathe 18s ease-in-out infinite alternate;animation-play-state:paused}
 .weave-visible .sketch-window svg{animation-play-state:running}
 [data-stage-background="crisalida"] .sketch-window svg{animation-duration:22s;animation-delay:-5s}
 [data-stage-background="eclosion"] .sketch-window svg{animation-duration:20s;animation-delay:-9s}
 [data-stage-background="mariposa"] .sketch-window svg{animation-duration:25s;animation-delay:-13s}
-[data-stage-background="eclosion"] .sketch-window{opacity:.10}
+[data-stage-background="eclosion"] .sketch-window{opacity:.07}
 @keyframes sketch-breathe{from{transform:translate3d(-5px,4px,0) scale(.98) rotate(-.35deg)}to{transform:translate3d(8px,-6px,0) scale(1.075) rotate(.45deg)}}
 .weave-paused .sketch-window svg{animation-play-state:paused!important}
 .no-motion .sketch-window{transform:none!important}.no-motion .sketch-window svg{animation:none!important;transform:none!important}
@@ -913,7 +914,7 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
 .stage-band .episode-scheme li:nth-child(4){background:#28481c;color:#fafbf2;border-color:#28481c}
 .stage-band .episode-scheme .episode-step-icon{background:transparent;color:inherit}
 .stage-band .episode-scheme li:not(:last-child):after{color:#315b4f}
-@media(max-width:759px){.sketch-window{opacity:.16;mask-image:linear-gradient(90deg,#000,rgba(0,0,0,.08) 21%,rgba(0,0,0,.08) 79%,#000)}.sketch-window svg{animation-duration:24s}}
+@media(max-width:759px){.sketch-window{opacity:.12;mask-image:linear-gradient(90deg,#000,rgba(0,0,0,.08) 21%,rgba(0,0,0,.08) 79%,#000)}.sketch-window svg{animation-duration:24s}}
 @media(prefers-reduced-motion:reduce){.sketch-window{transform:none!important}.sketch-window svg{animation:none!important;transform:none!important}}
 
 </style>
