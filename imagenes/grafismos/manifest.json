@@ -1,38 +1,42 @@
 [
   {
     "stage": "larva",
-    "file": "larva-4cc05216.png",
-    "width": 1698,
-    "height": 926,
-    "bytes": 1553647,
-    "sha256": "ab8d3cff48bec11e07f8e91d4318da8a5d39e54598e54ce4f40a237d14318b93",
-    "alpha": true
+    "file": "larva-montaje-60442372.png",
+    "width": 1448,
+    "height": 1086,
+    "bytes": 1015604,
+    "sha256": "6044237207f10dc9e56564d13dd98a2a5b554c2124657f4f486fb7db236f0687",
+    "alpha": true,
+    "treatment": "Versión separada para montaje mediante herramienta de edición de imágenes; los originales del chat siguen siendo referencia artística."
   },
   {
     "stage": "crisalida",
-    "file": "crisalida-80c32686.png",
-    "width": 1089,
-    "height": 1444,
-    "bytes": 1076422,
-    "sha256": "a389630c23ea6c0fb4f441622533f87fcc61fcb9024144191efd6f213011c705",
-    "alpha": true
+    "file": "crisalida-montaje-e37f4378.png",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 1485225,
+    "sha256": "e37f437852d83b8a1f5209a75a4874446d3eac72a86966c676372ecbd600815b",
+    "alpha": true,
+    "treatment": "Versión separada para montaje mediante herramienta de edición de imágenes; los originales del chat siguen siendo referencia artística."
   },
   {
     "stage": "eclosion",
-    "file": "eclosion-f2c91b6f.png",
-    "width": 1470,
-    "height": 1070,
-    "bytes": 1101055,
-    "sha256": "4c5b3ce1e26dd733241902a1a02fc955deb4bf6e93b9c892484d7ca6dc826e69",
-    "alpha": true
+    "file": "eclosion-montaje-8e96361f.png",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 1757227,
+    "sha256": "8e96361fe864d96e7c104aff05d801a07c3db4746a7c5fbf21055238bd81f1ab",
+    "alpha": true,
+    "treatment": "Versión separada para montaje mediante herramienta de edición de imágenes; los originales del chat siguen siendo referencia artística."
   },
   {
     "stage": "mariposa",
-    "file": "mariposa-86a20bed.png",
-    "width": 1470,
-    "height": 1070,
-    "bytes": 1738239,
-    "sha256": "53070f71098886be5c8952005314e6392ec66b0f7bc7a442acabaa1e85afd640",
-    "alpha": true
+    "file": "mariposa-montaje-8ab1940a.png",
+    "width": 1448,
+    "height": 1086,
+    "bytes": 1689179,
+    "sha256": "8ab1940a66758e7f6e8c7b1b3e59fa89ba95a3af536162040dd3045c2cf40640",
+    "alpha": true,
+    "treatment": "Versión separada para montaje mediante herramienta de edición de imágenes; los originales del chat siguen siendo referencia artística."
   }
 ]
