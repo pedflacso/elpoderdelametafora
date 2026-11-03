@@ -362,3 +362,9 @@ A pedido de la autora, se aplican al sitio principal las cuatro ilustraciones pr
 Se edita la figura de Larva para retirar las prolongaciones de la cabeza y el ojo, simplificando su aspecto como larva. El cambio se aplica a las apariciones que dependen de inkArt: entrada, escena de Larva, transición hacia Crisálida y mapa del recorrido. Se mantienen las otras ilustraciones y las interacciones.
 
 A pedido de la autora se reemplazan las cuatro ilustraciones por la variante suave de escritura y grafismos superpuestos de la lámina seleccionada. Se conservan los textos, las palabras exteriores, sus posiciones y las interacciones. Se usan recortes visuales no destructivos de la misma lámina, sin su franja demostrativa de palabras.
+
+Se añade a Eclosión un pequeño fragmento de ala asomando por el lateral superior, como capa independiente de trazo suave. Se conserva intacto el dibujo base seleccionado y se actualizan sus apariciones, incluida la transición hacia Mariposa y el mapa del recorrido. Las otras tres figuras, las palabras exteriores y las interacciones mantienen su contenido.
+
+Ajuste final: larva menos erguida; Eclosión conserva la apertura inferior y suma el alita cruzada en el costado opuesto; se retiran los aros exteriores.
+
+Se añade a Eclosión un pequeño fragmento de ala asomando por el lateral superior, como capa independiente de trazo suave. Se conserva intacto el dibujo base seleccionado y se actualizan sus apariciones, incluida la transición hacia Mariposa y el mapa del recorrido. Las otras tres figuras, las palabras exteriores y las interacciones mantienen su contenido.

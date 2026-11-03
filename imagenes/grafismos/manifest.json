@@ -1,20 +1,20 @@
 [
   {
     "stage": "larva",
-    "file": "larva-grafismo-suave-411c8f40.svg",
-    "width": 535,
-    "height": 340,
-    "bytes": 2996320,
-    "sha256": "411c8f4097556723e3546e3bce24fc67f04533aedce681d53952b6de6cd99834",
+    "file": "larva-grafismo-suave-0f0152b6.svg",
+    "width": 1054,
+    "height": 387,
+    "bytes": 1797287,
+    "sha256": "0f0152b6353b4503e523915a77faa4838703b8420f6597a721ba11788693a09e",
     "alpha": true,
-    "source": "lamina-grafismos-suaves.png",
+    "source": "larva-menos-erguida-56f800b2.png",
     "crop": [
-      0,
-      260,
-      535,
-      340
+      348,
+      289,
+      1054,
+      387
     ],
-    "treatment": "Recorte visual SVG de la lámina seleccionada; tinta separada del fondo mediante filtro de presentación, sin redibujar las figuras."
+    "treatment": "Variante aprobada con la parte delantera más baja, todavía levantada; recorte visual SVG y separación del fondo."
   },
   {
     "stage": "crisalida",
@@ -35,11 +35,11 @@
   },
   {
     "stage": "eclosion",
-    "file": "eclosion-grafismo-suave-db12d321.svg",
-    "width": 335,
+    "file": "eclosion-grafismo-suave-alita-12482abd.svg",
+    "width": 400,
     "height": 675,
-    "bytes": 2996337,
-    "sha256": "db12d321a1ef4d0d75180d8342bb4d8f07cff51c439fbedec7f62ae4a1ae1a28",
+    "bytes": 4445813,
+    "sha256": "12482abdd019d225ffb7e418103636b66a8b5906b26cbd534574e5303f3b8657",
     "alpha": true,
     "source": "lamina-grafismos-suaves.png",
     "crop": [
@@ -48,7 +48,8 @@
       335,
       675
     ],
-    "treatment": "Recorte visual SVG de la lámina seleccionada; tinta separada del fondo mediante filtro de presentación, sin redibujar las figuras."
+    "treatment": "Alita superior en el lateral opuesto al ala inferior, con disposición cruzada.",
+    "wing": "alita-eclosion-ba8e89d9.png"
   },
   {
     "stage": "mariposa",
