@@ -425,3 +425,9 @@ Por indicación posterior se conserva Mariposa como en la propuesta verde aproba
 Ajuste de alcance tras la aclaración: la exploración conserva las tramas anteriores a baja intensidad y suma los grafismos móviles como una capa suave en las tres primeras etapas. No se sustituye el diseño completo. Mariposa permanece sin capas nuevas. La verificación final confirma animación real en Crisálida, ausencia de capas nuevas en Mariposa, detención con ambos controles de movimiento y sin desbordamiento hasta 320 px.
 
 Larva: se refuerzan exclusivamente los hilos de conexión con verde oscuro `#214936`, grosor de 3 px y opacidad completa. Revisión visual en navegador; se conserva el trazado y su comportamiento con el control de movimiento.
+
+### Variante con la paleta detallada del equipo
+
+`propuesta-paleta.html` permite comparar la propuesta anterior con la especificación aportada: hilos cobre `#B87333`, bordes bronce `#8A6A3A` y nudos oro viejo `#C1A04A` con contorno de bronce; tres niveles claros de lila en Crisálida; Actividad ciruela, Guía petróleo y llave con degradado entre ambas; pregunta verde pino; cuatro miradas lila, rosa empolvado, marino y bosque; caminos con botón ciruela/petróleo lleno y tilde, sin contorno grueso en la tarjeta seleccionada; columnas claro-a-hondo y fases ámbar, oliva, verde y celeste; círculos del podcast rosa empolvado con hilos e íconos rojo apagado.
+
+Se mantiene el diseño de Mariposa, las ilustraciones originales, el JSON editorial y los controles de movimiento. Nudos nuevos y gradiente son SVG decorativos; sin archivos raster adicionales. Contrastes calculados: hilo cobre/fondo 3,27:1 (gráfico), bronce/superficie 4,79:1, ciruela/superficie 7,56:1, petróleo/botón claro 5,47:1, rojo apagado/rosa 5,26:1. Axe-core no detectó fallas de contraste en los bloques y estados comprobados; pruebas de foco, ambas preferencias de movimiento y anchos de 320 a 1440 px completadas.
