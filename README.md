@@ -393,3 +393,9 @@ Contraste calculado con la trama a su opacidad máxima del 14%: texto principal 
 `propuesta-papel.html` es una alternativa completa para revisar, sin reemplazar `index.html`. Mantiene idénticos el JSON editorial y todas las ilustraciones. Usa una secuencia cálida continua: crema `#f3eddb`, arena `#eee1cc`, durazno `#efd6c5`, rosa arcilla `#e8c9c3`. Los controles progresan entre ocre oscuro `#5c4726`, marrón cálido `#694429`, terracota `#743b2a` y borgoña `#6e3438`.
 
 Una única tesela SVG de puntos irregulares y fibras finas produce el papel sin filtros de ruido ni nuevas imágenes raster. Conserva el desplazamiento de hasta 20 px y ambas opciones de reducción de movimiento. Auditoría de contraste con axe-core: sin fallas detectadas en las cuatro etapas, ambos caminos, desplegables abiertos y hover; foco visible de 3 px y sin desbordamiento móvil. Enlaces de comparación al sitio actual y al diseño original al comienzo de la prueba.
+
+### Prueba botánica de verdes continuos
+
+`propuesta-verdes.html` conserva el recorrido completo como alternativa independiente. Fondos: crema verdoso `#eef0d9`, brote `#dfe8c4`, salvia `#cbdcbe`, eucalipto `#b8d0bd`. Controles: oliva `#4e542a`, musgo `#3d5231`, bosque `#2c503b`, petróleo `#1c4541`. El borgoña `#731f40` destaca la relación seleccionada en Mariposa junto con el borde, el peso de letra y los hilos resaltados.
+
+SVG ligeros de nervaduras y grano irregular, con mayor ramificación por etapa. Capas curvas de los dos verdes contiguos suavizan los límites. Sin fotografías nuevas ni cambios a los dibujos. Solo las nervaduras se desplazan suavemente; las capas de transición permanecen fijas. Se conserva la preferencia de movimiento del sistema y el botón del módulo. Los enlaces superiores permiten comparar con el sitio actual, la prueba de papeles cálidos y el diseño original.
