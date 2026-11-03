@@ -390,6 +390,6 @@ Contraste calculado con la trama a su opacidad máxima del 14%: texto principal 
 
 ### Prueba de papel y colores análogos
 
-`propuesta-papel.html` es una alternativa completa para revisar, sin reemplazar `index.html`. Mantiene idénticos el JSON editorial y todas las ilustraciones. Usa una secuencia cálida continua: crema `#f3eddb`, arena `#eee1cc`, durazno `#efd6c5`, rosa arcilla `#e8c9c3`. Los controles progresan entre ocre oscuro `#65502b`, marrón cálido `#76502f`, terracota `#814431` y borgoña `#7b3d40`.
+`propuesta-papel.html` es una alternativa completa para revisar, sin reemplazar `index.html`. Mantiene idénticos el JSON editorial y todas las ilustraciones. Usa una secuencia cálida continua: crema `#f3eddb`, arena `#eee1cc`, durazno `#efd6c5`, rosa arcilla `#e8c9c3`. Los controles progresan entre ocre oscuro `#5c4726`, marrón cálido `#694429`, terracota `#743b2a` y borgoña `#6e3438`.
 
 Una única tesela SVG de puntos irregulares y fibras finas produce el papel sin filtros de ruido ni nuevas imágenes raster. Conserva el desplazamiento de hasta 20 px y ambas opciones de reducción de movimiento. Auditoría de contraste con axe-core: sin fallas detectadas en las cuatro etapas, ambos caminos, desplegables abiertos y hover; foco visible de 3 px y sin desbordamiento móvil. Enlaces de comparación al sitio actual y al diseño original al comienzo de la prueba.
