@@ -15,3 +15,9 @@ La versión activa utiliza ahora los PNG originales de montaje, conservando los 
 Se utilizan ahora las cuatro versiones de montaje preparadas a partir de las nuevas láminas compartidas: larva sobre una rama, crisálida cerrada, crisálida que deja ver las alas y mariposa de alas abiertas. La separación se realizó con la herramienta de edición de imágenes; no se afirma identidad píxel a píxel con los originales. Los PNG separados se conservan con su huella de contenido en este directorio y el HTML los incorpora para evitar fallos de carga. El manifiesto describe estos archivos activos.
 
 Se conservan los blancos interiores y los trazos negros, también en Mariposa y el cierre. La coloración de las alas en Eclosión se adapta a la zona inferior del dibujo, preservando el trazo mediante mezcla de color. Se mantienen los hilos y las etiquetas interactivas como elementos independientes.
+
+## Grafismos suaves seleccionados
+
+La autora seleccionó la lámina de cuatro figuras con escritura interior suave y superpuesta (`lamina-grafismos-suaves.png`). Cada figura se presenta mediante un SVG que recorta una región de esa misma lámina y separa la tinta del fondo en el renderizado. Se conserva el PNG íntegro; no se generan nuevos dibujos ni se agregan palabras interiores. La franja de palabras de la muestra queda fuera de los recortes. Las palabras y etiquetas exteriores del módulo conservan su contenido y disposición.
+
+La tinta se presenta oscura en Larva, Crisálida y Eclosión y clara en Mariposa y el cierre. La tinta interior hace de sombra; se desactiva el relleno plano de alas que usaban las ilustraciones previas. Los hilos, botones y notas mantienen sus interacciones.
