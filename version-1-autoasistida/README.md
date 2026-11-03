@@ -370,3 +370,20 @@ Ajuste final: larva menos erguida; Eclosión conserva la apertura inferior y sum
 Se añade a Eclosión un pequeño fragmento de ala asomando por el lateral superior, como capa independiente de trazo suave. Se conserva intacto el dibujo base seleccionado y se actualizan sus apariciones, incluida la transición hacia Mariposa y el mapa del recorrido. Las otras tres figuras, las palabras exteriores y las interacciones mantienen su contenido.
 
 Revisión de proporciones: se retira el fragmento lateral añadido a Eclosión. Se conserva el dibujo seleccionado con la apertura inferior, sin aros exteriores; la larva aprobada permanece.
+
+### Sistema visual editorial: cuatro atmósferas
+
+Se conserva el contenido JSON completo, incluidos todos los originales de las ilustraciones. La versión inmediatamente anterior a esta revisión está en `version-anterior.html`, con los mismos recursos relativos; ambas versiones incluyen un enlace para alternar. El enlace de revisión no es una instantánea: el archivo anterior sí conserva el diseño previo.
+
+| Etapa | Fondo | Intención y trama |
+| --- | --- | --- |
+| Larva | `#f3efe6` | Papel cálido: partes disponibles, hilo suelto y bucles aislados. |
+| Crisálida | `#e2e8dd` | Salvia: recogimiento, hebras que se entrelazan. |
+| Eclosión | `#f5e0d3` | Durazno: apertura, trazos que se separan y ramifican. |
+| Mariposa | `#dfeaf0` | Azul aireado: despliegue, nervaduras y curvas abiertas. |
+
+La tinta oscura y las superficies casi blancas unifican el recorrido. Los controles adoptan verde, verde profundo, terracota y azul petróleo por etapa; selección con doble borde interior y negrita, foco con contorno oscuro y separación clara. Se mantiene la forma, posición y fuente de cada ilustración.
+
+Cuatro SVG decorativos inline, sin nuevas imágenes raster, forman tramas de margen que se desvanecen hacia la lectura. Desplazamiento vertical de hasta 20 px en una sola actualización `requestAnimationFrame`, reutilizando el controlador de scroll existente. Solo se actualizan bandas visibles. Sin temporizadores de animación. `prefers-reduced-motion` y el botón existente restablecen y mantienen la trama estática. Las transiciones suaves de color marcan únicamente el inicio de cada etapa.
+
+Contraste calculado con la trama a su opacidad máxima del 14%: texto principal >= 7,95:1, enlaces >= 4,72:1, texto de botones >= 7,27:1. El desvanecido central reduce aún más la interferencia. La revisión automática de contraste se realiza con axe-core en Chromium, en ambos caminos, desplegables y estados hover. La versión anterior conserva su comportamiento original.
