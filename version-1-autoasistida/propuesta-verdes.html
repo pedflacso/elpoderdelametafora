@@ -829,6 +829,43 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
 .stage-band .curation-material-graphic path{stroke:#5c735d}
 .stage-band .learning-action-icon{background:#e6ebd1;color:#2c503b;border:1px solid #879a7b}
 
+
+/* Un acento calibrado por fondo: detalles, acciones y relaciones activas. */
+.stage-band[data-stage-background="larva"]{--stage-action:#8b422e;--stage-accent:#8b422e;--accent-tint:#f3dfd2}
+.stage-band[data-stage-background="crisalida"]{--stage-action:#62415d;--stage-accent:#62415d;--accent-tint:#eadee6}
+.stage-band[data-stage-background="eclosion"]{--stage-action:#86364f;--stage-accent:#86364f;--accent-tint:#f1dce3}
+.stage-band[data-stage-background="mariposa"]{--stage-action:#731f40;--stage-accent:#731f40;--accent-tint:#f0dce3}
+.stage-band .eyebrow::before{background:var(--stage-accent)}
+.stage-band .quote{border-left-color:var(--stage-accent)}
+.stage-band :is(.larva-connection-question,.larva-metaphor-bridge,.case-opening-box){border-color:var(--stage-accent)}
+.stage-band :is(.drawer-icon,.thinker-icon,.learning-action-icon){background:var(--accent-tint);color:var(--stage-accent)}
+.stage-band details[open]{border-color:var(--stage-accent)}
+#elegir .investigation-options .choice{box-shadow:inset 0 3px var(--stage-accent)}
+#elegir .investigation-options .choice[data-selected="true"]{border-color:var(--stage-accent);box-shadow:0 0 0 2px var(--stage-accent),inset 0 3px var(--stage-accent)}
+#elegir .investigation-options .choice[data-selected="true"] h3{color:var(--stage-accent)}
+#elegir .investigation-path-icon{background:var(--accent-tint);color:var(--stage-accent)}
+#elegir .investigation-options button{background:#fafbf2;color:var(--stage-accent)!important;border-color:var(--stage-accent)}
+#elegir .investigation-options button:hover{background:var(--accent-tint);color:var(--stage-accent)!important;box-shadow:inset 0 0 0 1px var(--stage-accent)}
+#elegir .investigation-options button[aria-pressed="true"]{background:var(--stage-accent)!important;color:#fafbf2!important;border-color:var(--stage-accent);box-shadow:inset 0 0 0 2px #fafbf2}
+#investigation-content .pair-options button{border-color:var(--stage-accent);color:var(--stage-accent)!important}
+#investigation-content .pair-options [aria-pressed="true"]{background:var(--stage-accent)!important;color:#fafbf2!important;border-color:var(--stage-accent)}
+.stage-band .has-pair .pair-link svg{stroke:var(--stage-accent)}
+.stage-band .has-pair .pair-link strong{color:var(--stage-accent)}
+#mariposa .connection-buttons button[aria-pressed="true"]{background:var(--stage-accent)!important;border-color:var(--stage-accent)}
+#butterfly-visual .ink-node.is-highlighted dt{background:var(--accent-tint);outline-color:var(--stage-accent)}
+#butterfly-visual .ink-thread.is-highlighted{stroke:var(--stage-accent)}
+
+
+/* Progresión local derivada de lima, oliva y salvia; bifurcación rosa/verde azulado. */
+.stage-band .design-bridge-relations li{--relation-ink:#67682c;background:#e8edc7;color:#263c30;border:1px solid #929c68;box-shadow:inset 4px 0 var(--relation-ink)}
+.stage-band .design-bridge-relations li:nth-child(2){--relation-ink:#4e633c;background:#d7dfb3;border-color:#82936b}
+.stage-band .design-bridge-relations li:nth-child(3){--relation-ink:#315b4a;background:#c5d7bd;border-color:#6a8970}
+.stage-band .design-bridge-relations .segment-icon,.stage-band .design-bridge-link{color:var(--relation-ink)}
+.stage-band .proposal-fork .fork-root{background:#fafbf2;color:#263c30;border:1px solid #5c735d}
+.stage-band .proposal-fork .fork-options li{background:#ead7d4;color:#263c30;border:1px solid #9e747e;box-shadow:inset 0 3px #86364f}
+.stage-band .proposal-fork .fork-options li:nth-child(2){background:#cee2dc;color:#263c30;border-color:#658d82;box-shadow:inset 0 3px #315b4a}
+.stage-band .proposal-fork .fork-links{color:#5c735d}
+
 </style>
 </head>
 <body><nav class="visual-version-nav" aria-label="Versiones del diseño"><a href="index.html">Ver el sitio actual</a><a href="propuesta-papel.html">Comparar con los papeles cálidos</a><a href="version-anterior.html">Ver el diseño original</a></nav>
