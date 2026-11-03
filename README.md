@@ -113,3 +113,9 @@ Propuesta con inicio el 14/04/2026: certificación completa de 15 semanas y reco
 - [Árbol y cronogramas](version-1-autoasistida/trayectorias/index.html).
 - [Cronograma editable en Excel](version-1-autoasistida/trayectorias/Cronograma_trayectorias_OA.xlsx).
 - [Fundamentos y criterios de planificación](documentacion/trayectorias/PROPUESTA.md).
+
+## Prueba de entrada con hilos y seis relaciones
+
+En `version-1-autoasistida/propuesta-metamorfosis.html`, la entrada ocupa la pantalla y construye la crisálida con hilos al desplazarse. El diagrama de Larva despliega sus seis relaciones en seis momentos de scroll. Crisálida incorpora los dos recuadros sobre la pregunta de diseño; los ejemplos de lenguaje quedan como lectura opcional. La versión principal permanece intacta.
+
+Verificación: seis etapas, ambos textos, caja interactiva, contraste, anchos de 320 a 1440 px y movimiento reducido manual y del sistema; sin errores de JavaScript. En móvil y con movimiento reducido se presenta la composición completa.
