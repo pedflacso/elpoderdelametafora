@@ -358,3 +358,5 @@ Edición fina del 2 de noviembre de 2026:
 Se verificaron nombres y roles en ambas rutas, las nueve combinaciones de la mesa, popups de los cuatro autores, guardado de la explicación, imágenes, lectura entre 320 y 1440 px y ampliación de texto al 200 %. Se conservan el foro como única producción compartida y la plantilla opcional ya corregida.
 
 A pedido de la autora, se aplican al sitio principal las cuatro ilustraciones preparadas en la prueba local del 3 de noviembre de 2026. Se actualizan todas las apariciones mediante inkArt: entrada a Larva, etapas, imágenes de transición, mapa del recorrido y cierre. Se conserva el blanco interior de las figuras y se adapta la coloración de las alas de Eclosión. Los textos, notas, controles y clave de guardado del módulo no se sustituyen por los de la copia de prueba.
+
+Se edita la figura de Larva para retirar las prolongaciones de la cabeza y el ojo, simplificando su aspecto como larva. El cambio se aplica a las apariciones que dependen de inkArt: entrada, escena de Larva, transición hacia Crisálida y mapa del recorrido. Se mantienen las otras ilustraciones y las interacciones.
