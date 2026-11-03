@@ -1,13 +1,13 @@
 [
   {
     "stage": "larva",
-    "file": "larva-montaje-60442372.png",
+    "file": "larva-montaje-6dd7bb93.png",
     "width": 1448,
     "height": 1086,
-    "bytes": 1015604,
-    "sha256": "6044237207f10dc9e56564d13dd98a2a5b554c2124657f4f486fb7db236f0687",
+    "bytes": 928970,
+    "sha256": "6dd7bb93ac15033aa7127d54c74da55a8c76372d993d99bba2647ec34e4deed7",
     "alpha": true,
-    "treatment": "Versión separada para montaje mediante herramienta de edición de imágenes; los originales del chat siguen siendo referencia artística."
+    "treatment": "Edición de la ilustración de Larva: cabeza simplificada, sin prolongaciones ni ojo; se conservan cuerpo segmentado, rama, trazo negro e interiores blancos."
   },
   {
     "stage": "crisalida",
