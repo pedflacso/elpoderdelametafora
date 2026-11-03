@@ -387,3 +387,9 @@ La tinta oscura y las superficies casi blancas unifican el recorrido. Los contro
 Cuatro SVG decorativos inline, sin nuevas imágenes raster, forman tramas de margen que se desvanecen hacia la lectura. Desplazamiento vertical de hasta 20 px en una sola actualización `requestAnimationFrame`, reutilizando el controlador de scroll existente. Solo se actualizan bandas visibles. Sin temporizadores de animación. `prefers-reduced-motion` y el botón existente restablecen y mantienen la trama estática. Las transiciones suaves de color marcan únicamente el inicio de cada etapa.
 
 Contraste calculado con la trama a su opacidad máxima del 14%: texto principal >= 7,95:1, enlaces >= 4,72:1, texto de botones >= 7,27:1. El desvanecido central reduce aún más la interferencia. La revisión automática de contraste se realiza con axe-core en Chromium, en ambos caminos, desplegables y estados hover. La versión anterior conserva su comportamiento original.
+
+### Prueba de papel y colores análogos
+
+`propuesta-papel.html` es una alternativa completa para revisar, sin reemplazar `index.html`. Mantiene idénticos el JSON editorial y todas las ilustraciones. Usa una secuencia cálida continua: crema `#f3eddb`, arena `#eee1cc`, durazno `#efd6c5`, rosa arcilla `#e8c9c3`. Los controles progresan entre ocre oscuro `#5c4726`, marrón cálido `#694429`, terracota `#743b2a` y borgoña `#6e3438`.
+
+Una única tesela SVG de puntos irregulares y fibras finas produce el papel sin filtros de ruido ni nuevas imágenes raster. Conserva el desplazamiento de hasta 20 px y ambas opciones de reducción de movimiento. Auditoría de contraste con axe-core: sin fallas detectadas en las cuatro etapas, ambos caminos, desplegables abiertos y hover; foco visible de 3 px y sin desbordamiento móvil. Enlaces de comparación al sitio actual y al diseño original al comienzo de la prueba.
