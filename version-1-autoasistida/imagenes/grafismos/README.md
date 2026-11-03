@@ -9,3 +9,9 @@ La animación de los hilos acompaña el scroll, sin reproducción automática de
 Se redujo el peso conjunto de los WebP de aproximadamente 3,6 MB a 1,9 MB. Los nombres incluyen una huella de contenido para distinguir las versiones y evitar reutilizar archivos antiguos. Larva se precarga; Larva y Crisálida se solicitan desde el inicio.
 
 La versión activa utiliza ahora los PNG originales de montaje, conservando los WebP anteriores. El manifiesto describe los PNG activos.
+
+## Reemplazo del 3 de noviembre de 2026
+
+Se utilizan ahora las cuatro versiones de montaje preparadas a partir de las nuevas láminas compartidas: larva sobre una rama, crisálida cerrada, crisálida que deja ver las alas y mariposa de alas abiertas. La separación se realizó con la herramienta de edición de imágenes; no se afirma identidad píxel a píxel con los originales. Los PNG separados se conservan con su huella de contenido en este directorio y el HTML los incorpora para evitar fallos de carga. El manifiesto describe estos archivos activos.
+
+Se conservan los blancos interiores y los trazos negros, también en Mariposa y el cierre. La coloración de las alas en Eclosión se adapta a la zona inferior del dibujo, preservando el trazo mediante mezcla de color. Se mantienen los hilos y las etiquetas interactivas como elementos independientes.
