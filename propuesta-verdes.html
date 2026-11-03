@@ -799,6 +799,36 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
 .stage-band.stage-start[data-stage-background="crisalida"]::after{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201440%20105%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20fill%3D%22%23d3dfb9%22%20opacity%3D%22.45%22%20d%3D%22M0%200H1440V35C1120%20112%20900%200%20610%2059S180%2098%200%2051Z%22%2F%3E%3Cpath%20fill%3D%22%23eef0d9%22%20d%3D%22M0%200H1440V15C1110%2080%20915-10%20625%2032S180%2069%200%2025Z%22%2F%3E%3C%2Fsvg%3E")}
 .stage-band.stage-start[data-stage-background="eclosion"]::after{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201440%20105%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20fill%3D%22%23bdd2b2%22%20opacity%3D%22.45%22%20d%3D%22M0%200H1440V35C1120%20112%20900%200%20610%2059S180%2098%200%2051Z%22%2F%3E%3Cpath%20fill%3D%22%23dfe8c4%22%20d%3D%22M0%200H1440V15C1110%2080%20915-10%20625%2032S180%2069%200%2025Z%22%2F%3E%3C%2Fsvg%3E")}
 .stage-band.stage-start[data-stage-background="mariposa"]::after{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201440%20105%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20fill%3D%22%23aec9b3%22%20opacity%3D%22.45%22%20d%3D%22M0%200H1440V35C1120%20112%20900%200%20610%2059S180%2098%200%2051Z%22%2F%3E%3Cpath%20fill%3D%22%23cbdcbe%22%20d%3D%22M0%200H1440V15C1110%2080%20915-10%20625%2032S180%2069%200%2025Z%22%2F%3E%3C%2Fsvg%3E")}
+
+/* Integración de elección, evidencias y diagramas en la familia botánica. */
+#elegir .investigation-options .choice{background:#edf1df;color:#263c30;border:1px solid #5c735d;box-shadow:none}
+#elegir .investigation-options .choice:nth-child(2){background:#d4e1cd}
+#elegir .investigation-options .choice[data-selected="true"]{border-color:#2c503b;box-shadow:0 0 0 2px #2c503b}
+#elegir .investigation-path-icon{background:#fafbf2;color:#2c503b}
+#elegir .investigation-path-actions{background:rgba(250,251,242,.65);color:#263c30}
+#elegir .investigation-options button{background:#fafbf2;color:#2c503b!important;border:1px solid #2c503b}
+#elegir .investigation-options button:hover{background:#c2d4b8;color:#263c30!important;box-shadow:inset 0 0 0 1px #2c503b}
+#elegir .investigation-options button[aria-pressed="true"]{background:#2c503b!important;color:#fafbf2!important;border-color:#2c503b;box-shadow:inset 0 0 0 2px #fafbf2}
+#elegir .investigation-options button:focus-visible{outline:3px solid #263c30!important;outline-offset:4px;box-shadow:0 0 0 4px #fafbf2!important}
+.stage-band .choice-fork-lines{stroke:#5c735d;stroke-width:1.5}
+.stage-band .pair-voice-card{background:#edf1df;border:1px solid #879a7b;color:#263c30}
+.stage-band .pair-evidence-card{background:#d4e1cd;border:1px solid #879a7b;color:#263c30}
+.stage-band .pair-link,.stage-band .pair-source-type{color:#2c503b}
+.stage-band .pair-link svg,.stage-band .has-pair .pair-link svg{stroke:#3d6040}
+#investigation-content .pair-options button{background:#fafbf2;border-color:#2c503b;color:#2c503b!important}
+#investigation-content .pair-options [aria-pressed="true"]{background:#2c503b!important;color:#fafbf2!important;border-color:#2c503b}
+.stage-band .curation-diagram>li{background:#fafbf2;border:1px solid #879a7b;color:#263c30}
+.stage-band .curation-diagram>li:nth-child(2){background:#edf1df}
+.stage-band .curation-diagram>li:nth-child(3){background:#d4e1cd}
+.stage-band .curation-diagram>li.is-in-view{outline:2px solid #5c735d}
+.stage-band .curation-material-graphic rect{stroke:#5c735d;stroke-width:1;fill:#fafbf2}
+.stage-band .curation-material-graphic rect[fill="#ffe0cf"]{fill:#e6ebd1}
+.stage-band .curation-material-graphic rect[fill="#d5c6ec"]{fill:#bfd2b5}
+.stage-band .curation-material-graphic rect[fill="#eee8f6"]{fill:#dce6d6}
+.stage-band .curation-material-graphic text{fill:#263c30}
+.stage-band .curation-material-graphic path{stroke:#5c735d}
+.stage-band .learning-action-icon{background:#e6ebd1;color:#2c503b;border:1px solid #879a7b}
+
 </style>
 </head>
 <body><nav class="visual-version-nav" aria-label="Versiones del diseño"><a href="index.html">Ver el sitio actual</a><a href="propuesta-papel.html">Comparar con los papeles cálidos</a><a href="version-anterior.html">Ver el diseño original</a></nav>
