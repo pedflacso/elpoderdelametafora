@@ -881,9 +881,21 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
 .stage-band .research-cycle-arrows{stroke:var(--stage-accent);stroke-width:1.5}
 .stage-band .research-cycle-core,.stage-band .research-step-icon{color:var(--stage-accent)}
 
+
+/* Gradación continua gris-verde → azul verdoso; lectura en sentido horario. */
+.stage-band[data-stage-background="larva"]{--stage-action:#315b4f;--stage-accent:#315b4f;--accent-tint:#d5e3db}
+#larva .ink-stage{--thread-a:#315b4f;--thread-b:#315b4f}
+#larva .ink-node:nth-child(odd) dt{box-shadow:inset 3px 0 #315b4f}
+#larva .ink-node:nth-child(even) dt{box-shadow:inset -3px 0 #315b4f}
+.stage-band .blackbox-node-1,.stage-band .cycle-node-1{background:linear-gradient(125deg,#e1e6d2,#d4dfd0)}
+.stage-band .blackbox-node-2,.stage-band .cycle-node-2{background:linear-gradient(125deg,#d4dfd0,#c6d8ce)}
+.stage-band .blackbox-node-4,.stage-band .cycle-node-3{background:linear-gradient(125deg,#c6d8ce,#b8d0cc)}
+.stage-band .blackbox-node-3,.stage-band .cycle-node-4{background:linear-gradient(125deg,#b8d0cc,#a8c8ca)}
+.stage-band .research-cycle-arrows marker path{stroke:var(--stage-accent)}
+
 </style>
 </head>
-<body><nav class="visual-version-nav" aria-label="Versiones del diseño"><a href="index.html">Ver el sitio actual</a><a href="propuesta-papel.html">Comparar con los papeles cálidos</a><a href="version-anterior.html">Ver el diseño original</a></nav>
+<body><nav class="visual-version-nav" aria-label="Versiones del diseño"><a href="propuesta-contrastes.html#research-meaning-title">Comparar bloques de color</a><a href="index.html">Ver el sitio actual</a><a href="propuesta-papel.html">Comparar con los papeles cálidos</a><a href="version-anterior.html">Ver el diseño original</a></nav>
 <a class="skip" href="#main">Ir al contenido</a>
 <header class="header"><div class="wrap header-inner"><a class="brand" href="#main">El poder de la metáfora</a><div class="phase" aria-label="Momento del recorrido"><a href="#larva">Larva</a><a href="#crisalida">Crisálida</a><a href="#caso">Eclosión</a><a href="#mariposa">Mariposa</a></div><button id="motion" class="secondary" aria-pressed="false">Reducir movimiento</button></div></header>
 <main id="main" class="wrap" tabindex="-1"></main>
