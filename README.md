@@ -6,7 +6,7 @@ Esta es una copia de trabajo de la versión 1. Conserva la entrada por las parte
 
 Descargá `descargas/metafora-version-1-autoasistida.zip` desde GitHub, descomprimilo y abrí `index.html` en un navegador actual. No necesita instalación ni conexión para leer los textos. Alternativamente, descargá el repositorio completo y abrí `version-1-autoasistida/index.html`.
 
-GitHub muestra el código HTML; guardar el proyecto en el repositorio no publica un sitio web. No se activó GitHub Pages.
+Sitio principal: https://pedflacso.github.io/elpoderdelametafora/. La versión de narración por capas se publica como índice principal por autorización del equipo.
 
 ## Qué cambió
 
@@ -457,3 +457,9 @@ La descarga ZIP se actualiza como módulo de producción, excluyendo páginas de
 Una entrada breve presenta la larva recogiéndose entre hilos mediante transformaciones de presentación, sin deformar ni editar su dibujo original. En Crisálida se abren inicialmente los tres desplegables principales (siguen siendo plegables) y se acompaña la lectura de trece fragmentos existentes: el dibujo pasa de Larva a Crisálida, las asociaciones «Ojos/Luceros» y «Tiempo/Oro» aparecen en la escena al leerlas, y los hilos y componentes cambian de foco según el texto. Tres botones permiten ir a los temas explícitamente. Las lecturas complementarias, notas y decisiones del caso conservan sus controles.
 
 La caja negra incorpora un botón para levantar la tapa y mostrar los seis componentes y la pregunta inicial del módulo; las cuatro miradas continúan visibles y no se oculta el contenido existente. El movimiento respeta ambos controles de reducción, y en pantallas menores de 900 px la secuencia es estática y completa. Comprobaciones: progreso de la escena, navegación, apertura/cierre de caja, contraste textual, ausencia de errores JS, anchos 320–1440 px y modo estático manual/del sistema. Los dos nuevos sitios de referencia no pudieron abrirse por bloqueo del entorno; no se atribuyen características no verificadas a esos ejemplos.
+
+### Narración por capas como versión principal
+
+Por solicitud del equipo, el contenido de `propuesta-capas.html` pasa a `index.html`. Se retira únicamente la barra de navegación de pruebas. Incluye la entrada de hilos negros que forma la larva, las seis relaciones, las pantallas opacas y sus mini escenas didácticas, la lente de investigación, la caja grande que se abre y los bocetos persistentes. Se conservan los contenidos, audios, notas, ambas rutas e interacciones.
+
+La versión inmediatamente anterior queda en `version-previa-scrollytelling.html`. La prueba sigue disponible por separado. La descarga ZIP se actualiza con el mismo índice y conserva sus recursos locales.
