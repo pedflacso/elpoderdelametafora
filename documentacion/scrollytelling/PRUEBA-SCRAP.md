@@ -23,3 +23,9 @@ Validación en Chromium: ambas rutas, controles de caja, cambios de foco de la l
 - Los recortes detrás de la mariposa mantienen la paleta y opacidad al seleccionar relaciones.
 
 Esta revisión también se publica en el índice principal y se incorpora a su ZIP. El índice anterior queda guardado en `version-previa-scrap.html`.
+
+## Lupa persistente y fondo de gran escala
+
+Por aclaración del equipo, el bloque de fases deja de mostrar la carpeta: la lupa ya está presente desde la pregunta inicial y se desplaza sobre rostro u hojas al avanzar. En los materiales se vuelve a colocar la escena de observación en el plano de fondo, a gran escala y detrás de los recuadros. La lente sigue respondiendo al scroll y al cambio de evidencia; las hojas de lectura recuperan su ancho. El resto del montaje no cambia.
+
+Comprobación: lente visible en las cuatro fases, cambios de posición y de papel observado, escena de fondo de más de 1000 px en escritorio, movimiento al cambiar de evidencia, ambas rutas, anchos 320–1440 px, movimiento reducido y ausencia de errores de JavaScript.
