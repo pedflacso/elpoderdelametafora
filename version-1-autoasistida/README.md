@@ -498,3 +498,6 @@ Los ocho dibujos de síntesis de podcast y artefacto adoptan la estética sketch
 
 
 Entrada directa: se retiran del recorrido la portada y todas las pantallas introductorias previas. El primer bloque es ahora la animación de hilos con «Bienvenidos/as a “El poder de la metáfora”». Conserva la tarjeta de audio y lectura que aparece tras formarse la larva. Los controles de guardar/retomar se trasladan a un desplegable en Tus notas. Las notas opcionales se condensan a la derecha en desplegables accesibles, sin duplicar campos ni perder texto al cerrar; el rótulo «Con texto» indica contenido escrito. Los tres personajes se montan detrás de «Un caso, tres voces». Las seis piezas de Larva tienen nombre y explicación sobre una sola superficie de papel de color, sin caja blanca; el diseño intermedio de 800px se ajusta a una cuadrícula estática. Validación: entrada primera en DOM, una bienvenida h1, un audio de entrada, guardado local operativo, cierre y reapertura de notas sin pérdida, ambas ramas, contraste sin incidencias, sin errores JS ni desbordes a 320–1440px.
+
+
+La entrada abre solo con los hilos en movimiento: se retiran la bienvenida y los rótulos visuales del inicio. Conserva descripción accesible de la escena y la tarjeta de escucha/lectura posterior. Verificado: sin bienvenida visible, 17 trazos y un audio de entrada, sin errores JavaScript.
