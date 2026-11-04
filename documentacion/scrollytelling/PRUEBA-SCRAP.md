@@ -59,3 +59,6 @@ Retratos de testimonios: se reemplaza la tira fotográfica por dibujos originale
 
 
 La explicación después de investigar se presenta plegada: pregunta «¿Cómo explicarías lo que pasó?», invitación a tomar notas y acción de abrir. El desplegable conserva dentro toda la consigna, primera interpretación, pistas, campo, revisión y comparación. No se duplican campos; el texto persiste al cerrar/reabrir y al cambiar de camino. Rótulo «Con texto» y acción contextual. Verificado en ambos caminos, comparación operativa, sin errores JS ni desbordes de 320 a 1440px.
+
+
+La iconografía de componentes, aprendizaje, caja y orientación utiliza dibujos de grafito de una hoja 4×4, con formas reconocibles y trazos de cuaderno; se preservan los contenedores SVG, tamaños y nombres de controles. Los signos de apertura/cierre de cajones usan la misma familia dibujada. Revisión visual a tamaño real en papelitos de la caja, regresión de ambos caminos y notas, contraste sin incidencias, sin errores JS ni desbordes de 320 a 1440px.
