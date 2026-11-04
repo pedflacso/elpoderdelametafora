@@ -41,3 +41,6 @@ Las pantallas educativas se escalonan izquierda / derecha / izquierda y se super
 
 
 Cierre de la secuencia educativa: las tarjetas sticky terminan antes de la pregunta puente. La pregunta aparece en un panel claro sobre las tres escenas difuminadas; el esquema completo y el resto del contenido continúan después. Verificado orden DOM, texto exacto, ausencia de errores JavaScript y de desbordes a 320–1440px.
+
+
+Cierre «La forma que construimos»: mariposa original ampliada como escena sticky, papeles de color que aparecen y cuatro conexiones bordó dibujadas con el scroll; los textos conservados pasan en capas alternadas. Móvil y movimiento reducido mantienen lectura estática. Las tarjetas educativas utilizan rosados suaves; las etiquetas de Larva/Crisálida se imprimen sobre papeles claros de colores sin oscurecer los otros componentes. «Un vínculo posible» recibe bocetos de la estudiante desde la capa exterior y matices leves en las tarjetas próximas. Verificado: cuatro conexiones, contraste sin incidencias, ambos caminos funcionales, sin errores JavaScript; desborde de 6px a 1000px corregido y vuelto a verificar.

@@ -4442,5 +4442,70 @@ if('IntersectionObserver' in window){const checkpoints=new IntersectionObserver(
  const mq=matchMedia('(prefers-reduced-motion:reduce)');let pending=false;function update(){pending=false;const r=finale.getBoundingClientRect(),p=Math.max(-1,Math.min(1,(innerHeight*.5-r.top)/(innerHeight+r.height))),still=mq.matches||document.body.classList.contains('no-motion');background.querySelectorAll('.closing-scene').forEach((e,i)=>e.style.setProperty('--closing-drift',still?'0px':(p*(i===1?-65:45)).toFixed(1)+'px'))}function schedule(){if(!pending){pending=true;requestAnimationFrame(update)}}addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);document.addEventListener('click',schedule);mq.addEventListener('change',schedule);update();})();
 </script>
 
+
+<style>
+.summary-backdrop{position:relative;isolation:isolate}.summary-paper-layers{position:absolute;inset:4% 8%;z-index:-1;pointer-events:none}.summary-paper-layers .scrap-butterfly-patches{position:absolute;inset:0;opacity:.55}
+@media(min-width:1000px){
+#cierre .butterfly-summary{display:block;position:relative}
+#cierre .summary-backdrop{position:sticky;top:90px;height:calc(100svh - 110px);min-height:480px;margin-bottom:calc(-100svh + 110px);pointer-events:none;z-index:0}
+#cierre .summary-butterfly-core{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;max-width:none;margin:0;transform:translate(var(--final-pan,0px),var(--final-rise,0px)) scale(var(--final-zoom,1));transform-origin:center}
+#cierre .summary-butterfly-core img{width:94%;max-width:1000px;height:78%;object-fit:contain;transform:none;opacity:.78}
+#cierre .summary-butterfly-core p{margin:0;background:#FBFAF3CC;padding:10px 22px;border-radius:30px}
+#cierre .summary-threads{inset:7% 0 10%;width:100%;height:83%;display:block;z-index:1;opacity:.8;stroke-width:1.7}
+#cierre .summary-threads path{stroke-dasharray:1;stroke-dashoffset:var(--thread-hidden,1)}
+#cierre .summary-wing{position:relative;z-index:2;width:47%;margin:0 0 45svh;min-height:0;background:#FBFAF3E8;padding:28px;border-radius:22px;box-shadow:0 16px 35px #263c3017;backdrop-filter:blur(3px);transform:translateY(var(--card-rise,0px))}
+#cierre .summary-wing-1{margin-left:0;padding-top:28px}
+#cierre .summary-wing-2{margin-left:53%;background:#F3E9F0E8}
+#cierre .summary-wing-3{margin-left:5%;background:#E8EFDFE8}
+#cierre .summary-wing-4{margin-left:50%;background:#E5EFEFE8}
+#cierre .summary-wing:first-of-type{margin-top:18svh}
+#cierre .butterfly-summary figcaption{position:relative;z-index:3;background:#FBFAF3E8;border-radius:20px;padding:24px;margin:0 auto}
+#cierre .summary-paper-layers{transform:translateY(var(--paper-rise,0px)) rotate(var(--paper-turn,0deg));opacity:var(--paper-appear,0)}
+}
+@media(max-width:999px){.summary-paper-layers{inset:0}.summary-backdrop .summary-butterfly-core{max-width:600px;margin:auto}.summary-backdrop .summary-threads{display:none}.summary-backdrop{grid-column:1/-1}.summary-backdrop .summary-butterfly-core img{width:100%;height:340px}.summary-backdrop .summary-butterfly-core p{text-align:center}}
+.no-motion #cierre .summary-backdrop{position:relative;top:auto;height:450px;min-height:0;margin-bottom:25px}.no-motion #cierre .summary-wing{width:100%;margin:20px 0;transform:none}.no-motion #cierre .summary-threads path{stroke-dashoffset:0}.no-motion #cierre .summary-paper-layers{opacity:1;transform:none}.no-motion #cierre .summary-butterfly-core{transform:none}
+@media(prefers-reduced-motion:reduce){#cierre .summary-backdrop{position:relative;top:auto;height:450px;min-height:0;margin-bottom:25px}#cierre .summary-wing{width:100%;margin:20px 0;transform:none}#cierre .summary-threads path{stroke-dashoffset:0}#cierre .summary-paper-layers{opacity:1;transform:none}#cierre .summary-butterfly-core{transform:none}}
+</style>
+<script>
+(()=>{const figure=document.querySelector('.butterfly-summary'),core=figure.querySelector('.summary-butterfly-core'),threads=figure.querySelector('.summary-threads'),cards=[...figure.querySelectorAll('.summary-wing')],backdrop=document.createElement('div');backdrop.className='summary-backdrop';figure.prepend(backdrop);backdrop.append(core,threads);const paper=document.createElement('div');paper.className='summary-paper-layers';paper.setAttribute('aria-hidden','true');const source=document.querySelector('#butterfly-visual .scrap-butterfly-patches');if(source)paper.append(source.cloneNode(true));core.prepend(paper);
+ const data=threads.querySelector('path').getAttribute('d').match(/M[^M]+/g);threads.replaceChildren(...data.map(d=>{const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',d);path.setAttribute('pathLength','1');return path}));
+ const mq=matchMedia('(prefers-reduced-motion:reduce)'),clamp=n=>Math.max(0,Math.min(1,n));let queued=false;function update(){queued=false;const r=figure.getBoundingClientRect(),p=clamp((innerHeight*.5-r.top)/Math.max(1,r.height-innerHeight*.5)),still=mq.matches||document.body.classList.contains('no-motion')||innerWidth<1000;figure.style.setProperty('--final-zoom',still?'1':(1.03+Math.sin(p*Math.PI)*.15).toFixed(3));figure.style.setProperty('--final-pan',still?'0px':(Math.sin(p*Math.PI*2)*30).toFixed(1)+'px');figure.style.setProperty('--final-rise',still?'0px':(-25+p*50).toFixed(1)+'px');figure.style.setProperty('--paper-appear',still?'1':clamp(p*5).toFixed(2));figure.style.setProperty('--paper-rise',still?'0px':(35-p*65).toFixed(1)+'px');figure.style.setProperty('--paper-turn',still?'0deg':(-4+p*8).toFixed(1)+'deg');cards.forEach((card,i)=>{const rr=card.getBoundingClientRect(),progress=clamp((innerHeight*.95-rr.top)/(innerHeight*.55));threads.children[i].style.setProperty('--thread-hidden',still?'0':(1-progress).toFixed(3))})}function schedule(){if(!queued){queued=true;requestAnimationFrame(update)}}addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);document.addEventListener('click',schedule);mq.addEventListener('change',schedule);update();})();
+</script>
+
+
+<style>
+/* Papeles claros con el nombre impreso en la misma superficie. */
+#larva .ink-node dt.paper-name,#crisalida .meta-labels li.paper-name{background:transparent!important;box-shadow:none!important;color:#374437!important;--label-wash:#EBDCE4}
+#larva .ink-node:nth-child(2) dt.paper-name,#crisalida .meta-labels li.paper-name:nth-child(2){--label-wash:#DDEBEF}
+#larva .ink-node:nth-child(3) dt.paper-name,#crisalida .meta-labels li.paper-name:nth-child(3){--label-wash:#E5EBD6}
+#larva .ink-node:nth-child(4) dt.paper-name,#crisalida .meta-labels li.paper-name:nth-child(4){--label-wash:#E7DFED}
+#larva .ink-node:nth-child(5) dt.paper-name,#crisalida .meta-labels li.paper-name:nth-child(5){--label-wash:#F0DFD8}
+#larva .ink-node:nth-child(6) dt.paper-name,#crisalida .meta-labels li.paper-name:nth-child(6){--label-wash:#DDEAE2}
+#larva .ink-node dt.paper-name:before,#crisalida .meta-labels li.paper-name:before{background-color:var(--label-wash)!important;background-image:linear-gradient(color-mix(in srgb,var(--label-wash) 72%,transparent),color-mix(in srgb,var(--label-wash) 72%,transparent)),url('imagenes/scrap/piezas-papel.png')!important;background-size:100% 100%,900% 900%;background-position:center,var(--paper-pos,78% 78%)}
+#crisalida .meta-labels li.paper-name.is-related{--label-wash:#E8CADA;color:#642E4C!important;filter:none}
+#larva .ink-node.dim,#crisalida .meta-labels li{opacity:1!important;filter:none}
+#larva .ink-node dt.paper-name>*{background:transparent!important}
+@media(min-width:1000px){
+.relation-deck>.relation-screen>.education-film{background:#EAD8E1F0!important;color:#344538;border-color:#F7EDF2}
+.relation-deck>.relation-screen:nth-child(2)>.education-film{background:#E5CBD9F0!important}
+.relation-deck>.relation-screen:nth-child(3)>.education-film{background:#F0DFE6F0!important}
+.relation-screen .education-film .segment-icon{color:#70435B!important}
+.relation-screen .education-film .paper-hero-name{color:#613C52!important;--paper-base:#F3E6ED!important}
+.relation-screen .education-film .paper-hero-name:before{background-color:#F3E6ED!important;background-image:linear-gradient(#F3E6EDE0,#F3E6EDE0),url('imagenes/scrap/piezas-papel.png');background-size:100% 100%,900% 900%}
+}
+.relation-complete{position:relative;isolation:isolate;overflow:visible}
+.relation-complete>.oa-relationship{position:relative;z-index:2}
+.relationship-sketch-layer{position:absolute;inset:-20% -3%;z-index:1;pointer-events:none;overflow:clip}
+.relationship-sketch{position:absolute;width:70%;aspect-ratio:1;background-image:url('imagenes/scrap/escenas-educativas.png');background-size:300% 200%;background-position:var(--touch-frame) 0%;opacity:.21;transform:translate(var(--touch-x,0px),var(--touch-y,0px)) rotate(var(--touch-angle,0deg));filter:blur(.3px)}
+.relationship-sketch:nth-child(1){left:-35%;top:-5%;--touch-angle:-10deg}.relationship-sketch:nth-child(2){right:-35%;bottom:-8%;--touch-angle:9deg}
+.relation-complete .oa-purpose,.relation-complete .oa-feedback,.relation-complete .oa-supports li{background:var(--touch-tint,#FAFBF2)!important;transition:background-color .15s linear}
+.no-motion .relationship-sketch{transform:none}.no-motion .relation-complete .oa-purpose,.no-motion .relation-complete .oa-feedback,.no-motion .relation-complete .oa-supports li{transition:none}
+@media(max-width:999px){.relationship-sketch-layer{inset:-8% 0}.relationship-sketch{width:100%;opacity:.13}}
+@media(prefers-reduced-motion:reduce){.relationship-sketch{transform:none}.relation-complete .oa-purpose,.relation-complete .oa-feedback,.relation-complete .oa-supports li{transition:none}}
+</style>
+<script>
+(()=>{const panel=document.querySelector('.relation-complete'),layer=document.createElement('div');layer.className='relationship-sketch-layer';layer.setAttribute('aria-hidden','true');layer.innerHTML='<i class="relationship-sketch" style="--touch-frame:0%"></i><i class="relationship-sketch" style="--touch-frame:100%"></i>';panel.prepend(layer);const mq=matchMedia('(prefers-reduced-motion:reduce)'),sketches=[...layer.children],cards=[...panel.querySelectorAll('.oa-purpose,.oa-feedback,.oa-supports li')];let queued=false;const clamp=n=>Math.max(0,Math.min(1,n));function update(){queued=false;const r=panel.getBoundingClientRect(),p=clamp((innerHeight-r.top)/(innerHeight+r.height)),still=mq.matches||document.body.classList.contains('no-motion');sketches.forEach((e,i)=>{e.style.setProperty('--touch-x',still?'0px':((i?-1:1)*p*Math.min(210,innerWidth*.18)).toFixed(1)+'px');e.style.setProperty('--touch-y',still?'0px':((i?1:-1)*(p-.5)*80).toFixed(1)+'px')});cards.forEach((card,i)=>{const c=card.getBoundingClientRect(),s=sketches[i%2].getBoundingClientRect(),d=Math.hypot((c.left+c.width/2)-(s.left+s.width/2),(c.top+c.height/2)-(s.top+s.height/2)),touch=clamp(1-d/Math.max(1,s.width*.65)),a=[250,251,242],b=i%2?[226,237,228]:[241,218,228];card.style.setProperty('--touch-tint',`rgb(${a.map((v,j)=>Math.round(v+(b[j]-v)*touch)).join(',')})`)})}function schedule(){if(!queued){queued=true;requestAnimationFrame(update)}}addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);document.addEventListener('click',schedule);mq.addEventListener('change',schedule);update()})();
+</script>
+
 </body>
 </html>
