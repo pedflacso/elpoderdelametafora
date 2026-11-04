@@ -4420,5 +4420,27 @@ if('IntersectionObserver' in window){const checkpoints=new IntersectionObserver(
 }
 </style>
 
+
+<style>
+.relation-deck-closing{position:relative;isolation:isolate;overflow:hidden;background:#D9E2C8!important;color:#263C30!important;min-height:80svh;margin-top:28svh!important;display:flex;align-items:center;justify-content:center;padding:clamp(28px,5vw,72px)!important}
+.relation-finale .closing-scenes{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.relation-finale .closing-scene{position:absolute;width:65%;aspect-ratio:1;background-image:url('imagenes/scrap/escenas-educativas.png');background-size:300% 200%;background-position:var(--closing-x) 0%;opacity:.22;filter:blur(1px);transform:translateY(var(--closing-drift,0px)) rotate(var(--closing-r,0deg))}
+.relation-finale .closing-scene:nth-child(1){left:-15%;top:-18%;--closing-r:-9deg}
+.relation-finale .closing-scene:nth-child(2){right:-13%;top:-12%;--closing-r:8deg}
+.relation-finale .closing-scene:nth-child(3){width:60%;left:22%;bottom:-32%;--closing-r:-3deg}
+.relation-finale .closing-question{display:block;max-width:850px;background:#FBFAF3DF;border:1px solid #FBFAF3;padding:clamp(24px,4vw,48px);border-radius:24px;box-shadow:0 15px 40px #263c3012;backdrop-filter:blur(3px)}
+.relation-complete{margin-top:12svh}
+@media(max-width:999px){.relation-deck-closing{min-height:60svh;margin-top:30px!important}.relation-finale .closing-scene{width:90%}.relation-finale .closing-scene:nth-child(3){width:90%;left:5%;bottom:-20%}}
+.no-motion .relation-deck-closing{min-height:0;margin-top:30px!important}.no-motion .closing-scene{transform:none!important}
+@media(prefers-reduced-motion:reduce){.relation-deck-closing{min-height:0;margin-top:30px!important}.closing-scene{transform:none!important}}
+</style>
+<script>
+(()=>{const deck=document.querySelector('.relation-deck'),finale=deck.querySelector('.relation-finale'),complete=deck.querySelector('.relation-complete');
+ const question=document.createElement('span');question.className='closing-question';while(finale.firstChild)question.append(finale.firstChild);finale.append(question);const background=document.createElement('span');background.className='closing-scenes';background.setAttribute('aria-hidden','true');background.innerHTML=[0,1,2].map(i=>`<i class="closing-scene" style="--closing-x:${i*50}%"></i>`).join('');finale.prepend(background);
+ // Close the sticky sequence before the question and the remaining content.
+ deck.after(finale,complete);finale.classList.add('relation-deck-closing');
+ const mq=matchMedia('(prefers-reduced-motion:reduce)');let pending=false;function update(){pending=false;const r=finale.getBoundingClientRect(),p=Math.max(-1,Math.min(1,(innerHeight*.5-r.top)/(innerHeight+r.height))),still=mq.matches||document.body.classList.contains('no-motion');background.querySelectorAll('.closing-scene').forEach((e,i)=>e.style.setProperty('--closing-drift',still?'0px':(p*(i===1?-65:45)).toFixed(1)+'px'))}function schedule(){if(!pending){pending=true;requestAnimationFrame(update)}}addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);document.addEventListener('click',schedule);mq.addEventListener('change',schedule);update();})();
+</script>
+
 </body>
 </html>

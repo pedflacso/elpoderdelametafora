@@ -486,3 +486,6 @@ Filminas y profundidad: la síntesis alterna podcast a izquierda y artefacto a d
 
 
 Las pantallas educativas se escalonan izquierda / derecha / izquierda y se superponen dejando asomar el recuadro previo. Las escenas desbordan los marcos de forma controlada y aumentan su desplazamiento ligado al scroll. Se conserva la lectura estática móvil y con movimiento reducido. Verificación: sin desbordes a 1440, 1000, 390 y 320px, sin errores JavaScript.
+
+
+Cierre de la secuencia educativa: las tarjetas sticky terminan antes de la pregunta puente. La pregunta aparece en un panel claro sobre las tres escenas difuminadas; el esquema completo y el resto del contenido continúan después. Verificado orden DOM, texto exacto, ausencia de errores JavaScript y de desbordes a 320–1440px.
