@@ -475,3 +475,5 @@ Entrada visual y sonora: al completarse la larva aparece el recuadro con la preg
 Por solicitud del equipo, la revisión de `propuesta-scrap.html` pasa al índice principal. Incluye la lupa y la mesa dentro del recuadro, la caja con papelitos desplegables, los títulos de papel en las tres pantallas y los nombres sobre recortes, sin las tiras gruesas de Crisálida. Los colores detrás de la mariposa permanecen estables al interactuar. Se retira la barra de navegación de prueba.
 
 El índice inmediatamente anterior queda en `version-previa-scrap.html`; el contenido, audios y notas conservan su funcionamiento. El ZIP se actualiza e incorpora las imágenes de papel necesarias.
+
+Aclaración de la lupa: en las fases de investigación se reemplaza la carpeta por una escena con lupa grande y persistente, con rostro u hojas debajo según la fase. En los materiales se recupera la lupa de gran tamaño en la capa de fondo, detrás de los recuadros. Se mantienen los demás elementos scrap y los controles.
