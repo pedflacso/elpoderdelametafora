@@ -40,6 +40,10 @@ Validación adicional: las tres pantallas no desbordan en escritorio; el esquema
 
 Cada sección conserva tres apariciones decorativas del boceto original de su etapa, distribuidas a los costados y en un plano inferior, con distinta escala, inclinación y transparencia. El scroll desplaza y gira suavemente esas capas en direcciones diferentes; no sustituye ni altera las ilustraciones principales. Los bocetos también permanecen en móvil con menor intensidad. El movimiento reducido conserva los fondos estáticos. Se verificaron las fuentes por etapa, el desplazamiento al hacer scroll, los controles de movimiento, el contraste y la ausencia de desbordes y errores de JavaScript.
 
-## Montaje sobre Propósito, Actividad y Retroalimentación
+## Mini escenas de la conexión didáctica
 
-Las tres pantallas opacas incorporan el boceto original de la larva sobre un recorte claro, con tres íconos conectados por un hilo bordó. El foco cambia entre propósito, actividad y retroalimentación; el hilo se completa progresivamente y el boceto cambia suavemente de posición con el scroll. La composición deja una columna para el texto y conserva los apoyos de la actividad debajo. El montaje es decorativo; no agrega ni reemplaza contenido. La vista móvil y el movimiento reducido conservan el esquema completo original.
+Las tres pantallas conservan sus colores y textos. En lugar del montaje rojo, pequeñas escenas gráficas en verde y petróleo muestran Propósito → Actividad, los tres apoyos conectados con la actividad y el retorno desde Retroalimentación. El boceto permanece tenue detrás. Las líneas completas quedan visibles en un plano suave mientras el trazo de énfasis avanza con el scroll. Son escenas decorativas: no agregan contenido ni duplican la lectura accesible del esquema original.
+
+## Caja del diseño con una acción visible
+
+La caja aumenta de tamaño. Al abrirse, la tapa se levanta y seis componentes salen hacia los lados, conectados con el interior. Puede abrirse y cerrarse mediante el botón de texto o tocando la ilustración, que también funciona como botón accesible con teclado. Ambos controles sincronizan `aria-expanded`. La animación respeta el movimiento reducido y la decisión de volver a cerrar la caja. El contenido de las cuatro miradas se conserva.
