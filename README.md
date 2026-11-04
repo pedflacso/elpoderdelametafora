@@ -123,3 +123,7 @@ Verificación: seis etapas, ambos textos, caja interactiva, contraste, anchos de
 ## Prueba integral de narración por capas
 
 `version-1-autoasistida/propuesta-capas.html` explora escenas persistentes, recuadros superpuestos, caja que se abre y materiales que se reordenan con el scroll, manteniendo el contenido y las interacciones. La versión principal y la prueba de metamorfosis quedan intactas. [Escenas y validación para la revisión](documentacion/scrollytelling/PRUEBA-CAPAS.md).
+
+## Montaje de piezas scrap para revisar
+
+[Prueba independiente de las piezas a color](version-1-autoasistida/propuesta-scrap.html), con carpeta, lente, caja de papel y recortes en capas. [Escenas y alcance](documentacion/scrollytelling/PRUEBA-SCRAP.md). El índice principal y su ZIP no cambian.
