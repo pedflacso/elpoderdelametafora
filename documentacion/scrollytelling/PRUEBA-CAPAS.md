@@ -53,3 +53,7 @@ La caja aumenta de tamaño. Al abrirse, la tapa se levanta y seis componentes sa
 Se retiran las mini escenas de Propósito, Actividad y Retroalimentación. Se conserva la secuencia de pantallas opacas superpuestas, con una composición de fondo libre: bocetos tenues, curvas, campos circulares y formas de documentos, sin flechas ni nuevos contenidos. La caja negra suma un fondo de exploración con desplazamiento y giro suave al hacer scroll. Los bocetos originales distribuidos por cada etapa permanecen sin cambios.
 
 La entrada usa siete grises y ocho grosores de trazo para aproximarse al carácter del dibujo de la larva. El movimiento reducido mantiene las imágenes y desactiva los desplazamientos. Se verificaron el fondo móvil de la caja, su apertura/cierre, los tonos y grosores, la ausencia de las mini escenas, ambas rutas, el contraste y anchos de 320 a 1440 px.
+
+## Dos columnas e íconos de trazo más próximo al dibujo
+
+Las columnas de imágenes y lectura tienen desplazamientos distintos. La imagen puede detenerse durante un tramo del scroll mientras los recuadros siguen su recorrido. Se conservan los controles, la composición y la lectura estática en móvil y movimiento reducido. Los íconos comunes mantienen sus significados y colores, con contornos más finos y ligeramente irregulares. Los fondos conservan todos sus matices. La posible dirección scrapbook queda pendiente de conversación.
