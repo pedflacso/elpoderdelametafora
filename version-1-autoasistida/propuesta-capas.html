@@ -3952,5 +3952,37 @@ if('IntersectionObserver' in window){const checkpoints=new IntersectionObserver(
 })();
 </script>
 <!-- END-OPAQUE-RELATIONS-OPTICS -->
+
+<!-- PERSISTENT-STAGE-SKETCHES -->
+<style>
+.stage-sketches{position:absolute;inset:0;left:calc((100% - 100vw)/2);width:100vw;z-index:-1;pointer-events:none;overflow:clip}
+.stage-sketch-window{position:sticky;top:76px;height:calc(100svh - 76px);width:100%}
+.stage-sketch{position:absolute;object-fit:contain;max-width:none;will-change:transform;transform:translate3d(var(--sketch-x,0px),var(--sketch-y,0px),0) rotate(calc(var(--sketch-turn,0deg) + var(--rest-angle,0deg))) scale(var(--sketch-scale,1));transform-origin:center}
+.stage-sketch-0{left:-17%;top:1%;width:49%;height:62%;opacity:.15;--rest-angle:-17deg}
+.stage-sketch-1{right:-13%;top:23%;width:53%;height:70%;opacity:.2;--rest-angle:14deg}
+.stage-sketch-2{left:16%;bottom:-17%;width:39%;height:53%;opacity:.09;--rest-angle:-8deg}
+[data-stage-background="crisalida"] .stage-sketch-0{left:-11%;width:35%;height:80%;top:-8%;--rest-angle:-23deg}
+[data-stage-background="crisalida"] .stage-sketch-1{right:-8%;width:40%;height:91%;top:6%;--rest-angle:20deg}
+[data-stage-background="eclosion"] .stage-sketch-0{left:-12%;width:38%;height:75%;opacity:.13;--rest-angle:-24deg}
+[data-stage-background="eclosion"] .stage-sketch-1{right:-9%;width:43%;height:85%;opacity:.18;--rest-angle:20deg}
+[data-stage-background="mariposa"] .stage-sketch-0{opacity:.13;--rest-angle:-19deg}
+[data-stage-background="mariposa"] .stage-sketch-1{opacity:.17;--rest-angle:12deg}
+.no-motion .stage-sketch{will-change:auto}
+@media(max-width:999px){.stage-sketch-0{left:-35%;width:79%;opacity:.09}.stage-sketch-1{right:-31%;width:83%;opacity:.11}.stage-sketch-2{left:12%;width:65%;opacity:.055}[data-stage-background="crisalida"] .stage-sketch-0,[data-stage-background="eclosion"] .stage-sketch-0{left:-27%;width:64%;opacity:.085}[data-stage-background="crisalida"] .stage-sketch-1,[data-stage-background="eclosion"] .stage-sketch-1{right:-25%;width:65%;opacity:.11}}
+@media(prefers-reduced-motion:reduce){.stage-sketch{will-change:auto}}
+</style>
+<script>
+(()=>{
+ const stages=[...document.querySelectorAll('.stage-band')],mq=matchMedia('(prefers-reduced-motion:reduce)');let pending=false;
+ stages.forEach(section=>{const art=C.inkArt[section.dataset.stageBackground];if(!art)return;const field=document.createElement('div');field.className='stage-sketches';field.setAttribute('aria-hidden','true');const window=document.createElement('div');window.className='stage-sketch-window';for(let i=0;i<3;i++){const img=document.createElement('img');img.className='stage-sketch stage-sketch-'+i;img.src=art.src;img.alt='';img.width=art.width;img.height=art.height;img.decoding='async';img.draggable=false;window.append(img);}field.append(window);section.prepend(field);});
+ function update(){pending=false;const still=mq.matches||document.body.classList.contains('no-motion'),compact=innerWidth<1000;
+ stages.forEach(section=>{const rect=section.getBoundingClientRect();if(!still&&(rect.bottom<0||rect.top>innerHeight))return;const distance=still?0:Math.max(-1,Math.min(1,(innerHeight*.5-rect.top)/(rect.height+innerHeight))),amplitude=compact?22:58;
+ section.querySelectorAll('.stage-sketch').forEach((img,i)=>{const direction=i%2?-1:1;img.style.setProperty('--sketch-x',(distance*amplitude*.55*direction).toFixed(2)+'px');img.style.setProperty('--sketch-y',(distance*amplitude*direction).toFixed(2)+'px');img.style.setProperty('--sketch-turn',(distance*5*direction).toFixed(2)+'deg');img.style.setProperty('--sketch-scale',String(1+Math.abs(distance)*.045));});});}
+ function schedule(){if(!pending){pending=true;requestAnimationFrame(update);}}
+ addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);document.addEventListener('click',schedule);document.addEventListener('visibilitychange',schedule);mq.addEventListener('change',schedule);update();
+})();
+</script>
+<!-- END-PERSISTENT-STAGE-SKETCHES -->
+
 </body>
 </html>

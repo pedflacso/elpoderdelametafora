@@ -35,3 +35,7 @@ El vínculo posible se presenta en tres pantallas opacas superpuestas: Propósit
 La investigación incorpora una lente con un esquema de documentos e hilos que cambia de foco al avanzar por las fases. Se conserva el contenido de cada fase; la lente es una representación visual, sin agregar datos al caso. Ambos caminos mantienen el fondo de investigación y superficies de color para los materiales.
 
 Validación adicional: las tres pantallas no desbordan en escritorio; el esquema final y la pregunta se conservan; los hilos son negros; cambia el foco de la lente; no hay ciclos continuos de mutaciones; sin errores de JavaScript ni infracciones automáticas de contraste en el estado revisado. El diseño estático conserva el esquema completo en móvil y con movimiento reducido.
+
+## Bocetos presentes durante cada etapa
+
+Cada sección conserva tres apariciones decorativas del boceto original de su etapa, distribuidas a los costados y en un plano inferior, con distinta escala, inclinación y transparencia. El scroll desplaza y gira suavemente esas capas en direcciones diferentes; no sustituye ni altera las ilustraciones principales. Los bocetos también permanecen en móvil con menor intensidad. El movimiento reducido conserva los fondos estáticos. Se verificaron las fuentes por etapa, el desplazamiento al hacer scroll, los controles de movimiento, el contraste y la ausencia de desbordes y errores de JavaScript.
