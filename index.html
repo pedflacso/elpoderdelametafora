@@ -4571,9 +4571,10 @@ if('IntersectionObserver' in window){const checkpoints=new IntersectionObserver(
 (()=>{const entrance=document.querySelector('#entrada-hilos'),main=document.querySelector('#main'),notes=document.querySelector('.journey-notes-panel'),saving=document.querySelector('.saving-panel');
  if(saving){const options=document.createElement('details'),summary=document.createElement('summary');summary.textContent='Guardar o retomar mi recorrido';options.append(summary,saving);notes.append(options)}
  while(main.firstElementChild&&main.firstElementChild!==entrance)main.firstElementChild.remove();
- const heading=document.createElement('h1');heading.className='thread-welcome';heading.textContent='Bienvenidos/as a “El poder de la metáfora”';entrance.querySelector('.entrance-scene').prepend(heading);entrance.setAttribute('aria-labelledby','thread-welcome');heading.id='thread-welcome';if(!location.hash)scrollTo({top:0,behavior:'instant'});
+ entrance.setAttribute('aria-label','El poder de la metáfora: los hilos forman una larva');if(!location.hash)scrollTo({top:0,behavior:'instant'});
 })();
 </script>
 
+<style>#entrada-hilos .entrance-caption,#entrada-hilos .entrance-hint{display:none!important}</style>
 </body>
 </html>
