@@ -4661,5 +4661,42 @@ function mount(){queued=false;root.querySelectorAll('.sound-voice').forEach((voi
 function schedule(){if(!queued){queued=true;requestAnimationFrame(mount)}}new MutationObserver(schedule).observe(root,{childList:true,subtree:true});mount();})();
 </script>
 
+
+<!-- Familia de recortes de papel a lo largo del recorrido. -->
+<style>
+body #main .journey-paper.journey-paper.journey-paper{isolation:isolate;background:transparent!important;background-image:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;color:var(--journey-ink,#263C30)!important}
+body #main .journey-paper.journey-paper.journey-paper:before{content:'';position:absolute;inset:0!important;z-index:-1;pointer-events:none;display:block!important;background-color:var(--journey-fill,#ECE7D4)!important;background-image:linear-gradient(color-mix(in srgb,var(--journey-fill,#ECE7D4) 89%,transparent),color-mix(in srgb,var(--journey-fill,#ECE7D4) 89%,transparent)),url('imagenes/scrap/piezas-papel.png')!important;background-size:100% 100%,900% 900%!important;background-position:center,var(--journey-texture,78% 96%)!important;clip-path:polygon(1.5% 3%,97% 0,100% 95%,2.5% 100%,0 78%);transform:rotate(var(--journey-turn,-.5deg))!important}
+body #main .journey-paper:nth-child(even):before{clip-path:polygon(0 4%,97% 1%,100% 89%,98% 99%,2% 97%);--journey-turn:.5deg}
+body #main .journey-paper.journey-paper.journey-paper h4,body #main .journey-paper.journey-paper.journey-paper p,body #main .journey-paper.journey-paper.journey-paper strong{color:inherit}
+body #main .journey-paper.is-related,body #main .is-highlighted>.journey-paper,body #main button.journey-paper[aria-pressed="true"]{font-weight:700;outline:2px solid #79526C!important;outline-offset:3px}
+body #main button.journey-paper[aria-pressed="true"]{text-decoration:underline;text-underline-offset:4px}
+body #main button.journey-paper:focus-visible{outline:3px solid #2F6F7A!important;outline-offset:5px}
+/* Definitions remain one complete paper, without a white block under the title. */
+body #main #larva .ink-node.journey-paper dt,body #main #larva .ink-node.journey-paper dd{background:transparent!important;color:inherit!important}
+body #main #larva .ink-node.journey-paper dt:before{display:none!important}
+body #main .box-orbit-piece.journey-paper{position:absolute;min-height:48px}
+body #main .meta-labels .journey-paper,body #main .ink-node dt.journey-paper{position:absolute}
+body #main .ink-node dt.journey-paper{position:relative}
+body #main .relation-screen>.education-film.journey-paper{z-index:3}
+body #main .relation-screen .education-film.journey-paper .oa-purpose,body #main .relation-screen .education-film.journey-paper .oa-activity,body #main .relation-screen .education-film.journey-paper .oa-feedback{color:inherit}
+body #main .scrap-route .comparison-fact h5.journey-paper{border-radius:0;background:transparent}
+body #main .journey-paper .sketchbook-icon{filter:none}
+@media(max-width:899px){body #main #larva .ink-node.journey-paper{position:relative;top:auto!important;left:auto!important;right:auto!important;margin:0}}
+</style>
+<script>
+(()=>{const colors={olive:'#D9DFB0',blue:'#D2E0E5',cream:'#ECE7D4',petrol:'#D8E5E4',rose:'#E9DCE5',sage:'#DCE6D5'},texture={olive:'78% 78%',blue:'96% 78%',cream:'78% 96%',petrol:'96% 96%',rose:'96% 78%',sage:'78% 96%'},root=document.querySelector('#investigation-content');let queued=false;
+ const normalize=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+ function tone(el,i){const heading=el.querySelector(':scope>dt,:scope>h4,:scope>strong');const t=normalize(heading?heading.textContent:el.textContent);if(el.closest('#butterfly-visual'))return 'rose';if(el.closest('.education-film'))return 'rose';if(t.includes('retroaliment'))return 'rose';if(t.includes('proposito'))return 'olive';if(t.includes('contenido'))return 'blue';if(t.includes('orientacion'))return 'petrol';if(t.includes('recurso')||t.includes('registro'))return 'olive';if(t.includes('actividad')||t.includes('consigna'))return 'cream';if(t.includes('guia'))return 'sage';return ['cream','blue','olive','rose','petrol','sage'][i%6]}
+ function apply(el,i){if(el.classList.contains('journey-paper')||el.classList.contains('paper-ticket'))return;const t=tone(el,i);if(getComputedStyle(el).position==='static')el.style.position='relative';el.classList.add('journey-paper');el.style.setProperty('--journey-fill',colors[t]);el.style.setProperty('--journey-texture',texture[t]);el.style.setProperty('--journey-ink','#263C30')}
+ function mount(){queued=false;document.querySelectorAll('.scrap-route .comparison-fact').forEach(fact=>{if(fact.querySelector('.route-reading-paper'))return;const title=fact.querySelector('h5'),body=fact.querySelector('p'),paper=document.createElement('div');paper.className='route-reading-paper';title.before(paper);paper.append(title,body)});const selectors=['#larva .ink-with-definitions .ink-node','#crisalida .meta-labels li','.box-orbit-piece','#butterfly-visual .ink-node dt','.eclosion-piece','.paper-hero-name','.scrap-folder-label','.material-tokens li','.investigation-pieces li','.design-bridge-relations>li','.fork-root','.fork-options>li','.oa-supports>li','.relation-complete .oa-purpose','.relation-complete .oa-feedback','.relation-screen>.education-film','.investigation-path-actions','.learning-path>li','.choice','.blackbox-node','.research-cycle-node','.summary-wing','.route-reading-paper','.episode-scheme li','.zone button','.connection-buttons button','.meta-nav button','.meta-static-nav button','.design-message','.language-examples','.metaphor-drawer','.thinker-reading','.association-bridge>span','.reading-association','.larva-connection-question','.closing-question','.case-opening-box','.investigation-shared','.reunion-destination','.curation-outcome','.butterfly-summary figcaption'];document.querySelectorAll(selectors.join(',')).forEach(apply)}
+ mount();new MutationObserver(()=>{if(!queued){queued=true;requestAnimationFrame(mount)}}).observe(root,{childList:true,subtree:true});
+})();
+</script>
+
+<style>
+body #main .eclosion-piece.journey-paper h4.paper-name:before{display:none!important}
+body #main .scrap-route .route-reading-paper h5,body #main .scrap-route .route-reading-paper p{background:transparent!important;border-radius:0;box-shadow:none;backdrop-filter:none}
+body #main button.journey-paper[aria-current="step"]{outline:2px solid #79526C!important;outline-offset:3px;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+</style>
 </body>
 </html>
