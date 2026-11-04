@@ -4507,5 +4507,20 @@ if('IntersectionObserver' in window){const checkpoints=new IntersectionObserver(
 (()=>{const panel=document.querySelector('.relation-complete'),layer=document.createElement('div');layer.className='relationship-sketch-layer';layer.setAttribute('aria-hidden','true');layer.innerHTML='<i class="relationship-sketch" style="--touch-frame:0%"></i><i class="relationship-sketch" style="--touch-frame:100%"></i>';panel.prepend(layer);const mq=matchMedia('(prefers-reduced-motion:reduce)'),sketches=[...layer.children],cards=[...panel.querySelectorAll('.oa-purpose,.oa-feedback,.oa-supports li')];let queued=false;const clamp=n=>Math.max(0,Math.min(1,n));function update(){queued=false;const r=panel.getBoundingClientRect(),p=clamp((innerHeight-r.top)/(innerHeight+r.height)),still=mq.matches||document.body.classList.contains('no-motion');sketches.forEach((e,i)=>{e.style.setProperty('--touch-x',still?'0px':((i?-1:1)*p*Math.min(210,innerWidth*.18)).toFixed(1)+'px');e.style.setProperty('--touch-y',still?'0px':((i?1:-1)*(p-.5)*80).toFixed(1)+'px')});cards.forEach((card,i)=>{const c=card.getBoundingClientRect(),s=sketches[i%2].getBoundingClientRect(),d=Math.hypot((c.left+c.width/2)-(s.left+s.width/2),(c.top+c.height/2)-(s.top+s.height/2)),touch=clamp(1-d/Math.max(1,s.width*.65)),a=[250,251,242],b=i%2?[226,237,228]:[241,218,228];card.style.setProperty('--touch-tint',`rgb(${a.map((v,j)=>Math.round(v+(b[j]-v)*touch)).join(',')})`)})}function schedule(){if(!queued){queued=true;requestAnimationFrame(update)}}addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);document.addEventListener('click',schedule);mq.addEventListener('change',schedule);update()})();
 </script>
 
+
+<style>
+.route-scene img.sketchbook-route{height:auto!important;aspect-ratio:4/3;top:50%;translate:0 -50%;background-image:url('imagenes/scrap/caminos-sketchbook.png');background-size:200% 400%;background-position:var(--route-cell-x) var(--route-cell-y);background-repeat:no-repeat}
+.route-inline-scene.sketchbook-route{height:auto;aspect-ratio:4/3;background-image:url('imagenes/scrap/caminos-sketchbook.png');background-size:200% 400%;background-position:var(--route-cell-x) var(--route-cell-y);background-repeat:no-repeat}
+#cierre .journey-notes-panel{position:relative;z-index:4;background:#F4E6ED!important;border:1px solid #A27890!important;border-left:6px solid #79526C!important;border-radius:24px;padding:clamp(24px,4vw,44px)!important;color:#2E4337!important;box-shadow:0 14px 36px #263c3018;margin:44px 0}
+#cierre .journey-notes-panel h3{font-size:clamp(1.4rem,2.5vw,1.8rem);color:#65415A;margin-top:0}
+#cierre .journey-notes-panel p{max-width:75ch}
+#cierre .journey-notes-panel #download-notes{background:#65415A;color:#FBFAF6;border-color:#65415A}
+#cierre .journey-notes-panel #download-notes:hover{background:#52334A}
+#cierre .journey-notes-panel #download-notes:focus-visible{outline:3px solid #2F6F7A;outline-offset:4px}
+</style>
+<script>
+(()=>{const empty='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450"%3E%3C/svg%3E';document.querySelectorAll('.scrap-route').forEach(article=>{const x=article.classList.contains('universe-podcast')?'0%':'100%';[...article.querySelectorAll('.route-scene img')].forEach((img,i)=>{img.dataset.originalScene=img.getAttribute('src');img.classList.add('sketchbook-route');img.style.setProperty('--route-cell-x',x);img.style.setProperty('--route-cell-y',i*100/3+'%');img.src=empty});article.querySelectorAll('.route-inline-scene').forEach((img,i)=>{img.classList.add('sketchbook-route');img.style.setProperty('--route-cell-x',x);img.style.setProperty('--route-cell-y',i*100/3+'%');img.src=empty})});document.querySelector('#notes-title').closest('section').classList.add('journey-notes-panel')})();
+</script>
+
 </body>
 </html>

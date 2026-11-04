@@ -6,3 +6,6 @@ La grilla 3 × 3 contiene: fondo de carpeta, solapa, hoja; mesa de observación,
 
 
 `escenas-educativas.png`: hoja de seis escenas generada a partir del boceto aprobado; se muestran las tres superiores mediante CSS, sin alterar el PNG. `podcast-1.svg` a `podcast-4.svg` y `artefacto-1.svg` a `artefacto-4.svg`: originales aportados por el equipo, conservados sin modificaciones, usados en la síntesis de caminos.
+
+
+`caminos-sketchbook.png`: hoja generada a partir de los ocho SVG del equipo y la estética aprobada de escenas educativas; dos columnas (podcast, artefacto) y cuatro filas (etapas). El PNG se conserva completo y se muestra por celdas con CSS, sin edición de píxeles.
