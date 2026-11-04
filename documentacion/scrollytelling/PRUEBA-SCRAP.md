@@ -35,3 +35,6 @@ Síntesis de caminos: escena sticky con cuatro SVG por camino, cambios de compos
 
 
 Filminas y profundidad: la síntesis alterna podcast a izquierda y artefacto a derecha, con escenas sticky grandes, acercamientos y apertura de plano vinculados al scroll. Los detalles pasan en tarjetas translúcidas sobre la ilustración. Las tres escenas educativas utilizan el mismo tratamiento con fondos ampliados y texto sobre filmina oscura. Móvil y movimiento reducido muestran una lectura estática, con cada ilustración junto a su contenido. Verificado: cuatro estados de cada camino, escalas variables entre 1.02 y 1.24, movimiento lateral opuesto, sin errores JavaScript ni desbordes, contraste sin incidencias.
+
+
+Las pantallas educativas se escalonan izquierda / derecha / izquierda y se superponen dejando asomar el recuadro previo. Las escenas desbordan los marcos de forma controlada y aumentan su desplazamiento ligado al scroll. Se conserva la lectura estática móvil y con movimiento reducido. Verificación: sin desbordes a 1440, 1000, 390 y 320px, sin errores JavaScript.
