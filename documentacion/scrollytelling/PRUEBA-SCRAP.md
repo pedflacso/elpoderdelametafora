@@ -1,6 +1,6 @@
 # Montaje de piezas scrap para revisión
 
-Prueba independiente: `version-1-autoasistida/propuesta-scrap.html`. El índice principal y su ZIP permanecen intactos.
+El montaje revisado de `version-1-autoasistida/propuesta-scrap.html` se incorpora al índice principal por solicitud del equipo. La copia de prueba se conserva para comparación.
 
 - Carpeta: fondo y solapa estables; hoja que cambia de posición al avanzar por las fases. La etiqueta recupera el título de la fase actual.
 - Observación: discos de papel detrás de los materiales y lente independiente que se desplaza con el scroll y al elegir otra evidencia. Es una representación visual de mirar en detalle; no amplía ópticamente el texto del caso.
@@ -22,4 +22,4 @@ Validación en Chromium: ambas rutas, controles de caja, cambios de foco de la l
 - Los nombres de componentes y piezas adoptan el soporte de papel. Las selecciones se indican con énfasis y trazo, manteniendo sus colores de base.
 - Los recortes detrás de la mariposa mantienen la paleta y opacidad al seleccionar relaciones.
 
-El índice principal y su ZIP siguen sin cambios; estos ajustes pertenecen a la prueba scrap.
+Esta revisión también se publica en el índice principal y se incorpora a su ZIP. El índice anterior queda guardado en `version-previa-scrap.html`.

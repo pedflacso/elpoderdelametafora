@@ -126,4 +126,4 @@ Verificación: seis etapas, ambos textos, caja interactiva, contraste, anchos de
 
 ## Montaje de piezas scrap para revisar
 
-[Prueba independiente de las piezas a color](version-1-autoasistida/propuesta-scrap.html), con carpeta, lente, caja de papel y recortes en capas. [Escenas y alcance](documentacion/scrollytelling/PRUEBA-SCRAP.md). El índice principal y su ZIP no cambian.
+El [módulo principal](version-1-autoasistida/index.html) incorpora el montaje scrap revisado, con carpeta, lente dentro del recuadro, caja de papel y recortes en capas. [Escenas y alcance](documentacion/scrollytelling/PRUEBA-SCRAP.md). El ZIP incluye las imágenes de papel; la versión anterior queda conservada.

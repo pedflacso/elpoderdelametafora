@@ -469,3 +469,9 @@ La versión inmediatamente anterior queda en `version-previa-scrollytelling.html
 Dos ritmos de scroll: las columnas visuales incorporan desplazamientos con pausas mientras la lectura sigue otra curva de movimiento. Se aplica a Crisálida, caso, caja, investigación, curaduría y Mariposa. Se conserva la composición y los matices de color. Los íconos comunes pasan a trazos más finos e irregulares, con símbolos y etiquetas sin cambios. La dirección scrapbook se mantiene como una idea por discutir, sin transformar todo el diseño.
 
 Entrada visual y sonora: al completarse la larva aparece el recuadro con la pregunta de bienvenida, el reproductor existente, la lectura opcional «Si preferís leer» y el enlace «Entrar al recorrido». El audio y la lectura se reubican sin duplicarlos. La reproducción requiere una acción de la persona. La opción de comenzar lleva a la entrada de hilos. En móvil y con movimiento reducido, el recuadro se presenta en el flujo de lectura.
+
+### Montaje scrap como versión definitiva
+
+Por solicitud del equipo, la revisión de `propuesta-scrap.html` pasa al índice principal. Incluye la lupa y la mesa dentro del recuadro, la caja con papelitos desplegables, los títulos de papel en las tres pantallas y los nombres sobre recortes, sin las tiras gruesas de Crisálida. Los colores detrás de la mariposa permanecen estables al interactuar. Se retira la barra de navegación de prueba.
+
+El índice inmediatamente anterior queda en `version-previa-scrap.html`; el contenido, audios y notas conservan su funcionamiento. El ZIP se actualiza e incorpora las imágenes de papel necesarias.
