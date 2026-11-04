@@ -501,3 +501,6 @@ Entrada directa: se retiran del recorrido la portada y todas las pantallas intro
 
 
 La entrada abre solo con los hilos en movimiento: se retiran la bienvenida y los rótulos visuales del inicio. Conserva descripción accesible de la escena y la tarjeta de escucha/lectura posterior. Verificado: sin bienvenida visible, 17 trazos y un audio de entrada, sin errores JavaScript.
+
+
+Retratos de testimonios: se reemplaza la tira fotográfica por dibujos originales a lápiz sobre papel, con Laura y Marcos como estudiantes universitarios adultos (mochila, cuaderno) y Lic. Martínez como docente (libro y apuntes). Las tarjetas muestran los retratos con materiales, sin recorte circular, preservando nombres, roles, audios y textos. Se conserva el aviso de retratos ilustrativos. Verificado: tres retratos y su correspondencia, regeneración al cambiar de camino, sin errores JavaScript ni desbordes a 320,390,768,1000,1440px.

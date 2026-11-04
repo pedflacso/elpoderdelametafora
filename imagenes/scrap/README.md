@@ -9,3 +9,6 @@ La grilla 3 × 3 contiene: fondo de carpeta, solapa, hoja; mesa de observación,
 
 
 `caminos-sketchbook.png`: hoja generada a partir de los ocho SVG del equipo y la estética aprobada de escenas educativas; dos columnas (podcast, artefacto) y cuatro filas (etapas). El PNG se conserva completo y se muestra por celdas con CSS, sin edición de píxeles.
+
+
+`retratos-testimonios.png`: hoja de seis retratos ilustrativos generados en la estética aprobada; columnas Laura / Lic. Martínez / Marcos. Fila superior primeros planos, fila inferior retratos con materiales universitarios usada en las tarjetas. Montaje por CSS sin editar el PNG.
