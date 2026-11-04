@@ -10,7 +10,7 @@ La nueva revisión mantiene la entrada gradual de la versión 1 y añade orienta
 - [Instrucciones y alcance del guardado](version-1-autoasistida/README.md).
 - [Descargar ZIP de esta revisión](descargas/metafora-version-1-autoasistida.zip).
 
-Para verlo, descargá el ZIP desde GitHub, descomprimilo y abrí `index.html`. La rama `gh-pages` se prepara para publicación web. Su existencia no confirma que GitHub Pages esté activado: ver las instrucciones de publicación.
+Sitio publicado: https://pedflacso.github.io/elpoderdelametafora/. El índice principal incorpora la narración visual por capas aprobada por el equipo. También podés descargar el ZIP, descomprimirlo y abrir `index.html`.
 
 ## Base elegida para continuar
 
