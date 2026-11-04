@@ -1199,7 +1199,13 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
 .no-motion .layer-card,.no-motion .layer-blackbox .blackbox-node,.no-motion .layer-research .research-cycle-node,.no-motion .layer-route-card,.no-motion .layer-pair .pair-source-card,.no-motion .layer-sound .sound-voice,.no-motion .layer-episode li{transform:none!important}
 @media(max-width:999px){.layer-case-visual{display:block;margin:0 0 30px}.layer-case-visual #case-visual{position:relative;top:auto}.layer-art{display:none}.layer-card,.layer-route-card,.layer-pair .pair-source-card,.layer-sound .sound-voice,.layer-episode li{transform:none!important}}
 </style>
-</head>
+<style>
+#entrada-hilos .entrance-scene figure{width:100vw;max-width:none;align-self:center;overflow:visible}
+#entrada-hilos .entrance-silk{stroke:#171717!important;stroke-width:1.45;fill:none}
+#entrada-hilos .entrance-silk path{stroke:#171717!important}
+#entrada-hilos .entrance-chrysalis{width:76%;left:12%;object-fit:contain}
+@media(max-width:899px){#entrada-hilos .entrance-scene figure{width:100%;overflow:hidden}}
+</style></head>
 <body><nav class="visual-version-nav" aria-label="Versiones del diseño"><a href="index.html">Ver el módulo publicado</a><a href="#entrada-hilos">Probar la entrada</a><a href="#crisalida">Ir a Crisálida</a></nav>
 <a class="skip" href="#main">Ir al contenido</a>
 <header class="header"><div class="wrap header-inner"><a class="brand" href="#main">El poder de la metáfora</a><div class="phase" aria-label="Momento del recorrido"><a href="#larva">Larva</a><a href="#crisalida">Crisálida</a><a href="#caso">Eclosión</a><a href="#mariposa">Mariposa</a></div><button id="motion" class="secondary" aria-pressed="false">Reducir movimiento</button></div></header>
@@ -3477,7 +3483,7 @@ function refreshInkMotion(){
 
 function mountThreadEntrance(){
  const section=document.createElement('section');section.className='thread-entrance';section.id='entrada-hilos';section.setAttribute('aria-label','Un hilo empieza a tomar forma');
- section.innerHTML=`<div class="entrance-scene"><figure role="img" aria-label="Los hilos se enrollan y dan lugar a una crisálida."><svg class="entrance-silk" viewBox="0 0 800 650" aria-hidden="true"><path class="entrance-tail" pathLength="1" d="M20 550C230 625 190 70 360 95S605 315 780 125"/><path class="entrance-coil" pathLength="1" d="M352.8 85.0C418.9 49.0 456.7 116.0 362.2 128.0"/><path class="entrance-coil" pathLength="1" d="M323.8 119.0C430.5 83.0 491.4 150.0 339.0 162.0"/><path class="entrance-coil" pathLength="1" d="M301.4 153.0C439.5 117.0 518.4 184.0 321.1 196.0"/><path class="entrance-coil" pathLength="1" d="M284.2 187.0C446.3 151.0 539.0 218.0 307.3 230.0"/><path class="entrance-coil" pathLength="1" d="M272.3 221.0C451.1 185.0 553.2 252.0 297.9 264.0"/><path class="entrance-coil" pathLength="1" d="M266.0 255.0C453.6 219.0 560.8 286.0 292.8 298.0"/><path class="entrance-coil" pathLength="1" d="M265.5 289.0C453.8 253.0 561.4 320.0 292.4 332.0"/><path class="entrance-coil" pathLength="1" d="M270.6 323.0C451.8 287.0 555.3 354.0 296.5 366.0"/><path class="entrance-coil" pathLength="1" d="M281.4 357.0C447.4 321.0 542.3 388.0 305.1 400.0"/><path class="entrance-coil" pathLength="1" d="M297.5 391.0C441.0 355.0 523.0 422.0 318.0 434.0"/><path class="entrance-coil" pathLength="1" d="M318.9 425.0C432.5 389.0 497.4 456.0 335.1 468.0"/><path class="entrance-coil" pathLength="1" d="M346.2 459.0C421.5 423.0 464.6 490.0 357.0 502.0"/></svg><img class="entrance-chrysalis" src="${esc(C.inkArt.crisalida.src)}" alt=""></figure><p class="entrance-caption">Un hilo empieza a tomar forma</p><p class="entrance-hint">Desplazate para seguir el hilo</p><a class="entrance-enter" href="#larva">Las partes con las que diseñamos ↓</a></div>`;
+ section.innerHTML=`<div class="entrance-scene"><figure role="img" aria-label="Hilos negros llegan desde los bordes de la pantalla y se reúnen hasta formar una larva."><svg class="entrance-silk" viewBox="0 0 1200 700" preserveAspectRatio="none" aria-hidden="true"><path class="entrance-tail" pathLength="1" d="M-20 680C160 680 120 75 360 160S940 580 1220 40"/><path class="entrance-coil" pathLength="1" d="M-30 -20C222.0 66.0 215 156.0 355 296.0C445 321.0 425 428.0 340 408.0S290 306.0 363 296.0"/><path class="entrance-coil" pathLength="1" d="M220 -30C372.0 59.0 247 153.1 387 293.1C477 318.1 457 443.8 372 423.8S322 303.1 395 293.1"/><path class="entrance-coil" pathLength="1" d="M600 -30C600.0 59.0 279 147.6 419 287.6C509 312.6 489 456.2 404 436.2S354 297.6 427 287.6"/><path class="entrance-coil" pathLength="1" d="M980 -30C828.0 59.0 311 138.2 451 278.2C541 303.2 521 463.1 436 443.1S386 288.2 459 278.2"/><path class="entrance-coil" pathLength="1" d="M1230 -20C978.0 66.0 343 125.9 483 265.9C573 290.9 553 464.8 468 444.8S418 275.9 491 265.9"/><path class="entrance-coil" pathLength="1" d="M1240 180C984.0 206.0 375 113.5 515 253.5C605 278.5 585 463.5 500 443.5S450 263.5 523 253.5"/><path class="entrance-coil" pathLength="1" d="M1240 400C984.0 360.0 407 104.5 547 244.5C637 269.5 617 462.1 532 442.1S482 254.5 555 244.5"/><path class="entrance-coil" pathLength="1" d="M1220 730C972.0 591.0 439 101.4 579 241.4C669 266.4 649 462.9 564 442.9S514 251.4 587 241.4"/><path class="entrance-coil" pathLength="1" d="M980 730C828.0 591.0 471 104.9 611 244.9C701 269.9 681 466.4 596 446.4S546 254.9 619 244.9"/><path class="entrance-coil" pathLength="1" d="M600 730C600.0 591.0 503 113.4 643 253.4C733 278.4 713 471.0 628 451.0S578 263.4 651 253.4"/><path class="entrance-coil" pathLength="1" d="M220 730C372.0 591.0 535 123.6 675 263.6C765 288.6 745 473.5 660 453.5S610 273.6 683 263.6"/><path class="entrance-coil" pathLength="1" d="M-30 730C222.0 591.0 567 132.4 707 272.4C797 297.4 777 471.3 692 451.3S642 282.4 715 272.4"/><path class="entrance-coil" pathLength="1" d="M-40 450C216.0 395.0 599 138.1 739 278.1C829 303.1 809 463.0 724 443.0S674 288.1 747 278.1"/><path class="entrance-coil" pathLength="1" d="M-40 200C216.0 220.0 631 140.9 771 280.9C861 305.9 841 449.5 756 429.5S706 290.9 779 280.9"/><path class="entrance-coil" pathLength="1" d="M-20 40C228.0 108.0 663 143.0 803 283.0C893 308.0 873 433.7 788 413.7S738 293.0 811 283.0"/><path class="entrance-coil" pathLength="1" d="M1200 660C960.0 542.0 695 147.2 835 287.2C925 312.2 905 419.2 820 399.2S770 297.2 843 287.2"/></svg><img class="entrance-chrysalis" src="${esc(C.inkArt.larva.src)}" alt=""></figure><p class="entrance-caption">Un hilo empieza a tomar forma</p><p class="entrance-hint">Desplazate para seguir el hilo</p><a class="entrance-enter" href="#larva">Las partes con las que diseñamos ↓</a></div>`;
  document.getElementById('larva').before(section);
 }
 function refreshThreadEntrance(){
@@ -3486,10 +3492,10 @@ function refreshThreadEntrance(){
  root.classList.toggle('entrance-visible',rect.top<innerHeight&&rect.bottom>0);
  const p=reduced?1:Math.max(0,Math.min(1,-rect.top/Math.max(1,rect.height-innerHeight)));
  root.dataset.progress=p.toFixed(3);root.querySelector('.entrance-tail').style.strokeDashoffset=String(1-Math.min(1,.2+p*1.2));
- root.querySelectorAll('.entrance-coil').forEach((path,i)=>path.style.strokeDashoffset=String(1-Math.max(0,Math.min(1,p*1.8-i*.065))));
- root.querySelector('.entrance-chrysalis').style.opacity=String(Math.max(0,Math.min(1,(p-.42)/.44)));
- root.querySelector('.entrance-silk').style.opacity=String(1-Math.max(0,p-.7)*2.3);
- root.querySelector('.entrance-caption').textContent=p<.35?'Un hilo empieza a tomar forma':p<.8?'Los hilos se entrelazan':'Una forma por explorar';
+ root.querySelectorAll('.entrance-coil').forEach((path,i)=>path.style.strokeDashoffset=String(1-Math.max(0,Math.min(1,p*1.95-i*.035))));
+ root.querySelector('.entrance-chrysalis').style.opacity=String(Math.max(0,Math.min(1,(p-.48)/.44)));
+ root.querySelector('.entrance-silk').style.opacity=String(1-Math.max(0,p-.65)/.35);
+ root.querySelector('.entrance-caption').textContent=p<.35?'Un hilo empieza a tomar forma':p<.8?'Los hilos se entrelazan':'Larva · Las partes están disponibles.';
 }
 function mountSixRelations(){
  const frame=document.querySelector('#larva .component-definitions.ink-first-composition');const section=document.createElement('section');section.className='six-relations';section.id='seis-relaciones';section.setAttribute('aria-label','Las seis partes se despliegan con sus relaciones');
@@ -3872,5 +3878,79 @@ if('IntersectionObserver' in window){const checkpoints=new IntersectionObserver(
 })();
 </script>
 
+<!-- OPAQUE-RELATIONS-OPTICS --><style>
+/* Pantallas opacas: la secuencia se construye antes de revelar el conjunto. */
+.relation-deck{position:relative;isolation:isolate}.relation-screen{display:none}
+.relation-complete{position:relative;z-index:5;background:#CAD6B6;border-radius:32px;padding:32px}
+.relation-finale{width:100%;max-width:none;position:relative;z-index:6;background:#5B4260!important;color:#FBFAF6!important;border-radius:32px;padding:clamp(30px,5vw,72px)!important;text-align:center;font-size:clamp(1.5rem,3vw,2.6rem)!important;line-height:1.35!important;margin:36px 0 0!important}
+.optics{position:relative;color:#2c503b}.optics svg{display:block;width:100%;height:auto;overflow:visible}.optics .lens-glass{fill:#e8efdf;stroke:#365e55;stroke-width:5}.optics .optic-sample{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.optics-caption{font-size:1.05rem;font-weight:700;text-align:center;color:#2c503b;padding:12px 16px;margin:0}
+.optics .optic-focus{transition:transform .6s}.optics .optic-guide{fill:none;stroke:#8a6a8f;stroke-width:1.5;stroke-dasharray:4 5}
+.layer-research .research-cycle-core{background:#CAD6B6;border:1px solid #91a485;border-radius:30px}
+.layer-research .research-cycle-core>.optics{width:100%;max-width:380px;margin:auto}.layer-research .research-cycle-core>strong{margin-top:12px}
+#investigar{position:relative;isolation:isolate;background:#d9e4d2}
+#investigation-content{position:relative;isolation:isolate}.investigation-optics{display:none;pointer-events:none}
+#investigation-content>.workspace{background:#E9EDDC;border-color:#879a7b;box-shadow:0 14px 40px #263c3010}
+#investigation-content>.workspace:nth-of-type(even){background:#DCEAEA;border-color:#709a9d}
+#investigation-content>.reflection{background:#E6E1EB;border-color:#99859d}
+#investigation-content .evidence-body{background:#FBFAF6;border:1px solid #a8b79f}
+@media(min-width:1000px) and (min-height:700px){
+ .relation-screen{display:flex;position:sticky;top:100px;height:calc(100svh - 125px);min-height:550px;border-radius:32px;margin:0 0 25svh;padding:clamp(30px,4vw,64px);flex-direction:column;justify-content:center;align-items:center;text-align:center;background:#365C48;color:#FBFAF6;box-shadow:0 -10px 35px #263c3020;border:1px solid #42694f;overflow:hidden}
+ .relation-screen:nth-child(2){top:112px;background:#54693D;border-color:#687d50;z-index:2}.relation-screen:nth-child(3){top:124px;background:#365F62;border-color:#537d80;z-index:3}
+ .relation-screen h4{font-size:clamp(2rem,4vw,3.4rem);margin:12px 0 24px}.relation-screen p{font-size:clamp(1.1rem,2vw,1.5rem);line-height:1.5;max-width:720px;margin:0 auto 20px}
+ .relation-screen .segment-icon{width:58px;height:58px;margin:0 auto;color:#FBFAF6!important}
+ .relation-screen .oa-purpose,.relation-screen .oa-feedback,.relation-screen .oa-activity{padding:0;background:transparent!important;color:inherit;max-width:900px;display:block}
+ .relation-screen .oa-supports{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+ .relation-screen .oa-supports li{background:#e8edda!important;color:#263c30;padding:20px 16px;border-radius:18px;font-size:1.05rem}
+ .relation-screen .oa-link{color:inherit;font-size:1.3rem;margin-top:20px;display:block;opacity:1}
+ .relation-screen .oa-link span{display:block;font-size:2rem}.relation-screen>.oa-link{margin:0 0 24px}
+ .relation-screen .relation-serial{position:absolute;top:24px;left:30px;color:inherit;font-size:.95rem;letter-spacing:.15em}
+ .relation-complete{padding:42px;margin-top:15svh;box-shadow:0 -16px 50px #263c3030;min-height:72svh}
+ #larva .larva-relations-scene{padding-top:50px}.larva-relations-scene>.layer-art{display:none}
+ .relation-finale{min-height:42svh;display:grid;place-items:center}
+}
+@media(min-width:1000px){
+ .layer-research .research-cycle-core{top:110px;margin-top:4svh;padding:20px;min-height:0}
+ .layer-research .research-cycle-core>svg{display:none}.layer-research .research-cycle-core .optics svg{width:100%;height:auto}
+ .investigation-optics{display:block;position:sticky;top:100px;height:calc(100svh - 130px);margin-bottom:calc(-100svh + 130px);z-index:-1;overflow:hidden}
+ .investigation-optics .optics{width:52%;margin-left:auto;padding-top:6svh;opacity:.8;transform:rotate(-9deg)}
+ #investigation-content>.workspace{max-width:76%;position:relative;z-index:1;margin:8svh 0}
+ #investigation-content>.workspace:has(.pair-board),#investigation-content>.reflection{max-width:100%}
+ #investigation-content>.path-head{max-width:78%;position:relative;z-index:1}
+ #investigation-content>.sound-map{position:relative;z-index:1}
+ #investigation-content .layer-sound{clip-path:inset(0 round 28px)}
+ #investigation-content .layer-sound .sound-voice{background:#EDF0E1;border:1px solid #879a7b}
+}
+.no-motion .relation-screen{display:none}.no-motion .relation-complete{margin:0;min-height:0}.no-motion .relation-finale{min-height:0}.no-motion .optics .optic-sample,.no-motion .optics .optic-focus{transition:none}
+@media(prefers-reduced-motion:reduce){.relation-screen{display:none}.relation-complete{margin:0;min-height:0}.relation-finale{min-height:0}.optics .optic-sample,.optics .optic-focus{transition:none}}
+@media(max-width:999px){.relation-complete{padding:20px}.layer-research .research-cycle-core>.optics{max-width:240px}.layer-research .research-cycle-core{padding:20px;margin-bottom:18px}.relation-finale{padding:30px 22px!important}}
+</style>
+<script>
+(()=>{
+ const q=(s,r=document)=>r.querySelector(s),qa=(s,r=document)=>[...r.querySelectorAll(s)];
+ const figure=q('.oa-relationship'),host=q('.larva-relations-scene'),bridge=q('.larva-metaphor-bridge');
+ const deck=document.createElement('div');deck.className='relation-deck';deck.id='vinculo-en-capas';figure.before(deck);
+ const links=qa('.oa-link',figure),parts=[q('.oa-purpose',figure),q('.oa-activity',figure),q('.oa-feedback',figure)];
+ parts.forEach((part,i)=>{const screen=document.createElement('section');screen.className='relation-screen';screen.setAttribute('aria-hidden','true');screen.dataset.relationScreen=i;const number=document.createElement('span');number.className='relation-serial';number.textContent=String(i+1).padStart(2,'0')+' / 03';screen.append(number);if(i===2)screen.append(links[1].cloneNode(true));screen.append(part.cloneNode(true));if(i===0)screen.append(links[0].cloneNode(true));screen.querySelectorAll('[id]').forEach(e=>e.removeAttribute('id'));deck.append(screen);});
+ const complete=document.createElement('div');complete.className='relation-complete';deck.append(complete);complete.append(figure);bridge.classList.add('relation-finale');deck.append(bridge);
+ let serial=0;
+ function optics(){const id='specimen-'+(++serial);return `<div class="optics" aria-hidden="true"><svg viewBox="0 0 400 380"><defs><clipPath id="${id}"><circle cx="190" cy="165" r="126"/></clipPath><g id="${id}-sample"><path d="M40 100C110 15 265 260 345 165M40 250C150 330 205 25 340 90" fill="none" stroke="#731F40" stroke-width="2"/><g fill="#FBFAF6" stroke="#638679" stroke-width="1.5"><rect x="55" y="75" width="94" height="115" rx="9"/><rect x="225" y="130" width="106" height="125" rx="9"/><rect x="130" y="260" width="100" height="90" rx="9"/></g><g stroke="#879a7b" stroke-width="3"><path d="M72 103h57m-57 17h45m-45 17h53m100 21h67m-67 19h55m-55 19h67m-67 19h44M146 285h65m-65 17h47m-47 17h65"/></g><g fill="#5B4260"><circle cx="149" cy="133" r="5"/><circle cx="225" cy="185" r="5"/><circle cx="178" cy="260" r="5"/></g></g></defs><path d="M290 272l67 70" stroke="#365e55" stroke-width="28" stroke-linecap="round"/><circle class="lens-glass" cx="190" cy="165" r="140"/><g clip-path="url(#${id})"><g class="optic-sample"><use href="#${id}-sample"/></g></g><circle cx="190" cy="165" r="126" fill="none" stroke="#8ea99a" stroke-width="1"/><path class="optic-guide" d="M190 28v274M53 165h274"/><g class="optic-focus" fill="none" stroke="#731F40" stroke-width="2"><circle cx="190" cy="165" r="24"/><path d="M190 131v12m0 44v12m-34-34h12m44 0h12"/></g><path d="M90 78a115 115 0 0 1 98-36" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".65"/></svg><p class="optics-caption"></p></div>`;}
+ const research=q('.research-cycle-section'),core=q('.research-cycle-core',research);core.insertAdjacentHTML('afterbegin',optics());
+ const investigation=q('#investigation-content');let lastChild=null,queued=false;
+ const mq=matchMedia('(prefers-reduced-motion:reduce)');
+ function moveOptics(root,index,label,still){if(!root)return;const positions=[[0,0],[45,-25],[-35,34],[20,55]],xy=positions[index%4];q('.optic-sample',root).style.transform=still?'none':`translate(${xy[0]}px,${xy[1]}px) scale(1.35)`;q('.optic-focus',root).style.transform=still?'none':`translate(${-xy[0]*.45}px,${-xy[1]*.45}px)`;const caption=q('.optics-caption',root);if(caption.textContent!==label)caption.textContent=label;}
+ function tick(){queued=false;const still=mq.matches||document.body.classList.contains('no-motion')||innerWidth<1000;
+ const r=deck.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0){let current=0;qa('.relation-screen',deck).forEach((e,i)=>{if(e.getBoundingClientRect().top<innerHeight*.6)current=i;});deck.dataset.activeScreen=current;}
+ const ri=Number(research.dataset.layerStep||0),step=q('.cycle-node-'+(ri+1)+' h4',research);moveOptics(q('.optics',core),ri,step?.textContent||'',still);
+ const first=[...investigation.children].find(e=>!e.classList.contains('investigation-optics'));
+ if(first&&first!==lastChild){lastChild=first;q('.investigation-optics',investigation)?.remove();const bg=document.createElement('div');bg.className='investigation-optics';bg.setAttribute('aria-hidden','true');bg.innerHTML=optics();investigation.prepend(bg);}
+ const bg=q('.investigation-optics',investigation);if(bg){const stages=qa(':scope>.workspace,.sound-voice',investigation);let index=0;stages.forEach((e,i)=>{if(e.getBoundingClientRect().top<innerHeight*.65)index=i;});const selected=q('#evidence-body h3',investigation);const label=selected?.textContent||q('h3,h4',stages[index]||investigation)?.textContent||'';moveOptics(q('.optics',bg),index,label,still);}
+ }
+ function schedule(){if(!queued){queued=true;requestAnimationFrame(tick);}}
+ addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);document.addEventListener('click',schedule);mq.addEventListener('change',schedule);
+ new MutationObserver(schedule).observe(investigation,{childList:true,subtree:true});tick();
+})();
+</script>
+<!-- END-OPAQUE-RELATIONS-OPTICS -->
 </body>
 </html>
