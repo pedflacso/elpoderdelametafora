@@ -57,3 +57,9 @@ La entrada usa siete grises y ocho grosores de trazo para aproximarse al caráct
 ## Dos columnas e íconos de trazo más próximo al dibujo
 
 Las columnas de imágenes y lectura tienen desplazamientos distintos. La imagen puede detenerse durante un tramo del scroll mientras los recuadros siguen su recorrido. Se conservan los controles, la composición y la lectura estática en móvil y movimiento reducido. Los íconos comunes mantienen sus significados y colores, con contornos más finos y ligeramente irregulares. Los fondos conservan todos sus matices. La posible dirección scrapbook queda pendiente de conversación.
+
+## Aparición de la bienvenida sonora al formarse la larva
+
+La animación reserva un tramo final para revelar un recuadro con la pregunta de bienvenida y su reproductor. Se reutilizan y reubican el audio y la lectura existentes; no se duplica el reproductor. «Si preferís leer» abre la versión escrita opcional y conserva la aclaración de que recupera ideas del audio. Un enlace permite continuar hacia Larva. No hay reproducción automática; si se está escuchando o usando los controles, el recuadro conserva su disponibilidad.
+
+Validación: recuadro oculto e inerte durante la formación, visible al completarse la imagen; un único audio de bienvenida; lectura opcional y reproducción por clic operativas; contraste sin infracciones en el estado revisado; sin desbordes de 320 a 1440 px; recuadro accesible con movimiento reducido y sin errores de JavaScript.
