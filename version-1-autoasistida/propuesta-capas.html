@@ -4045,6 +4045,7 @@ if('IntersectionObserver' in window){const checkpoints=new IntersectionObserver(
 <!-- LARGE-ACTIVE-DESIGN-BOX -->
 <style>
 .layer-blackbox .blackbox-core{padding:16px 20px 24px;background:#CAD6B6;border:1px solid #9CAE8A}
+.layer-blackbox .box-theatre{background:transparent!important;border:0!important;box-shadow:none!important}
 .box-theatre{display:block;padding:0;border:0;border-radius:22px;background:transparent;color:inherit;cursor:pointer;position:relative;width:min(100%,470px);height:clamp(340px,45svh,440px);margin:0 auto 8px;isolation:isolate}
 .layer-blackbox .box-theatre .blackbox-object{width:100%;height:100%;max-height:none;margin:0;overflow:visible;transform:translateY(var(--box-y,0px)) rotate(var(--box-r,0deg));transition:transform .6s}
 .box-theatre .box-body-art{transform-origin:100px 110px;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
@@ -4063,7 +4064,7 @@ if('IntersectionObserver' in window){const checkpoints=new IntersectionObserver(
 .layer-blackbox .blackbox-core h4{font-size:1.3rem;margin:12px 0 6px}.layer-blackbox .box-discovery p{padding:12px 0 0}
 @media(min-width:1000px){.layer-blackbox .blackbox-core{top:85px;margin-top:5svh}.layer-blackbox .blackbox-map{grid-template-columns:.95fr 1.05fr}}
 @media(max-width:999px){.layer-blackbox .blackbox-core{max-width:470px;width:100%;grid-column:1/-1}.box-theatre{height:360px}}
-@media(max-width:499px){.layer-blackbox .blackbox-core{padding:14px 8px 24px}.box-theatre{height:320px}.box-orbit-piece{font-size:.7rem;padding:8px 5px;gap:3px;width:29%}.box-orbit-piece:last-child{left:55%;width:42%}.box-orbit-piece .segment-icon{width:18px;height:18px;flex-basis:18px}}
+@media(max-width:499px){.layer-blackbox .blackbox-core{padding:14px 8px 24px}.box-theatre{height:320px}.box-orbit-piece{font-size:.66rem;padding:8px 4px;gap:2px;width:31%;flex-direction:column}.box-orbit-piece>span{white-space:nowrap}.box-orbit-piece:last-child{font-size:.62rem}.box-orbit-piece:last-child{left:55%;width:42%}.box-orbit-piece .segment-icon{width:18px;height:18px;flex-basis:18px}}
 @media(prefers-reduced-motion:reduce){.box-theatre *{transition:none!important}.layer-blackbox .box-theatre .blackbox-object{transform:none!important}}
 .no-motion .box-theatre *{transition:none!important}.no-motion .layer-blackbox .box-theatre .blackbox-object{transform:none!important}
 </style>
