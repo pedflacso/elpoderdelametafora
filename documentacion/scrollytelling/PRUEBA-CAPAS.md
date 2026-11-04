@@ -39,3 +39,7 @@ Validación adicional: las tres pantallas no desbordan en escritorio; el esquema
 ## Bocetos presentes durante cada etapa
 
 Cada sección conserva tres apariciones decorativas del boceto original de su etapa, distribuidas a los costados y en un plano inferior, con distinta escala, inclinación y transparencia. El scroll desplaza y gira suavemente esas capas en direcciones diferentes; no sustituye ni altera las ilustraciones principales. Los bocetos también permanecen en móvil con menor intensidad. El movimiento reducido conserva los fondos estáticos. Se verificaron las fuentes por etapa, el desplazamiento al hacer scroll, los controles de movimiento, el contraste y la ausencia de desbordes y errores de JavaScript.
+
+## Montaje sobre Propósito, Actividad y Retroalimentación
+
+Las tres pantallas opacas incorporan el boceto original de la larva sobre un recorte claro, con tres íconos conectados por un hilo bordó. El foco cambia entre propósito, actividad y retroalimentación; el hilo se completa progresivamente y el boceto cambia suavemente de posición con el scroll. La composición deja una columna para el texto y conserva los apoyos de la actividad debajo. El montaje es decorativo; no agrega ni reemplaza contenido. La vista móvil y el movimiento reducido conservan el esquema completo original.

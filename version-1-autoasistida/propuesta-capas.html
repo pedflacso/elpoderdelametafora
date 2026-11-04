@@ -3984,5 +3984,44 @@ if('IntersectionObserver' in window){const checkpoints=new IntersectionObserver(
 </script>
 <!-- END-PERSISTENT-STAGE-SKETCHES -->
 
+
+<!-- RELATION-VISUAL-MONTAGE -->
+<style>
+.relation-montage{display:none}
+@media(min-width:1000px) and (min-height:700px){
+ .relation-screen .relation-montage{display:block;position:absolute;right:4%;top:18%;width:45%;height:60%;pointer-events:none;transform:translateY(var(--montage-y,0px));isolation:isolate}
+ .montage-paper{position:absolute;inset:5% 2% 8%;background:#F0EFD9;border-radius:46% 36% 44% 32%;transform:rotate(-7deg);box-shadow:0 14px 32px #15291f22}
+ .relation-montage img{position:absolute;inset:12% 4% 10%;width:92%;height:78%;object-fit:contain;transform:translateY(var(--drawing-y,0px)) rotate(var(--drawing-r,-7deg));opacity:.92}
+ .relation-montage svg.montage-thread{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+ .montage-thread path{fill:none;stroke:#731F40;stroke-width:2.3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:var(--montage-dash,0)}
+ .montage-pin{position:absolute;width:72px;height:72px;border-radius:50%;display:grid;place-items:center;background:#FBFAF6;color:#365C48;border:1px solid #8ca080;box-shadow:0 8px 20px #263c3020;transform:scale(.82);opacity:.6}
+ .montage-pin .segment-icon{color:inherit!important;width:36px;height:36px;margin:0!important}
+ .montage-pin-0{left:2%;top:12%}.montage-pin-1{right:2%;top:38%}.montage-pin-2{left:18%;bottom:2%}
+ .montage-pin.is-focus{background:#731F40;color:#FBFAF6;transform:scale(1.1);opacity:1;box-shadow:0 0 0 7px #FBFAF65c,0 12px 30px #263c3028}
+ .relation-screen:nth-child(2) .relation-montage{height:48%;top:14%}
+ .relation-screen:nth-child(2) .montage-paper{transform:rotate(5deg);border-radius:35% 48% 30% 45%}
+ .relation-screen:nth-child(3) .montage-paper{transform:rotate(-3deg);border-radius:44% 31% 49% 36%}
+ .relation-screen>.oa-purpose,.relation-screen>.oa-feedback{width:47%;align-self:flex-start}
+ .relation-screen>.oa-link{width:47%;align-self:flex-start;margin-top:24px}
+ .relation-screen .oa-activity{width:100%;max-width:none}
+ .relation-screen .oa-activity>h4,.relation-screen .oa-activity>p{width:47%;max-width:47%;margin-left:0;margin-right:auto;text-align:center}
+ .relation-screen .oa-activity>.segment-icon{margin-left:calc(23.5% - 29px);margin-right:auto}
+ .relation-screen .oa-supports{margin-top:48px;position:relative;z-index:2}
+ .relation-screen>.oa-feedback>h4{font-size:clamp(1.5rem,2.7vw,2.65rem);overflow-wrap:normal;word-break:normal}
+}
+@media(prefers-reduced-motion:reduce){.relation-montage{display:none}}
+.no-motion .relation-montage{display:none}
+</style>
+<script>
+(()=>{
+ const deck=document.querySelector('.relation-deck'),screens=[...deck.querySelectorAll('.relation-screen')],mq=matchMedia('(prefers-reduced-motion:reduce)');let queued=false;
+ screens.forEach((screen,i)=>{const visual=document.createElement('div');visual.className='relation-montage';visual.setAttribute('aria-hidden','true');visual.innerHTML=`<div class="montage-paper"></div><img src="${esc(C.inkArt.larva.src)}" alt="" width="${C.inkArt.larva.width}" height="${C.inkArt.larva.height}"><svg class="montage-thread" viewBox="0 0 500 500" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M42 90C170-10 132 225 255 250S470 175 465 235S185 240 125 430"/></svg>${[0,2,5].map((icon,j)=>`<span class="montage-pin montage-pin-${j}${i===j?' is-focus':''}">${segmentIcon(icon)}</span>`).join('')}`;screen.append(visual);});
+ function update(){queued=false;const still=mq.matches||document.body.classList.contains('no-motion')||innerWidth<1000,rect=deck.getBoundingClientRect();if(rect.top>innerHeight||rect.bottom<0)return;const deckTop=scrollY+rect.top;screens.forEach((screen,i)=>{const progress=still?1:Math.max(0,Math.min(1,(scrollY-deckTop-screen.offsetTop+innerHeight*.45)/innerHeight));const visual=screen.querySelector('.relation-montage');visual.style.setProperty('--montage-y',((progress-.5)*-22).toFixed(2)+'px');visual.style.setProperty('--drawing-y',((progress-.5)*16).toFixed(2)+'px');visual.style.setProperty('--drawing-r',(-8+i*6+progress*3).toFixed(2)+'deg');visual.style.setProperty('--montage-dash',String(1-Math.min(1,(i+1)/3+progress*.12)));});}
+ function schedule(){if(!queued){queued=true;requestAnimationFrame(update);}}
+ addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);document.addEventListener('click',schedule);mq.addEventListener('change',schedule);update();
+})();
+</script>
+<!-- END-RELATION-VISUAL-MONTAGE -->
+
 </body>
 </html>
