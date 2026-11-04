@@ -480,3 +480,6 @@ Aclaración de la lupa: en las fases de investigación se reemplaza la carpeta p
 
 
 Actualización visual: escenas educativas en Propósito, Actividad y Retroalimentación; etiquetas claras en Crisálida y caja, rosadas en Mariposa. La síntesis de ambos caminos utiliza los ocho SVG aportados, con escena lateral fija y cuatro composiciones por scroll; en móvil las imágenes se apilan. Se conserva el contenido y el control de movimiento.
+
+
+Filminas y profundidad: la síntesis alterna podcast a izquierda y artefacto a derecha, con escenas sticky grandes, acercamientos y apertura de plano vinculados al scroll. Los detalles pasan en tarjetas translúcidas sobre la ilustración. Las tres escenas educativas utilizan el mismo tratamiento con fondos ampliados y texto sobre filmina oscura. Móvil y movimiento reducido muestran una lectura estática, con cada ilustración junto a su contenido. Verificado: cuatro estados de cada camino, escalas variables entre 1.02 y 1.24, movimiento lateral opuesto, sin errores JavaScript ni desbordes, contraste sin incidencias.
