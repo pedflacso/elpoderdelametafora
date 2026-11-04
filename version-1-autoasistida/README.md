@@ -504,3 +504,6 @@ La entrada abre solo con los hilos en movimiento: se retiran la bienvenida y los
 
 
 Retratos de testimonios: se reemplaza la tira fotográfica por dibujos originales a lápiz sobre papel, con Laura y Marcos como estudiantes universitarios adultos (mochila, cuaderno) y Lic. Martínez como docente (libro y apuntes). Las tarjetas muestran los retratos con materiales, sin recorte circular, preservando nombres, roles, audios y textos. Se conserva el aviso de retratos ilustrativos. Verificado: tres retratos y su correspondencia, regeneración al cambiar de camino, sin errores JavaScript ni desbordes a 320,390,768,1000,1440px.
+
+
+La explicación después de investigar se presenta plegada: pregunta «¿Cómo explicarías lo que pasó?», invitación a tomar notas y acción de abrir. El desplegable conserva dentro toda la consigna, primera interpretación, pistas, campo, revisión y comparación. No se duplican campos; el texto persiste al cerrar/reabrir y al cambiar de camino. Rótulo «Con texto» y acción contextual. Verificado en ambos caminos, comparación operativa, sin errores JS ni desbordes de 320 a 1440px.
