@@ -4628,11 +4628,18 @@ if('IntersectionObserver' in window){const checkpoints=new IntersectionObserver(
 </style>
 <script>
 (()=>{const root=document.querySelector('#investigation-content'),mq=matchMedia('(prefers-reduced-motion:reduce)'),timers=new WeakMap();let queued=false;const still=()=>mq.matches||document.body.classList.contains('no-motion');function pulse(icon){if(!icon||still())return;icon.classList.add('is-writing');clearTimeout(timers.get(icon));timers.set(icon,setTimeout(()=>icon.classList.remove('is-writing'),2200))}
- const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){pulse(e.target);observer.unobserve(e.target)}}),{threshold:.7});
+ const observer=new IntersectionObserver(entries=>entries.forEach(e=>{e.target.classList.toggle('is-in-view',e.isIntersecting)}),{threshold:.1});
  function mount(){queued=false;document.querySelectorAll('.note-dock>summary,.reflection-note-entry>summary').forEach(summary=>{if(summary.querySelector('.note-sketch'))return;const icon=document.createElement('span');icon.className='note-sketch';icon.setAttribute('aria-hidden','true');icon.innerHTML='<svg class="writing-mark" viewBox="0 0 84 62"><path pathLength="1" d="M18 48q2-3 3 0t3-1 3 1 3-1 3 0 3-1 3 1 3-1"/></svg><img class="writing-hand" src="imagenes/scrap/mano-escritura.png" alt="" width="80" height="54">';summary.prepend(icon);observer.observe(icon)})}
  function schedule(){if(!queued){queued=true;requestAnimationFrame(mount)}}new MutationObserver(schedule).observe(root,{childList:true,subtree:true});mount();document.addEventListener('pointerover',e=>{const summary=e.target.closest('.note-dock>summary,.reflection-note-entry>summary');if(summary&&!summary.contains(e.relatedTarget))pulse(summary.querySelector('.note-sketch'))});document.addEventListener('focusin',e=>pulse(e.target.closest('.note-dock,.reflection-note-entry')?.querySelector('.note-sketch')));document.addEventListener('input',e=>{if(e.target.matches('textarea'))pulse(e.target.closest('.note-dock,.reflection-note-entry')?.querySelector('.note-sketch'))});function stop(){if(still())document.querySelectorAll('.note-sketch.is-writing').forEach(e=>{clearTimeout(timers.get(e));e.classList.remove('is-writing')})}mq.addEventListener('change',stop);document.querySelector('#motion').addEventListener('click',()=>requestAnimationFrame(stop));
 })();
 </script>
 
+<style>
+.note-sketch:is(.is-writing,.is-in-view) .writing-hand{animation:note-hand-writing-clear 3.4s linear infinite}
+.note-sketch:is(.is-writing,.is-in-view) .writing-mark path{animation:note-mark-writing-clear 3.4s linear infinite}
+@keyframes note-hand-writing-clear{0%,8%{transform:translate(0,0) rotate(0deg)}14%{transform:translate(3px,-2px) rotate(-3deg)}20%{transform:translate(7px,1px) rotate(2deg)}26%{transform:translate(10px,-2px) rotate(-2deg)}32%{transform:translate(14px,1px) rotate(2deg)}38%{transform:translate(17px,-2px) rotate(-2deg)}44%{transform:translate(21px,1px) rotate(2deg)}50%{transform:translate(25px,-1px) rotate(-2deg)}56%{transform:translate(28px,0) rotate(0deg)}63%{transform:translate(28px,-8px) rotate(-7deg)}76%{transform:translate(0,-8px) rotate(-5deg)}84%,100%{transform:translate(0,0) rotate(0deg)}}
+@keyframes note-mark-writing-clear{0%,8%{stroke-dashoffset:1;opacity:0}12%{opacity:1}56%,76%{stroke-dashoffset:0;opacity:1}84%,100%{stroke-dashoffset:1;opacity:0}}
+.no-motion .note-sketch .writing-hand,.no-motion .note-sketch .writing-mark path{animation:none!important}@media(prefers-reduced-motion:reduce){.note-sketch .writing-hand,.note-sketch .writing-mark path{animation:none!important}}
+</style>
 </body>
 </html>
