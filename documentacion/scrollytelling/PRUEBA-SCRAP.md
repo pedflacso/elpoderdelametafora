@@ -32,3 +32,6 @@ Comprobación: lente visible en las cuatro fases, cambios de posición y de pape
 
 
 Síntesis de caminos: escena sticky con cuatro SVG por camino, cambios de composición al avanzar sobre los textos existentes. En móvil se muestran las cuatro escenas junto al texto; modo reducido sin transiciones. Escenas educativas incorporadas a las tres pantallas del vínculo. Validación: ocho SVG cargados, activación de los cuatro estados de cada camino, sin errores JavaScript ni desbordes a 320–1440px, contraste sin incidencias.
+
+
+Filminas y profundidad: la síntesis alterna podcast a izquierda y artefacto a derecha, con escenas sticky grandes, acercamientos y apertura de plano vinculados al scroll. Los detalles pasan en tarjetas translúcidas sobre la ilustración. Las tres escenas educativas utilizan el mismo tratamiento con fondos ampliados y texto sobre filmina oscura. Móvil y movimiento reducido muestran una lectura estática, con cada ilustración junto a su contenido. Verificado: cuatro estados de cada camino, escalas variables entre 1.02 y 1.24, movimiento lateral opuesto, sin errores JavaScript ni desbordes, contraste sin incidencias.

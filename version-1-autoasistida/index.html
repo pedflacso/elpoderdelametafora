@@ -1361,6 +1361,39 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
 .no-motion .route-scene{position:relative;top:auto}.no-motion .route-scene img{transition:none}
 @media(prefers-reduced-motion:reduce){.route-scene{position:relative;top:auto}.route-scene img{transition:none}}
 </style>
+<style>
+/* Filminas sobre escenas: planos alternados y profundidad ligada al scroll. */
+@media(min-width:760px){
+.scrap-route .route-story{display:block;position:relative;isolation:isolate}
+.scrap-route .route-scene{position:sticky;top:90px;height:calc(100svh - 115px);min-height:460px;aspect-ratio:auto;margin-bottom:calc(-100svh + 115px);overflow:hidden;z-index:0;border-radius:24px}
+.scrap-route .route-scene img{width:82%;height:100%;left:0%;object-fit:contain;transform:translate(var(--scene-pan,0px),var(--scene-rise,0px)) scale(var(--scene-zoom,1));transform-origin:44% 50%;transition:opacity .55s;will-change:transform}
+.scrap-route .route-scene img.is-current{transform:translate(var(--scene-pan,0px),var(--scene-rise,0px)) scale(var(--scene-zoom,1))}
+.universe-artefacto.scrap-route .route-scene img{left:18%;transform-origin:60% 50%}
+.scrap-route .route-copy{position:relative;z-index:1;padding:8vh 0 15vh;pointer-events:none}
+.scrap-route .comparison-fact{min-height:72vh!important;padding:18vh 0 10vh!important;width:47%;margin-left:53%;pointer-events:auto}
+.universe-artefacto.scrap-route .comparison-fact{margin-left:0;margin-right:53%}
+.scrap-route .comparison-fact h5{background:none;box-shadow:none;transform:none;display:block;margin:0;padding:12px 24px 8px;border-radius:18px 18px 0 0;background:#F9F8F1DE}
+.scrap-route .comparison-fact p{padding:8px 24px 26px;background:#F9F8F1DE;border-radius:0 0 18px 18px;box-shadow:0 14px 30px #263c3014;backdrop-filter:blur(3px)}
+.scrap-route .comparison-fact-icon{margin-left:24px;background:#F9F8F1DD;border-radius:50%;width:42px;height:42px;margin-bottom:12px}
+}
+@media(min-width:1000px){
+.relation-screen>.education-scene{width:72%;top:4%;right:0%;opacity:.62;transform:translate(var(--edu-pan,0px),var(--edu-rise,0px)) scale(var(--edu-zoom,1));transform-origin:60% 45%;will-change:transform}
+.relation-screen:nth-child(2)>.education-scene{right:auto;left:0%;transform-origin:40% 45%}
+.relation-screen>.education-film{position:relative;z-index:2;width:54%;align-self:flex-start;padding:24px 28px;background:#203E32D9;border:1px solid #FBFAF633;border-radius:20px;box-shadow:0 15px 35px #172d2420;backdrop-filter:blur(3px);text-align:left}
+.relation-screen:nth-child(2)>.education-film{align-self:flex-end;background:#394A28DB;width:59%}
+.relation-screen:nth-child(3)>.education-film{background:#244B50DB}
+.relation-screen .education-film .oa-purpose>p,.relation-screen .education-film .oa-feedback>p,.relation-screen .education-film .oa-activity>p{width:100%;font-size:clamp(1rem,1.7vw,1.35rem)}
+.relation-screen .education-film .paper-hero-name{max-width:100%;font-size:clamp(1.4rem,2.3vw,2rem)!important;padding:10px 16px!important;margin:10px 0 24px!important}
+.relation-screen .education-film .oa-link{font-size:1.05rem;margin:12px 0 0}
+.relation-screen .education-film .oa-link span{display:inline;margin-left:10px;font-size:1.4rem}
+.relation-screen .education-film .oa-supports{margin-top:20px;gap:8px}
+.relation-screen .education-film .oa-supports li{padding:12px 10px;font-size:.9rem}
+.relation-screen .education-film .segment-icon{width:32px;height:32px}
+}
+@media(prefers-reduced-motion:reduce){.scrap-route .route-scene{position:relative;top:auto;height:auto;min-height:0;aspect-ratio:5/4;margin-bottom:0}.scrap-route .route-scene img{transform:none!important}.scrap-route .comparison-fact{min-height:0!important;padding:24px!important;width:100%;margin:0!important}.scrap-route .route-copy{padding:0}}
+.no-motion .scrap-route .route-scene{position:relative;top:auto;height:auto;min-height:0;aspect-ratio:5/4;margin-bottom:0}.no-motion .scrap-route .route-scene img{transform:none!important}.no-motion .scrap-route .comparison-fact{min-height:0!important;padding:24px!important;width:100%;margin:0!important}.no-motion .scrap-route .route-copy{padding:0}
+</style>
+<style>.no-motion .scrap-route .route-scene{display:none}.no-motion .route-inline-scene{display:block;width:100%;max-width:520px;margin:auto}@media(prefers-reduced-motion:reduce){.scrap-route .route-scene{display:none}.route-inline-scene{display:block;width:100%;max-width:520px;margin:auto}}</style>
 </head>
 <body>
 <a class="skip" href="#main">Ir al contenido</a>
@@ -4354,6 +4387,20 @@ if('IntersectionObserver' in window){const checkpoints=new IntersectionObserver(
  const story=document.createElement('div');story.className='route-story';const scene=document.createElement('div');scene.className='route-scene';scene.setAttribute('aria-hidden','true');scene.innerHTML=facts.map((_,i)=>`<img src="imagenes/scrap/${path}-${i+1}.svg" alt="" class="${i===0?'is-current':''}" loading="eager">`).join('');const copy=document.createElement('div');copy.className='route-copy';facts.forEach((fact,i)=>{const img=document.createElement('img');img.className='route-inline-scene';img.src=`imagenes/scrap/${path}-${i+1}.svg`;img.alt='';img.loading='lazy';fact.prepend(img);copy.append(fact)});story.append(scene,copy);article.querySelector('.comparison-orbit').replaceWith(story);article.prepend(title);article.classList.add('scrap-route');tracks.push({facts,images:[...scene.children]});
  });
  let pending=false;function update(){pending=false;tracks.forEach(({facts,images})=>{let active=0;facts.forEach((f,i)=>{if(f.getBoundingClientRect().top<innerHeight*.55)active=i});images.forEach((img,i)=>img.classList.toggle('is-current',i===active))})}addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(update)}},{passive:true});addEventListener('resize',update);update();
+})();
+</script>
+
+
+<script>
+(()=>{
+ const mq=matchMedia('(prefers-reduced-motion:reduce)'),routes=[...document.querySelectorAll('.scrap-route')],screens=[...document.querySelectorAll('.relation-screen')];
+ screens.forEach(screen=>{const film=document.createElement('div');film.className='education-film';[...screen.children].filter(e=>e.matches('.oa-purpose,.oa-activity,.oa-feedback,.oa-link')).forEach(e=>film.append(e));screen.append(film)});
+ let queued=false;const clamp=n=>Math.max(0,Math.min(1,n));
+ function update(){queued=false;const still=mq.matches||document.body.classList.contains('no-motion');
+ routes.forEach((article,index)=>{const story=article.querySelector('.route-story'),r=story.getBoundingClientRect(),p=clamp((100-r.top)/Math.max(1,r.height-innerHeight+120)),wave=Math.sin(p*Math.PI*3);story.style.setProperty('--scene-zoom',still||innerWidth<760?'1':(1.02+Math.sin(p*Math.PI*4)**2*.22).toFixed(3));story.style.setProperty('--scene-pan',still?'0px':((index?-1:1)*wave*26).toFixed(1)+'px');story.style.setProperty('--scene-rise',still?'0px':(Math.cos(p*Math.PI*3)*18).toFixed(1)+'px')});
+ screens.forEach((screen,i)=>{const next=screens[i+1]||document.querySelector('.relation-complete'),r=next.getBoundingClientRect(),p=clamp(1-r.top/(innerHeight*1.8));screen.style.setProperty('--edu-zoom',still?'1':(1+Math.sin(p*Math.PI)*.22).toFixed(3));screen.style.setProperty('--edu-pan',still?'0px':((i%2?-1:1)*(p-.5)*44).toFixed(1)+'px');screen.style.setProperty('--edu-rise',still?'0px':((p-.5)*-50).toFixed(1)+'px')});
+ }
+ function schedule(){if(!queued){queued=true;requestAnimationFrame(update)}}addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);document.addEventListener('click',schedule);mq.addEventListener('change',schedule);update();
 })();
 </script>
 
