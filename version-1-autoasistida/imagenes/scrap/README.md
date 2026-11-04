@@ -15,3 +15,6 @@ La grilla 3 × 3 contiene: fondo de carpeta, solapa, hoja; mesa de observación,
 
 
 `iconos-grafito.png`: hoja 4×4 generada de iconos dibujados, mostrados por ventanas SVG. Orden: propósito, contenidos, actividad, orientación; recurso, retorno, auriculares, diálogo; lupa, conexiones, cuadrícula, escritura; ojo, recorrido, más, menos. PNG sin edición de píxeles.
+
+
+`mano-escritura.png`: dibujo generado de mano con lápiz, recortado sobre transparencia. El PNG se conserva sin editar; su movimiento y la línea de escritura son capas CSS/SVG decorativas.

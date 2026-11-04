@@ -4609,5 +4609,30 @@ if('IntersectionObserver' in window){const checkpoints=new IntersectionObserver(
 .drawer-handle:before,.thinker-toggle:before{content:''!important;width:22px;height:22px;background:url('imagenes/scrap/iconos-grafito.png') 66.666667% 100%/400% 400% no-repeat;filter:brightness(0) invert(1)}
 .metaphor-drawer[open] .drawer-handle:before,.thinker-reading[open] .thinker-toggle:before{background-position:100% 100%}
 </style>
+
+<style>
+.note-dock>summary{position:relative;padding-left:98px!important;min-height:72px}
+.note-dock>summary:before{display:none}
+.reflection-note-entry>summary{padding-left:120px!important;min-height:120px}
+.note-sketch{position:absolute;left:12px;top:50%;translate:0 -50%;width:84px;height:62px;pointer-events:none;overflow:visible}
+.note-sketch .writing-hand{position:absolute;inset:0 auto auto 0;width:80px;height:54px;object-fit:contain;transform-origin:22% 88%;will-change:transform}
+.note-sketch .writing-mark{position:absolute;inset:0;width:84px;height:62px;fill:none;stroke:#665364;stroke-width:1.15;stroke-linecap:round}
+.note-sketch .writing-mark path{stroke-dasharray:1;stroke-dashoffset:1}
+.note-sketch.is-writing .writing-hand{animation:note-hand-writing 1.65s linear infinite}
+.note-sketch.is-writing .writing-mark path{animation:note-mark-writing 1.65s linear infinite}
+@keyframes note-hand-writing{0%{transform:translate(0,0) rotate(0deg)}15%{transform:translate(4px,-1px) rotate(-2deg)}30%{transform:translate(8px,1px) rotate(1deg)}45%{transform:translate(12px,-1px) rotate(-1deg)}60%{transform:translate(16px,1px) rotate(1deg)}75%{transform:translate(22px,0) rotate(-1deg)}85%{transform:translate(22px,-4px) rotate(-3deg)}100%{transform:translate(0,0) rotate(0deg)}}
+@keyframes note-mark-writing{0%{stroke-dashoffset:1;opacity:0}8%{opacity:1}75%{stroke-dashoffset:0;opacity:1}88%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+.no-motion .note-sketch .writing-hand,.no-motion .note-sketch .writing-mark path{animation:none!important}.no-motion .note-sketch .writing-mark path{stroke-dashoffset:0}
+@media(prefers-reduced-motion:reduce){.note-sketch .writing-hand,.note-sketch .writing-mark path{animation:none!important}.note-sketch .writing-mark path{stroke-dashoffset:0}}
+@media(max-width:420px){.note-dock>summary{padding-left:80px!important}.reflection-note-entry>summary{padding-left:90px!important}.note-sketch{left:4px;scale:.8;transform-origin:left center}}
+</style>
+<script>
+(()=>{const root=document.querySelector('#investigation-content'),mq=matchMedia('(prefers-reduced-motion:reduce)'),timers=new WeakMap();let queued=false;const still=()=>mq.matches||document.body.classList.contains('no-motion');function pulse(icon){if(!icon||still())return;icon.classList.add('is-writing');clearTimeout(timers.get(icon));timers.set(icon,setTimeout(()=>icon.classList.remove('is-writing'),2200))}
+ const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){pulse(e.target);observer.unobserve(e.target)}}),{threshold:.7});
+ function mount(){queued=false;document.querySelectorAll('.note-dock>summary,.reflection-note-entry>summary').forEach(summary=>{if(summary.querySelector('.note-sketch'))return;const icon=document.createElement('span');icon.className='note-sketch';icon.setAttribute('aria-hidden','true');icon.innerHTML='<svg class="writing-mark" viewBox="0 0 84 62"><path pathLength="1" d="M18 48q2-3 3 0t3-1 3 1 3-1 3 0 3-1 3 1 3-1"/></svg><img class="writing-hand" src="imagenes/scrap/mano-escritura.png" alt="" width="80" height="54">';summary.prepend(icon);observer.observe(icon)})}
+ function schedule(){if(!queued){queued=true;requestAnimationFrame(mount)}}new MutationObserver(schedule).observe(root,{childList:true,subtree:true});mount();document.addEventListener('pointerover',e=>{const summary=e.target.closest('.note-dock>summary,.reflection-note-entry>summary');if(summary&&!summary.contains(e.relatedTarget))pulse(summary.querySelector('.note-sketch'))});document.addEventListener('focusin',e=>pulse(e.target.closest('.note-dock,.reflection-note-entry')?.querySelector('.note-sketch')));document.addEventListener('input',e=>{if(e.target.matches('textarea'))pulse(e.target.closest('.note-dock,.reflection-note-entry')?.querySelector('.note-sketch'))});function stop(){if(still())document.querySelectorAll('.note-sketch.is-writing').forEach(e=>{clearTimeout(timers.get(e));e.classList.remove('is-writing')})}mq.addEventListener('change',stop);document.querySelector('#motion').addEventListener('click',()=>requestAnimationFrame(stop));
+})();
+</script>
+
 </body>
 </html>
