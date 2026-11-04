@@ -4641,5 +4641,25 @@ if('IntersectionObserver' in window){const checkpoints=new IntersectionObserver(
 @keyframes note-mark-writing-clear{0%,8%{stroke-dashoffset:1;opacity:0}12%{opacity:1}56%,76%{stroke-dashoffset:0;opacity:1}84%,100%{stroke-dashoffset:1;opacity:0}}
 .no-motion .note-sketch .writing-hand,.no-motion .note-sketch .writing-mark path{animation:none!important}@media(prefers-reduced-motion:reduce){.note-sketch .writing-hand,.note-sketch .writing-mark path{animation:none!important}}
 </style>
+
+<style>
+.paper-ticket{position:relative;isolation:isolate;background:transparent!important;border:0!important;border-radius:0!important;color:var(--ticket-ink,#263C30)!important;box-shadow:none!important;padding:12px 18px!important;min-height:44px;line-height:1.5}
+.paper-ticket:before{content:'';position:absolute;inset:0!important;z-index:-1;background-color:var(--ticket-color);background-image:linear-gradient(color-mix(in srgb,var(--ticket-color) 85%,transparent),color-mix(in srgb,var(--ticket-color) 85%,transparent)),url('imagenes/scrap/piezas-papel.png');background-size:100% 100%,900% 900%;background-position:center,var(--ticket-texture,78% 96%);clip-path:polygon(3% 4%,96% 0,100% 93%,1% 100%,0 75%);transform:rotate(var(--ticket-angle,-1deg));box-shadow:1px 4px 5px #263c3014}
+.paper-ticket[data-ticket="docente"]:before,.paper-ticket[data-ticket="registro"]:before{clip-path:polygon(0 8%,97% 0,100% 91%,4% 99%,0 68%)}
+.paper-ticket h4,.paper-ticket .sound-voice-role,.paper-ticket .pair-person-role{color:inherit!important}
+.sound-voice-person>.paper-ticket{display:table;max-width:100%;margin:0 auto 18px;padding:12px 22px!important;min-width:135px}
+.sound-voice-person>.paper-ticket h4{margin:0;font-size:1.1rem}.sound-voice-person>.paper-ticket .sound-voice-role{margin:3px 0 0}
+#investigation-content .pair-options button.paper-ticket,#investigation-content .evidence-buttons button.paper-ticket,#investigation-content .pair-options button.paper-ticket[aria-pressed="true"],#investigation-content .evidence-buttons button.paper-ticket[aria-pressed="true"]{color:var(--ticket-ink,#263C30)!important;background:transparent!important;box-shadow:none!important}
+#investigation-content button.paper-ticket[aria-pressed="true"]{outline:2px solid #79526C;outline-offset:4px;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+#investigation-content button.paper-ticket:focus-visible{outline:3px solid #2F6F7A;outline-offset:5px}
+@media(max-width:759px){.sound-voice-person>.paper-ticket{margin:0;min-width:0;display:block;padding:10px 14px!important}.sound-voice-person>.paper-ticket h4{font-size:1rem}}
+</style>
+<script>
+(()=>{const root=document.querySelector('#investigation-content'),palettes={estudiante1:['#3C656B','#FBFAF3','96% 96%','-2deg'],docente:['#A7AC6B','#263C30','78% 78%','1deg'],estudiante2:['#D2E0E5','#263C30','96% 78%','-1deg'],consigna:['#E2E6CF','#263C30','78% 96%','-1deg'],ubicacion:['#ECE7D4','#263C30','78% 96%','1deg'],registro:['#A7AC6B','#263C30','78% 78%','-1deg'],guia:['#D8E6DC','#263C30','78% 96%','1deg'],voz:['#E9DEE9','#263C30','96% 78%','-1deg']};let queued=false;
+function apply(el,key){if(!el||el.dataset.ticket===key)return;const [color,ink,texture,angle]=palettes[key]||palettes.guia;el.classList.add('paper-ticket');el.dataset.ticket=key;el.style.setProperty('--ticket-color',color);el.style.setProperty('--ticket-ink',ink);el.style.setProperty('--ticket-texture',texture);el.style.setProperty('--ticket-angle',angle)}
+function mount(){queued=false;root.querySelectorAll('.sound-voice').forEach((voice,i)=>apply(voice.querySelector('.sound-voice-person>div'),C.voices[i].id));root.querySelectorAll('[data-pair-voice]').forEach(e=>apply(e,e.dataset.pairVoice));root.querySelectorAll('[data-pair-evidence]').forEach(e=>apply(e,e.dataset.pairEvidence));root.querySelectorAll('.evidence-buttons [data-evidence]').forEach(e=>apply(e,e.dataset.evidence))}
+function schedule(){if(!queued){queued=true;requestAnimationFrame(mount)}}new MutationObserver(schedule).observe(root,{childList:true,subtree:true});mount();})();
+</script>
+
 </body>
 </html>

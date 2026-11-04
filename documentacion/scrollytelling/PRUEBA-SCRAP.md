@@ -68,3 +68,6 @@ Tomar notas incorpora una mano ilustrada con lápiz en la estética sketchbook. 
 
 
 Ajuste de escritura: la mano escribe automáticamente mientras la invitación está visible, con recorrido más amplio, trazo, levantamiento del lápiz y retorno. Ciclo de 3.4 segundos con pausa. Se verificaron transformaciones distintas en fotogramas sucesivos y continuidad después de tres segundos; sin animación en movimiento reducido ni errores JavaScript.
+
+
+Etiquetas como recortes: nombres de testimonios, selectores de voces y evidencias adoptan papel irregular con petróleo (Laura), oliva (docente y registro), celeste (Marcos), crema y verdes claros (otras evidencias). Textura y leve inclinación acompañan la forma sin mover el texto. La selección conserva el tono y se distingue con contorno, subrayado y aria-pressed. Validación: tres nombres y cinco etiquetas de evidencias en artefacto, selección voz/evidencia operativa, contraste sin incidencias, sin errores JS ni desbordes a 320–1440px. Confirmada además la publicación anterior de la mano animada.
