@@ -465,3 +465,5 @@ Por solicitud del equipo, el contenido de `propuesta-capas.html` pasa a `index.h
 La versión inmediatamente anterior queda en `version-previa-scrollytelling.html`. La prueba sigue disponible por separado. La descarga ZIP se actualiza con el mismo índice y conserva sus recursos locales.
 
 Último ajuste del recorrido publicado: hilos iniciales con distintos grises y grosores, fondo móvil de exploración detrás de la caja, y sustitución de las mini escenas por fondos libres en las tres pantallas de relación. Se conservan los bocetos transparentes, el contenido y los controles.
+
+Dos ritmos de scroll: las columnas visuales incorporan desplazamientos con pausas mientras la lectura sigue otra curva de movimiento. Se aplica a Crisálida, caso, caja, investigación, curaduría y Mariposa. Se conserva la composición y los matices de color. Los íconos comunes pasan a trazos más finos e irregulares, con símbolos y etiquetas sin cambios. La dirección scrapbook se mantiene como una idea por discutir, sin transformar todo el diseño.
