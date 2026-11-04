@@ -463,3 +463,5 @@ La caja negra incorpora un botón para levantar la tapa y mostrar los seis compo
 Por solicitud del equipo, el contenido de `propuesta-capas.html` pasa a `index.html`. Se retira únicamente la barra de navegación de pruebas. Incluye la entrada de hilos negros que forma la larva, las seis relaciones, las pantallas opacas y sus mini escenas didácticas, la lente de investigación, la caja grande que se abre y los bocetos persistentes. Se conservan los contenidos, audios, notas, ambas rutas e interacciones.
 
 La versión inmediatamente anterior queda en `version-previa-scrollytelling.html`. La prueba sigue disponible por separado. La descarga ZIP se actualiza con el mismo índice y conserva sus recursos locales.
+
+Último ajuste del recorrido publicado: hilos iniciales con distintos grises y grosores, fondo móvil de exploración detrás de la caja, y sustitución de las mini escenas por fondos libres en las tres pantallas de relación. Se conservan los bocetos transparentes, el contenido y los controles.
