@@ -477,3 +477,6 @@ Por solicitud del equipo, la revisión de `propuesta-scrap.html` pasa al índice
 El índice inmediatamente anterior queda en `version-previa-scrap.html`; el contenido, audios y notas conservan su funcionamiento. El ZIP se actualiza e incorpora las imágenes de papel necesarias.
 
 Aclaración de la lupa: en las fases de investigación se reemplaza la carpeta por una escena con lupa grande y persistente, con rostro u hojas debajo según la fase. En los materiales se recupera la lupa de gran tamaño en la capa de fondo, detrás de los recuadros. Se mantienen los demás elementos scrap y los controles.
+
+
+Actualización visual: escenas educativas en Propósito, Actividad y Retroalimentación; etiquetas claras en Crisálida y caja, rosadas en Mariposa. La síntesis de ambos caminos utiliza los ocho SVG aportados, con escena lateral fija y cuatro composiciones por scroll; en móvil las imágenes se apilan. Se conserva el contenido y el control de movimiento.

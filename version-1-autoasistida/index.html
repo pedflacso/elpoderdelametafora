@@ -1306,7 +1306,62 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
 @media(max-width:999px){.phase-lens-scene{height:310px;max-width:420px}.phase-lens{inset:-2% -7% -12%}.investigation-optics{display:none}}
 .no-motion .phase-lens{transform:none!important;transition:none}
 @media(prefers-reduced-motion:reduce){.phase-lens{transform:none!important;transition:none}}
-</style></head>
+</style><style>
+/* Crisálida conserva su gama crema–lila–ciruela sobre el soporte de papel. */
+#crisalida .meta-labels li.paper-name{--paper-ink:#263C30!important;--paper-base:#FAFBF2!important;color:#263C30!important}
+#crisalida .meta-labels li.paper-name:before{background-color:#FAFBF2!important;background-image:linear-gradient(#FAFBF2ED,#FAFBF2ED),url('imagenes/scrap/piezas-papel.png');background-size:100% 100%,900% 900%;background-position:center,var(--paper-pos,78% 78%)}
+#crisalida .meta-labels li.paper-name.is-related{--paper-ink:#62415D!important;color:#62415D!important;font-weight:700}
+#crisalida .meta-labels li.paper-name.is-related:before{background-color:#E6D9E4!important;background-image:linear-gradient(#E6D9E4ED,#E6D9E4ED),url('imagenes/scrap/piezas-papel.png')}
+</style><style>
+/* Papeles claros alrededor de la caja: identidad por matiz y lectura rápida. */
+.box-theatre .box-orbit-piece{color:#263C30!important;font-weight:600}
+.box-theatre .box-orbit-piece .segment-icon{color:inherit!important}
+.box-theatre .box-orbit-piece:nth-child(1){--box-wash:#F3F4DCEB}
+.box-theatre .box-orbit-piece:nth-child(2){--box-wash:#E0EFF2EB}
+.box-theatre .box-orbit-piece:nth-child(3){--box-wash:#FAF6E9EB}
+.box-theatre .box-orbit-piece:nth-child(4){--box-wash:#D5EAE6EB}
+.box-theatre .box-orbit-piece:nth-child(5){--box-wash:#E8EFCFEB}
+.box-theatre .box-orbit-piece:nth-child(6){--box-wash:#EEE2EEEB}
+.box-theatre .box-orbit-piece:before{background-color:#F1F4E8!important;background-image:linear-gradient(var(--box-wash),var(--box-wash)),url('imagenes/scrap/piezas-papel.png');background-size:100% 100%,900% 900%;background-position:center,var(--paper-pos,78% 78%)}
+@media(min-width:500px){.box-theatre .box-orbit-piece{font-size:.86rem}}
+</style><style>
+/* La mariposa recupera la familia de rosados en sus etiquetas. */
+#butterfly-visual .ink-node dt.paper-name{--paper-ink:#62415D!important;color:#62415D!important}
+#butterfly-visual .ink-node dt.paper-name:before{background-color:#F4E5EC!important;background-image:linear-gradient(#F4E5ECEB,#F4E5ECEB),url('imagenes/scrap/piezas-papel.png');background-size:100% 100%,900% 900%;background-position:center,var(--paper-pos,78% 78%)}
+#butterfly-visual .ink-node.is-highlighted dt.paper-name{color:#731F40!important;font-weight:700}
+#butterfly-visual .ink-node.is-highlighted dt.paper-name:before{background-color:#EAD0DE!important;background-image:linear-gradient(#EAD0DEEB,#EAD0DEEB),url('imagenes/scrap/piezas-papel.png')}
+</style><style>
+/* Escenas educativas y síntesis de los dos caminos. */
+.box-theatre .box-orbit-piece{height:auto!important;min-height:48px;overflow:visible!important}
+@media(min-width:1000px){
+.relation-screen>.education-scene{position:absolute!important;right:2%;top:18%;width:49%;aspect-ratio:1;z-index:0;background-image:url('imagenes/scrap/escenas-educativas.png');background-size:300% 200%;background-position:var(--scene-x) 0%;transform:translateY(calc(var(--ambient-y,0px)*-.35));pointer-events:none}
+.relation-screen>.slide-paper-scene{display:none}
+.relation-screen .oa-purpose,.relation-screen .oa-feedback,.relation-screen .oa-activity{width:100%;max-width:none;text-align:left}
+.relation-screen .oa-purpose>p,.relation-screen .oa-feedback>p,.relation-screen .oa-activity>p{width:45%;margin:0 0 20px}
+.relation-screen .paper-hero-name{font-size:clamp(1.5rem,2.6vw,2.5rem)!important;min-width:0;max-width:47%;padding:14px 22px!important;margin:15px 0 30px!important}
+.relation-screen .segment-icon{margin:0 0 12px!important;width:40px;height:40px}
+.relation-screen>.oa-link{align-self:flex-start;max-width:43%;text-align:left}
+.relation-screen .oa-supports{position:relative;z-index:2;margin-top:42px}
+}
+.comparison-universes{max-width:none}
+.comparison-universe.scrap-route{background:#E7EBD9!important;color:#263C30!important;border-radius:30px;padding:32px;position:relative;isolation:isolate}
+.comparison-universe.scrap-route.universe-artefacto{background:#DFEBE7!important}
+.route-story{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:start}
+.route-scene{position:sticky;top:120px;aspect-ratio:5/4;width:100%;pointer-events:none}
+.route-scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transform:translateY(14px) scale(.96);transition:opacity .65s,transform .8s}
+.route-scene img.is-current{opacity:1;transform:translateY(0) scale(1)}
+.route-copy{min-width:0;padding-bottom:12vh}
+.scrap-route .comparison-fact{display:block!important;min-height:48vh!important;aspect-ratio:auto!important;max-width:none!important;width:100%;border:0!important;border-radius:0!important;padding:30px 24px!important;background:transparent!important;text-align:left!important;transform:none!important}
+.scrap-route .comparison-fact h5{font-size:1.35rem;background:#F8F5E9;display:inline-block;padding:12px 18px;box-shadow:2px 4px 0 #263c3014;transform:rotate(-1deg)}
+.scrap-route .comparison-fact p{font-size:1.1rem;line-height:1.7}
+.scrap-route .comparison-actions{background:#FBFAF3!important;color:#263C30!important;border-radius:22px;padding:24px}
+.scrap-route>h4{font-size:1.7rem;margin:0 0 24px;color:#263C30!important}
+@media(max-width:759px){.comparison-universe.scrap-route{padding:20px}.route-story{display:block}.route-scene{position:relative;top:auto}.route-copy{padding:0}.scrap-route .comparison-fact{min-height:0!important;padding:20px 4px!important}.route-inline-scene{display:block;width:100%;aspect-ratio:5/4;object-fit:contain}.route-story>.route-scene{display:none}}
+@media(min-width:760px){.route-inline-scene{display:none}}
+.no-motion .route-scene{position:relative;top:auto}.no-motion .route-scene img{transition:none}
+@media(prefers-reduced-motion:reduce){.route-scene{position:relative;top:auto}.route-scene img{transition:none}}
+</style>
+</head>
 <body>
 <a class="skip" href="#main">Ir al contenido</a>
 <header class="header"><div class="wrap header-inner"><a class="brand" href="#main">El poder de la metáfora</a><div class="phase" aria-label="Momento del recorrido"><a href="#larva">Larva</a><a href="#crisalida">Crisálida</a><a href="#caso">Eclosión</a><a href="#mariposa">Mariposa</a></div><button id="motion" class="secondary" aria-pressed="false">Reducir movimiento</button></div></header>
@@ -4286,6 +4341,19 @@ if('IntersectionObserver' in window){const checkpoints=new IntersectionObserver(
  }
  function schedule(){if(!queued){queued=true;requestAnimationFrame(update);}}
  addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);document.addEventListener('click',schedule);mq.addEventListener('change',schedule);new MutationObserver(schedule).observe(investigation,{childList:true});update();
+})();
+</script>
+
+
+<script>
+(()=>{
+ document.querySelectorAll('.relation-screen').forEach((screen,i)=>{const scene=document.createElement('div');scene.className='education-scene';scene.setAttribute('aria-hidden','true');scene.style.setProperty('--scene-x',i*50+'%');screen.prepend(scene)});
+ const tracks=[];
+ document.querySelectorAll('.comparison-universe').forEach(article=>{
+ const path=article.classList.contains('universe-podcast')?'podcast':'artefacto',facts=[...article.querySelectorAll('.comparison-fact')],title=article.querySelector('.comparison-hub h4');if(facts.length!==4)return;
+ const story=document.createElement('div');story.className='route-story';const scene=document.createElement('div');scene.className='route-scene';scene.setAttribute('aria-hidden','true');scene.innerHTML=facts.map((_,i)=>`<img src="imagenes/scrap/${path}-${i+1}.svg" alt="" class="${i===0?'is-current':''}" loading="eager">`).join('');const copy=document.createElement('div');copy.className='route-copy';facts.forEach((fact,i)=>{const img=document.createElement('img');img.className='route-inline-scene';img.src=`imagenes/scrap/${path}-${i+1}.svg`;img.alt='';img.loading='lazy';fact.prepend(img);copy.append(fact)});story.append(scene,copy);article.querySelector('.comparison-orbit').replaceWith(story);article.prepend(title);article.classList.add('scrap-route');tracks.push({facts,images:[...scene.children]});
+ });
+ let pending=false;function update(){pending=false;tracks.forEach(({facts,images})=>{let active=0;facts.forEach((f,i)=>{if(f.getBoundingClientRect().top<innerHeight*.55)active=i});images.forEach((img,i)=>img.classList.toggle('is-current',i===active))})}addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(update)}},{passive:true});addEventListener('resize',update);update();
 })();
 </script>
 
