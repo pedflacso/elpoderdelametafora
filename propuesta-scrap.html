@@ -4698,5 +4698,27 @@ body #main .eclosion-piece.journey-paper h4.paper-name:before{display:none!impor
 body #main .scrap-route .route-reading-paper h5,body #main .scrap-route .route-reading-paper p{background:transparent!important;border-radius:0;box-shadow:none;backdrop-filter:none}
 body #main button.journey-paper[aria-current="step"]{outline:2px solid #79526C!important;outline-offset:3px;font-weight:700;text-decoration:underline;text-underline-offset:4px}
 </style>
+
+<style>
+/* The original butterfly remains the background of the closing sequence. */
+#cierre .summary-backdrop{visibility:visible;opacity:1;overflow:clip}
+#cierre .summary-butterfly-core{height:100%;max-height:100%;min-height:0;grid-column:auto;grid-row:auto;align-self:stretch}
+#cierre .summary-butterfly-core>img{min-height:0;flex:1 1 auto;max-height:calc(100% - 64px);height:calc(100% - 64px);width:94%;max-width:1000px;object-fit:contain;filter:none;visibility:visible;opacity:.82}
+#cierre .summary-butterfly-core>p{flex:0 0 auto}
+@media(max-width:999px){
+#cierre .butterfly-summary{display:block;position:relative;isolation:isolate}
+#cierre .summary-backdrop{position:sticky;top:84px;height:calc(100svh - 108px);min-height:320px;margin-bottom:calc(-100svh + 108px);z-index:0;pointer-events:none}
+#cierre .summary-butterfly-core{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;max-width:none;width:100%;margin:0;transform:none}
+#cierre .summary-butterfly-core>img{width:115%;max-width:none;max-height:calc(100% - 64px);height:calc(100% - 64px);opacity:.72}
+#cierre .summary-butterfly-core>p{margin:0;background:#FBFAF3CC;padding:8px 16px;border-radius:20px}
+#cierre .summary-paper-layers{opacity:.5}
+#cierre .summary-wing{position:relative;z-index:2;width:92%;margin:24svh 0;padding:24px}
+#cierre .summary-wing:nth-of-type(even){margin-left:8%}
+#cierre .butterfly-summary figcaption{position:relative;z-index:3;padding:22px;margin:22px 0}
+}
+.no-motion #cierre .summary-backdrop{position:relative;top:auto;height:400px;min-height:0;margin-bottom:24px}.no-motion #cierre .summary-wing{width:100%;margin:20px 0}
+@media(prefers-reduced-motion:reduce){#cierre .summary-backdrop{position:relative;top:auto;height:400px;min-height:0;margin-bottom:24px}#cierre .summary-wing{width:100%;margin:20px 0}}
+</style>
+
 </body>
 </html>
