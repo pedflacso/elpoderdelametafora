@@ -528,3 +528,6 @@ Se asegura la mariposa original como fondo grande de «La forma que construimos�
 
 
 La mariposa del cierre se integra con las tarjetas mediante menor opacidad (38% escritorio, 32% móvil) y un desenfoque suave. Los recortes de color del fondo también se suavizan. Se mantienen intactos los textos y las conexiones. Verificado fondo visible, sin desbordes de 320 a 1440px y sin errores JS.
+
+
+Mapa de posición: navegación fija con diez tramos, fase y tema actuales, enlace a cada sección y barra de posición de lectura (no de evaluación/completitud). En escritorio ancho se muestra a la derecha; en pantallas menores aparece como banda inferior desplegable. Cambia el boceto contextual con cada tema usando los dibujos originales, las voces, la lupa y las composiciones de caminos. No elige una rama por la persona: Investigación remite a la elección cuando no hay camino seleccionado. Navegación por teclado, foco en el destino, aria-current y progress accesible; la posición responde a cambios de contenido y tamaño. Validación: diez accesos, seis cambios de tramo comprobados, despliegue móvil y cierre al navegar, sin desbordes a 320,390,768,1000,1280,1400,1440px, contraste sin incidencias y sin errores JS.
