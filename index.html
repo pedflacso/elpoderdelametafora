@@ -4725,5 +4725,47 @@ body #main button.journey-paper[aria-current="step"]{outline:2px solid #79526C!i
 #cierre .summary-paper-layers{filter:blur(.7px);opacity:.36}
 @media(max-width:999px){#cierre .summary-butterfly-core>img{opacity:.32;filter:blur(.85px)}#cierre .summary-paper-layers{opacity:.3}}
 </style>
+
+<style>
+.reading-map{position:fixed;z-index:8;right:12px;top:104px;width:132px;padding:10px;background:#FBFAF3F2;color:#263C30;border:1px solid #8E9E83;border-radius:18px;box-shadow:0 8px 24px #263c3017;max-height:calc(100svh - 124px);overflow:auto;backdrop-filter:blur(6px);font-size:.78rem;line-height:1.35}
+.reading-map>details{padding:0;border:0;background:transparent;border-radius:0}
+.reading-map summary{position:sticky;top:0;z-index:2;background:#FBFAF3F2;list-style:none;display:flex;flex-direction:column;align-items:center;text-align:center;gap:5px;padding:0;cursor:pointer;font-weight:500}
+.reading-map summary::-webkit-details-marker{display:none}
+.reading-map-heading{font-weight:700;color:#65415A;font-size:.74rem}
+.reading-map-art{display:block;width:94px;height:78px;background-repeat:no-repeat;background-position:center;background-size:contain}
+.reading-map-current{font-weight:700;min-height:2.6em;display:flex;align-items:center;justify-content:center}
+.reading-map-disclosure{font-size:.7rem;color:#5C705F}
+.reading-map progress{display:block;width:100%;height:5px;margin:10px 0 8px;accent-color:#79526C;border:0;border-radius:5px;background:#DFE6D4}
+.reading-map progress::-webkit-progress-bar{background:#DFE6D4;border-radius:5px}.reading-map progress::-webkit-progress-value{background:#79526C;border-radius:5px}
+.reading-map ol{list-style:none;padding:0;margin:9px 0 0;display:grid;gap:2px;border-left:1px solid #B6C1AA}
+.reading-map a{position:relative;display:block;padding:7px 4px 7px 12px;color:#435C4D;text-decoration:none;line-height:1.35;min-height:32px;border-radius:0 7px 7px 0}
+.reading-map a:before{content:'';position:absolute;left:-4px;top:13px;width:6px;height:6px;border-radius:50%;background:#A6B398}
+.reading-map a[aria-current="location"]{background:#E9DCE5;color:#603C54;font-weight:700}
+.reading-map a[aria-current="location"]:before{background:#79526C;width:8px;height:8px;left:-5px}
+.reading-map a:focus-visible,.reading-map summary:focus-visible{outline:3px solid #2F6F7A;outline-offset:2px}
+@media(max-width:1439px){
+.reading-map{top:auto;bottom:12px;right:12px;width:min(370px,calc(100% - 24px));max-height:calc(100svh - 140px);padding:9px 14px;border-radius:18px}
+.reading-map summary{display:grid;grid-template-columns:50px 1fr auto;grid-template-rows:auto auto;gap:1px 10px;text-align:left;align-items:center}
+.reading-map-art{grid-column:1;grid-row:1/3;width:50px;height:42px}
+.reading-map-heading{grid-column:2;grid-row:1}.reading-map-current{grid-column:2;grid-row:2;min-height:0;justify-content:flex-start;font-size:.85rem}.reading-map-disclosure{grid-column:3;grid-row:1/3}
+.reading-map progress{margin:6px 0 0;height:4px}
+.reading-map ol{grid-template-columns:1fr 1fr;gap:3px 9px;max-height:42svh;overflow:auto;padding:2px 4px 4px}
+.reading-map a{min-height:40px;padding-top:9px;font-size:.85rem}
+body{padding-bottom:100px}
+}
+@media(prefers-reduced-motion:reduce){.reading-map *{scroll-behavior:auto}}
+</style>
+<script>
+(()=>{
+const points=[['entrada-hilos','Entrada','Larva','larva'],['larva','Las partes','Larva','larva'],['crisalida','La metáfora','Crisálida','crisalida'],['caso','El caso','Eclosión','voices'],['elegir','Dos caminos','Eclosión','podcast'],['investigar','Investigación','Eclosión','lens'],['reencuentro','Reencuentro','Eclosión','network'],['mariposa','Las conexiones','Mariposa','mariposa'],['tu-objeto','Tu propuesta','Mariposa','network'],['cierre','La forma construida','Mariposa','mariposa']].filter(p=>document.getElementById(p[0]));
+const rail=document.createElement('aside');rail.className='reading-map';rail.setAttribute('aria-label','Mapa y posición en el recorrido');rail.innerHTML='<details><summary><span class="reading-map-art" aria-hidden="true"></span><span class="reading-map-heading">Mapa del recorrido</span><span class="reading-map-current"></span><span class="reading-map-disclosure">Ver mapa</span></summary><nav aria-label="Etapas del recorrido"><ol>'+points.map(([id,label])=>`<li><a href="#${id}" data-map-target="${id}">${label}</a></li>`).join('')+'</ol></nav></details><progress max="100" value="0" aria-label="Posición de lectura en la página"></progress>';document.body.append(rail);
+const details=rail.querySelector('details'),art=rail.querySelector('.reading-map-art'),current=rail.querySelector('.reading-map-current'),disclosure=rail.querySelector('.reading-map-disclosure'),links=[...rail.querySelectorAll('a')],progress=rail.querySelector('progress'),desktop=matchMedia('(min-width:1440px)');let queued=false,last=-1;
+function setArt(key){if(C.inkArt[key]){art.style.backgroundImage=`url("${C.inkArt[key].src}")`;art.style.backgroundSize='contain';art.style.backgroundPosition='center'}else if(key==='lens'){art.style.backgroundImage="url('imagenes/scrap/piezas-papel.png')";art.style.backgroundSize='300% 300%';art.style.backgroundPosition='50% 50%'}else{art.style.backgroundImage="url('imagenes/scrap/caminos-sketchbook.png')";art.style.backgroundSize='200% 400%';art.style.backgroundPosition=key==='voices'?'0% 33.333333%':key==='podcast'?'0% 0%':'100% 100%'}}
+function update(){queued=false;const offset=Math.min(210,innerHeight*.27);let index=0;points.forEach((p,i)=>{if(document.getElementById(p[0]).getBoundingClientRect().top<=offset)index=i});if(last!==index){last=index;const [id,label,stage,key]=points[index];current.textContent=stage+' · '+label;setArt(key);links.forEach(a=>{if(a.dataset.mapTarget===id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});if(desktop.matches&&details.open){const active=links[index];const r=active.getBoundingClientRect(),rr=rail.getBoundingClientRect();if(r.bottom>rr.bottom-16)rail.scrollTop+=r.bottom-rr.bottom+16;else if(r.top<rr.top)rail.scrollTop-=rr.top-r.top+12}}
+const height=document.documentElement.scrollHeight-innerHeight;progress.value=height>0?Math.min(100,Math.max(0,scrollY/height*100)):0;const investigation=links.find(a=>a.dataset.mapTarget==='investigar');if(investigation)investigation.href=state.path?'#investigar':'#elegir';}
+function schedule(){if(!queued){queued=true;requestAnimationFrame(update)}}function layout(){details.open=desktop.matches;disclosure.textContent=details.open?'Ocultar mapa':'Ver mapa';schedule()}details.addEventListener('toggle',()=>disclosure.textContent=details.open?'Ocultar mapa':'Ver mapa');rail.addEventListener('click',e=>{const link=e.target.closest('a');if(!link)return;if(!desktop.matches)details.open=false;const target=document.querySelector(link.getAttribute('href'));if(target)requestAnimationFrame(()=>{const heading=target.querySelector('h2,h3')||target;heading.tabIndex=-1;heading.focus({preventScroll:true})})});addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);desktop.addEventListener('change',layout);document.addEventListener('click',schedule);new MutationObserver(schedule).observe(document.querySelector('#investigation-content'),{childList:true});layout();update();
+})();
+</script>
+
 </body>
 </html>
