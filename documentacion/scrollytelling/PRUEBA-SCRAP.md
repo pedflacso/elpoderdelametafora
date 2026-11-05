@@ -77,3 +77,6 @@ La familia de recortes se extiende a las etiquetas y tarjetas equivalentes en to
 
 
 Se asegura la mariposa original como fondo grande de «La forma que construimos». Se restringe el tamaño de la imagen dentro de la escena para evitar que el aumento o el tamaño intrínseco la recorten en exceso; en móvil la escena permanece sticky detrás de las cuatro tarjetas. Se conservan los recortes de papel, conexiones y contenido. En movimiento reducido se muestra estática. Validado: fondo visible a 1440,1000,800,390,320px, sin desbordes, imagen cargada y sin errores JavaScript.
+
+
+La mariposa del cierre se integra con las tarjetas mediante menor opacidad (38% escritorio, 32% móvil) y un desenfoque suave. Los recortes de color del fondo también se suavizan. Se mantienen intactos los textos y las conexiones. Verificado fondo visible, sin desbordes de 320 a 1440px y sin errores JS.
