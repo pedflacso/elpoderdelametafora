@@ -534,3 +534,6 @@ Mapa de posición: navegación fija con diez tramos, fase y tema actuales, enlac
 
 
 El cursor del mouse cambia entre Larva, Crisálida, Eclosión y Mariposa usando los bocetos originales en PNG de 40px. Sigue la fase visible y el elemento bajo el puntero. Se usa cursor nativo, sin capas que interfieran con clics; los campos de escritura conservan el cursor de texto y los controles deshabilitados, su indicación. Se aplica solo con mouse/puntero fino. Verificación: cuatro archivos cargados de 40×40px y cuatro estados correctos, cursor de texto operativo, botones con cursor de la fase, pantalla táctil con cursor normal y sin errores JavaScript.
+
+
+Cabecera: se retira el control visible de reducir movimiento y se conserva el respeto por la preferencia del dispositivo. La marca utiliza una composición de dos niveles, «El poder de la» y «metáfora» en serif cursiva ciruela, con el boceto original de mariposa sobre recorte rosado. Conserva enlace al inicio y nombre accesible completo. Verificado botón no visible, enlace operativo, preferencia reducida aplicada, sin errores JavaScript ni desbordes a 320,390,768,1000,1440px.

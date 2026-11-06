@@ -1397,7 +1397,7 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
 </head>
 <body><nav class="scrap-preview-nav" aria-label="Comparar la prueba"><a href="index.html">Volver al sitio actual</a><a href="#research-meaning-title">Carpeta</a><a href="#blackbox-title">Caja</a><a href="#curation-scheme-title">Recortes</a><a href="#mariposa">Mariposa</a></nav>
 <a class="skip" href="#main">Ir al contenido</a>
-<header class="header"><div class="wrap header-inner"><a class="brand" href="#main">El poder de la metáfora</a><div class="phase" aria-label="Momento del recorrido"><a href="#larva">Larva</a><a href="#crisalida">Crisálida</a><a href="#caso">Eclosión</a><a href="#mariposa">Mariposa</a></div><button id="motion" class="secondary" aria-pressed="false">Reducir movimiento</button></div></header>
+<header class="header"><div class="wrap header-inner"><a class="brand" href="#main">El poder de la metáfora</a><div class="phase" aria-label="Momento del recorrido"><a href="#larva">Larva</a><a href="#crisalida">Crisálida</a><a href="#caso">Eclosión</a><a href="#mariposa">Mariposa</a></div><button id="motion" hidden class="secondary" aria-pressed="false">Reducir movimiento</button></div></header>
 <main id="main" class="wrap" tabindex="-1"></main>
 <footer><div class="wrap">Revisión autoasistida de la versión 1. Sin seguimiento de Moodle. Integración con el aula y cotejo de transcripciones pendientes.</div></footer>
 <noscript><p class="wrap">Este prototipo necesita JavaScript para mostrar el contenido y las actividades. Activá JavaScript para recorrerlo.</p></noscript>
@@ -4782,6 +4782,22 @@ body[data-cursor-stage] :is(button:disabled,input:disabled,[aria-disabled="true"
 </style>
 <script>
 (()=>{const sections=[...document.querySelectorAll('#entrada-hilos,.stage-band[data-stage-background]')];let queued=false;function set(stage){if(document.body.dataset.cursorStage!==stage)document.body.dataset.cursorStage=stage}function update(){queued=false;let stage='larva';const point=Math.min(210,innerHeight*.27);sections.forEach(section=>{if(section.getBoundingClientRect().top<=point)stage=section.dataset.stageBackground||'larva'});set(stage)}function schedule(){if(!queued){queued=true;requestAnimationFrame(update)}}document.addEventListener('pointerover',e=>{if(e.pointerType==='touch')return;const stage=e.target.closest('[data-stage-background]');if(stage)set(stage.dataset.stageBackground)});addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);new MutationObserver(schedule).observe(document.querySelector('#investigation-content'),{childList:true});update()})();
+</script>
+
+
+<style>
+.header .header-inner{padding:9px 0;gap:18px}
+.header .brand{position:relative;isolation:isolate;display:inline-flex;align-items:center;gap:10px;padding:7px 18px 9px 10px;min-height:62px;text-decoration:none;color:#263C30;flex:0 1 auto}
+.header .brand:before{content:'';position:absolute;inset:1px 0;z-index:-1;background-image:linear-gradient(#F0E4EAE8,#F0E4EAE8),url('imagenes/scrap/piezas-papel.png');background-position:center,78% 96%;background-size:100% 100%,900% 900%;clip-path:polygon(2% 4%,96% 0,100% 91%,3% 100%,0 75%);transform:rotate(-1deg)}
+.brand .brand-sketch{display:block;width:46px;height:46px;object-fit:contain;opacity:.83;flex-shrink:0}
+.brand .brand-words{display:flex;flex-direction:column;gap:1px;line-height:1.05}
+.brand .brand-prefix{font-size:.66rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#596B58}
+.brand .brand-title{font-family:Georgia,'Times New Roman',serif;font-size:1.8rem;font-weight:400;font-style:italic;letter-spacing:-.035em;color:#65415A}
+.header .brand:hover:before{background-color:#E9D9E3}.header .brand:focus-visible{outline:3px solid #2F6F7A;outline-offset:3px}
+@media(max-width:599px){.header .header-inner{padding:7px 0}.header .brand{min-height:58px;padding:6px 16px 7px 8px}.brand .brand-sketch{width:40px;height:40px}.brand .brand-title{font-size:1.65rem}}
+</style>
+<script>
+(()=>{const brand=document.querySelector('.header .brand');brand.setAttribute('aria-label','El poder de la metáfora · Volver al inicio');brand.innerHTML='<img class="brand-sketch" alt="" width="46" height="46"><span class="brand-words"><span class="brand-prefix">El poder de la</span><span class="brand-title">metáfora</span></span>';brand.querySelector('img').src=C.inkArt.mariposa.src;document.querySelector('#motion').hidden=true})();
 </script>
 
 </body>
