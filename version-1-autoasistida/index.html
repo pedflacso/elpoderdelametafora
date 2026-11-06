@@ -4767,5 +4767,22 @@ function schedule(){if(!queued){queued=true;requestAnimationFrame(update)}}funct
 })();
 </script>
 
+
+<style>
+@media(hover:hover) and (pointer:fine){
+body[data-cursor-stage="larva"]{--stage-cursor-image:url('imagenes/cursores/larva.png') 20 20}
+body[data-cursor-stage="crisalida"]{--stage-cursor-image:url('imagenes/cursores/crisalida.png') 20 20}
+body[data-cursor-stage="eclosion"]{--stage-cursor-image:url('imagenes/cursores/eclosion.png') 20 20}
+body[data-cursor-stage="mariposa"]{--stage-cursor-image:url('imagenes/cursores/mariposa.png') 20 20}
+body[data-cursor-stage]{cursor:var(--stage-cursor-image),auto}
+body[data-cursor-stage] :is(a,button,summary,[role="button"],label,select,input[type="range"],input[type="checkbox"],input[type="radio"]){cursor:var(--stage-cursor-image),pointer}
+body[data-cursor-stage] :is(textarea,[contenteditable="true"],input:not([type]),input[type="text"],input[type="email"],input[type="search"],input[type="number"],input[type="password"],input[type="url"],input[type="tel"]){cursor:text!important}
+body[data-cursor-stage] :is(button:disabled,input:disabled,[aria-disabled="true"]){cursor:not-allowed!important}
+}
+</style>
+<script>
+(()=>{const sections=[...document.querySelectorAll('#entrada-hilos,.stage-band[data-stage-background]')];let queued=false;function set(stage){if(document.body.dataset.cursorStage!==stage)document.body.dataset.cursorStage=stage}function update(){queued=false;let stage='larva';const point=Math.min(210,innerHeight*.27);sections.forEach(section=>{if(section.getBoundingClientRect().top<=point)stage=section.dataset.stageBackground||'larva'});set(stage)}function schedule(){if(!queued){queued=true;requestAnimationFrame(update)}}document.addEventListener('pointerover',e=>{if(e.pointerType==='touch')return;const stage=e.target.closest('[data-stage-background]');if(stage)set(stage.dataset.stageBackground)});addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);new MutationObserver(schedule).observe(document.querySelector('#investigation-content'),{childList:true});update()})();
+</script>
+
 </body>
 </html>
