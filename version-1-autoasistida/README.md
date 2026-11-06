@@ -537,3 +537,6 @@ El cursor del mouse cambia entre Larva, Crisálida, Eclosión y Mariposa usando 
 
 
 Cabecera: se retira el control visible de reducir movimiento y se conserva el respeto por la preferencia del dispositivo. La marca utiliza una composición de dos niveles, «El poder de la» y «metáfora» en serif cursiva ciruela, con el boceto original de mariposa sobre recorte rosado. Conserva enlace al inicio y nombre accesible completo. Verificado botón no visible, enlace operativo, preferencia reducida aplicada, sin errores JavaScript ni desbordes a 320,390,768,1000,1440px.
+
+
+«Cambiar de camino» se destaca sobre papel rosado con un sendero bifurcado a lápiz, punto animado que alterna ramas e invitación «Explorar la otra opción». La animación solo corre mientras el botón es visible y queda estática con movimiento reducido. Se conserva la acción original de volver a la elección y enfocar el otro camino, sin elegirlo automáticamente. Validación: punto en posiciones distintas, acción y foco en ambas ramas, icono regenerado al cambiar de camino, sin errores JavaScript ni desbordes a 320–1440px.

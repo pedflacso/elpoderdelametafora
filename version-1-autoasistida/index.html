@@ -4800,5 +4800,29 @@ body[data-cursor-stage] :is(button:disabled,input:disabled,[aria-disabled="true"
 (()=>{const brand=document.querySelector('.header .brand');brand.setAttribute('aria-label','El poder de la metáfora · Volver al inicio');brand.innerHTML='<img class="brand-sketch" alt="" width="46" height="46"><span class="brand-words"><span class="brand-prefix">El poder de la</span><span class="brand-title">metáfora</span></span>';brand.querySelector('img').src=C.inkArt.mariposa.src;document.querySelector('#motion').hidden=true})();
 </script>
 
+
+<style>
+#investigation-content #switch-path{display:inline-flex;align-items:center;justify-content:center;gap:14px;position:relative;isolation:isolate;padding:12px 20px 12px 12px;min-height:74px;max-width:100%;background:transparent!important;color:#603C54!important;border:0;border-radius:0;text-align:left;box-shadow:none;flex-shrink:0}
+#switch-path:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(#EADAE4EC,#EADAE4EC),url('imagenes/scrap/piezas-papel.png');background-position:center,96% 78%;background-size:100% 100%,900% 900%;clip-path:polygon(2% 3%,97% 0,100% 93%,2% 100%,0 76%);filter:drop-shadow(0 3px 3px #263c3020)}
+#switch-path .switch-route-icon{width:72px;height:54px;flex:0 0 72px;overflow:visible;fill:none;stroke:#65415A;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+#switch-path .route-pencil-echo{opacity:.2;stroke-width:1;transform:translate(.8px,-.5px)}
+#switch-path .route-traveller{fill:#65415A;stroke:#FBFAF3;stroke-width:1.2;offset-path:path('M36 49 C34 37 39 31 36 25 C31 17 19 20 10 9');offset-distance:0%;opacity:1}
+#switch-path .route-traveller-other{offset-path:path('M36 49 C34 37 39 31 36 25 C41 16 53 19 62 8');opacity:0}
+#switch-path.route-in-view .route-traveller{animation:walk-another-route 5s linear infinite}
+#switch-path.route-in-view .route-traveller-other{animation-delay:2.5s}
+@keyframes walk-another-route{0%{offset-distance:0%;opacity:0}6%{opacity:1}40%{offset-distance:100%;opacity:1}48%,100%{offset-distance:100%;opacity:0}}
+#switch-path .switch-route-words{display:flex;flex-direction:column;gap:4px;line-height:1.35}
+#switch-path .switch-route-title{font-size:1.05rem;font-weight:700}
+#switch-path .switch-route-hint{font-size:.82rem;color:#70556A}
+#switch-path:hover:before{background-color:#DFCAD8}#switch-path:hover .switch-route-title{text-decoration:underline;text-underline-offset:4px}
+#switch-path:focus-visible{outline:3px solid #2F6F7A;outline-offset:4px}
+.no-motion #switch-path .route-traveller{animation:none!important;offset-distance:65%;opacity:1}.no-motion #switch-path .route-traveller-other{opacity:0}
+@media(prefers-reduced-motion:reduce){#switch-path .route-traveller{animation:none!important;offset-distance:65%;opacity:1}#switch-path .route-traveller-other{opacity:0}}
+@media(max-width:599px){#investigation-content #switch-path{min-height:70px;gap:10px}.path-head{align-items:flex-start}#switch-path .switch-route-icon{width:60px;height:45px;flex-basis:60px}}
+</style>
+<script>
+(()=>{const root=document.querySelector('#investigation-content'),observer=new IntersectionObserver(entries=>entries.forEach(e=>e.target.classList.toggle('route-in-view',e.isIntersecting)),{threshold:.1});let mounted=null,queued=false;function mount(){queued=false;const button=root.querySelector('#switch-path');if(!button||button===mounted)return;if(mounted)observer.unobserve(mounted);mounted=button;const label=button.textContent;button.innerHTML='<svg class="switch-route-icon" viewBox="0 0 72 54" aria-hidden="true"><g class="route-pencil-echo"><path d="M36 49C34 37 39 31 36 25C31 17 19 20 10 9M36 25C41 16 53 19 62 8M10 9l1 9M10 9l9 2M62 8l-1 9M62 8l-9 2"/></g><path d="M36 49C34 37 39 31 36 25C31 17 19 20 10 9M36 25C41 16 53 19 62 8M10 9l1 9M10 9l9 2M62 8l-1 9M62 8l-9 2"/><circle class="route-traveller" r="3.4"/><circle class="route-traveller route-traveller-other" r="3.4"/></svg><span class="switch-route-words"><span class="switch-route-title"></span><span class="switch-route-hint">Explorar la otra opción</span></span>';button.querySelector('.switch-route-title').textContent=label;observer.observe(button)}function schedule(){if(!queued){queued=true;requestAnimationFrame(mount)}}new MutationObserver(schedule).observe(root,{childList:true});mount()})();
+</script>
+
 </body>
 </html>
