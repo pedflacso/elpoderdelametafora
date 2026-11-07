@@ -540,3 +540,6 @@ Cabecera: se retira el control visible de reducir movimiento y se conserva el re
 
 
 «Cambiar de camino» se destaca sobre papel rosado con un sendero bifurcado a lápiz, punto animado que alterna ramas e invitación «Explorar la otra opción». La animación solo corre mientras el botón es visible y queda estática con movimiento reducido. Se conserva la acción original de volver a la elección y enfocar el otro camino, sin elegirlo automáticamente. Validación: punto en posiciones distintas, acción y foco en ambas ramas, icono regenerado al cambiar de camino, sin errores JavaScript ni desbordes a 320–1440px.
+
+
+Revisión móvil: mapa integrado en cabecera táctil y oculto al escribir, etiquetas de caja en grilla con texto mayor, navegación de Crisálida ajustada, gráficos y espaciado de lectura adaptados. Probadas vistas de 320–1440px, celular horizontal, notas y ambas ramas; sin desbordes, errores JS ni incidencias automáticas de contraste. Se conserva el contenido. La caja de archivo alternativa puede verse con `?caja=archivo#blackbox-title`, sin sustituir la predeterminada. Detalle en documentacion/scrollytelling/REVISION-RESPONSIVA.md.
