@@ -20,4 +20,4 @@ La grilla 3 × 3 contiene: fondo de carpeta, solapa, hoja; mesa de observación,
 `mano-escritura.png`: dibujo generado de mano con lápiz, recortado sobre transparencia. El PNG se conserva sin editar; su movimiento y la línea de escritura son capas CSS/SVG decorativas.
 
 
-`caja-archivo-alternativa.png`: ilustración generada de una caja de archivo con tapa abierta, grafito y papel en petróleo suave. Se monta en la vista opcional `?caja=archivo`; el PNG original se conserva sin edición de píxeles.
+`caja-archivo-alternativa.png`: ilustración generada de una caja de archivo con tapa abierta, grafito y papel en petróleo suave. Se monta como caja principal del recorrido; el PNG original se conserva sin edición de píxeles.
