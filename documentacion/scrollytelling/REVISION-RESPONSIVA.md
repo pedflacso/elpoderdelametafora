@@ -19,3 +19,5 @@ Sin desbordamiento horizontal en los tamaños indicados. Contraste automático s
 ## Caja alternativa
 
 Añadir `?caja=archivo#blackbox-title` para ver la caja de archivo abierta, con tapa y acabado de grafito y papel. Es una comparación; la caja habitual permanece como opción predeterminada. Los mismos controles despliegan y reúnen las piezas en las dos vistas.
+
+Se verificó también el destino del mapa móvil: al terminar el desplazamiento, el título queda debajo de la cabecera (140px de cabecera y destino en 162px), sin sumar dos veces los márgenes de navegación.
