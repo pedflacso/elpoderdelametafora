@@ -543,3 +543,6 @@ Cabecera: se retira el control visible de reducir movimiento y se conserva el re
 
 
 Revisión móvil: mapa integrado en cabecera táctil y oculto al escribir, etiquetas de caja en grilla con texto mayor, navegación de Crisálida ajustada, gráficos y espaciado de lectura adaptados. Probadas vistas de 320–1440px, celular horizontal, notas y ambas ramas; sin desbordes, errores JS ni incidencias automáticas de contraste. Se conserva el contenido. La caja de archivo alternativa puede verse con `?caja=archivo#blackbox-title`, sin sustituir la predeterminada. Detalle en documentacion/scrollytelling/REVISION-RESPONSIVA.md.
+
+
+La caja de archivo fue aprobada y pasa a ser la gráfica principal de «Abrir la caja negra del diseño», sin parámetros de prueba. Se mantienen los mismos controles, papelitos y conexiones y la grilla adaptada al celular. Validado en la URL normal: imagen cargada, dibujo anterior oculto, desplegar/reunir operativo y sin errores JavaScript.
