@@ -29,3 +29,4 @@
 .note-linked-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0 4px}.note-linked-actions .notebook-entry{margin:0;min-height:40px;background:#f6eef4!important;color:#603c54!important;border-color:#b79aae!important}
 .note-linked-prompt{font-weight:700;margin:16px 0 8px!important}
 body #main .reflection-note-entry>summary button.notebook-entry{background:#f6eef4!important;color:#603c54!important;border-color:#b79aae!important;opacity:1}
+.notes-dialog .notebook-options{margin-top:18px;padding-top:14px;border-top:1px solid #cad6b6}.notes-dialog .notebook-options>summary{cursor:pointer;font-weight:600}.notes-dialog .notebook-options .saving-panel{background:transparent;padding:12px 0;margin:0}.notes-dialog .notebook-options .save-actions{margin-bottom:8px}

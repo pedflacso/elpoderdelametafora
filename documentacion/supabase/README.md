@@ -22,3 +22,5 @@ Embeber el sitio en Moodle mediante un iframe no comparte automáticamente la id
 Se comprobó en escritorio y móvil que no hay bloque de cuenta, formulario de correo ni solicitudes a Supabase; la escritura en el cuaderno, la persistencia después de recargar y la descarga siguen funcionando.
 
 Las correcciones visuales del caso y del reencuentro permanecen en `version-1-autoasistida/ajustes-recorrido.css`.
+
+Se retiró del cierre el panel duplicado «Tus notas del recorrido». La descarga se ofrece únicamente en el cuaderno; sus opciones de almacenamiento local se agrupan en «Opciones del cuaderno». El guardado y las notas existentes se conservan.
