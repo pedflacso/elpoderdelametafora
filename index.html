@@ -1519,7 +1519,7 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
   "voices": [
     {
       "id": "estudiante1",
-      "name": "Laura",
+      "name": "María",
       "text": "Llegué a la actividad, pero no sabía qué criterios tenía que usar para analizar el caso.",
       "audio": "audio/12-estudiante-1-final-78801477.mp3",
       "role": "Estudiante"
@@ -1581,7 +1581,7 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
     "evidenceTitle": "La escucha nos lleva a otras evidencias",
     "evidenceIntro": "Cuando hayas revisado las tres voces, consultá los materiales. ¿Qué información nueva aparece?",
     "contrastTitle": "Poné las piezas en relación",
-    "contrastIntro": "Elegí la voz de Laura, la Lic. Martínez o Marcos y una evidencia. Mirá qué aporta cada pieza y qué se comprende al ponerlas juntas. Si querés, podés dejarte una nota. Después vas a construir tu explicación.",
+    "contrastIntro": "Elegí la voz de María, la Lic. Martínez o Marcos y una evidencia. Mirá qué aporta cada pieza y qué se comprende al ponerlas juntas. Si querés, podés dejarte una nota. Después vas a construir tu explicación.",
     "contrastLabel": "Anotá una relación entre una voz y una evidencia",
     "contrastPlaceholder": "Por ejemplo: qué cuenta una persona, qué muestra un material y cómo se relacionan…",
     "architectureTitle": "Cómo se organizó este episodio",
@@ -1680,7 +1680,7 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
     "noPath": "Elegí un camino arriba para abrir la investigación.",
     "evidenceHint": "Elegí una pieza para consultarla.",
     "consulted": "Consultada",
-    "voicePiece": "Testimonio · Laura, estudiante",
+    "voicePiece": "Testimonio · María, estudiante",
     "motionOn": "Reducir movimiento",
     "motionOff": "Movimiento reducido",
     "copy": "Copiar mi explicación",
@@ -3905,7 +3905,7 @@ function reflection(path){return `<details class="workspace reflection reflectio
 function episodeScheme(){return `<figure class="episode-scheme" aria-label="Organización del episodio de investigación"><ol>${C.podcast.nodes.map((node,i)=>`<li><span class="episode-step-icon">${learningIcon([3,0,1,4][i])}</span><h4>${esc(node.title)}</h4><p>${esc(node.body)}</p></li>`).join('')}</ol><figcaption>Las voces abren preguntas, las evidencias permiten contrastarlas y las relaciones sostienen una explicación.</figcaption></figure>`;}
 function renderPath(path){const s=state[path],p=C[path];document.getElementById('investigation-title').textContent=p.title;document.getElementById('path-status').textContent=C.choose.paths.find(x=>x.id===path).label;let body='';
 if(path==='podcast')body=`<p class="note">${esc(p.audioNotice)}</p>${soundMap()}<div class="workspace"><h3>${esc(p.evidenceTitle)}</h3><p>${esc(p.evidenceIntro)}</p>${evidenceList(false)}</div><div class="workspace"><h3>${esc(p.contrastTitle)}</h3><p>${esc(p.contrastIntro)}</p>${pairBoard()}<details><summary>Si te sirve, anotá una relación</summary><label for="contrast-note">${esc(p.contrastLabel)}</label><textarea id="contrast-note" placeholder="${esc(p.contrastPlaceholder)}">${esc(s.note)}</textarea><p class="small">${esc(C.reflection.privacy)}</p></details></div><details class="path-extension episode-extension"><summary>Cómo se organizó este episodio</summary><p>${esc(p.architectureIntro)}</p>${episodeScheme()}</details>`;
-else body=`<div class="workspace"><h3>${esc(p.exploreTitle)}</h3><p>${esc(p.exploreIntro)}</p>${evidenceList(true)}</div><div class="workspace"><h3>${esc(p.relationsTitle)}</h3><p>${esc(p.relationsIntro)}</p><details><summary>Si te sirve, anotá la relación entre dos piezas</summary><label for="relation-note">Tu relación entre dos piezas — nota opcional</label><textarea id="relation-note" placeholder="${esc(C.ui.relationPlaceholder)}">${esc(s.relationNote||'')}</textarea><p class="small">${esc(C.reflection.privacy)}</p></details><div class="details-grid">${details(p.relations.map(r=>({title:r.title+' · Lectura posible',body:r.body})))}</div></div><details class="workspace evidence-organizer" id="ordenar-indicios"><summary>${esc(p.organizeTitle)}</summary><p>${esc(p.organizeIntro)}</p><div class="zones">${p.zones.map((z,i)=>`<div class="zone"><h3>${esc(z)}</h3><div role="group" aria-label="${esc(z)}">${p.pieces.map((piece,j)=>`<button data-zone="${i}" data-piece="${j}" aria-pressed="${s.zones[i].has(j)}"><span class="zone-check" aria-hidden="true">✓</span>${esc(piece)}</button>`).join('')}</div></div>`).join('')}</div></details>`;
+else body=`<div class="workspace"><h3>${esc(p.exploreTitle)}</h3><p>${esc(p.exploreIntro)}</p>${evidenceList(true)}</div><div class="workspace"><h3>${esc(p.relationsTitle)}</h3><p>${esc(p.relationsIntro)}</p><details><summary>Si te sirve, anotá la relación entre dos piezas</summary><label for="relation-note">Tu relación entre dos piezas — nota opcional</label><textarea id="relation-note" placeholder="${esc(C.ui.relationPlaceholder)}">${esc(s.relationNote||'')}</textarea><p class="small">${esc(C.reflection.privacy)}</p></details><div class="details-grid">${details(p.relations.map(r=>({title:r.title+' · Lectura posible',body:r.body})))}</div></div>`;
 document.getElementById('investigation-content').innerHTML=`<div class="path-head"><p class="lead">${esc(p.intro)}</p><button id="switch-path" class="secondary">${esc(C.ui.switch)}</button></div>${body}${reflection(path)}<p class="note">${esc(p.closing)}</p><div class="workspace"><a class="button-link" href="#reencuentro">${esc(C.branchEnd.button)}</a></div>`;
 initAudioPlayers();updatePairBoard();
 document.getElementById('first-interpretation').textContent=personalNotes['case-first-note']||'No dejaste una nota. Podés recordar lo que pensabas al conocer el caso y compararlo con lo que encontraste.';const active=s.active;if(active)showEvidence(active);else updateEvidenceButtons();
