@@ -1,0 +1,37 @@
+/* El caso se lee por escenas sucesivas. Cada una termina antes de la siguiente. */
+#caso .layer-case-scene{position:relative;isolation:isolate;display:flow-root;padding-bottom:36px;overflow:clip}
+#caso .layer-case-visual{display:block;position:relative;top:auto;width:100%;height:auto;margin:0 0 38px;overflow:visible;z-index:0}
+#caso .layer-case-visual #case-visual{max-width:820px;margin:0 auto;position:relative;top:auto}
+#caso .layer-case-visual .eclosion-opening{height:350px;max-width:600px;margin-inline:auto;transform:none!important}
+#caso .layer-case-visual .eclosion-piece{transform:none!important}
+#caso .case-introduction{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;width:100%;max-width:none;padding:0;margin:0;position:relative;z-index:1}
+#caso .case-introduction>.step{min-height:0;margin:0;padding:28px;position:relative;top:auto;background:#fbfaf3;border:1px solid #a6b69c;border-radius:22px}
+#caso .blackbox-section{position:relative;isolation:isolate;clear:both;margin-top:36px;padding-top:32px}
+#caso .blackbox-map{position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;gap:24px;min-height:0;padding:0;margin:24px 0}
+#caso .blackbox-map .blackbox-core{position:relative;top:auto;grid-column:1/-1;grid-row:auto;align-self:auto;width:min(100%,680px);max-width:680px;margin:0 auto 24px;z-index:0}
+#caso .blackbox-map .blackbox-node{position:relative;top:auto;grid-column:auto;grid-row:auto;align-self:start;min-height:0;width:100%;max-width:none;margin:0;padding:24px;transform:none!important;z-index:1;box-sizing:border-box}
+#caso .blackbox-map figcaption{position:relative;grid-column:1/-1;margin:8px 0 0;padding:14px 20px;z-index:2;background:#fbfaf3;border-radius:12px}
+#caso .blackbox-node>summary{display:block;cursor:pointer;list-style:none;padding:0;color:#263c30;background:transparent;font-weight:400}
+#caso .blackbox-node>summary::-webkit-details-marker{display:none}
+#caso .blackbox-node>summary h4{font-size:1.08rem;line-height:1.5;margin:0 0 12px;font-weight:700}
+#caso .blackbox-node>summary p{margin-bottom:14px}
+#caso .case-question-toggle{display:flex;justify-content:space-between;gap:12px;color:#2d5652;font-size:.9rem;font-weight:700}
+#caso .case-question-toggle:after{content:'+';font-size:1.3rem}
+#caso .blackbox-node[open] .case-question-toggle:after{content:'−'}
+#caso .case-question-detail{border-top:1px solid #a6b69c;padding-top:18px;margin-top:18px}
+#caso .case-question-detail p{font-size:1rem;line-height:1.65;margin:0 0 14px}
+/* El óvalo y los materiales quedan dentro de la figura, antes del audio. */
+#reencuentro .curation-scheme{position:relative;isolation:isolate;overflow:clip;padding-bottom:24px}
+#reencuentro .layer-curation-visual{z-index:0;overflow:clip}
+#reencuentro .curation-diagram{position:relative;z-index:1}
+#reencuentro .curation-outcome,#reencuentro .curation-scheme>figcaption{position:relative;z-index:2;background:#fbfaf3;color:#263c30}
+#reencuentro .listening-focus>.wave-player{position:relative;z-index:2}
+/* Las imágenes acompañan las tarjetas desde el fondo y no salen de su escena. */
+#reencuentro .scrap-route{position:relative;isolation:isolate;overflow:clip}
+#reencuentro .scrap-route .route-story{position:relative;isolation:isolate;overflow:clip}
+#reencuentro .scrap-route .route-scene{z-index:0;pointer-events:none}
+#reencuentro .scrap-route .route-copy{position:relative;z-index:2}
+body #main #reencuentro .scrap-route .route-reading-paper{position:relative;z-index:3;background:#fbfaf3!important;opacity:1;padding:20px 24px;isolation:isolate}
+body #main #reencuentro .scrap-route .route-reading-paper h5,body #main #reencuentro .scrap-route .route-reading-paper p{position:relative;z-index:1;color:#263c30;background:transparent!important;padding:0}
+@media(max-width:999px){#caso .case-introduction{grid-template-columns:1fr}#caso .layer-case-visual .eclosion-opening{height:300px}}
+@media(max-width:599px){#caso .blackbox-map{grid-template-columns:1fr}#caso .blackbox-map .blackbox-node{padding:20px}#caso .case-introduction>.step{padding:22px}#caso .layer-case-visual .eclosion-opening{height:250px}body #main #reencuentro .scrap-route .route-reading-paper{padding:18px}}
