@@ -1,6 +1,6 @@
 # Notas personales del recorrido
 
-El botón lateral «Abrir mis notas» reúne las notas existentes de ambos caminos y agrega una nota libre. Funciona localmente sin configurar una base de datos. La copia local y la descarga siguen disponibles si Supabase falla.
+El botón lateral «Abrir mis notas» reúne las notas que tienen una consigna vigente en el recorrido. Funciona localmente sin configurar una base de datos. La copia local y la descarga siguen disponibles si Supabase falla.
 
 ## Activar la conexión
 
@@ -27,7 +27,7 @@ SDK local: `@supabase/supabase-js` 2.90.1, empaquetado con esbuild 0.25.12, IIFE
 
 «Abrir mis notas» abre un cuaderno con páginas para ideas iniciales, el caso, Podcast, Artefacto y el objeto propio. Cada recuadro conserva la consigna concreta y un único enlace a la página correspondiente del cuaderno. La escritura se realiza solo en el cuaderno; no hay otros campos visibles ni vistas previas repetidas en las actividades. El botón cambia de «Escribir» a «Revisar» cuando ya hay una nota. El cuaderno no requiere iniciar sesión para escribir y descargar.
 
-Para guardar en Supabase: abrir el cuaderno, ingresar el correo, recibir el enlace, abrirlo en el mismo navegador y pulsar «Guardar todas mis notas en mi cuenta». La acción guarda el snapshot completo, incluidas las notas de ambos caminos, la nota libre y las de la transferencia. Si se sigue editando, hay que pulsar nuevamente para actualizar la copia en la cuenta. El estado lo indica.
+Para guardar en Supabase: abrir el cuaderno, ingresar el correo, recibir el enlace, abrirlo en el mismo navegador y pulsar «Guardar todas mis notas en mi cuenta». La acción guarda el snapshot completo, incluidas las notas de ambos caminos, las de transferencia y los textos conservados de versiones anteriores. Si se sigue editando, hay que pulsar nuevamente para actualizar la copia en la cuenta. El estado lo indica.
 
 Para recuperar en otro dispositivo: abrir el sitio, abrir el cuaderno, ingresar con el mismo correo y pulsar «Recuperar mis notas». La recuperación pide confirmar antes de reemplazar la copia local y conserva una copia de respaldo previa.
 
@@ -44,3 +44,5 @@ Si el sitio se embebe en Moodle, el iframe no identifica al cursante. Para usar 
 `version-1-autoasistida/ajustes-recorrido.css` contiene los cambios acotados de transiciones: escenas sucesivas en el caso; preguntas de la caja como tarjetas desplegables que abren el cuaderno; recorte del óvalo dentro de su figura antes del audio; ilustraciones de Podcast y Artefacto debajo de tarjetas opacas. Se verificaron con movimiento normal a 1260 px y 390 px de ancho, además del cuaderno en escritorio y móvil, con persistencia y exportación completas. El flujo PKCE, guardado, recuperación, cancelación y errores de conexión se probaron con respuestas simuladas de la API; las políticas de la base se probaron contra el proyecto real en una transacción revertida.
 
 La actualización mantiene el mismo identificador de guardado local de la versión anterior. Se probó la recuperación de notas del caso, Podcast y Artefacto escritas con el HTML anterior. El cuaderno abre primero una página con notas y muestra cuántas hay en cada pestaña. El dibujo de la mano escribiendo y la paleta lavanda vinculan visualmente el botón lateral con las invitaciones del recorrido. Los recursos propios del cuaderno incluyen versión en sus URLs para evitar mezclar HTML y scripts de distintas publicaciones.
+
+El apartado «La metáfora» del cuaderno muestra solo la asociación presente en el recorrido. Se retiraron los campos «Una nota para seguir pensando» y «Una relación que te gustaría construir». Los valores anteriores de `free-note` y `larva-note` se conservan en el snapshot y en la exportación, sin volver a ofrecer esos campos de escritura.

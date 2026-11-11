@@ -4900,7 +4900,7 @@ window.metaforaNotes={
   const personal=(id,label)=>field('personal:'+id,label,personalNotes[id]);
   const branch=(path,key,label)=>field('branch:'+path+':'+key,label,state[path][key]);
   const pages=[
-   {id:'ideas',title:'Primeras ideas',fields:[personal('free-note','Una nota para seguir pensando'),personal('larva-note',C.larva.label),personal('association-note',C.concepts[0].note)]},
+   {id:'ideas',title:'La metáfora',fields:[personal('association-note',C.concepts[0].note)]},
    {id:'caso',title:'El caso',fields:[personal('case-first-note','Mi primera interpretación del caso')]},
    {id:'podcast',title:'Camino Podcast',fields:[branch('podcast','note',C.podcast.contrastLabel),branch('podcast','explanation',C.reflection.label)]},
    {id:'artefacto',title:'Camino Artefacto',fields:[branch('artefacto','relationNote','Mi relación entre dos piezas'),branch('artefacto','explanation',C.reflection.label)]},
@@ -4940,9 +4940,9 @@ window.metaforaNotes={
  }
 };
 </script>
-<link rel="stylesheet" href="ajustes-recorrido.css?v=cuaderno-3">
-<link rel="stylesheet" href="notas/notas.css?v=cuaderno-3">
-<script src="notas/config.js?v=cuaderno-3"></script>
-<script src="notas/notas.js?v=cuaderno-3"></script>
+<link rel="stylesheet" href="ajustes-recorrido.css?v=cuaderno-4">
+<link rel="stylesheet" href="notas/notas.css?v=cuaderno-4">
+<script src="notas/config.js?v=cuaderno-4"></script>
+<script src="notas/notas.js?v=cuaderno-4"></script>
 </body>
 </html>
