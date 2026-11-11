@@ -25,7 +25,7 @@ SDK local: `@supabase/supabase-js` 2.90.1, empaquetado con esbuild 0.25.12, IIFE
 
 ## Cuaderno y acceso de cursantes
 
-«Abrir mis notas» abre un cuaderno con páginas para ideas iniciales, el caso, Podcast, Artefacto y el objeto propio. Los botones «Abrir mi cuaderno» junto a las actividades abren la página correspondiente. Se puede editar en el cuaderno o en la actividad: es la misma nota. El cuaderno no requiere iniciar sesión para escribir y descargar.
+«Abrir mis notas» abre un cuaderno con páginas para ideas iniciales, el caso, Podcast, Artefacto y el objeto propio. Cada recuadro conserva la consigna concreta y un único enlace a la página correspondiente del cuaderno. La escritura se realiza solo en el cuaderno; no hay otros campos visibles ni vistas previas repetidas en las actividades. El botón cambia de «Escribir» a «Revisar» cuando ya hay una nota. El cuaderno no requiere iniciar sesión para escribir y descargar.
 
 Para guardar en Supabase: abrir el cuaderno, ingresar el correo, recibir el enlace, abrirlo en el mismo navegador y pulsar «Guardar todas mis notas en mi cuenta». La acción guarda el snapshot completo, incluidas las notas de ambos caminos, la nota libre y las de la transferencia. Si se sigue editando, hay que pulsar nuevamente para actualizar la copia en la cuenta. El estado lo indica.
 
@@ -42,3 +42,5 @@ Si el sitio se embebe en Moodle, el iframe no identifica al cursante. Para usar 
 ## Ajustes de lectura
 
 `version-1-autoasistida/ajustes-recorrido.css` contiene los cambios acotados de transiciones: escenas sucesivas en el caso; preguntas de la caja como tarjetas desplegables que abren el cuaderno; recorte del óvalo dentro de su figura antes del audio; ilustraciones de Podcast y Artefacto debajo de tarjetas opacas. Se verificaron con movimiento normal a 1260 px y 390 px de ancho, además del cuaderno en escritorio y móvil, con persistencia y exportación completas. El flujo PKCE, guardado, recuperación, cancelación y errores de conexión se probaron con respuestas simuladas de la API; las políticas de la base se probaron contra el proyecto real en una transacción revertida.
+
+La actualización mantiene el mismo identificador de guardado local de la versión anterior. Se probó la recuperación de notas del caso, Podcast y Artefacto escritas con el HTML anterior. El cuaderno abre primero una página con notas y muestra cuántas hay en cada pestaña. El dibujo de la mano escribiendo y la paleta lavanda vinculan visualmente el botón lateral con las invitaciones del recorrido. Los recursos propios del cuaderno incluyen versión en sus URLs para evitar mezclar HTML y scripts de distintas publicaciones.
