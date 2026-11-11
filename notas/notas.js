@@ -15,6 +15,15 @@
  <div class="notes-actions"><button type="button" id="my-notes-download">Descargar mi cuaderno</button></div>
 `;
  document.body.append(launcher,panel);
+ // Keep storage controls in the notebook and remove the repeated closing panel.
+ const closingNotes=document.querySelector('.journey-notes-panel'),saving=document.querySelector('.saving-panel');
+ if(saving){
+  const options=document.createElement('details'),summary=document.createElement('summary');options.className='notebook-options';summary.textContent='Opciones del cuaderno';options.append(summary,saving);panel.append(options);
+  for(const id of ['saving-title','storage-status','save-work','download-top']){const element=document.getElementById(id);if(element)element.hidden=true;}
+  saving.querySelectorAll(':scope>p.small:not(#resume-description)').forEach(element=>element.hidden=true);
+  document.getElementById('resume-work')?.addEventListener('click',()=>panel.close());
+ }
+ closingNotes?.remove();
  const q=id=>panel.querySelector('#'+id),content=q('my-notes-content'),localStatus=q('my-notes-local-status');
  function refresh(){content.textContent=bridge.text()||'Todavía no escribiste notas. Podés empezar acá o en los espacios del recorrido.';localStatus.textContent=document.getElementById('storage-status')?.textContent||'';for(const item of bridge.pages()){const button=q('notebook-tab-'+item.id);if(button){const count=item.fields.filter(field=>field.value.trim()).length;button.textContent=item.title+(count?' · '+count:'');button.setAttribute('aria-label',item.title+(count?', '+count+' notas escritas':''));}}}
  let activePage=null,opener=launcher;

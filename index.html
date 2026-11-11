@@ -3971,7 +3971,7 @@ document.addEventListener('input',e=>{if(e.target.classList.contains('personal-n
 document.addEventListener('click',e=>{const connection=e.target.closest('[data-connection]');if(connection){const i=Number(connection.dataset.connection),c=C.butterfly.connections[i];document.getElementById('connection-description').innerHTML=`<h3>${esc(c.title)}</h3><p>${esc(c.body)}</p>`;document.querySelectorAll('[data-connection]').forEach(b=>b.setAttribute('aria-pressed',Number(b.dataset.connection)===i));document.querySelectorAll('#butterfly-visual .segment').forEach(g=>{const selected=c.pair.includes(Number(g.dataset.component));g.classList.toggle('dim',!selected);g.classList.toggle('is-highlighted',selected);});}
 });
 function downloadNotes(){
- const text=notesText(),status=document.getElementById('notes-status');
+ const text=notesText(),status=document.getElementById('my-notes-local-status')||document.getElementById('notes-status')||document.getElementById('storage-status');
  if(!text){status.textContent=C.assistance.emptyNotes;status.scrollIntoView({block:'nearest'});return;}
  const blob=new Blob([text],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='mis-notas-metafora.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);
  status.textContent='La descarga de tus notas está preparada. Guardá el archivo para conservar tu copia.';
@@ -4940,8 +4940,8 @@ window.metaforaNotes={
  }
 };
 </script>
-<link rel="stylesheet" href="ajustes-recorrido.css?v=cuaderno-5">
-<link rel="stylesheet" href="notas/notas.css?v=cuaderno-5">
-<script src="notas/notas.js?v=cuaderno-5"></script>
+<link rel="stylesheet" href="ajustes-recorrido.css?v=cuaderno-6">
+<link rel="stylesheet" href="notas/notas.css?v=cuaderno-6">
+<script src="notas/notas.js?v=cuaderno-6"></script>
 </body>
 </html>
