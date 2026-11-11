@@ -1492,7 +1492,7 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
         {
           "title": "Pregunta e hipótesis inicial",
           "question": "¿Qué podría estar pasando?",
-          "body": "Retomás lo que anotaste antes de elegir un camino. Esa primera interpretación es una respuesta tentativa que vas a poder revisar.",
+          "body": "Retomás lo que anotaste al conocer el caso, antes de elegir un camino. Esa primera interpretación es una respuesta tentativa que vas a poder revisar.",
           "icon": 3
         },
         {
@@ -2118,7 +2118,7 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
     "review": "Compará tu explicación con esta lectura. ¿En qué evidencias se apoya cada una? ¿Hay alguna relación que ahora mirarías de otra manera? Podés volver a tu texto y revisarlo.",
     "feedbackTitle": "Una ayuda para revisar tu decisión",
     "feedback": "Volvé a lo que necesita aprender la persona. ¿Tu decisión ayuda a comprender el contenido, conectar partes u orientar una acción? ¿Qué podrías observar para revisar si funciona? Podés ajustar tu idea y conservar las preguntas que todavía tengas.",
-    "privacy": "Las notas se guardan únicamente en este navegador y dispositivo, si permite almacenamiento local. No se envían a Moodle ni se comparten. Si usás un equipo compartido, podés descargar tus notas y borrar la copia local al terminar.",
+    "privacy": "Las notas se guardan en este navegador, si permite almacenamiento local. Si está habilitado el acceso a tu cuenta, podés guardar y recuperar una copia desde «Abrir mis notas». No se envían a Moodle. En un equipo compartido, podés descargarlas y borrar la copia local al terminar.",
     "startSaving": "Comprobando el guardado en este navegador…",
     "saved": "Tus notas están guardadas en este navegador.",
     "pending": "Guardando tus notas…",
@@ -3840,7 +3840,7 @@ function apaReferences(items){return `<div class="apa-references">${items.map(it
 const main=document.getElementById('main');
 main.innerHTML=`<section class="hero"><span class="pill">${esc(C.hero.note)}</span><p class="eyebrow">${esc(C.hero.eyebrow)}</p><h1>${C.hero.title}</h1><p class="lead">${esc(C.hero.lead)}</p><nav class="anchors" aria-label="Secciones del recorrido"><a href="#larva">Larva</a><a href="#crisalida">Crisálida</a><a href="#caso">${esc(C.ui.caseAnchor)}</a><a href="#elegir">${esc(C.ui.chooseAnchor)}</a><a href="#investigar">${esc(C.ui.investigateAnchor)}</a><a href="#reencuentro">Reencuentro</a><a href="#mariposa">Mariposa</a><a href="#tu-objeto">Tu objeto</a></nav></section>${opening()}
 <section class="chapter" id="caso" aria-labelledby="case-title"><div class="case-introduction"><div class="step" data-stage="intro"><p class="eyebrow">01 · El caso</p><h2 id="case-title">${esc(C.case.title)}</h2><p class="lead">${esc(C.case.lead)}</p><div class="case-opening-box">${paras(C.case.paragraphs.slice(0,1))}</div><div class="audio-slot"><h3>Escuchar el caso completo</h3>${audioMarkup(C.case.audio,'Presentación completa del caso')}<p class="small">La grabación presenta el caso completo. Si preferís conocerlo por partes, podés continuar leyendo y después abrir las voces y evidencias.</p></div><details><summary>${esc(C.ui.readScript)}</summary>${paras(C.case.paragraphs)}</details></div><div class="step" data-stage="signals">${paras(C.case.paragraphs.slice(1))}<p class="quote">${esc(C.case.question)}</p><div class="workspace">${noteBox('case-first-note','Tu primera interpretación, si querés anotarla','Por ahora, pienso que…')}<p class="small">${esc(C.reflection.privacy)}</p></div></div></div><div class="eclosion-interlude">${visual()}</div>${blackboxScheme()}</section>
-<section class="chapter" id="elegir" aria-labelledby="choose-title"><p class="eyebrow">02 · Dos caminos</p><h2 id="choose-title">${esc(C.choose.title)}</h2>${investigationChoice()}<p class="choice-guidance">${esc(C.choose.note)}</p>${researchScheme()}</section>
+<section class="chapter" id="elegir" aria-labelledby="choose-title"><p class="eyebrow">02 · Dos caminos</p><h2 id="choose-title">${esc(C.choose.title)}</h2>${researchScheme()}${investigationChoice()}<p class="choice-guidance">${esc(C.choose.note)}</p></section>
 <section class="chapter" id="investigar" aria-labelledby="investigation-title"><p class="eyebrow">03 · Poner las piezas en relación</p><h2 id="investigation-title">La investigación</h2><p id="path-status" role="status">${esc(C.ui.noPath)}</p><div id="investigation-content"></div></section>
 ${ending()}`;
 
@@ -3947,6 +3947,7 @@ function notesText(){
  add(C.concepts[0].note,personalNotes['association-note']);
  add('Nota de una versión anterior del recorrido',personalNotes['self-note']);
  add('Mi primera interpretación del caso',personalNotes['case-first-note']);
+ add('Mi nota libre',personalNotes['free-note']);
  for(const path of ['podcast','artefacto']){
   const s=state[path],entries=[];
   const item=(label,value)=>{if(typeof value==='string'&&value.trim())entries.push(label+'\n'+value.trim());};
@@ -4888,5 +4889,31 @@ body #main .box-theatre .box-orbit-piece.journey-paper{position:relative;left:au
 @media(max-width:599px){.box-theatre .box-orbit-piece:last-child{flex-direction:column!important;min-height:76px}.box-theatre .box-orbit-piece:last-child>span{overflow-wrap:normal!important;hyphens:none}}
 @media(max-width:359px){.box-theatre .box-orbit-piece:nth-last-child(-n+2){grid-column:1/-1;min-height:54px;flex-direction:row!important}}
 </style><script>(()=>{const map=document.querySelector('.reading-map'),header=document.querySelector('.header'),mq=matchMedia('(max-width:999px) and (hover:none)');function place(){if(mq.matches){if(map.parentElement!==header)header.append(map)}else if(map.parentElement!==document.body)document.body.append(map)}mq.addEventListener('change',place);place()})();</script>
+<script>
+window.metaforaNotes={
+ text:()=>notesText(),
+ snapshot:()=>JSON.parse(JSON.stringify(snapshot())),
+ freeNote:()=>personalNotes['free-note']||'',
+ setFreeNote(value){personalNotes['free-note']=value;scheduleSave();},
+ download:()=>downloadNotes(),
+ restore(data){
+  if(data?.version!==1||!validNotes(data.notes)||!validNotes(data.branches)||!validNotes(data.transfer))throw Error('Copia incompatible');
+  if(Object.values(data.notes).some(value=>typeof value!=='string'))throw Error('Notas incompatibles');
+  for(const path of ['podcast','artefacto']){
+   const branch=data.branches[path];
+   if(!validNotes(branch)||!Array.isArray(branch.visited))throw Error('Camino incompatible');
+   if(path==='artefacto'&&(!Array.isArray(branch.zones)||branch.zones.length!==3||branch.zones.some(zone=>!Array.isArray(zone))))throw Error('Zonas incompatibles');
+  }
+  // Preserve a recoverable local backup before applying an explicitly chosen cloud copy.
+  localStorage.setItem(STORAGE_KEY+'-before-cloud-restore',JSON.stringify(snapshot()));
+  clearTimeout(saveTimer);restoring=true;
+  try{localStorage.setItem(STORAGE_KEY,JSON.stringify(data));location.reload();}
+  catch(error){restoring=false;throw error;}
+ }
+};
+</script>
+<link rel="stylesheet" href="notas/notas.css">
+<script src="notas/config.js"></script>
+<script src="notas/notas.js"></script>
 </body>
 </html>
