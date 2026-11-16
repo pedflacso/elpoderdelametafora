@@ -1759,7 +1759,7 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
         "paragraphs": [
           "Metáfora, en su raíz griega, significa traslado: llevar algo de un lugar a otro.",
           "En el lenguaje, ese movimiento ocurre cuando ponemos dos ámbitos en relación y usamos uno para mirar algo del otro de una manera diferente. Aristóteles (1974) vinculaba la metáfora con la capacidad de reconocer semejanzas.",
-          "La Poética fue compuesta en el siglo IV a. C. La fecha de 1974 corresponde a la edición trilingüe de Valentín García Yebra que consultamos."
+          "La obra original de la Poética se fecha aproximadamente en 335 a. C. La fecha de 1974 corresponde a la edición trilingüe de Valentín García Yebra que consultamos."
         ],
         "hint": "El traslado y las semejanzas",
         "example": {
@@ -2021,8 +2021,8 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
         "year": "1974",
         "title": "Poética de Aristóteles",
         "translator": "V. García Yebra, Ed. y Trad.; Ed. trilingüe",
-        "publisher": "Editorial Gredos.",
-        "original": "Obra compuesta en el siglo IV a. C."
+        "publisher": "Gredos.",
+        "original": "Obra original ca. 335 a. C."
       },
       {
         "author": "Borges, J. L.",
@@ -3604,7 +3604,7 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
   },
   "aristotlePopup": {
     "title": "Aristóteles · Poética de Aristóteles",
-    "reference": "Aristóteles. (1974). Poética de Aristóteles (V. García Yebra, Ed. y Trad.; Ed. trilingüe). Editorial Gredos. Obra compuesta en el siglo IV a. C.; 1974 corresponde a la edición consultada.",
+    "reference": "Aristóteles. (1974). Poética de Aristóteles (V. García Yebra, Ed. y Trad.; Ed. trilingüe). Gredos. (Obra original ca. 335 a. C.)",
     "url": "https://desarmandolacultura.wordpress.com/wp-content/uploads/2018/04/aristoteles-poetica-trilingue.pdf",
     "linkLabel": "Leer la Poética completa (PDF trilingüe)",
     "closeLabel": "Cerrar"
@@ -3868,7 +3868,7 @@ function hintMarkup(){return `<details class="help"><summary>${esc(C.assistance.
 
 
 /* Referencias APA: orden alfabético, títulos de libros en cursiva y sangría francesa. */
-function apaReferences(items){return `<div class="apa-references">${items.map(item=>`<p>${item.url?`<a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">${esc(item.author)}</a>`:bibliographyMention(item.author,item.year)} (${esc(item.year)}). <em>${esc(item.title)}</em>${item.translator?` (${esc(item.translator)})`:''}. ${esc(item.publisher)}${item.original?` (${esc(item.original)}).`:''}</p>`).join('')}</div>`;}
+function apaReferences(items){return `<div class="apa-references">${items.map(item=>`<p>${item.url?`<a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">${esc(item.author)}</a>`:bibliographyMention(item.author,item.year)} (${esc(item.year)}). <em>${esc(item.title)}</em>${item.translator?` (${esc(item.translator)})`:''}. ${esc(item.publisher)}${item.original?` (${esc(item.original)})${item.original.endsWith('.')?'':'.'}`:''}</p>`).join('')}</div>`;}
 
 const main=document.getElementById('main');
 main.innerHTML=`<section class="hero"><span class="pill">${esc(C.hero.note)}</span><p class="eyebrow">${esc(C.hero.eyebrow)}</p><h1>${C.hero.title}</h1><p class="lead">${esc(C.hero.lead)}</p><nav class="anchors" aria-label="Secciones del recorrido"><a href="#larva">Larva</a><a href="#crisalida">Crisálida</a><a href="#caso">${esc(C.ui.caseAnchor)}</a><a href="#elegir">${esc(C.ui.chooseAnchor)}</a><a href="#investigar">${esc(C.ui.investigateAnchor)}</a><a href="#reencuentro">Reencuentro</a><a href="#mariposa">Mariposa</a><a href="#tu-objeto">Tu objeto</a></nav></section>${opening()}
