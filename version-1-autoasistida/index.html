@@ -5012,5 +5012,12 @@ window.metaforaNotes={
 @media(prefers-reduced-motion:reduce){.curation-drawing{transition:none}}
 </style>
 <script>(()=>{const scenes=[...document.querySelectorAll('[data-curation-scene]')],drawings=[...document.querySelectorAll('[data-curation-drawing]')],steps=[...document.querySelectorAll('.curation-story-progress li')];function show(index){drawings.forEach((el,i)=>el.classList.toggle('is-active',i===index));steps.forEach((el,i)=>{el.classList.toggle('is-active',i===index);if(i===index)el.setAttribute('aria-current','step');else el.removeAttribute('aria-current')})}show(0);const observer=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio);if(visible[0])show(Number(visible[0].target.dataset.curationScene))},{rootMargin:'-20% 0px -20% 0px',threshold:[0,.2,.5,.8]});scenes.forEach(el=>observer.observe(el));})();</script>
+<style>
+/* El fondo animado termina con la síntesis; su leyenda participa del flujo de lectura. */
+#cierre .butterfly-summary{overflow:clip}
+#cierre .summary-conclusion{position:relative;z-index:3;display:block;max-width:720px;margin:28px auto;padding:18px 24px;background:#fbfaf3;border:1px solid #a6b69c;border-radius:20px;text-align:center;font-weight:600;transform:none}
+#cierre>.workspace,#cierre>details,#cierre>.anchors{position:relative;z-index:1}
+</style>
+<script>(()=>{const figure=document.querySelector('#cierre .butterfly-summary'),caption=figure?.querySelector('.summary-butterfly-core>p');if(!caption)return;caption.classList.add('summary-conclusion');figure.insertBefore(caption,figure.querySelector(':scope>figcaption'));})();</script>
 </body>
 </html>
