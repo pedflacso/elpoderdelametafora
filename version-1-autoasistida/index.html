@@ -2046,9 +2046,23 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
       },
       {
         "author": "Odetti, V.",
+        "year": "2013",
+        "title": "Curaduría de contenidos: límite y posibilidades de la metáfora para pensar materiales didácticos hipermediales en la educación superior en línea",
+        "publisher": "I Jornadas Nacionales y III de la UNC: experiencias e investigación en educación a distancia y tecnología educativa.",
+        "url": "https://pent.flacso.org.ar/producciones/curaduria-de-contenidos-limite-y-posibilidades-de-la-metafora-para-pensar-materiales"
+      },
+      {
+        "author": "Odetti, V.",
         "year": "2026",
         "title": "El diseño como mediación: Ideas, procesos y formatos para crear materiales didácticos digitales",
         "publisher": "Valeria Karina Odetti."
+      },
+      {
+        "author": "Schwartzman, G., & Odetti, V.",
+        "year": "2013",
+        "title": "Materiales didácticos hipermediales: una mirada desde la lectura de los estudiantes",
+        "publisher": "6.º Seminario Internacional de Educación a Distancia RUEDA, Mendoza, Argentina.",
+        "url": "https://pent.flacso.org.ar/producciones/materiales-didacticos-hipermediales-una-mirada-desde-la-lectura-de-los-estudiantes"
       }
     ],
     "infographic": {
@@ -3874,7 +3888,7 @@ function hintMarkup(){return `<details class="help"><summary>${esc(C.assistance.
 
 
 /* Referencias APA: orden alfabético, títulos de libros en cursiva y sangría francesa. */
-function apaReferences(items){return `<div class="apa-references">${items.map(item=>`<p>${bibliographyMention(item.author,item.year)} (${esc(item.year)}). <em>${esc(item.title)}</em>${item.translator?` (${esc(item.translator)})`:''}. ${esc(item.publisher)}${item.original?` (${esc(item.original)}).`:''}</p>`).join('')}</div>`;}
+function apaReferences(items){return `<div class="apa-references">${items.map(item=>`<p>${item.url?`<a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">${esc(item.author)}</a>`:bibliographyMention(item.author,item.year)} (${esc(item.year)}). <em>${esc(item.title)}</em>${item.translator?` (${esc(item.translator)})`:''}. ${esc(item.publisher)}${item.original?` (${esc(item.original)}).`:''}</p>`).join('')}</div>`;}
 
 const main=document.getElementById('main');
 main.innerHTML=`<section class="hero"><span class="pill">${esc(C.hero.note)}</span><p class="eyebrow">${esc(C.hero.eyebrow)}</p><h1>${C.hero.title}</h1><p class="lead">${esc(C.hero.lead)}</p><nav class="anchors" aria-label="Secciones del recorrido"><a href="#larva">Larva</a><a href="#crisalida">Crisálida</a><a href="#caso">${esc(C.ui.caseAnchor)}</a><a href="#elegir">${esc(C.ui.chooseAnchor)}</a><a href="#investigar">${esc(C.ui.investigateAnchor)}</a><a href="#reencuentro">Reencuentro</a><a href="#mariposa">Mariposa</a><a href="#tu-objeto">Tu objeto</a></nav></section>${opening()}
@@ -5025,7 +5039,7 @@ window.metaforaNotes={
 <script>(()=>{const figure=document.querySelector('#cierre .butterfly-summary'),caption=figure?.querySelector('.summary-butterfly-core>p');if(!caption)return;caption.classList.add('summary-conclusion');figure.insertBefore(caption,figure.querySelector(':scope>figcaption'));})();</script>
 <script>
 document.addEventListener('click',e=>{const button=e.target.closest('[data-campus]');if(!button)return;const root=button.closest('.campus-mock');root.querySelector('.campus-materiales').hidden=button.dataset.campus!=='materiales';root.querySelector('.campus-actividad').hidden=button.dataset.campus!=='actividad';root.querySelectorAll('[data-campus]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)))});
-(()=>{const article=document.getElementById('dar-forma');article.insertAdjacentHTML('beforeend',`<section class="workspace metaphor-design-example"><p class="eyebrow">Diseñar · Un ejemplo posible</p><h4>Un taller de escritura como laboratorio</h4><p>Imaginemos un objeto para revisar argumentos. La metáfora de laboratorio organiza una experiencia: formular una afirmación, probarla con evidencias, registrar qué la sostiene y volver a escribirla.</p><ol><li><strong>Pregunta:</strong> ¿qué afirmación quiero sostener?</li><li><strong>Prueba:</strong> contrasto la afirmación con fuentes y objeciones.</li><li><strong>Registro:</strong> anoto qué cambió y por qué.</li><li><strong>Revisión:</strong> produzco una nueva versión del argumento.</li></ol><p>La metáfora orienta las actividades, los recursos y la retroalimentación: cada devolución ayuda a decidir la próxima revisión. Para que funcione, las consignas explicitan qué significa «probar» un argumento.</p></section>`);})();
+(()=>{const article=document.getElementById('dar-forma');article.insertAdjacentHTML('beforeend',`<section class="workspace metaphor-design-example" aria-labelledby="metaphor-case-title"><p class="eyebrow">Diseñar · Una metáfora en acción</p><h4 id="metaphor-case-title">Explorar un sistema solar para estudiar un problema</h4><p>En el posgrado del PENT-FLACSO, un material sobre propiedad y circulación del conocimiento en la web se organizó como un sistema solar. La lectura requería explorar y decidir por dónde seguir.</p><figure class="solar-case-map"><div class="solar-case-orbit" aria-hidden="true"><span class="solar-core">${sketchSymbol(0)}</span><span class="solar-planet solar-planet-a"></span><span class="solar-planet solar-planet-b"></span><span class="solar-planet solar-planet-c"></span></div><figcaption>Panorama → elección de un tema → profundización → nuevo recorrido</figcaption><p class="small">Esquema explicativo del caso.</p></figure><dl class="metaphor-action-map"><div><dt>Ver el sistema</dt><dd>Reconocer el conjunto antes de elegir una entrada.</dd></div><div><dt>Acercarse a un planeta</dt><dd>Profundizar en un tema y sus textos, audios o videos.</dd></div><div><dt>Definir una ruta</dt><dd>Construir una secuencia propia entre los temas.</dd></div></dl><h5>¿Qué hicieron los estudiantes?</h5><p>El estudio recoge distintas estrategias: empezar por el planeta de Copyright y continuar en sentido horario, guardar capturas para regresar a puntos de interés y volver sobre los materiales.</p><p class="note">La metáfora convirtió la lectura en decisiones de exploración. También hubo desorientación: las pistas y los apoyos seguían siendo necesarios.</p><p class="small">Caso y experiencias de lectura documentados por <a href="https://pent.flacso.org.ar/producciones/materiales-didacticos-hipermediales-una-mirada-desde-la-lectura-de-los-estudiantes" target="_blank" rel="noopener noreferrer">Schwartzman y Odetti (2013)</a>. El trabajo es una aproximación exploratoria a las experiencias de los estudiantes; no una medición de mejora del aprendizaje.</p><details class="second-metaphor-case"><summary>Otro caso: Alicia cae al pozo</summary><p>Para abordar el espacio hipermedial y los nuevos materiales, el PENT propuso recorridos personales entre recursos, acompañados por pistas del Gato de Cheshire. La caída de Alicia expresaba un cambio de lógica: entrar a las nuevas narrativas exigía revisar las formas habituales de leer.</p><p>La metáfora enlazaba el contenido con la experiencia de recorrerlo: explorar, seguir pistas y construir relaciones.</p><p class="small">Paráfrasis del caso presentado por <a href="https://pent.flacso.org.ar/producciones/curaduria-de-contenidos-limite-y-posibilidades-de-la-metafora-para-pensar-materiales" target="_blank" rel="noopener noreferrer">Odetti (2013)</a>.</p></details><p class="quote">Al volver a tu objeto: ¿qué decisión de quien aprende podría ayudar a organizar la metáfora que estás considerando?</p></section>`);})();
 </script>
 <style>
 .reading-phase-label{display:block;font-size:.8rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin:0 0 14px;color:#513b53}
@@ -5093,6 +5107,16 @@ document.addEventListener('click',e=>{const button=e.target.closest('[data-campu
 .curation-atelier figcaption{margin-top:16px!important}
 @media(min-width:1000px){.curation-atelier{top:105px}.curation-atelier .odetti-illustration{max-height:49svh;aspect-ratio:1;margin:auto;max-width:49svh}}
 @media(max-width:700px){.mobile-atelier{aspect-ratio:auto;min-height:0;padding:0 4px 15px;background:#f5f2e5}.mobile-atelier .atelier-scene.odetti-illustrated-scene{position:relative;inset:auto;padding:4px}.mobile-atelier .odetti-illustration{aspect-ratio:1}.mobile-atelier .odetti-meaning-strip{gap:8px;font-size:.7rem}.mobile-atelier .odetti-meaning-strip>span:not([aria-hidden]){padding:6px 9px}.entry-notebook[open] .cover-folio{height:100px;margin:10px 0}}
+</style>
+<style>
+.metaphor-design-example h4{font-size:1.5rem;line-height:1.35}.metaphor-design-example h5{font-size:1.1rem;margin:28px 0 14px}.metaphor-design-example{max-width:100%;box-sizing:border-box}
+.solar-case-map{margin:28px 0;padding:22px 16px;background:#e5e9d8;border-radius:6px 18px 10px 22px;border:1px solid #bfccb2;text-align:center}
+.solar-case-orbit{position:relative;width:220px;height:150px;margin:0 auto 20px;border:1.5px dashed #8c758b;border-radius:50%;transform:rotate(-14deg)}
+.solar-core{position:absolute;left:81px;top:42px;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:#f5e9c8;box-shadow:0 0 0 10px #f5e9c840}.solar-core .sketchbook-icon{width:38px!important;height:38px!important;transform:rotate(14deg)}
+.solar-planet{position:absolute;border:1px solid #789079;border-radius:44% 52% 48% 50%;background:#b4c6ac;box-shadow:inset -6px -5px 0 #53654d20}.solar-planet-a{width:36px;height:36px;left:4px;top:19px}.solar-planet-b{width:29px;height:29px;right:-8px;top:62px;background:#cfb9cf}.solar-planet-c{width:24px;height:24px;left:52px;bottom:-6px;background:#a8c6c6}
+.solar-case-map figcaption{font-size:.95rem!important;padding:0!important;background:transparent!important;position:relative!important}.solar-case-map>.small{margin:12px 0 0;font-size:.8rem}
+.metaphor-action-map{margin:25px 0;display:grid;gap:14px}.metaphor-action-map>div{padding:18px;background:#f5f0df;border-left:4px solid #789079;border-radius:4px 14px 8px 10px}.metaphor-action-map dt{font-weight:700;margin-bottom:8px}.metaphor-action-map dd{margin:0;line-height:1.6}.second-metaphor-case{margin:24px 0}
+@media(max-width:700px){.metaphor-design-example{padding:22px 18px!important}.solar-case-map{padding:18px 10px}.solar-case-orbit{width:180px;height:130px}.solar-core{left:63px;top:33px}.metaphor-action-map>div{padding:15px}}
 </style>
 </body>
 </html>
