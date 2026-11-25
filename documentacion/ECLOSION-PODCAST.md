@@ -33,3 +33,7 @@ CHROMIUM_PATH=/usr/bin/chromium node documentacion/pruebas/eclosion-podcast.cjs
 ```
 
 Se puede cambiar la dirección con `TEST_BASE_URL` y usar el Chromium instalado por Playwright omitiendo `CHROMIUM_PATH`. La prueba cubre escritorio, tableta y móvil, movimiento reducido, todos los contenidos sin clics de navegación, ausencia de desbordamiento horizontal, reproducción manual, persistencia y recuperación de notas anteriores.
+
+## Controles simulados y acciones reales
+
+Los controles representados dentro del aula y del OA son etiquetas no interactivas con borde punteado y la marca visible «Simulado». No son botones, enlaces ni paradas de teclado. El contenido correspondiente permanece disponible al seguir bajando. Los controles de audio, el guardado del ensayo, la salida y la revisión de la hipótesis siguen siendo acciones reales; los botones de estas últimas acciones usan azul sólido. El índice vertical sigue funcionando como acceso opcional a los tramos. Una aclaración permanente al pie distingue ambos tipos.

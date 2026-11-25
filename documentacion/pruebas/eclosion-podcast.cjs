@@ -20,15 +20,23 @@ const base=process.env.TEST_BASE_URL||'http://127.0.0.1:3000/';
    assert.equal(await page.locator('#lab-guide .case-guide-criteria li').count(),3);
    assert.equal(await page.locator('#case-lab-dialog details:not([open])').count(),0);
    assert(await page.locator('#case-lab-dialog').evaluate(dialog=>{const ids=[...dialog.querySelectorAll('[id]')].map(el=>el.id);return ids.length===new Set(ids).size;}));
+   assert((await page.locator('.case-simulated-control').count())>0);
+   assert.equal(await page.locator('.case-simulated-control:is(a,button,[tabindex],[role="button"])').count(),0);
+   assert.equal(await page.locator('.case-simulated-control:not(:has(.case-simulated-badge))').count(),0);
+   const firstSimulated=page.locator('.case-simulated-control').first();await firstSimulated.evaluate(el=>{const pane=document.getElementById('case-lab-content');pane.scrollTop+=el.getBoundingClientRect().top-pane.getBoundingClientRect().top-100;});
+   const before=await page.locator('#case-lab-content').evaluate(pane=>pane.scrollTop);await firstSimulated.click();assert.equal(await page.locator('#case-lab-content').evaluate(pane=>pane.scrollTop),before);
    const pane=page.locator('#case-lab-content');let insideClicks=0;await page.exposeFunction('recordCaseClick',()=>insideClicks++);await page.locator('#case-lab-dialog').evaluate(dialog=>dialog.addEventListener('click',()=>window.recordCaseClick()));
    for(const id of ['maria','objeto','docente','aula','marcos','registro','hipotesis']){
     await pane.evaluate((pane,id)=>{const target=document.getElementById('case-step-'+id);pane.scrollTo({top:target.getBoundingClientRect().top-pane.getBoundingClientRect().top+pane.scrollTop,behavior:'instant'});},id);
-    await page.waitForTimeout(100);assert.equal(await page.locator('.case-scroll-rail [aria-current]').getAttribute('data-case-stage'),id);
+    await page.waitForFunction(id=>document.querySelector('.case-scroll-rail [aria-current]')?.dataset.caseStage===id,id,{timeout:5000});
     assert(await pane.evaluate(el=>el.scrollWidth<=el.clientWidth+1));
    }
    assert.equal(insideClicks,0,'Scrolling through all information must not require navigation clicks');
    assert(await page.locator('#case-lab-dialog audio').evaluateAll(audios=>audios.every(audio=>audio.paused&&!audio.autoplay)));
    const rail=await page.locator('.case-scroll-rail').boundingBox();assert(rail.height>rail.width,'Navigation must be vertical');
+   await page.locator('#case-oa-answer').fill('Ensayo guardado desde una acción real');await page.locator('[data-lab-save-oa]').click();
+   assert.equal(await page.evaluate(()=>personalNotes['case-oa-analysis']),'Ensayo guardado desde una acción real');
+   assert((await page.locator('#case-oa-save-status').textContent()).includes('conservado en tu cuaderno'));
    await page.locator('#case-lab-dialog [data-lab-close]').click();
    await page.locator('#open-my-notes').click();assert.equal(await page.locator('#notebook-tab-artefacto').count(),0);
    await page.locator('#notebook-tab-podcast').click();await page.locator('[data-note-key="branch:podcast:explanation"]').fill('Mi explicación en la investigación unificada');await page.waitForTimeout(450);await page.reload();
