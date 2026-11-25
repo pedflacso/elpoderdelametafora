@@ -1414,7 +1414,7 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
     "title": "El caso",
     "lead": "Vamos a investigar cómo se articulan una actividad, sus materiales y las orientaciones para realizarla. Las voces de un podcast nos acompañan para recorrer el escenario y contrastar los indicios.",
     "paragraphs": [
-      "La Licenciada Martínez prepara el objeto de aprendizaje “Analizar una propuesta de enseñanza” para una formación docente. Dentro del objeto, una actividad pide analizar una situación escolar utilizando los criterios de una guía.",
+      "La Licenciada Martínez prepara el trabajo práctico “Información en las redes sociales: confiabilidad de las fuentes.” en un objeto de aprendizaje. La consigna pide analizar una fuente periodística sobre IA utilizando los criterios de una guía y entregar un informe en el buzón de la actividad.",
       "Durante una prueba, algunas personas llegan a la actividad y se detienen sin saber cómo seguir. Otras logran resolverla después de buscar los materiales que necesitan.",
       "Vas a poder recorrer el objeto y el aula Moodle donde está publicado, consultar sus documentos y escuchar tres perspectivas. Todavía necesitamos poner esas piezas en relación para explicar qué ocurrió."
     ],
@@ -1535,7 +1535,7 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
     {
       "id": "consigna",
       "title": "Actividad dentro del OA",
-      "body": "El objeto “Analizar una propuesta de enseñanza” contiene una situación escolar, una consigna y un espacio de respuesta. Recorré esas pantallas para ver qué encuentra quien aprende.",
+      "body": "El objeto reúne un trabajo práctico con una fuente periodística, una consigna, criterios de evaluación y un buzón de entrega. La consigna pide usar una guía que no está adjunta ni enlazada en ese espacio de actividad.",
       "question": "¿Qué necesita consultar quien llega a esta consigna? ¿Cómo puede reconocerlo?",
       "source": "Escenario didáctico ficticio, construido para investigar decisiones de diseño."
     },
@@ -1556,7 +1556,7 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
     {
       "id": "guia",
       "title": "Guía de análisis",
-      "body": "Documento con tres criterios: coherencia con el propósito, recursos necesarios y producción esperada. Abrilo para contrastar la guía con la actividad del objeto.",
+      "body": "Documento con tres criterios para analizar fuentes: autoría y contexto, respaldo de las afirmaciones y contraste con otras fuentes. Está publicado en Materiales de la unidad, fuera del espacio del trabajo práctico.",
       "question": "¿Qué aporta cada criterio para resolver lo pedido?",
       "source": "Documento didáctico ficticio, parte del escenario del caso."
     }
@@ -4930,7 +4930,7 @@ window.metaforaNotes={
   const branch=(path,key,label)=>field('branch:'+path+':'+key,label,state[path][key]);
   const pages=[
    {id:'ideas',title:'La metáfora',fields:[personal('association-note',C.concepts[0].note),personal('design-note','Una posibilidad para mi objeto de aprendizaje'),personal('curation-note','Relaciones y pistas para quien aprende')]},
-   {id:'caso',title:'El caso',fields:[personal('case-first-note','Mi primera interpretación del caso'),personal('case-oa-analysis','Mi ensayo dentro del OA del caso')]},
+   {id:'caso',title:'El caso',fields:[personal('case-first-note','Mi primera interpretación del caso'),personal('case-oa-analysis','Mis notas sobre el trabajo práctico del caso')]},
    {id:'podcast',title:'Investigación del caso',fields:[branch('podcast','note',C.podcast.contrastLabel),branch('podcast','explanation',C.reflection.label)]},
    {id:'objeto',title:'Mi objeto',fields:[personal('need-note',C.transfer.needLabel),personal('organize-note',C.transfer.organizeLabel),...C.transfer.choices.flatMap(choice=>choice.fields.map((label,i)=>field('transfer:'+choice.id+':'+i,choice.title+' · '+label,transferState[choice.id][i])))]}
   ];
@@ -4968,9 +4968,9 @@ window.metaforaNotes={
  }
 };
 </script>
-<link rel="stylesheet" href="ajustes-recorrido.css?v=podcast-scroll-3">
-<link rel="stylesheet" href="notas/notas.css?v=podcast-scroll-3">
-<script src="notas/notas.js?v=podcast-scroll-3"></script>
+<link rel="stylesheet" href="ajustes-recorrido.css?v=podcast-scroll-4">
+<link rel="stylesheet" href="notas/notas.css?v=podcast-scroll-4">
+<script src="notas/notas.js?v=podcast-scroll-4"></script>
 <style>
 .research-cycle-section .research-cycle{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px!important;padding:0!important;isolation:isolate}
 .research-cycle-section .research-cycle .research-cycle-core{position:relative!important;top:auto!important;grid-column:1/-1!important;grid-row:auto!important;min-height:0!important;max-width:480px;width:100%;box-sizing:border-box;margin:0 auto 16px!important;align-self:start}
@@ -5222,5 +5222,5 @@ body.case-lab-open{overflow:hidden}
 </style></body>
 </html>
 
-<link rel="stylesheet" href="caso-podcast.css?v=podcast-scroll-3">
-<script src="caso-podcast.js?v=podcast-scroll-3"></script>
+<link rel="stylesheet" href="caso-podcast.css?v=podcast-scroll-4">
+<script src="caso-podcast.js?v=podcast-scroll-4"></script>
