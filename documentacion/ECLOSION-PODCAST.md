@@ -4,15 +4,17 @@ La versión vigente usa un solo entorno para investigar el caso de la Licenciada
 
 ## Simulación por scroll
 
-`version-1-autoasistida/caso-podcast.js` presenta un continuo con siete tramos:
+`version-1-autoasistida/caso-podcast.js` presenta un continuo con nueve tramos:
 
 1. El testimonio de María.
 2. El trabajo práctico completo: fuente periodística, consigna, producción, criterios de evaluación y buzón de entrega.
 3. La perspectiva de la Licenciada Martínez.
-4. El aula Moodle y los materiales visibles, sin la guía requerida por la actividad.
+4. El aula Moodle de la Unidad 3 y sus materiales visibles, sin la guía requerida por la actividad.
 5. La experiencia de Marcos.
-6. El registro del caso.
-7. La revisión de la hipótesis.
+6. Una pantalla del aula en la Unidad 1, con un recuadro de ubicación y la Guía de análisis entre sus materiales de consulta.
+7. Un recuadro independiente que explica el desajuste entre la actividad de la Unidad 3 y el recurso de la Unidad 1.
+8. El registro del caso, con el retorno a la Unidad 1.
+9. La revisión de la hipótesis.
 
 La barra horizontal se reemplazó por un índice vertical. Marca el tramo visible y ofrece enlaces opcionales para volver a un punto. No hay que pulsar controles para descubrir pantallas, testimonios o documentos. El contenido no se oculta por animación: permanece disponible para lectura, teclado y tecnologías de asistencia. Los audios no se reproducen automáticamente.
 
@@ -42,6 +44,12 @@ Los elementos representados dentro del aula y del OA son textos pequeños y aten
 
 La actividad aprobada para nivel superior pide seleccionar dos fuentes sobre IA y educación de la Guía de análisis, comparar su autoría, afirmaciones, evidencias, coincidencias, diferencias y límites, y fundamentar la confiabilidad de las fuentes y la validez de sus afirmaciones. La entrega solicitada es un texto de 800 a 1.000 palabras en PDF o DOCX, en el buzón del aula representada.
 
-La guía contiene, según la consigna, tanto las fuentes como los criterios para contrastarlas. No se muestra la guía ni se ofrecen las fuentes por separado en el aula representada. Se retiraron el fragmento periodístico anterior, su enlace y el documento antes incorporado a Materiales. El buzón representa una actividad del caso y no recibe archivos reales de quien recorre el módulo.
+La guía contiene, según la consigna, tanto las fuentes como los criterios para contrastarlas. La guía no aparece en el trabajo práctico ni entre los materiales de la Unidad 3. Después de Marcos, una pantalla separada representa su ubicación en la Unidad 1, sin un enlace de apertura ficticio ni fuentes por separado. Al continuar con el scroll, otro recuadro explica el error de ubicación. Se retiraron el fragmento periodístico anterior, su enlace y el documento antes incorporado a la unidad de la actividad. El buzón representa una actividad del caso y no recibe archivos reales de quien recorre el módulo.
 
-Los audios y sus testimonios se conservan sin cambios. La reconstrucción distingue lo que dicen la docente y Marcos de los accesos que efectivamente muestra el escenario. La guía mencionada constituye un indicio del recurso necesario y de su ausencia, no un documento que se haya leído.
+Los audios y sus testimonios se conservan sin cambios. La reconstrucción distingue lo que dicen la docente y Marcos de los accesos que efectivamente muestra el escenario. La tarjeta de la guía en la Unidad 1 constituye un indicio de su ubicación, no un documento que se haya leído. La reconstrucción y el registro reflejan esa ubicación sin cambiar los testimonios grabados.
+
+## Cuaderno dentro del caso
+
+El botón permanente y el acceso del cierre usan la misma mano, paleta rosa, tipografía y forma que las entradas al cuaderno fuera del entorno. Abren el mismo diálogo y la misma página de investigación, sin cerrar el aula. Los audios se pausan al abrir las notas; al cerrar el cuaderno, el foco vuelve al botón que lo abrió. El contenido y las claves de guardado se conservan.
+
+Las dos pantallas nuevas se dimensionan con la altura del panel de lectura para separar la observación del aula y la explicación del desajuste. No requieren clics ni ocultan información para producir el efecto de avance.

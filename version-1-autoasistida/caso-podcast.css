@@ -61,3 +61,28 @@
 #case-lab-dialog .case-delivery{border-top:2px solid #aebdd0;margin-top:30px;padding-top:8px}
 .case-delivery-slot{display:flex;align-items:flex-start;gap:16px;padding:22px;border:1px solid #bcc7d4;border-radius:5px;background:#f3f5f7}.case-delivery-icon{display:block;flex:0 0 38px;color:#647080}.case-delivery-icon svg{width:38px;height:38px}.case-delivery-slot p{margin:0 0 8px}.case-oa-context{font-size:.85rem;margin:0;color:#425d7a}
 @media(max-width:520px){#case-lab-dialog .case-simulated-control{font-size:.72rem;padding:0}#case-lab-dialog .case-tp{padding:17px 13px}#case-lab-dialog .case-tp .news-headline{padding:16px 14px}.case-delivery-slot{padding:16px 12px;gap:10px}.case-delivery-icon{flex-basis:28px}.case-delivery-icon svg{width:28px;height:28px}#case-lab-dialog .case-tp p,#case-lab-dialog .case-tp li{font-size:.9rem}}
+/* El cuaderno conserva su identidad editorial también dentro de la simulación. */
+#case-lab-dialog .notebook-entry{display:inline-flex;align-items:center;justify-content:center;gap:12px;max-width:100%;box-sizing:border-box;min-height:54px;margin:5px 0 10px;padding:10px 18px!important;border:1px solid #a18196!important;border-radius:28px!important;background:#eadae4!important;color:#603c54!important;font:600 14px/1.4 Roboto,sans-serif!important;text-align:left;white-space:normal;cursor:pointer!important;box-shadow:none}
+#case-lab-dialog .notebook-entry:before{content:'';display:block;width:52px;height:36px;flex-shrink:0;background:url('imagenes/scrap/mano-escritura.png') center/contain no-repeat}
+#case-lab-dialog .notebook-entry:hover{background:#dfcbd8!important;color:#603c54!important}
+#case-lab-dialog.case-scroll-dialog .case-lab-footer .notebook-entry{margin:0;flex-shrink:1}
+#case-lab-dialog .case-segmented-screen{box-sizing:border-box;min-height:var(--case-pane-height,65svh);padding-top:32px;padding-bottom:56px}
+#case-lab-dialog .case-unit-location{display:flex;flex-direction:column;gap:3px;margin-left:auto;padding:10px 18px;border:2px solid #7892af;border-radius:6px;background:#fff;color:#233b59;font-weight:700;font-size:.95rem;line-height:1.35}
+#case-lab-dialog .case-unit-location small{font-size:.72rem;font-weight:400;color:#5a6c80}
+#case-lab-dialog .case-unit-selected{padding:10px 12px;background:#e1e8f1;color:#233b59;border-left:3px solid #567da8;font-weight:700;line-height:1.4}
+#case-lab-dialog .case-guide-location{background:#f8fafc;border:1px solid #c0ccda;border-radius:6px;padding:22px}
+#case-lab-dialog .case-guide-location h4{color:#233b59;font-size:1.12rem;margin:10px 0}
+#case-lab-dialog .case-location-mismatch{background:#fffdf8;border:2px solid #b69572;border-left:6px solid #b07b43;border-radius:10px;padding:clamp(20px,3vw,36px);color:#25354b}
+#case-lab-dialog .case-location-mismatch>h3{font-size:clamp(1.25rem,2vw,1.65rem);line-height:1.4;color:#233b59;margin:12px 0 26px}
+#case-lab-dialog .case-location-comparison{display:grid;grid-template-columns:minmax(0,1fr) 36px minmax(0,1fr);align-items:center;gap:14px;margin:24px 0 28px}
+#case-lab-dialog .case-location-comparison>div{padding:22px;background:#edf2f8;border:1px solid #b7c6d8;border-radius:6px;min-width:0;align-self:stretch}
+#case-lab-dialog .case-location-comparison>div>span{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#526b89}
+#case-lab-dialog .case-location-comparison h4{font-size:1.05rem;line-height:1.4;color:#233b59;margin:14px 0}
+#case-lab-dialog .case-location-comparison p,#case-lab-dialog .case-location-mismatch>p{font-size:.95rem;line-height:1.7}
+.case-location-distance{text-align:center;font-size:1.7rem;color:#7c6043}
+#case-lab-dialog .case-mismatch-question{border-top:1px solid #d3c3b1;padding-top:20px;font-weight:600}
+@media(max-width:800px){#case-lab-dialog .case-location-comparison{grid-template-columns:minmax(0,1fr);gap:12px}.case-location-distance{transform:rotate(90deg)}#case-lab-dialog .case-unit-location{margin-left:0}#case-lab-dialog .case-unit-location small{display:block}}
+@media(max-width:520px){#case-lab-dialog .case-location-comparison>div,#case-lab-dialog .case-guide-location{padding:16px 12px}#case-lab-dialog .case-location-mismatch{padding:20px 14px}#case-lab-dialog.case-scroll-dialog .case-lab-footer .notebook-entry{max-width:170px;font-size:13px!important;padding:8px 12px!important;gap:8px}#case-lab-dialog.case-scroll-dialog .case-lab-footer .notebook-entry:before{width:40px;height:30px}#case-lab-dialog .case-unit-location{width:100%;box-sizing:border-box}}
+
+#case-lab-dialog .case-prior-unit-bar .case-unit-location{width:100%;box-sizing:border-box;margin:0}
+@media(min-width:801px){#case-lab-dialog #case-step-unidad1>.case-step-number{margin-bottom:10px}#case-lab-dialog #case-step-unidad1>h2{font-size:1.7rem;margin-bottom:18px}#case-lab-dialog #case-step-unidad1 .moodle-breadcrumb{padding:10px 20px}#case-lab-dialog #case-step-unidad1 .case-unit-location{padding:8px 16px}#case-lab-dialog #case-step-unidad1 .moodle-course-content{padding:20px 24px}#case-lab-dialog #case-step-unidad1 .moodle-label{margin:0 0 10px}#case-lab-dialog #case-step-unidad1 .moodle-course-content>h2{font-size:1.4rem;margin:0 0 18px}#case-lab-dialog #case-step-unidad1 .moodle-unit-section{padding:18px;margin-bottom:0}#case-lab-dialog #case-step-unidad1 .moodle-unit-section>h3{margin:0 0 18px}#case-lab-dialog #case-step-unidad1 .case-guide-location{padding:16px}#case-lab-dialog #case-step-unidad1 .case-guide-location p{margin:0;font-size:.9rem}}
