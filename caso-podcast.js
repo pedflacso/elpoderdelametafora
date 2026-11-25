@@ -44,7 +44,7 @@ function pause(){dialog.querySelectorAll('audio').forEach(audio=>audio.pause());
 function go(id,focus=false){const target=content.querySelector('#'+id);if(!target)return;const top=target.getBoundingClientRect().top-content.getBoundingClientRect().top+content.scrollTop-20;content.scrollTo({top,behavior:'instant'});if(focus){const heading=target.querySelector('h2,h3,h4')||target;heading.tabIndex=-1;heading.focus({preventScroll:true});}schedule();}
 function close(){pause();dialog.close();document.body.classList.remove('case-lab-open');}
 function open(next='overview'){
- returnFocus=document.activeElement;if(state.path!=='podcast')selectPathWithoutJump('podcast');document.querySelectorAll('audio').forEach(audio=>audio.pause());
+ returnFocus=document.activeElement;if(state.path!=='podcast')selectPathWithoutJump('podcast');checkpoint='caso';userNavigated=true;scheduleSave();document.querySelectorAll('audio').forEach(audio=>audio.pause());
  const answer=content.querySelector('#case-oa-answer');if(answer)answer.value=personalNotes['case-oa-analysis']||'';
  if(!dialog.open)dialog.showModal();document.body.classList.add('case-lab-open');content.focus({preventScroll:true});
  let target=routes[next]||'case-step-maria';if(next.startsWith('voice:')){const index=C.voices.findIndex(voice=>voice.id===next.slice(6));target=['case-step-maria','case-step-docente','case-step-marcos'][index]||target;}
