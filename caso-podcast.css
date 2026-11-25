@@ -45,3 +45,19 @@
 #case-lab-dialog [data-lab-close]:hover,#case-lab-dialog [data-lab-final]:hover,#case-lab-dialog [data-lab-save-oa]:hover{background:#244465!important;border-color:#244465!important}
 #case-lab-dialog [data-lab-save-oa]{box-shadow:0 2px 0 #233b5922}
 @media(max-width:520px){#case-lab-dialog .case-simulated-control{gap:5px;font-size:.75rem;padding:7px 9px}#case-lab-dialog .moodle-breadcrumb{gap:6px;flex-wrap:wrap}#case-lab-dialog .case-simulated-badge{font-size:.6rem}}
+/* Los elementos del aula enmarcan la escena como texto; no parecen controles. */
+#case-lab-dialog .case-simulated-control{display:inline-block;margin:3px 10px 3px 0;padding:0;border:0;border-radius:0;background:transparent;color:#647080;font-size:.74rem;line-height:1.5;cursor:default!important;box-shadow:none;text-decoration:none}
+#case-lab-dialog .moodle-breadcrumb .case-simulated-control{padding:0;margin:0;font-size:.72rem}
+#case-lab-dialog .moodle-course-nav>.case-simulated-control{padding:5px 0;margin:0;width:100%;font-size:.76rem}
+#case-lab-dialog .case-tp{margin:0 auto 20px;padding:clamp(18px,3vw,38px);max-width:900px;border:1px solid #c4c9cf;background:#fffefa;box-shadow:2px 4px 0 #d8dee5}
+#case-lab-dialog .case-tp-header{padding-bottom:22px;margin-bottom:25px;border-bottom:1px solid #c9cdd3}
+#case-lab-dialog .case-tp-header h2{font-size:clamp(1.35rem,2.4vw,1.85rem);line-height:1.35;color:#233b59;margin:0 0 16px}
+#case-lab-dialog .case-tp h3{font-size:1.12rem;line-height:1.4;margin:26px 0 16px;color:#233b59}
+#case-lab-dialog .case-tp p,#case-lab-dialog .case-tp li{font-size:.95rem;line-height:1.75}
+#case-lab-dialog .case-tp li{margin-bottom:12px}.case-tp-steps{padding-left:25px}
+#case-lab-dialog .case-tp .news-source-meta{font-size:.8rem;color:#526276;line-height:1.6}.news-source-kind{font-size:.8rem!important;font-weight:600;color:#526276}
+#case-lab-dialog .case-tp .news-headline{font-size:clamp(1.15rem,2vw,1.5rem);font-weight:600;line-height:1.5;padding:20px 24px;margin:16px 0;background:#edf2f8;border-left:4px solid #567da8;color:#233b59}
+#case-lab-dialog .case-source-link{display:inline-block;color:#244b7a;text-decoration:underline;font-size:.85rem;line-height:1.5;padding:7px 0;text-underline-offset:3px}
+#case-lab-dialog .case-delivery{border-top:2px solid #aebdd0;margin-top:30px;padding-top:8px}
+.case-delivery-slot{display:flex;align-items:flex-start;gap:16px;padding:22px;border:1px solid #bcc7d4;border-radius:5px;background:#f3f5f7}.case-delivery-icon{display:block;flex:0 0 38px;color:#647080}.case-delivery-icon svg{width:38px;height:38px}.case-delivery-slot p{margin:0 0 8px}.case-oa-context{font-size:.85rem;margin:0;color:#425d7a}
+@media(max-width:520px){#case-lab-dialog .case-simulated-control{font-size:.72rem;padding:0}#case-lab-dialog .case-tp{padding:17px 13px}#case-lab-dialog .case-tp .news-headline{padding:16px 14px}.case-delivery-slot{padding:16px 12px;gap:10px}.case-delivery-icon{flex-basis:28px}.case-delivery-icon svg{width:28px;height:28px}#case-lab-dialog .case-tp p,#case-lab-dialog .case-tp li{font-size:.9rem}}
