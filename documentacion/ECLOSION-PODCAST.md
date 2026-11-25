@@ -58,3 +58,11 @@ Las dos pantallas nuevas se dimensionan con la altura del panel de lectura para 
 Se eliminaron la etapa del registro, sus dos recorridos y su entrada en el índice y en la selección de evidencias. Las referencias del cierre y de la síntesis se apoyan ahora en los testimonios, la consigna y la ubicación de la guía. La ruta antigua `log` remite al cierre, y una selección guardada de la evidencia retirada se normaliza al recuperar el estado. Se conservan los textos de las notas.
 
 Consigna final: «Registrá en tu cuaderno qué pudiste comprender durante la investigación y qué indicios sostienen tu explicación».
+
+## Caja negra: preguntas sobre el diseño
+
+La leyenda bajo el título recupera los seis componentes del OA sin volver a definirlos. La caja deja de desplegar tarjetas con sus nombres y acompaña cuatro preguntas en presente: qué encuentra quien aprende, qué recorrido propone el diseño, qué relaciones necesita construir y qué orientaciones ofrece el OA.
+
+Las tarjetas conservan una pregunta y una explicación breve; se retiraron el párrafo duplicado, los cuatro accesos repetidos al cuaderno y la lectura que volvía a enumerarlas. La apertura avanza por scroll, manteniendo disponible el control de teclado de cada desplegable. La ilustración acompaña las tarjetas en escritorio; en móvil se dispone antes de ellas. Con movimiento reducido se conserva la apertura sin animación.
+
+Prueba específica: `documentacion/pruebas/preguntas-diseno.cjs`, en 1365, 768 y 390 píxeles, verifica leyenda, ausencia de tarjetas de componentes, redacción en presente, apertura sucesiva y ausencia de desbordamiento o errores de JavaScript.

@@ -10,7 +10,7 @@ Fuente: documento «INDICACIONES REUNION NOVIEMBRE.docx» recibido el 25 de novi
 - Los componentes de Crisálida comparten color base y se destacan al relacionarse. Nombrar, Relacionar y Diseñar siguen en el primer nivel; sus desarrollos permanecen debajo.
 - Mapa del río integrado a la lectura: cuatro fichas continuas, mapa lateral en escritorio, enlaces opcionales e indicador de la parada visible. Sin ventanas obligatorias.
 - Desplegables de contenido abiertos al llegar por scroll; los controles de almacenamiento del cuaderno conservan su interacción propia.
-- Caja negra abierta con sus componentes, sin botón «Reunir las piezas». Leyenda y preguntas conectadas con las decisiones de diseño.
+- Caja negra dedicada a las preguntas de diseño, sin botón «Reunir las piezas». Los componentes se recuperan en la leyenda y las cuatro preguntas en presente se despliegan al avanzar con el scroll.
 - Invitación simplificada, hipótesis después de la presentación, propósito y cierre alineados con el podcast; retiradas referencias residuales a dos decisiones curatoriales.
 
 Pruebas: `documentacion/pruebas/reunion-noviembre.cjs` y `documentacion/pruebas/eclosion-podcast.cjs`, con escritorio, tableta, móvil, movimiento reducido y recuperación de notas.

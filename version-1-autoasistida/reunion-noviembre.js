@@ -24,14 +24,38 @@
  }
  flattenNotes();
  main.querySelectorAll('.crisalida-notebook,.curation-notebook').forEach(el=>el.classList.add('notebook-prompt-sheet'));
- const box=document.querySelector('.blackbox-core');if(box){box.classList.add('box-open');const layer=box.closest('.layer-blackbox');if(layer)layer.dataset.autoOpened='true';const disclosure=box.querySelector('.box-discovery');if(disclosure)disclosure.hidden=false;box.querySelector('.box-open-button')?.remove();}
- const theatre=document.querySelector('.box-theatre');if(theatre){theatre.removeAttribute('tabindex');theatre.setAttribute('role','img');theatre.setAttribute('aria-label','Los componentes del diseño desplegados');}
- const intro=document.querySelector('.blackbox-intro');if(intro)intro.textContent='Estas preguntas son una brújula para la investigación. Mirá cómo se relacionan el propósito de enseñanza, los contenidos, los recursos, la actividad, las orientaciones y la retroalimentación. Vas a recorrer el objeto y el aula del caso y volver sobre tus ideas en el cuaderno.';
- const titles=['Propósitos y contenidos','Actividad y recorrido','Recursos y relaciones','Orientaciones y retroalimentación'];
- document.querySelectorAll('.blackbox-node-heading>span:last-child').forEach((el,i)=>{el.textContent=titles[i]||el.textContent;});
+ function mountDesignQuestions(){
+  const box=document.querySelector('.blackbox-core'),map=document.querySelector('.blackbox-map');if(!box||!map)return;
+  const layer=box.closest('.layer-blackbox');if(layer)layer.dataset.autoOpened='true';
+  box.classList.remove('box-open');box.querySelector('.box-open-button')?.remove();box.querySelector('.box-discovery')?.remove();
+  const theatre=box.querySelector('.box-theatre');
+  if(theatre){const illustration=document.createElement('div');illustration.className='box-theatre design-question-illustration';illustration.setAttribute('aria-hidden','true');const art=theatre.querySelector('.scrap-box-stage');if(art)illustration.append(art);theatre.replaceWith(illustration);}
+  map.classList.add('design-questions-map');
+  const stack=document.createElement('div');stack.className='design-question-stack';map.append(stack);
+  const cards=[...map.querySelectorAll('.blackbox-node')];
+  cards.forEach((card,i)=>{
+   card.classList.add('design-question-card');card.dataset.designQuestion=String(i);card.open=false;
+   card.querySelector(':scope>summary>p')?.remove();card.querySelector('.case-question-toggle')?.remove();
+   card.querySelectorAll('.notebook-entry').forEach(button=>button.remove());stack.append(card);
+  });
+  map.querySelector('figcaption')?.remove();document.querySelector('.blackbox-reading')?.remove();
+  const caption=document.createElement('figcaption');caption.id='blackbox-caption';caption.textContent='Estas preguntas orientan la investigación del caso y las decisiones de diseño.';map.append(caption);
+  let queued=false;const revealed=new Set();
+  function update(){
+   queued=false;const bounds=map.getBoundingClientRect();if(!map.getClientRects().length||bounds.top>innerHeight*.85||bounds.bottom<100)return;
+   box.classList.add('box-open');let active=0;const target=innerHeight*.42;
+   cards.forEach((card,i)=>{if(card.getBoundingClientRect().top<=target)active=i;});
+   cards.forEach((card,i)=>{card.classList.toggle('is-current',i===active);if(i<=active&&!revealed.has(i)){revealed.add(i);card.open=true;card.classList.add('is-revealed');}});
+   box.dataset.currentQuestion=String(active+1);
+  }
+  function schedule(){if(!queued){queued=true;requestAnimationFrame(update);}}
+  addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);
+  map.closest('details')?.addEventListener('toggle',schedule);cards.forEach(card=>card.addEventListener('toggle',schedule));schedule();
+ }
+ mountDesignQuestions();
  document.querySelectorAll('.larva-connection-question,.larva-metaphor-bridge,.icon-thought,.blackbox-node h4,.research-cycle-node h4,.river-stop-question').forEach(el=>el.classList.add('journey-question'));
  const openOnScroll=new IntersectionObserver(entries=>{for(const entry of entries){if(!entry.isIntersecting)continue;entry.target.open=true;openOnScroll.unobserve(entry.target);}},{rootMargin:'0px 0px -12% 0px',threshold:0});
- function observeReadings(){main.querySelectorAll('details:not([data-scroll-reading])').forEach(detail=>{detail.dataset.scrollReading='true';openOnScroll.observe(detail);});}
+ function observeReadings(){main.querySelectorAll('details:not([data-scroll-reading]):not(.design-question-card)').forEach(detail=>{detail.dataset.scrollReading='true';openOnScroll.observe(detail);});}
  observeReadings();
  new MutationObserver(()=>{flattenNotes();observeReadings();}).observe(main,{childList:true,subtree:true});
  // Una activación conserva un cambio visible sin alterar los textos ni sus valores guardados.
