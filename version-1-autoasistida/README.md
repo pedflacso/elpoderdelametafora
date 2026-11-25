@@ -1,3 +1,5 @@
+> **Recorrido vigente:** Eclosión se concentra en el caso de podcast. La simulación del aula, el objeto y los documentos se recorre por scroll con un índice vertical. No hay elección ni cambio entre dos caminos. Véase [el alcance y la validación](../documentacion/ECLOSION-PODCAST.md). Las referencias posteriores a alternativas corresponden al historial de diseño.
+
 # Versión 1. Revisión para un curso autoasistido
 
 Esta es una copia de trabajo de la versión 1. Conserva la entrada por las partes del OA y el marco conceptual. El caso aparece después. La carpeta `version-1` sigue intacta como referencia.
