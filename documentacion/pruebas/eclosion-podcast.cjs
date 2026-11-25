@@ -12,6 +12,7 @@ const base=process.env.TEST_BASE_URL||'http://127.0.0.1:3000/';
    const body=await page.locator('body').innerText();assert(!/dos caminos|ambos caminos|otro camino|cambiar de camino|dos maneras de recorrer|Camino Artefacto|Artefacto interactivo/i.test(body));
    await page.locator('.case-scenario-gateway [data-case-open]').click();
    assert(await page.locator('#case-lab-dialog').evaluate(dialog=>dialog.open));
+   assert.equal(await page.evaluate(()=>checkpoint),'caso');
    assert.equal(await page.locator('.case-investigator-nav,.case-voice-tabs,.case-oa-nav').count(),0);
    assert.equal(await page.locator('.case-scroll-step').count(),7);
    assert.equal(await page.locator('.case-oa-scroll-screen').count(),4);
