@@ -157,3 +157,12 @@ body #main .question-paper.journey-question[class]:before{background:linear-grad
 @media(max-width:520px){.proposal-metaphor-graphic{padding:22px 16px}.metaphor-scheme-start{font-size:1.05rem;padding:16px}.metaphor-scheme-card{grid-template-columns:minmax(0,1fr);gap:14px}.metaphor-scheme-card h4{font-size:1.2rem}.proposal-metaphor-graphic>figcaption{font-size:1.15rem;padding:20px}}
 
 body #main #tu-objeto .proposal-metaphor-graphic>figcaption{color:#fffdf6!important}
+
+/* Cierre breve: un esquema visible y las relaciones en consulta opcional. */
+body #main #tu-objeto .proposal-metaphor-graphic{border:0;box-shadow:none;padding:clamp(16px,2vw,28px);margin:32px 0;background:transparent}
+body #main #tu-objeto .metaphor-scheme-brand{display:none}
+body #main #tu-objeto .proposal-relations-disclosure{margin:36px 0 28px;background:#fbfaf3;border:1px solid #aebaa3;border-radius:12px}
+body #main #tu-objeto .proposal-relations-disclosure>summary{padding:22px;font-size:1.15rem;font-weight:600;color:#315b4f;cursor:pointer}
+body #main #tu-objeto .proposal-relations-disclosure .proposal-relation-graphic{border:0;background:transparent;padding:10px 22px 26px;margin:0;box-shadow:none}
+body #main #tu-objeto .proposal-relations-disclosure .proposal-relation-graphic>h3{display:none}
+.proposal-pdf-download{margin-top:30px}
