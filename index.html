@@ -3805,7 +3805,8 @@ function segmentIcon(index){return sketchSymbol([0,1,2,3,4,5][index],'segment-ic
 function componentMosaic(){return `<dl class="component-mosaic" aria-label="${esc(C.segmentVisuals.componentLabel)}">${C.components.map((part,i)=>`<div><dt>${segmentIcon(i)}${esc(part.name)}</dt><dd>${esc(part.meaning)}</dd></div>`).join('')}</dl>`;}
 function associationBridge(pair){return pair?`<div class="association-bridge"><span>${esc(pair[0])}</span><svg viewBox="0 0 60 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 17Q30-10 55 17m-8-1 8 1-2-8"/></svg><span>${esc(pair[1])}</span></div>`:'';}
 function comparisonRoute(path){const t=C.learningPaths[path];return `<p class="path-hint">${esc(t.hint)}</p><ul class="learning-path">${t.steps.map(step=>`<li><span class="learning-action-icon">${learningIcon(step.icon)}</span><strong>${esc(step.title)}</strong><p>${esc(step.body)}</p></li>`).join('')}</ul><p class="path-return">${esc(t.footer)}</p>`;}
-function proposalFork(){const t=C.segmentVisuals;return `<figure class="proposal-fork"><h3 class="design-bridge-title">${esc(C.designBridge.title)}</h3><p class="design-bridge-intro">${esc(C.designBridge.intro)}</p><ul class="design-bridge-relations">${C.designBridge.relations.map(relation=>`<li><span class="design-bridge-part">${segmentIcon(relation.icons[0])}<strong>${esc(relation.from)}</strong></span><span class="design-bridge-link">${esc(relation.link)}<span aria-hidden="true">→</span></span><span class="design-bridge-part">${segmentIcon(relation.icons[1])}<strong>${esc(relation.to)}</strong></span></li>`).join('')}</ul><p class="design-bridge-hint">${esc(C.designBridge.hint)}</p><p class="fork-root">${esc(t.forkRoot)}</p><svg class="fork-links" viewBox="0 0 300 45" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M150 0v15Q150 22 140 22H20q-10 0-10 10v13M150 15q0 7 10 7h120q10 0 10 10v13"/></svg><ul class="fork-options">${t.forkOptions.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><figcaption>${esc(t.forkCaption)}</figcaption></figure>`;}
+function proposalFork(){return `<figure class="proposal-relation-graphic" aria-labelledby="proposal-relation-title"><h3 id="proposal-relation-title">${esc(C.designBridge.title)}</h3><picture><source media="(max-width:600px)" srcset="imagenes/relaciones-propuesta-movil.svg"><img src="imagenes/relaciones-propuesta.svg" width="1400" height="590" loading="lazy" decoding="async" alt="El propósito orienta la actividad; las orientaciones la acompañan; la retroalimentación permite revisarla."></picture><figcaption>Usá la plantilla para explorar una posibilidad, probar una metáfora o ensayar otra organización.</figcaption><p class="small">La decisión puede seguir abierta.</p></figure>`;}
+
 /* Esquema del OA: los rótulos de las conexiones explican el vínculo. */
 function oaRelationshipScheme(){const t=C.oaScheme;return `<figure class="oa-relationship" aria-labelledby="oa-relationship-title"><h3 id="oa-relationship-title">${esc(t.title)}</h3><div class="oa-purpose">${segmentIcon(0)}<h4>${esc(t.purpose)}</h4><p>${esc(t.purposeBody)}</p></div><p class="oa-link">${esc(t.firstLink)}<span aria-hidden="true">↓</span></p><div class="oa-activity">${segmentIcon(2)}<h4>${esc(t.activity)}</h4><p>${esc(t.activityBody)}</p><ul class="oa-supports">${t.supports.map(x=>`<li><strong>${esc(x.title)}</strong><span>${esc(x.body)}</span></li>`).join('')}</ul></div><p class="oa-link">${esc(t.secondLink)}<span aria-hidden="true">↓</span></p><div class="oa-feedback">${segmentIcon(5)}<h4>${esc(t.feedback)}</h4><p>${esc(t.feedbackBody)}</p></div><figcaption class="icon-thought"><span aria-hidden="true">${learningIcon(2)}</span><span>${esc(t.caption)}</span></figcaption></figure>`;}
 /* Cuatro preguntas rodean la caja: no hay un orden obligatorio de lectura visual. */
@@ -4961,9 +4962,9 @@ window.metaforaNotes={
  }
 };
 </script>
-<link rel="stylesheet" href="ajustes-recorrido.css?v=recorrido-visual-1">
-<link rel="stylesheet" href="notas/notas.css?v=recorrido-visual-1">
-<script src="notas/notas.js?v=recorrido-visual-1"></script>
+<link rel="stylesheet" href="ajustes-recorrido.css?v=relaciones-propuesta-1">
+<link rel="stylesheet" href="notas/notas.css?v=relaciones-propuesta-1">
+<script src="notas/notas.js?v=relaciones-propuesta-1"></script>
 <style>
 .research-cycle-section .research-cycle{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px!important;padding:0!important;isolation:isolate}
 .research-cycle-section .research-cycle .research-cycle-core{position:relative!important;top:auto!important;grid-column:1/-1!important;grid-row:auto!important;min-height:0!important;max-width:480px;width:100%;box-sizing:border-box;margin:0 auto 16px!important;align-self:start}
@@ -5211,8 +5212,8 @@ body.case-lab-open{overflow:hidden}
 </style></body>
 </html>
 
-<link rel="stylesheet" href="caso-podcast.css?v=recorrido-visual-1">
-<script src="caso-podcast.js?v=recorrido-visual-1"></script>
+<link rel="stylesheet" href="caso-podcast.css?v=relaciones-propuesta-1">
+<script src="caso-podcast.js?v=relaciones-propuesta-1"></script>
 
-<link rel="stylesheet" href="reunion-noviembre.css?v=recorrido-visual-1">
-<script src="reunion-noviembre.js?v=recorrido-visual-1"></script>
+<link rel="stylesheet" href="reunion-noviembre.css?v=relaciones-propuesta-1">
+<script src="reunion-noviembre.js?v=relaciones-propuesta-1"></script>
