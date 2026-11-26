@@ -49,7 +49,7 @@
  function noteKey(id){if(id==='explanation')return 'branch:'+bridge.snapshot().branches.path+':explanation';if(id==='contrast-note')return 'branch:podcast:note';if(id==='relation-note')return 'branch:artefacto:relationNote';return 'personal:'+id;}
  function refreshInlineStates(){for(const id of Object.keys(originalPages)){
   const area=document.getElementById(id),button=document.getElementById('linked-open-'+id);if(!area||!button)continue;
-  const value=area.value.trim(),action=id==='explanation'?'mi explicación':id==='case-first-note'?'mi primera interpretación':'esta nota';
+  const value=area.value.trim(),action=id==='explanation'?'mi explicación':id==='case-first-note'?'mi primera hipótesis':'esta nota';
   const label=(value?'Revisar ':'Escribir ')+action+' en el cuaderno';if(button.textContent!==label)button.textContent=label;
   const reflection=area.closest('.reflection-note-entry')?.querySelector('.reflection-note-status');if(reflection&&reflection.textContent!==(value?'En el cuaderno':''))reflection.textContent=value?'En el cuaderno':'';
  }}

@@ -15,7 +15,7 @@ La versión vigente usa un solo entorno para investigar el caso de la Licenciada
 7. Un recuadro independiente que explica el desajuste entre la actividad de la Unidad 3 y el recurso de la Unidad 1.
 8. Un cierre breve para registrar lo comprendido en el cuaderno.
 
-La barra horizontal se reemplazó por un índice vertical. Marca el tramo visible y ofrece enlaces opcionales para volver a un punto. No hay que pulsar controles para descubrir pantallas, testimonios o documentos. El contenido no se oculta por animación: permanece disponible para lectura, teclado y tecnologías de asistencia. Los audios no se reproducen automáticamente.
+La barra horizontal se reemplazó por un índice vertical. Marca el tramo visible y ofrece enlaces opcionales para volver a un punto. El scroll permite recorrer las pantallas. Los testimonios se escuchan de forma manual y sus transcripciones se despliegan a pedido, con una indicación explícita para quienes prefieren o necesitan leer. El contenido no se oculta por animación: permanece disponible para lectura, teclado y tecnologías de asistencia. Los audios no se reproducen automáticamente.
 
 La simulación conserva la diferencia entre aula, objeto y documento. Se retiró la representación del registro de recorridos. Después del desajuste de ubicación, el cierre invita a registrar lo comprendido y los indicios que sostienen la explicación, con un único botón en ese bloque.
 
@@ -76,3 +76,7 @@ La escena permanece a la vista mientras el scroll libera las cuatro preguntas. L
 El primer tramo de scroll abre la tapa de la caja sin mostrar preguntas. Los cuatro tramos siguientes liberan una pregunta por vez. Cada tarjeta sale acompañada por un hilo curvo que se dibuja desde un punto del interior hasta su borde; los cuatro orígenes están dentro de la caja y son distintos. En móvil se conserva el hilo de la pregunta visible.
 
 La apertura utiliza capas del mismo recurso gráfico, sin sustituir la ilustración. La tapa responde al avance del scroll; con movimiento reducido cambia sin interpolación. Se conservan los controles numerados y la lectura continua para ventanas bajas. La prueba verifica que no haya tarjetas ni hilos durante la apertura y que cada aparición agregue su conexión correspondiente.
+
+## Revisión de lectura y síntesis
+
+La presentación del caso va primero, a todo el ancho, seguida por la primera hipótesis centrada. Se retiraron las cuatro tarjetas del ciclo de investigación. El cierre remite al cuaderno con una consigna breve; las pistas permanecen cerradas y se despliegan a pedido. Véase `documentacion/SECUENCIA-LECTURA-CUADERNO.md` para la secuencia de Mariposa y la unificación del mapa con la explicación de las figuras.
