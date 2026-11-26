@@ -70,3 +70,9 @@ Prueba específica: `documentacion/pruebas/preguntas-diseno.cjs`, en 1365, 768 y
 ### Recuperación de la caja protagonista
 
 La escena permanece a la vista mientras el scroll libera las cuatro preguntas. Las tarjetas parten visualmente del interior de la caja, en lugar de formar una columna independiente. Se conservan los componentes en la leyenda y la redacción en presente. Cuatro controles numerados ofrecen la misma navegación por teclado; las tarjetas todavía ocultas se excluyen del foco. Con movimiento reducido, los cambios son inmediatos, y en ventanas de poca altura se ofrece una disposición continua sin fijar la escena.
+
+### Apertura e hilos desde el interior
+
+El primer tramo de scroll abre la tapa de la caja sin mostrar preguntas. Los cuatro tramos siguientes liberan una pregunta por vez. Cada tarjeta sale acompañada por un hilo curvo que se dibuja desde un punto del interior hasta su borde; los cuatro orígenes están dentro de la caja y son distintos. En móvil se conserva el hilo de la pregunta visible.
+
+La apertura utiliza capas del mismo recurso gráfico, sin sustituir la ilustración. La tapa responde al avance del scroll; con movimiento reducido cambia sin interpolación. Se conservan los controles numerados y la lectura continua para ventanas bajas. La prueba verifica que no haya tarjetas ni hilos durante la apertura y que cada aparición agregue su conexión correspondiente.
