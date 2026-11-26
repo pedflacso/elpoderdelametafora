@@ -140,3 +140,20 @@ body #main .question-paper.journey-question[class]:before{background:linear-grad
 .proposal-relation-graphic>figcaption{padding:18px 22px;margin-top:22px;border-radius:12px;background:#dce8d0;color:#263c30;font-size:1.05rem;font-weight:600;line-height:1.65}
 .proposal-relation-graphic>.small{margin:14px 0 0;text-align:center;font-size:.9rem}
 @media(max-width:600px){.proposal-relation-graphic{padding:20px 14px}.proposal-relation-graphic>figcaption{font-size:1rem;padding:16px}}
+/* El cierre recupera la función de la metáfora en un OA. */
+.metaphor-transfer-intro{max-width:950px}.metaphor-transfer-intro p{font-size:1.1rem;line-height:1.85;margin:22px 0}
+.proposal-metaphor-graphic{margin:46px 0;padding:clamp(22px,3vw,38px);background:#fbfaf3;border:1px solid #b7bea9;border-radius:8px 22px 12px 18px;color:#263c30;box-sizing:border-box}
+.metaphor-scheme-brand{display:inline-block;font-size:.95rem;font-weight:700;margin:0 0 25px;padding-bottom:9px;border-bottom:5px solid #ecdfa6}
+.proposal-metaphor-graphic h3{font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.35;margin:0 0 28px;color:#263c30}
+.metaphor-scheme-start{padding:18px 24px;background:#ecdfa6;border-radius:30px;font-size:1.15rem;font-weight:700;line-height:1.5;text-align:center;margin:0 0 24px}
+.metaphor-scheme-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.metaphor-scheme-card{display:grid;grid-template-columns:80px minmax(0,1fr);gap:22px;align-items:center;min-width:0;padding:26px 24px;border-radius:16px;color:#263c30}
+.scheme-relation{background:#c9dfed}.scheme-function{background:#dce8d0}.scheme-presence{background:#e6c9dd}.scheme-limits{background:#ecdfa6}
+.metaphor-scheme-icon{display:block;width:80px;height:80px;color:#315b4f}
+.metaphor-scheme-card h4{font-size:1.3rem;line-height:1.4;margin:0 0 12px}.metaphor-scheme-card p{font-size:1rem;line-height:1.7;margin:0}
+.proposal-metaphor-graphic>figcaption{margin:26px 0 0;padding:24px;background:#315b4f;color:#fffdf6;border-radius:12px;font-size:1.3rem;font-weight:700;line-height:1.6;text-align:center}
+.metaphor-personal-template{margin:50px 0}.metaphor-personal-template>h3{font-size:1.6rem;line-height:1.4}.metaphor-personal-template>p{line-height:1.8}
+@media(max-width:800px){.metaphor-scheme-grid{grid-template-columns:minmax(0,1fr)}.metaphor-scheme-card{grid-template-columns:58px minmax(0,1fr);gap:18px;padding:24px 20px}.metaphor-scheme-icon{width:58px;height:58px}}
+@media(max-width:520px){.proposal-metaphor-graphic{padding:22px 16px}.metaphor-scheme-start{font-size:1.05rem;padding:16px}.metaphor-scheme-card{grid-template-columns:minmax(0,1fr);gap:14px}.metaphor-scheme-card h4{font-size:1.2rem}.proposal-metaphor-graphic>figcaption{font-size:1.15rem;padding:20px}}
+
+body #main #tu-objeto .proposal-metaphor-graphic>figcaption{color:#fffdf6!important}
