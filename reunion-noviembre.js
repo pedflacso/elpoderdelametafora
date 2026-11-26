@@ -8,9 +8,9 @@
   const cover=document.createElement('button');cover.type='button';cover.className='notebook-cover-action';cover.dataset.notePage='ideas';cover.setAttribute('aria-haspopup','dialog');cover.setAttribute('aria-controls','my-notes');
   cover.append(...introduction.querySelector('summary').childNodes);
   cover.querySelector('.cover-prompt').textContent='Abrir mi cuaderno';
-  const hand=document.createElement('img');hand.src='imagenes/scrap/mano-escritura.png';hand.alt='';hand.className='cover-writing-hand';hand.width=100;hand.height=68;cover.querySelector('.cover-label h2').after(hand);
+  const hand=document.createElement('img');hand.src='imagenes/scrap/mano-escritura.png';hand.alt='';hand.className='cover-writing-hand';hand.width=180;hand.height=140;cover.querySelector('.cover-label h2').after(hand);
   const description=introduction.querySelector('.notebook-pages>p');
-  section.append(cover);if(description)section.append(description);introduction.replaceWith(section);
+  section.append(cover);if(description){const sheet=document.createElement('div');sheet.className='notebook-description-sheet';sheet.append(description);section.append(sheet);}introduction.replaceWith(section);
  }
  function flattenNotes(){
   main.querySelectorAll('details.note-dock,details.reflection-note-entry').forEach(detail=>{
@@ -19,6 +19,13 @@
    heading.textContent=summary?.querySelector('strong')?.textContent||'Mi cuaderno de notas';sheet.append(heading);
    const body=detail.querySelector('.note-body,.reflection-body');if(body)sheet.append(...body.childNodes);
    detail.replaceWith(sheet);
+  });
+  main.querySelectorAll('.reflection-note-entry:not([data-compact-reflection])').forEach(sheet=>{
+   sheet.dataset.compactReflection='true';const title=sheet.querySelector(':scope>h4'),actions=sheet.querySelector('.note-linked-actions');if(!title||!actions)return;
+   const extra=document.createElement('details');extra.className='reflection-more';extra.dataset.manualDisclosure='true';const summary=document.createElement('summary');summary.textContent='Si necesitás ayuda, desplegá una orientación';extra.append(summary);
+   for(const node of [...sheet.childNodes]){if(node===title||node===actions)continue;extra.append(node);}
+   const prompt=document.createElement('p');prompt.className='reflection-compact-prompt';prompt.textContent='Volvé a tu primera hipótesis y comparala con lo que comprendiste durante la investigación. Registrá en el cuaderno qué cambió y qué indicios sostienen tu explicación.';
+   sheet.replaceChildren(title,prompt,actions,extra);
   });
   main.querySelectorAll('.notebook-entry:not([data-paper-entry])').forEach(button=>{button.dataset.paperEntry='true';});
  }
@@ -72,10 +79,20 @@
 
  mountDesignQuestions();
  document.querySelectorAll('.larva-connection-question,.larva-metaphor-bridge,.icon-thought,.blackbox-node h4,.research-cycle-node h4,.river-stop-question').forEach(el=>el.classList.add('journey-question'));
+ // Las preguntas que articulan el recorrido comparten papel y jerarquía, sin repetir marcos en las tarjetas de la caja.
+ document.querySelectorAll('.journey-question,.quote,.closing-question').forEach(el=>{if(el.textContent.trim().startsWith('¿')&&!el.closest('.blackbox-node,.research-cycle-node'))el.classList.add('journey-question','question-paper');});
+ document.querySelectorAll('.entrance-enter,.notebook-next').forEach(el=>el.remove());
+ document.querySelectorAll('.research-cycle-node').forEach(card=>card.remove());
+ function prepareManualDisclosures(){
+  const transcripts=main.querySelectorAll('.entrance-listening-card>details,.case-introduction [data-stage="intro"]>details,.curation-audio-reading,.audio-transcript');
+  transcripts.forEach(detail=>{if(detail.dataset.manualDisclosure)return;detail.classList.add('audio-transcript');detail.dataset.manualDisclosure='true';detail.open=false;const summary=detail.querySelector(':scope>summary');if(summary&&!detail.closest('.case-introduction'))summary.textContent='Si preferís o necesitás leer, desplegá el texto del audio';});
+  main.querySelectorAll('details.help,details.help details,.reflection-more').forEach(detail=>{if(detail.dataset.manualDisclosure)return;detail.dataset.manualDisclosure='true';detail.open=false;});
+ }
+ prepareManualDisclosures();
  const openOnScroll=new IntersectionObserver(entries=>{for(const entry of entries){if(!entry.isIntersecting)continue;entry.target.open=true;openOnScroll.unobserve(entry.target);}},{rootMargin:'0px 0px -12% 0px',threshold:0});
- function observeReadings(){main.querySelectorAll('details:not([data-scroll-reading]):not(.design-question-card)').forEach(detail=>{detail.dataset.scrollReading='true';openOnScroll.observe(detail);});}
+ function observeReadings(){main.querySelectorAll('details:not([data-scroll-reading]):not(.design-question-card):not([data-manual-disclosure])').forEach(detail=>{detail.dataset.scrollReading='true';openOnScroll.observe(detail);});}
  observeReadings();
- new MutationObserver(()=>{flattenNotes();observeReadings();}).observe(main,{childList:true,subtree:true});
+ new MutationObserver(()=>{flattenNotes();prepareManualDisclosures();observeReadings();}).observe(main,{childList:true,subtree:true});
  // Una activación conserva un cambio visible sin alterar los textos ni sus valores guardados.
  document.addEventListener('click',event=>{const element=event.target.closest('.meta-labels li,.ink-node,.pair-options button,.relation-choice');if(element)element.classList.add('is-connected');});
  function mountRelationColors(){
@@ -111,5 +128,31 @@
   addEventListener('scroll',schedule,{passive:true});addEventListener('resize',resize);new ResizeObserver(resize).observe(scene);show(0);resize();
  }
  mountRiverComponentCarousel();
+
+ function mountButterflySequence(){
+  const root=document.getElementById('mariposa'),grid=root?.querySelector(':scope>.story-grid');if(!grid)return;
+  const intro=document.createElement('section');intro.className='butterfly-introduction';intro.setAttribute('aria-labelledby','butterfly-title');
+  intro.append(root.querySelector(':scope>h2'),root.querySelector(':scope>.lead'));root.prepend(intro);
+  const interaction=document.createElement('section');interaction.className='butterfly-interaction';interaction.setAttribute('aria-labelledby','butterfly-invitation-title');
+  const invitation=document.createElement('div');invitation.className='butterfly-invitation';const title=document.createElement('h3');title.id='butterfly-invitation-title';title.textContent='Te invitamos a jugar con esta mariposa';invitation.append(title);const lead=grid.querySelector(':scope>div>p');if(lead)invitation.append(lead);
+  grid.before(interaction);interaction.append(invitation,grid);
+  const functions=grid.querySelector('.reading-block');if(functions){functions.classList.add('butterfly-contributions');functions.querySelector('h3').id='butterfly-contributions-title';functions.setAttribute('aria-labelledby','butterfly-contributions-title');interaction.after(functions);}
+ }
+ mountButterflySequence();
+ function mountMetaphorMemory(){
+  const section=document.querySelector('.module-metaphor'),oldMap=document.querySelector('#mariposa .journey-map');if(!section||!oldMap)return;
+  const images=[...oldMap.querySelectorAll('.journey-ink')],links=[...oldMap.querySelectorAll('figcaption a')];
+  const headings=['Reconocer las partes','Explorar las relaciones','Poner las relaciones a prueba','Revisar la forma construida'];
+  const paragraphs=['Larva permitió reconocer las partes de un OA. Los componentes estaban disponibles; el recorrido invitó a distinguir qué aporta cada uno.','En Crisálida exploramos cómo una metáfora permite nombrar, organizar y dar forma a una experiencia de aprendizaje. Las partes empiezan a relacionarse de otra manera.','En Eclosión investigamos un caso para reconocer cómo las decisiones de diseño toman forma en una experiencia. Las voces y la ubicación de los materiales aportaron indicios para revisar una hipótesis.','Mariposa permitió volver sobre las conexiones entre los componentes y reconocer qué cambió al organizarlos de otra manera. Esa revisión abre el paso al propio diseño.'];
+  const title=section.querySelector('h3'),caseParagraph=section.querySelectorAll(':scope>p')[1],question=section.querySelector('.quote');
+  const lead=document.createElement('p');lead.className='memory-lead';lead.textContent='La metamorfosis organizó el recorrido. Al volver sobre cada figura, podemos reconocer qué nos permitió comprender y hacer.';
+  const layout=document.createElement('div');layout.className='memory-layout';const canvas=document.createElement('aside');canvas.className='memory-canvas';canvas.setAttribute('aria-label','Figuras del recorrido');const steps=document.createElement('div');steps.className='memory-steps';
+  const articles=images.map((image,i)=>{const inline=image.cloneNode();inline.className='memory-inline-art';image.className='memory-art';image.setAttribute('aria-hidden',String(i!==0));canvas.append(image);const article=document.createElement('article');article.className='memory-step';article.dataset.memoryStage=String(i);article.id='memory-stage-'+i;const label=document.createElement('p');label.className='eyebrow';label.textContent=(i+1)+' · '+links[i].textContent;const heading=document.createElement('h4');heading.textContent=headings[i];const body=document.createElement('p');body.textContent=paragraphs[i];const link=links[i];link.textContent='Volver a '+link.textContent;article.append(inline,label,heading,body,link);steps.append(article);return article;});
+  layout.append(canvas,steps);const caseReading=document.createElement('section');caseReading.className='memory-case-reading';const caseTitle=document.createElement('h4');caseTitle.textContent='La investigación también organizó una experiencia';caseReading.append(caseTitle);if(caseParagraph)caseReading.append(caseParagraph);if(question)caseReading.append(question);
+  section.classList.add('memory-sequence');section.replaceChildren(title,lead,layout,caseReading);oldMap.remove();
+  let queued=false;function update(){queued=false;let active=0;articles.forEach((article,i)=>{if(article.getBoundingClientRect().top<=innerHeight*.48)active=i;});images.forEach((image,i)=>{image.classList.toggle('is-current',i===active);image.setAttribute('aria-hidden',String(i!==active));});articles.forEach((article,i)=>article.classList.toggle('is-current',i===active));section.dataset.memoryStage=String(active);}
+  function schedule(){if(!queued){queued=true;requestAnimationFrame(update);}}addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);schedule();
+ }
+ mountMetaphorMemory();
 
 })();
