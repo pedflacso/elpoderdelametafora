@@ -1896,7 +1896,7 @@ body{background-color:#eef0d9}.header{background:#eef0d9;border-color:#5c735d}.h
     "connections": [
       {
         "title": "Propósitos ↔ Actividades",
-        "body": "El propósito es reconocer qué aporta una metáfora al diseño. Investigar el caso, comparar dos recorridos y ensayar una decisión propia son actividades que permiten ponerlo a prueba.",
+        "body": "El propósito es reconocer qué aporta una metáfora al diseño. Investigar el caso, relacionar las voces con los materiales y ensayar una decisión propia son actividades que permiten ponerlo a prueba.",
         "pair": [
           0,
           2
@@ -3646,7 +3646,7 @@ function previousInkImage(stage){const previous={crisalida:'larva',eclosion:'cri
 function stageArtwork(stage,{definitions=false,captionId='',caption=true}={}){
  const t=C.inkArt[stage],isCase=stage==='eclosion';
  const nodes=isCase?[{name:'Actividad',meaning:''},{name:'Guía',meaning:''}]:C.components;
- return `<figure class="ink-stage ink-${stage}${definitions?' ink-with-definitions':''}" data-ink-stage="${stage}"><div class="ink-canvas${stage!=='larva'?' ink-transition':''}"${stage!=='larva'?` data-ink-transition="${stage}"`:''}>${previousInkImage(stage)}<img class="ink-original ink-current" src="${esc(t.src)}" width="${t.width}" height="${t.height}" alt="${esc(t.alt)}" loading="${['larva','crisalida'].includes(stage)?'eager':'lazy'}" fetchpriority="${stage==='larva'?'high':'low'}" decoding="async"><svg class="ink-threads" viewBox="0 0 700 500" preserveAspectRatio="none" aria-hidden="true">${nodes.map((node,i)=>`<path class="ink-thread segment" data-component="${i}" d="${inkThreadPath(i,stage)}" pathLength="1"/>`).join('')}${stage==='larva'?[[105,75],[595,75],[105,250],[595,250],[105,425],[595,425],[350,250]].map(([x,y])=>`<circle class="ink-knot" cx="${x}" cy="${y}" r="4"/>`).join(''):''}</svg>${isCase?'<span class="ink-case-question" aria-hidden="true">?</span>':''}<dl class="ink-annotations" aria-label="${esc(isCase?'Piezas del caso':'Partes del objeto de aprendizaje')}">${nodes.map((node,i)=>`<div class="ink-node ink-node-${i} segment" data-component="${i}"><dt>${esc(node.name)}</dt>${definitions?`<dd>${esc(node.meaning)}</dd>`:''}</div>`).join('')}</dl></div>${caption?`<figcaption${captionId?` id="${captionId}"`:''}>${esc(t.caption)}</figcaption>`:''}</figure>`;
+ return `<figure class="ink-stage ink-${stage}${definitions?' ink-with-definitions':''}" data-ink-stage="${stage}"><div class="ink-canvas${stage!=='larva'?' ink-transition':''}"${stage!=='larva'?` data-ink-transition="${stage}"`:''}>${previousInkImage(stage)}<img class="ink-original ink-current" src="${esc(t.src)}" width="${t.width}" height="${t.height}" alt="${esc(t.alt)}" loading="${['larva','crisalida'].includes(stage)?'eager':'lazy'}" fetchpriority="${stage==='larva'?'high':'low'}" decoding="async"><svg class="ink-threads" viewBox="0 0 700 500" preserveAspectRatio="none" aria-hidden="true">${nodes.map((node,i)=>`<path class="ink-thread segment" data-component="${i}" d="${inkThreadPath(i,stage)}" pathLength="1"/>`).join('')}${stage==='larva'?[[105,75],[595,75],[105,250],[595,250],[105,425],[595,425]].map(([x,y])=>`<circle class="ink-knot" cx="${x}" cy="${y}" r="4"/>`).join(''):''}</svg>${isCase?'<span class="ink-case-question" aria-hidden="true">?</span>':''}<dl class="ink-annotations" aria-label="${esc(isCase?'Piezas del caso':'Partes del objeto de aprendizaje')}">${nodes.map((node,i)=>`<div class="ink-node ink-node-${i} segment" data-component="${i}"><dt>${esc(node.name)}</dt>${definitions?`<dd>${esc(node.meaning)}</dd>`:''}</div>`).join('')}</dl></div>${caption?`<figcaption${captionId?` id="${captionId}"`:''}>${esc(t.caption)}</figcaption>`:''}</figure>`;
 }
 function inkThumbnail(stage){const t=C.inkArt[stage];return `<img class="journey-ink" src="${esc(t.src)}" width="${t.width}" height="${t.height}" alt="${esc(t.alt)}" loading="lazy" decoding="async">`;}
 // Solo se dibujan los hilos con el desplazamiento. Las imágenes y etiquetas nunca se ocultan.
@@ -4962,9 +4962,9 @@ window.metaforaNotes={
  }
 };
 </script>
-<link rel="stylesheet" href="ajustes-recorrido.css?v=preguntas-diseno-1">
-<link rel="stylesheet" href="notas/notas.css?v=preguntas-diseno-1">
-<script src="notas/notas.js?v=preguntas-diseno-1"></script>
+<link rel="stylesheet" href="ajustes-recorrido.css?v=rio-vinculos-1">
+<link rel="stylesheet" href="notas/notas.css?v=rio-vinculos-1">
+<script src="notas/notas.js?v=rio-vinculos-1"></script>
 <style>
 .research-cycle-section .research-cycle{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px!important;padding:0!important;isolation:isolate}
 .research-cycle-section .research-cycle .research-cycle-core{position:relative!important;top:auto!important;grid-column:1/-1!important;grid-row:auto!important;min-height:0!important;max-width:480px;width:100%;box-sizing:border-box;margin:0 auto 16px!important;align-self:start}
@@ -5212,8 +5212,8 @@ body.case-lab-open{overflow:hidden}
 </style></body>
 </html>
 
-<link rel="stylesheet" href="caso-podcast.css?v=preguntas-diseno-1">
-<script src="caso-podcast.js?v=preguntas-diseno-1"></script>
+<link rel="stylesheet" href="caso-podcast.css?v=rio-vinculos-1">
+<script src="caso-podcast.js?v=rio-vinculos-1"></script>
 
-<link rel="stylesheet" href="reunion-noviembre.css?v=preguntas-diseno-1">
-<script src="reunion-noviembre.js?v=preguntas-diseno-1"></script>
+<link rel="stylesheet" href="reunion-noviembre.css?v=rio-vinculos-1">
+<script src="reunion-noviembre.js?v=rio-vinculos-1"></script>
