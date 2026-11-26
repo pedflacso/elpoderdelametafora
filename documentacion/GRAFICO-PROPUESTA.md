@@ -1,11 +1,9 @@
 # Cierre centrado en la metáfora
 
-«Una metáfora que puede tomar forma» recupera la metamorfosis y la investigación del caso para pensar el aporte de una metáfora a un OA.
+El cierre entra directamente desde «Del recorrido a una metáfora propia» al párrafo introductorio sobre la función de una metáfora en un OA. Se retiraron el título adicional, los otros párrafos y el bloque explicativo de la plantilla.
 
-El esquema «¿Qué podría aportar una metáfora a tu propuesta?» reúne cuatro dimensiones: la relación, su función, su presencia en la experiencia y sus límites. Usa texto HTML e iconos SVG decorativos, con dos columnas en escritorio y una en móvil. La paleta combina papel claro, azul, verde, rosa y ocre del sitio.
+El esquema de cuatro dimensiones de la metáfora permanece visible. El gráfico de relaciones entre Propósito, Orientaciones, Retroalimentación y Actividad queda en un desplegable manual, cerrado inicialmente, para evitar dos láminas grandes consecutivas. Conserva versiones SVG de escritorio y móvil y la paleta del sitio.
 
-La plantilla conserva sus descargas PDF y Word y se presenta como herramienta personal. Este cierre no asigna ninguna actividad al foro del aula.
+Solo se ofrece la descarga del PDF rellenable. No se modificó el archivo PDF ni se ofrece Word en este cierre.
 
-La prueba `documentacion/pruebas/grafico-propuesta.cjs` verifica las cuatro dimensiones, la ausencia de la consigna de foro, las descargas y la ausencia de desbordamiento en escritorio y móvil.
-
-El cierre también conserva el gráfico «¿Qué relación necesita tu propuesta?»: Propósito, Orientaciones y Retroalimentación se vinculan con la Actividad. Aparece después del esquema sobre la metáfora y antes de la plantilla, con variantes SVG para escritorio y móvil y la paleta del sitio.
+La prueba `documentacion/pruebas/grafico-propuesta.cjs` verifica ambos esquemas, apertura manual, introducción breve, descarga única de PDF y ausencia de desbordamiento en escritorio y móvil.
