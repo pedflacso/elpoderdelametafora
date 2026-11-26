@@ -63,6 +63,10 @@ Consigna final: «Registrá en tu cuaderno qué pudiste comprender durante la in
 
 La leyenda bajo el título recupera los seis componentes del OA sin volver a definirlos. La caja deja de desplegar tarjetas con sus nombres y acompaña cuatro preguntas en presente: qué encuentra quien aprende, qué recorrido propone el diseño, qué relaciones necesita construir y qué orientaciones ofrece el OA.
 
-Las tarjetas conservan una pregunta y una explicación breve; se retiraron el párrafo duplicado, los cuatro accesos repetidos al cuaderno y la lectura que volvía a enumerarlas. La apertura avanza por scroll, manteniendo disponible el control de teclado de cada desplegable. La ilustración acompaña las tarjetas en escritorio; en móvil se dispone antes de ellas. Con movimiento reducido se conserva la apertura sin animación.
+Las tarjetas conservan una pregunta y una explicación breve; se retiraron el párrafo duplicado, los cuatro accesos repetidos al cuaderno y la lectura que volvía a enumerarlas. La apertura avanza por scroll, manteniendo disponible el control de teclado de cada desplegable. La caja se conserva grande y centrada, sin el recuadro lateral que reducía su presencia. Las preguntas salen desde su interior al avanzar con el scroll y se distribuyen alrededor en escritorio. En móvil se muestra una pregunta por vez sobre la caja para mantener legibles el texto y la ilustración. Con movimiento reducido se conserva la apertura sin animación.
 
 Prueba específica: `documentacion/pruebas/preguntas-diseno.cjs`, en 1365, 768 y 390 píxeles, verifica leyenda, ausencia de tarjetas de componentes, redacción en presente, apertura sucesiva y ausencia de desbordamiento o errores de JavaScript.
+
+### Recuperación de la caja protagonista
+
+La escena permanece a la vista mientras el scroll libera las cuatro preguntas. Las tarjetas parten visualmente del interior de la caja, en lugar de formar una columna independiente. Se conservan los componentes en la leyenda y la redacción en presente. Cuatro controles numerados ofrecen la misma navegación por teclado; las tarjetas todavía ocultas se excluyen del foco. Con movimiento reducido, los cambios son inmediatos, y en ventanas de poca altura se ofrece una disposición continua sin fijar la escena.
