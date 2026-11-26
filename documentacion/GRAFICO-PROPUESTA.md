@@ -7,3 +7,5 @@ El esquema «¿Qué podría aportar una metáfora a tu propuesta?» reúne cuatr
 La plantilla conserva sus descargas PDF y Word y se presenta como herramienta personal. Este cierre no asigna ninguna actividad al foro del aula.
 
 La prueba `documentacion/pruebas/grafico-propuesta.cjs` verifica las cuatro dimensiones, la ausencia de la consigna de foro, las descargas y la ausencia de desbordamiento en escritorio y móvil.
+
+El cierre también conserva el gráfico «¿Qué relación necesita tu propuesta?»: Propósito, Orientaciones y Retroalimentación se vinculan con la Actividad. Aparece después del esquema sobre la metáfora y antes de la plantilla, con variantes SVG para escritorio y móvil y la paleta del sitio.
