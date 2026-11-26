@@ -30,28 +30,30 @@
   box.classList.remove('box-open');box.querySelector('.box-open-button')?.remove();box.querySelector('.box-discovery')?.remove();
   const theatre=box.querySelector('.box-theatre');
   if(theatre){const illustration=document.createElement('div');illustration.className='box-theatre design-question-illustration';illustration.setAttribute('aria-hidden','true');const art=theatre.querySelector('.scrap-box-stage');if(art)illustration.append(art);theatre.replaceWith(illustration);}
-  map.classList.add('design-questions-map');
-  const stack=document.createElement('div');stack.className='design-question-stack';map.append(stack);
+  map.classList.add('design-questions-map','design-question-flight');
+  const stack=document.createElement('div');stack.className='design-question-stack';box.append(stack);
   const cards=[...map.querySelectorAll('.blackbox-node')];
-  cards.forEach((card,i)=>{
-   card.classList.add('design-question-card');card.dataset.designQuestion=String(i);card.open=false;
-   card.querySelector(':scope>summary>p')?.remove();card.querySelector('.case-question-toggle')?.remove();
-   card.querySelectorAll('.notebook-entry').forEach(button=>button.remove());stack.append(card);
-  });
-  map.querySelector('figcaption')?.remove();document.querySelector('.blackbox-reading')?.remove();
-  const caption=document.createElement('figcaption');caption.id='blackbox-caption';caption.textContent='Estas preguntas orientan la investigación del caso y las decisiones de diseño.';map.append(caption);
-  let queued=false;const revealed=new Set();
-  function update(){
-   queued=false;const bounds=map.getBoundingClientRect();if(!map.getClientRects().length||bounds.top>innerHeight*.85||bounds.bottom<100)return;
-   box.classList.add('box-open');let active=0;const target=innerHeight*.42;
-   cards.forEach((card,i)=>{if(card.getBoundingClientRect().top<=target)active=i;});
-   cards.forEach((card,i)=>{card.classList.toggle('is-current',i===active);if(i<=active&&!revealed.has(i)){revealed.add(i);card.open=true;card.classList.add('is-revealed');}});
-   box.dataset.currentQuestion=String(active+1);
+  cards.forEach((card,i)=>{card.classList.add('design-question-card');card.dataset.designQuestion=String(i);card.open=true;card.inert=true;card.setAttribute('aria-hidden','true');card.querySelector(':scope>summary>p')?.remove();card.querySelector('.case-question-toggle')?.remove();card.querySelectorAll('.notebook-entry').forEach(button=>button.remove());stack.append(card);});
+  map.querySelector('figcaption')?.remove();map.removeAttribute('aria-describedby');document.querySelector('.blackbox-reading')?.remove();
+  const controls=document.createElement('nav');controls.className='design-question-controls';controls.setAttribute('aria-label','Preguntas que salen de la caja');
+  cards.forEach((card,i)=>{const button=document.createElement('button');button.type='button';button.textContent=String(i+1);button.setAttribute('aria-label','Ver pregunta '+(i+1)+': '+card.querySelector('h4').textContent);button.onclick=()=>go(i);controls.append(button);});
+  const status=document.createElement('span');status.className='design-question-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');controls.append(status);box.append(controls);
+  let queued=false,last=-1;
+  const stickyTop=()=>parseFloat(getComputedStyle(box).top)||110;
+  function show(index){
+   const short=innerHeight<650,mobile=innerWidth<=800;
+   cards.forEach((card,i)=>{const revealed=short||i<=index,visible=short||(mobile?i===index:revealed);card.classList.toggle('is-revealed',revealed);card.classList.toggle('is-current',i===index);card.classList.toggle('is-visible',visible);card.inert=!visible;card.setAttribute('aria-hidden',String(!visible));});
+   controls.querySelectorAll('button').forEach((button,i)=>button.setAttribute('aria-current',i===index?'step':'false'));
+   box.classList.add('box-open');box.dataset.currentQuestion=String(index+1);
+   if(last!==index){status.textContent=(index+1)+' de '+cards.length;last=index;}
   }
+  function update(){queued=false;if(!map.getClientRects().length)return;const rect=map.getBoundingClientRect();const distance=Math.max(1,map.offsetHeight-box.offsetHeight);const ratio=Math.max(0,Math.min(1,(stickyTop()-rect.top)/distance));show(Math.min(cards.length-1,Math.floor(ratio*cards.length)));}
   function schedule(){if(!queued){queued=true;requestAnimationFrame(update);}}
-  addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);
-  map.closest('details')?.addEventListener('toggle',schedule);cards.forEach(card=>card.addEventListener('toggle',schedule));schedule();
+  function resize(){map.style.setProperty('--question-flight-distance',Math.round(innerHeight*1.4)+'px');map.style.setProperty('--question-scene-height',box.offsetHeight+'px');schedule();}
+  function go(index){const distance=Math.max(1,map.offsetHeight-box.offsetHeight);const ratio=(index+.12)/cards.length;window.scrollTo({top:scrollY+map.getBoundingClientRect().top-stickyTop()+ratio*distance,behavior:'instant'});show(index);}
+  addEventListener('scroll',schedule,{passive:true});addEventListener('resize',resize);map.closest('details')?.addEventListener('toggle',()=>{resize();schedule();});new ResizeObserver(resize).observe(box);resize();
  }
+
  mountDesignQuestions();
  document.querySelectorAll('.larva-connection-question,.larva-metaphor-bridge,.icon-thought,.blackbox-node h4,.research-cycle-node h4,.river-stop-question').forEach(el=>el.classList.add('journey-question'));
  const openOnScroll=new IntersectionObserver(entries=>{for(const entry of entries){if(!entry.isIntersecting)continue;entry.target.open=true;openOnScroll.unobserve(entry.target);}},{rootMargin:'0px 0px -12% 0px',threshold:0});
